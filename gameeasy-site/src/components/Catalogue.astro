@@ -1,0 +1,140 @@
+---
+import Card from './Card.astro';
+
+const games = [
+    { title: "GTA V", category: "Action / Open World", image: "/images/gta5.jpg" },
+    { title: "Cyberpunk 2077", category: "RPG / Sci-Fi", image: "/images/cyberpunk.jpg" },
+    { title: "Elden Ring", category: "Action / RPG", image: "/images/elden-ring.jpg" },
+    { title: "Red Dead Redemption 2", category: "Aventure / Western", image: "/images/rdr2.jpg" },
+    { title: "Marvel's Spider-Man 2", category: "Action / Aventure", image: "/images/spiderman2.jpg" },
+    { title: "Hogwarts Legacy", category: "Aventure / Magie", image: "/images/hogwarts.jpg" },
+    { title: "Forza Horizon 5", category: "Course / Simulation", image: "/images/forza5.jpg" },
+    { title: "God of War Ragnarök", category: "Action / Mythologie", image: "/images/gow-ragnarok.jpg" },
+    { title: "The Witcher 3: Wild Hunt", category: "RPG / Fantasy", image: "/images/witcher3.jpg" },
+    { title: "Hades II", category: "Roguelike / Action", image: "/images/hades2.jpg" },
+    { title: "Hollow Knight: Silksong", category: "Metroidvania", image: "/images/silksong.jpg" },
+    { title: "Manor Lords", category: "Stratégie / Médiéval", image: "/images/manor-lords.jpg" },
+    { title: "Palworld", category: "Survie / Créatures", image: "/images/palworld.jpg" },
+    { title: "Lethal Company", category: "Horreur / Coop", image: "/images/lethal-company.jpg" },
+    { title: "Black Myth: Wukong", category: "Action / RPG", image: "/images/wukong.jpg" },
+    { title: "Stardew Valley", category: "Simulation / RPG", image: "/images/stardew.jpg" },
+    { title: "Schedules", category: "Indie / Horreur", image: "/images/schedules.jpg" },
+    { title: "Are We There Yet?", category: "Indie / Aventure", image: "/images/rv-there-yet.jpg" },
+    { title: "Buckshot Roulette", category: "Indie / Stratégie", image: "/images/buckshot.jpg" },
+    { title: "Chained Together", category: "Coop / Plateforme", image: "/images/chained-together.jpg" },
+    { title: "Phasmophobia", category: "Horreur / Coop", image: "/images/phasmophobia.jpg" },
+    { title: "Lies of P", category: "Action / Souls-like", image: "/images/lies-of-p.jpg" },
+];
+---
+
+<div class="layout-ads">
+    <aside class="side-ad">
+        <div class="ad-placeholder">PUB GAUCHE</div>
+    </aside>
+
+    <section class="catalogue-section">
+        <div class="section-header">
+            <h2>Derniers <span>Cracks</span></h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="grid" id="game-grid">
+            {games.map((game) => (
+                /* MODIFICATION 1 : Ajout de l'attribut data-title pour la recherche */
+                <div class="game-item" data-title={game.title.toLowerCase()}>
+                    <Card title={game.title} category={game.category} image={game.image} />
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <aside class="side-ad">
+        <div class="ad-placeholder">PUB DROITE</div>
+    </aside>
+</div>
+
+<script>
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const gameItems = document.querySelectorAll('.game-item');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            const searchValue = searchInput.value.toLowerCase();
+
+            gameItems.forEach((item) => {
+                const title = item.getAttribute('data-title');
+                if (title && title.includes(searchValue)) {
+                    (item as HTMLElement).style.display = 'block';
+                } else {
+                    (item as HTMLElement).style.display = 'none';
+                }
+            });
+        });
+    }
+</script>
+
+<style>
+    /* ... (Votre CSS reste identique) ... */
+    .layout-ads {
+        display: grid;
+        grid-template-columns: 200px 1fr 200px;
+        width: 100%;
+        min-height: 100vh;
+        background: #060612;
+    }
+
+    .catalogue-section {
+        padding: 40px 20px;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .side-ad {
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+    }
+
+    .ad-placeholder {
+        width: 160px;
+        height: 600px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.2);
+        font-weight: bold;
+        position: sticky;
+        top: 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: white;
+    }
+    h2 span { color: #8a4fff; }
+    .line {
+        height: 3px;
+        width: 60px;
+        background: #8a4fff;
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 1200px) {
+        .layout-ads {
+            grid-template-columns: 1fr;
+        }
+        .side-ad {
+            display: none;
+        }
+    }
+</style>
