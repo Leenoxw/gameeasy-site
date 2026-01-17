@@ -23,16 +23,16 @@
 </header>
 
 <style is:global>
-.header-container {
+<style is:global>
+    .header-container {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
-        z-index: 9999 !important;
-        /* On force un fond semi-transparent et le flou */
-        background: rgba(6, 6, 18, 0.4) !important; 
+        z-index: 9999 !important; /* Force le Header au-dessus du fond noir de l'accueil */
+        background: rgba(6, 6, 18, 0.4) !important; /* Transparence forcée */
         backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important; /* Pour la compatibilité Safari/Chrome */
+        -webkit-backdrop-filter: blur(12px) !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
         padding: 10px 0 !important;
     }
