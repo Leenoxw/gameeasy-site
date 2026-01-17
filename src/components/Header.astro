@@ -22,23 +22,20 @@
     </nav>
 </header>
 
-<style>
-    /* GARDE TON STYLE EXACTEMENT COMME IL EST DANS TON MESSAGE */
-    /* ... (Ton CSS actuel est parfait, ne change rien) ... */
+<style is:global> /* CHANGEMENT : AJOUT DE is:global ICI */
     
     .header-container {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 1000;
+        z-index: 9999; /* CHANGEMENT : PASSÉ À 9999 POUR ÉVITER LE NOIR DE L'ACCUEIL */
         background: rgba(6, 6, 18, 0.4);
         backdrop-filter: blur(12px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         padding: 10px 0;
     }
     
-    /* Le reste de ton CSS suit ici... */
     .navbar { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; max-width: 1400px; margin: 0 auto; }
     .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
     .logo span { color: #8a4fff; }
