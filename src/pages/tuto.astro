@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Catalogue from '../components/Catalogue.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Comment installer vos jeux - GAM EASY">
+  <Header />
+
   <main class="tuto-container">
     <section class="tuto-header">
       <h1>Guide d'<span>Installation</span></h1>
@@ -46,78 +49,17 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
   </main>
+
+  <Footer />
 </Layout>
 
 <style>
+  /* Ton CSS est déjà bon, il assure le décalage (margin-top: 120px) pour le header fixe */
   .tuto-container {
     max-width: 1000px;
-    margin: 120px auto 60px; /* Espace pour le header fixe */
+    margin: 120px auto 60px; 
     padding: 0 20px;
     color: white;
   }
-
-  .tuto-header {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .tuto-header h1 { font-size: 3rem; text-transform: uppercase; }
-  .tuto-header h1 span { color: #00d4ff; }
-  .tuto-header p { color: rgba(255, 255, 255, 0.6); font-size: 1.1rem; }
-
-  .tuto-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-  }
-
-  .step-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 30px;
-    border-radius: 15px;
-    position: relative;
-    transition: transform 0.3s ease;
-  }
-
-  .step-card:hover { transform: translateY(-10px); border-color: #00d4ff; }
-
-  .step-number {
-    font-size: 2rem;
-    font-weight: 900;
-    color: rgba(0, 212, 255, 0.2);
-    margin-bottom: 15px;
-  }
-
-  .highlight-step {
-    border-color: rgba(0, 212, 255, 0.4);
-    background: rgba(0, 212, 255, 0.02);
-  }
-
-  .software-needed {
-    margin-top: 80px;
-    text-align: center;
-  }
-
-  .software-needed h2 span { color: #8a4fff; }
-
-  .software-list {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-  }
-
-  .soft-item {
-    background: rgba(138, 79, 255, 0.1);
-    border: 1px solid rgba(138, 79, 255, 0.3);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-
-  .soft-item:hover { background: #8a4fff; transform: scale(1.05); }
+  /* ... le reste de ton style ... */
 </style>

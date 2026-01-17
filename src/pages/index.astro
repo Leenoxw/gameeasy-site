@@ -1,11 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Catalogue from '../components/Catalogue.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Welcome from '../components/Welcome.astro';
-// On n'importe plus Catalogue ici si on ne veut plus le voir sur l'accueil
 ---
 
 <Layout title="JeuxCracks - Accueil">
-    <Welcome />
+    <Header />
+
+    <main>
+        <Welcome />
+        </main>
+
+    <Footer />
 </Layout>
+
+<style>
+    /* Optionnel : ajout d'un padding pour éviter que Welcome soit caché sous le Header fixe */
+    main {
+        padding-top: 80px;
+    }
+</style>

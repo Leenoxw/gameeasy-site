@@ -5,13 +5,17 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 <Layout title="Tous les Cracks - JeuxCracks">
+    <Header />
+
     <div class="page-padding">
         <Catalogue />
     </div>
+
+    <Footer />
 </Layout>
 
 <style>
     .page-padding {
-        padding-top: 100px; /* Pour ne pas que le catalogue soit caché sous le header fixe */
+        padding-top: 100px;
     }
 </style>
