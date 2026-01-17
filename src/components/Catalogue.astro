@@ -26,7 +26,31 @@ const games = [
 ];
 ---
 
+<div class="layout-ads">
+    <aside class="side-ad">
+        <div class="ad-placeholder">PUB GAUCHE</div>
+    </aside>
 
+    <section class="catalogue-section">
+        <div class="section-header">
+            <h2>Derniers <span>Cracks</span></h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="grid" id="game-grid">
+            {games.map((game) => (
+                /* MODIFICATION 1 : Ajout de l'attribut data-title pour la recherche */
+                <div class="game-item" data-title={game.title.toLowerCase()}>
+                    <Card title={game.title} category={game.category} image={game.image} />
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <aside class="side-ad">
+        <div class="ad-placeholder">PUB DROITE</div>
+    </aside>
+</div>
 
 <script>
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
