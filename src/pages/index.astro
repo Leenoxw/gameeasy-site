@@ -9,64 +9,16 @@ import Welcome from '../components/Welcome.astro';
 <Layout title="JeuxCracks - Accueil">
     <Header />
 
-    <div class="main-wrapper">
-        <aside class="sidebar left-pub">
-            <div class="pub-box">PUB GAUCHE</div>
-        </aside>
-
-        <main class="content-center">
-            <Welcome />
+    <main>
+        <Welcome />
         </main>
-
-        <aside class="sidebar right-pub">
-            <div class="pub-box">PUB DROITE</div>
-        </aside>
-    </div>
 
     <Footer />
 </Layout>
 
 <style>
-    .main-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 20px;
-        max-width: 100%;
-        margin: 0 auto;
-        padding-top: 100px; /* Ajusté pour le Header */
-    }
-
-    .content-center {
-        flex: 1;
-        max-width: 1200px;
-    }
-
-    .sidebar {
-        width: 160px;
-        min-width: 160px;
-        position: sticky;
-        top: 120px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .pub-box {
-        width: 160px;
-        height: 600px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px dashed rgba(255, 255, 255, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: rgba(255, 255, 255, 0.2);
-        font-weight: bold;
-    }
-
-    /* Cache les pubs sur mobile pour ne pas écraser le contenu central */
-    @media (max-width: 1300px) {
-        .sidebar {
-            display: none;
-        }
+    /* Optionnel : ajout d'un padding pour éviter que Welcome soit caché sous le Header fixe */
+    main {
+        padding-top: 80px;
     }
 </style>
