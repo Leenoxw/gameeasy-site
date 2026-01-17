@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Catalogue from '../components/Catalogue.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Comment installer vos jeux - GAM EASY">
+  <Header />
+
+  <main class="tuto-container">
+    <section class="tuto-header">
+      <h1>Guide d'<span>Installation</span></h1>
+      <p>Suivez ces étapes simples pour profiter de vos jeux sans erreur.</p>
+    </section>
+
+    <div class="tuto-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <h3>Téléchargement</h3>
+        <p>Cliquez sur le bouton <strong>Download</strong> de la fiche du jeu. Nous vous conseillons d'utiliser un bloqueur de publicité.</p>
+      </div>
+
+      <div class="step-card highlight-step">
+        <div class="step-number">02</div>
+        <h3>Extraction</h3>
+        <p>Utilisez <strong>WinRAR</strong> ou <strong>7-Zip</strong> pour extraire les fichiers. Si un mot de passe est demandé, c'est souvent 123 ou le nom du site.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <h3>Installation</h3>
+        <p>Lancez le fichier <code>setup.exe</code> en tant qu'administrateur. Désactivez temporairement votre antivirus si nécessaire.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">04</div>
+        <h3>Jouer</h3>
+        <p>Lancez le jeu via le raccourci sur votre bureau. Bon jeu !</p>
+      </div>
+    </div>
+
+    <section class="software-needed">
+      <h2>Logiciels <span>Recommandés</span></h2>
+      <div class="software-list">
+        <a href="https://www.win-rar.com/" target="_blank" class="soft-item">WinRAR</a>
+        <a href="https://www.7-zip.org/" target="_blank" class="soft-item">7-Zip</a>
+        <a href="https://get.daemon-tools.cc/" target="_blank" class="soft-item">Daemon Tools</a>
+      </div>
+    </section>
+  </main>
+
+  </Footer>
+</Layout>
+
+<style>
+  /* Ton CSS est déjà bon, il assure le décalage (margin-top: 120px) pour le header fixe */
+  .tuto-container {
+    max-width: 1000px;
+    margin: 120px auto 60px; 
+    padding: 0 20px;
+    color: white;
+  }
+  /* ... le reste de ton style ... */
+</style>
