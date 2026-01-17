@@ -24,33 +24,20 @@ const games = [
     { title: "Chained Together", category: "Coop / Plateforme", image: "/images/chained-together.jpg" },
     { title: "Phasmophobia", category: "Horreur / Coop", image: "/images/phasmophobia.jpg" }
 ];
----
+<section class="catalogue-section">
+    <div class="section-header">
+        <h2>Derniers <span>Cracks</span></h2>
+        <div class="line"></div>
+    </div>
 
-<div class="layout-ads">
-    <aside class="side-ad">
-        <div class="ad-placeholder">PUB GAUCHE</div>
-    </aside>
-
-    <section class="catalogue-section">
-        <div class="section-header">
-            <h2>Derniers <span>Cracks</span></h2>
-            <div class="line"></div>
-        </div>
-
-        <div class="grid" id="game-grid">
-            {games.map((game) => (
-                /* MODIFICATION 1 : Ajout de l'attribut data-title pour la recherche */
-                <div class="game-item" data-title={game.title.toLowerCase()}>
-                    <Card title={game.title} category={game.category} image={game.image} />
-                </div>
-            ))}
-        </div>
-    </section>
-
-    <aside class="side-ad">
-        <div class="ad-placeholder">PUB DROITE</div>
-    </aside>
-</div>
+    <div class="grid" id="game-grid">
+        {games.map((game) => (
+            <div class="game-item" data-title={game.title.toLowerCase()}>
+                <Card title={game.title} category={game.category} image={game.image} />
+            </div>
+        ))}
+    </div>
+</section>
 
 <script>
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
@@ -59,7 +46,6 @@ const games = [
     if (searchInput) {
         searchInput.addEventListener('input', () => {
             const searchValue = searchInput.value.toLowerCase();
-
             gameItems.forEach((item) => {
                 const title = item.getAttribute('data-title');
                 if (title && title.includes(searchValue)) {
@@ -73,45 +59,15 @@ const games = [
 </script>
 
 <style>
-    /* ... (Votre CSS reste identique) ... */
-    .layout-ads {
-        display: grid;
-        grid-template-columns: 200px 1fr 200px;
-        width: 100%;
-        min-height: 100vh;
-        background: #060612;
-    }
-
     .catalogue-section {
         padding: 40px 20px;
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        width: 100%;
     }
 
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 30px;
-    }
-
-    .side-ad {
-        display: flex;
-        justify-content: center;
-        padding-top: 100px;
-    }
-
-    .ad-placeholder {
-        width: 160px;
-        height: 600px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px dashed rgba(255, 255, 255, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: rgba(255, 255, 255, 0.2);
-        font-weight: bold;
-        position: sticky;
-        top: 20px;
     }
 
     h2 {
@@ -121,19 +77,11 @@ const games = [
         color: white;
     }
     h2 span { color: #8a4fff; }
+    
     .line {
         height: 3px;
         width: 60px;
         background: #8a4fff;
         margin-bottom: 40px;
-    }
-
-    @media (max-width: 1200px) {
-        .layout-ads {
-            grid-template-columns: 1fr;
-        }
-        .side-ad {
-            display: none;
-        }
     }
 </style>
