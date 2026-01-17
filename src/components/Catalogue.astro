@@ -26,20 +26,30 @@ const games = [
 ];
 ---
 
-<section class="catalogue-section">
-    <div class="section-header">
-        <h2>Derniers <span>Cracks</span></h2>
-        <div class="line"></div>
-    </div>
+<div class="layout-ads">
+    <aside class="side-ad">
+        <div class="ad-placeholder">PUB GAUCHE</div>
+    </aside>
 
-    <div class="grid" id="game-grid">
-        {games.map((game) => (
-            <div class="game-item" data-title={game.title.toLowerCase()}>
-                <Card title={game.title} category={game.category} image={game.image} />
-            </div>
-        ))}
-    </div>
-</section>
+    <section class="catalogue-section">
+        <div class="section-header">
+            <h2>Derniers <span>Cracks</span></h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="grid" id="game-grid">
+            {games.map((game) => (
+                <div class="game-item" data-title={game.title.toLowerCase()}>
+                    <Card title={game.title} category={game.category} image={game.image} />
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <aside class="side-ad">
+        <div class="ad-placeholder">PUB DROITE</div>
+    </aside>
+</div>
 
 <script>
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
@@ -61,15 +71,44 @@ const games = [
 </script>
 
 <style>
+    .layout-ads {
+        display: grid;
+        grid-template-columns: 200px 1fr 200px; /* Définit les 3 colonnes  */
+        width: 100%;
+        min-height: 100vh;
+        background: #060612;
+    }
+
     .catalogue-section {
         padding: 40px 20px;
-        width: 100%;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 30px;
+    }
+
+    .side-ad {
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+    }
+
+    .ad-placeholder {
+        width: 160px;
+        height: 600px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.2);
+        font-weight: bold;
+        position: sticky; /* Garde la pub visible au scroll [cite: 30] */
+        top: 20px;
     }
 
     h2 {
@@ -85,5 +124,15 @@ const games = [
         width: 60px;
         background: #8a4fff;
         margin-bottom: 40px;
+    }
+
+    /* Gestion mobile : on cache les pubs si l'écran est trop petit [cite: 35] */
+    @media (max-width: 1200px) {
+        .layout-ads {
+            grid-template-columns: 1fr;
+        }
+        .side-ad {
+            display: none;
+        }
     }
 </style>
