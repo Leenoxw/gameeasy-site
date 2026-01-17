@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// 1. Cette fonction définit quels jeux existent
+export function getStaticPaths() {
+  return [
+    { 
+      params: { id: 'gta-v' }, 
+      props: { 
+        title: 'GTA V', 
+        description: 'Vivez l\'ascension de trois criminels très différents, Michael, Franklin et Trevor.',
+        image: '/gameeasy-site/images/gtav.jpg',
+        category: 'ACTION / OPEN WORLD',
+        downloadUrl: 'https://votre-lien-de-telechargement.com'
+      }
+    },
+    { 
+      params: { id: 'cyberpunk-2077' }, 
+      props: { 
+        title: 'Cyberpunk 2077', 
+        description: 'Cyberpunk 2077 est un RPG d\'action-aventure en monde ouvert qui se déroule à Night City.',
+        image: '/gameeasy-site/images/cyberpunk.jpg',
+        category: 'RPG / SCI-FI',
+        downloadUrl: 'https://votre-lien-de-telechargement.com'
+      }
+    },
+    // Ajoute d'autres jeux ici en suivant le même format
+  ];
+}
+
+const { title, description, image, category, downloadUrl } = Astro.props;
+---
+
+<Layout title={`${title} - GameEasy`}>
+  <Header />
+  
+  <main class="game-detail-page">
+    <div class="container">
+      <a href="/gameeasy-site/cracks" class="back-link">← Retour aux cracks</a>
+      
+      <div class="content-grid">
+        <div class="image-container">
+          <img src={image} alt={title} />
+        </div>
+        
+        <div class="info-container">
+          <span class="badge">{category}</span>
+          <h1>{title}</h1>
+          <p class="description">{description}</p>
+          
+          <a href={downloadUrl} class="btn-download-final">
+            TELECHARGER LE CRACK 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .game-detail-page {
+    padding: 120px 20px 60px;
+    background: #060612;
+    min-height: 100vh;
+    color: white;
+  }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .back-link { color: #8b5cf6; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+  .image-container img { width: 100%; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.3); }
+  .badge { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; padding: 5px 12px; border-radius: 20px; font-size: 12px; }
+  h1 { font-size: 3rem; margin: 10px 0; }
+  .description { font-size: 1.1rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 30px; }
+  .btn-download-final { 
+    background: #8b5cf6; color: white; padding: 15px 30px; border-radius: 8px; 
+    text-decoration: none; display: flex; align-items: center; gap: 10px; width: fit-content;
+    font-weight: bold; transition: 0.3s;
+  }
+  .btn-download-final:hover { background: #7c3aed; transform: translateY(-2px); }
+
+  @media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+  }
+</style>
