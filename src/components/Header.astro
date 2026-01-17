@@ -2,15 +2,15 @@
 ---
 <header class="header-container">
     <nav class="navbar">
-        <a href="/" class="logo">GAM<span>EASY</span></a>
+        <a href="/gameeasy-site/" class="logo">GAM<span>EASY</span></a>
         
         <ul class="nav-links">
-    <li><a href="/gameeasy-site/">Accueil</a></li>
-    <li><a href="/gameeasy-site/cracks">Cracks</a></li>
-    <li><a href="/gameeasy-site/tuto">Tuto</a></li>
-    <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
-    <li><a href="#">About</a></li>
-</ul>
+            <li><a href="/gameeasy-site/">Accueil</a></li>
+            <li><a href="/gameeasy-site/cracks" class="highlight"><i class="fas fa-rocket"></i> Cracks</a></li>
+            <li><a href="/gameeasy-site/tuto" class="btn-tuto"><i class="fas fa-book"></i> Tuto</a></li>
+            <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
 
         <div class="search-container">
             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -23,6 +23,9 @@
 </header>
 
 <style>
+    /* GARDE TON STYLE EXACTEMENT COMME IL EST DANS TON MESSAGE */
+    /* ... (Ton CSS actuel est parfait, ne change rien) ... */
+    
     .header-container {
         position: fixed;
         top: 0;
@@ -34,161 +37,22 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         padding: 10px 0;
     }
-
-    .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 5%;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .logo { 
-        font-size: 24px; 
-        font-weight: 800; 
-        color: white; 
-        text-decoration: none;
-    }
+    
+    /* Le reste de ton CSS suit ici... */
+    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; max-width: 1400px; margin: 0 auto; }
+    .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
     .logo span { color: #8a4fff; }
-
-    .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 15px; /* Espace augmenté pour l'agrandissement */
-        margin: 0;
-        padding: 0;
-        align-items: center;
-    }
-
-    .nav-links a {
-        text-decoration: none;
-        color: #efefef;
-        font-size: 14px;
-        font-weight: 600;
-        padding: 12px 20px; /* Boutons plus grands */
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    /* ANIMATION DU BOUTON CRACKS */
-    .nav-links a.highlight {
-        background: rgba(138, 79, 255, 0.8) !important;
-        border: 1px solid #8a4fff !important;
-        color: white !important;
-    }
-
-    /* Style spécifique pour le bouton Tuto */
-    .nav-links a.btn-tuto {
-        background: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid #8a4fff !important; /* Couleur Cyan pour trancher avec le violet */
-        color: #8a4fff !important;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Animation au survol pour le mettre en évidence */
-    .nav-links a.btn-tuto:hover {
-        background: #8a4fff !important;
-        color: #efefef !important;
-        box-shadow: 0 0 20px rgba(138, 79, 255, 0.8);
-        transform: translateY(-4px);
-    }
-
-    /* Optionnel : petit point brillant pour attirer l'oeil */
-    .nav-links a.btn-tuto::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-        transform: rotate(45deg);
-        animation: shine 3s infinite;
-    }
-
-    @keyframes shine {
-        0% { left: -100%; }
-        20% { left: 100%; }
-        100% { left: 100%; }
-    }
-
-    /* Quand on survole le bouton Cracks, il s'agrandit */
-    .nav-links a.highlight:hover {
-        transform: scale(1.16); /* Agrandit le bouton de 10% */
-        background: #8a4fff !important;
-        box-shadow: 0 0 20px rgba(138, 79, 255, 0.4);
-    }
-
-    /* ANIMATION DE LA BARRE DE RECHERCHE */
-    .search-container {
-        display: flex;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 4px 15px;
-        transition: width 0.4s ease, border-color 0.4s ease; /* Transition fluide */
-        width: 180px;
-    }
-
-    /* Agrandissement quand on survole la barre OU quand on clique dedans */
-    .search-container:hover, 
-    .search-container:focus-within {
-        width: 250px; /* La barre s'allonge au survol */
-        border-color: rgba(138, 79, 255, 0.5);
-        background: rgba(138, 79, 255, 0.08);
-    }
-
-    .search-icon {
-        color: rgba(255, 255, 255, 0.4);
-        margin-right: 8px;
-        transition: color 0.3s ease;
-    }
-
-    /* L'icône change de couleur au survol de la barre */
-    .search-container:hover .search-icon {
-        color: #8a4fff;
-    }
-
-    .search-container input {
-        background: transparent;
-        border: none;
-        color: white;
-        padding: 8px 0;
-        outline: none;
-        width: 100%;
-        font-size: 13px;
-    }
+    .nav-links { display: flex; list-style: none; gap: 15px; margin: 0; padding: 0; align-items: center; }
+    .nav-links a { text-decoration: none; color: #efefef; font-size: 14px; font-weight: 600; padding: 12px 20px; border-radius: 8px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); display: flex; align-items: center; gap: 8px; }
+    .nav-links a.highlight { background: rgba(138, 79, 255, 0.8) !important; border: 1px solid #8a4fff !important; color: white !important; }
+    .nav-links a.btn-tuto { background: rgba(255, 255, 255, 0.05) !important; border: 1px solid #8a4fff !important; color: #8a4fff !important; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; position: relative; overflow: hidden; }
+    .nav-links a.btn-tuto:hover { background: #8a4fff !important; color: #efefef !important; box-shadow: 0 0 20px rgba(138, 79, 255, 0.8); transform: translateY(-4px); }
+    .nav-links a.btn-tuto::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); transform: rotate(45deg); animation: shine 3s infinite; }
+    @keyframes shine { 0% { left: -100%; } 20% { left: 100%; } 100% { left: 100%; } }
+    .nav-links a.highlight:hover { transform: scale(1.16); background: #8a4fff !important; box-shadow: 0 0 20px rgba(138, 79, 255, 0.4); }
+    .search-container { display: flex; align-items: center; background: rgba(255, 255, 255, 0.05); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); padding: 4px 15px; transition: width 0.4s ease, border-color 0.4s ease; width: 180px; }
+    .search-container:hover, .search-container:focus-within { width: 250px; border-color: rgba(138, 79, 255, 0.5); background: rgba(138, 79, 255, 0.08); }
+    .search-icon { color: rgba(255, 255, 255, 0.4); margin-right: 8px; transition: color 0.3s ease; }
+    .search-container:hover .search-icon { color: #8a4fff; }
+    .search-container input { background: transparent; border: none; color: white; padding: 8px 0; outline: none; width: 100%; font-size: 13px; }
 </style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const searchInput = document.querySelector('.search-container input');
-        
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                const gameItems = document.querySelectorAll('.game-item');
-
-                gameItems.forEach(item => {
-                    const title = item.getAttribute('data-title');
-                    if (title && title.includes(searchTerm)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        }
-    });
-</script>
