@@ -1,17 +1,18 @@
 ---
+// Correction du chemin : on remonte de deux niveaux pour atteindre layouts et components
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-// 1. Cette fonction définit quels jeux existent
+// Cette fonction est obligatoire pour générer les pages individuelles
 export function getStaticPaths() {
   return [
     { 
       params: { id: 'gta-v' }, 
       props: { 
         title: 'GTA V', 
-        description: 'Vivez l\'ascension de trois criminels très différents, Michael, Franklin et Trevor.',
-        image: '/gameeasy-site/images/gtav.jpg',
+        description: 'Vivez l\'ascension de trois criminels très différents, Michael, Franklin et Trevor, qui risquent le tout pour le tout dans une série de braquages dangereux.',
+        image: '/gameeasy-site/images/gtav.jpg', // Chemin avec la base du site
         category: 'ACTION / OPEN WORLD',
         downloadUrl: 'https://votre-lien-de-telechargement.com'
       }
@@ -20,13 +21,23 @@ export function getStaticPaths() {
       params: { id: 'cyberpunk-2077' }, 
       props: { 
         title: 'Cyberpunk 2077', 
-        description: 'Cyberpunk 2077 est un RPG d\'action-aventure en monde ouvert qui se déroule à Night City.',
+        description: 'Plongez dans l\'univers futuriste de Night City. Incarnez V, un mercenaire hors-la-loi à la recherche d\'un implant unique qui détient la clé de l\'immortalité.',
         image: '/gameeasy-site/images/cyberpunk.jpg',
         category: 'RPG / SCI-FI',
         downloadUrl: 'https://votre-lien-de-telechargement.com'
       }
     },
-    // Ajoute d'autres jeux ici en suivant le même format
+    { 
+      params: { id: 'elden-ring' }, 
+      props: { 
+        title: 'Elden Ring', 
+        description: 'Levez-vous, Guerrier d\'éclat, et laissez la grâce vous guider pour brandir le pouvoir du Cercle d\'Elden et devenir Seigneur d\'Elden.',
+        image: '/gameeasy-site/images/elden-ring.jpg',
+        category: 'ACTION / RPG',
+        downloadUrl: 'https://votre-lien-de-telechargement.com'
+      }
+    }
+    // Tu peux ajouter d'autres jeux ici
   ];
 }
 
@@ -36,24 +47,26 @@ const { title, description, image, category, downloadUrl } = Astro.props;
 <Layout title={`${title} - GameEasy`}>
   <Header />
   
-  <main class="game-detail-page">
-    <div class="container">
-      <a href="/gameeasy-site/cracks" class="back-link">← Retour aux cracks</a>
+  <main class="game-detail-container">
+    <div class="wrapper">
+      <a href="/gameeasy-site/cracks" class="back-button">← Retour à la liste</a>
       
-      <div class="content-grid">
-        <div class="image-container">
-          <img src={image} alt={title} />
+      <div class="game-grid">
+        <div class="game-media">
+          <img src={image} alt={title} class="main-img" />
         </div>
         
-        <div class="info-container">
-          <span class="badge">{category}</span>
+        <div class="game-info">
+          <span class="category-tag">{category}</span>
           <h1>{title}</h1>
-          <p class="description">{description}</p>
+          <p class="text-desc">{description}</p>
           
-          <a href={downloadUrl} class="btn-download-final">
-            TELECHARGER LE CRACK 
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          </a>
+          <div class="action-zone">
+            <a href={downloadUrl} class="download-now">
+              TÉLÉCHARGER MAINTENANT
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -63,27 +76,75 @@ const { title, description, image, category, downloadUrl } = Astro.props;
 </Layout>
 
 <style>
-  .game-detail-page {
-    padding: 120px 20px 60px;
+  .game-detail-container {
+    padding-top: 120px;
+    padding-bottom: 80px;
     background: #060612;
     min-height: 100vh;
     color: white;
   }
-  .container { max-width: 1000px; margin: 0 auto; }
-  .back-link { color: #8b5cf6; text-decoration: none; margin-bottom: 20px; display: inline-block; }
-  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
-  .image-container img { width: 100%; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.3); }
-  .badge { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; padding: 5px 12px; border-radius: 20px; font-size: 12px; }
-  h1 { font-size: 3rem; margin: 10px 0; }
-  .description { font-size: 1.1rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 30px; }
-  .btn-download-final { 
-    background: #8b5cf6; color: white; padding: 15px 30px; border-radius: 8px; 
-    text-decoration: none; display: flex; align-items: center; gap: 10px; width: fit-content;
-    font-weight: bold; transition: 0.3s;
+  .wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
-  .btn-download-final:hover { background: #7c3aed; transform: translateY(-2px); }
+  .back-button {
+    color: #8b5cf6;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 30px;
+    transition: 0.2s;
+  }
+  .back-button:hover { color: white; }
+  
+  .game-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+  .main-img {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .category-tag {
+    background: rgba(139, 92, 246, 0.2);
+    color: #8b5cf6;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  h1 { font-size: 3.5rem; margin: 15px 0; font-weight: 800; }
+  .text-desc {
+    color: #a1a1aa;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  .download-now {
+    background: #8b5cf6;
+    color: white;
+    padding: 18px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .download-now:hover {
+    background: #7c3aed;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+  }
 
-  @media (max-width: 768px) {
-    .content-grid { grid-template-columns: 1fr; }
+  @media (max-width: 850px) {
+    .game-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 2.5rem; }
   }
 </style>
