@@ -27,7 +27,7 @@ const games = [
 ---
 
 <div class="layout-ads">
-    <aside class="side-ad">
+    <aside class="side-ad left">
         <div class="ad-placeholder">PUB GAUCHE</div>
     </aside>
 
@@ -46,7 +46,7 @@ const games = [
         </div>
     </section>
 
-    <aside class="side-ad">
+    <aside class="side-ad right">
         <div class="ad-placeholder">PUB DROITE</div>
     </aside>
 </div>
@@ -72,26 +72,36 @@ const games = [
 
 <style>
     .layout-ads {
-        display: grid;
-        grid-template-columns: 200px 1fr 200px; /* Définit les 3 colonnes  */
+        display: flex; /* Passage en Flex pour une largeur mieux contrôlée */
+        justify-content: center;
         width: 100%;
+        max-width: 100vw; /* Empêche strictement de dépasser l'écran */
         min-height: 100vh;
         background: #060612;
+        overflow-x: hidden; /* Supprime le scroll horizontal */
+        box-sizing: border-box;
     }
 
     .catalogue-section {
+        flex: 1; /* Prend tout l'espace central disponible */
+        max-width: 1200px;
         padding: 40px 20px;
         border-left: 1px solid rgba(255, 255, 255, 0.05);
         border-right: 1px solid rgba(255, 255, 255, 0.05);
+        box-sizing: border-box;
     }
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 30px;
+        /* Utilisation de auto-fit pour que les cartes se rangent seules */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        width: 100%;
     }
 
     .side-ad {
+        width: 200px;
+        min-width: 200px;
         display: flex;
         justify-content: center;
         padding-top: 100px;
@@ -107,8 +117,8 @@ const games = [
         justify-content: center;
         color: rgba(255, 255, 255, 0.2);
         font-weight: bold;
-        position: sticky; /* Garde la pub visible au scroll [cite: 30] */
-        top: 20px;
+        position: sticky;
+        top: 120px;
     }
 
     h2 {
@@ -126,13 +136,13 @@ const games = [
         margin-bottom: 40px;
     }
 
-    /* Gestion mobile : on cache les pubs si l'écran est trop petit [cite: 35] */
-    @media (max-width: 1200px) {
-        .layout-ads {
-            grid-template-columns: 1fr;
-        }
+    /* Tablette et Mobile : On masque les pubs pour garder la largeur du catalogue */
+    @media (max-width: 1400px) {
         .side-ad {
             display: none;
+        }
+        .catalogue-section {
+            border: none;
         }
     }
 </style>
