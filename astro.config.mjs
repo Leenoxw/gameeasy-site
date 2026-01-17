@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://Leenoxw.github.io',
-  base: '/gameeasy-site',
+  site: 'https://leenoxw.github.io',
+  base: '/gameeasy-site', // Sans cela, les liens "/cracks" ne marcheront jamais
 });
