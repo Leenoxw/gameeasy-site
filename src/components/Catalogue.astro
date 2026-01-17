@@ -72,28 +72,26 @@ const games = [
 
 <style>
     .layout-ads {
-        display: flex; /* Passage en Flex pour une largeur mieux contrôlée */
+        display: flex;
         justify-content: center;
+        align-items: stretch; /* FORCE les colonnes de pub à faire toute la hauteur du catalogue */
         width: 100%;
-        max-width: 100vw; /* Empêche strictement de dépasser l'écran */
+        max-width: 100vw;
         min-height: 100vh;
         background: #060612;
-        overflow-x: hidden; /* Supprime le scroll horizontal */
+        overflow-x: hidden;
         box-sizing: border-box;
     }
 
     .catalogue-section {
-        flex: 1; /* Prend tout l'espace central disponible */
+        flex: 1;
         max-width: 1200px;
         padding: 40px 20px;
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
         box-sizing: border-box;
     }
 
     .grid {
         display: grid;
-        /* Utilisation de auto-fit pour que les cartes se rangent seules */
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 25px;
         width: 100%;
@@ -104,8 +102,12 @@ const games = [
         min-width: 200px;
         display: flex;
         justify-content: center;
-        padding-top: 100px;
+        background: rgba(255, 255, 255, 0.01); /* Un fond très léger pour marquer la zone */
     }
+
+    /* Bordures subtiles sur les côtés des publicités */
+    .side-ad.left { border-right: 1px solid rgba(255, 255, 255, 0.05); }
+    .side-ad.right { border-left: 1px solid rgba(255, 255, 255, 0.05); }
 
     .ad-placeholder {
         width: 160px;
@@ -119,6 +121,7 @@ const games = [
         font-weight: bold;
         position: sticky;
         top: 120px;
+        margin-top: 40px; /* Espace pour ne pas coller au haut dès le début */
     }
 
     h2 {
@@ -136,13 +139,9 @@ const games = [
         margin-bottom: 40px;
     }
 
-    /* Tablette et Mobile : On masque les pubs pour garder la largeur du catalogue */
     @media (max-width: 1400px) {
         .side-ad {
             display: none;
-        }
-        .catalogue-section {
-            border: none;
         }
     }
 </style>
