@@ -37,7 +37,7 @@ const games = [
       
       <p id="no-results" style="display: none; text-align: center; color: #888; margin-top: 50px; font-size: 1.2rem;">Aucun jeu ne correspond à votre recherche...</p>
 
-      <div class="grid" id="gameGrid">
+      <div class="grid">
         {games.map((game) => (
           <div class="card game-card">
             <img src={game.image} alt={game.title} class="cover" />
@@ -55,66 +55,63 @@ const games = [
 </Layout>
 
 <script>
-  function initSearch() {
+  function initFiltering() {
     const searchInput = document.getElementById('mainSearch') as HTMLInputElement;
     const gameCards = document.querySelectorAll('.game-card');
     const noResults = document.getElementById('no-results');
 
-    // 1. Détecter si une recherche est passée dans l'URL (?search=...)
-    const urlParams = new URLSearchParams(window.location.search);
-    const queryFromUrl = urlParams.get('search');
+    if (!searchInput) return;
 
-    const filterGames = (query: string) => {
-      let hasMatch = false;
+    // 1. Détection de recherche via l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialQuery = urlParams.get('search');
+
+    const runFilter = (query: string) => {
+      let found = false;
       const lowerQuery = query.toLowerCase();
 
       gameCards.forEach((card) => {
-        const title = card.querySelector('h3').textContent.toLowerCase();
+        const title = card.querySelector('h3')?.textContent?.toLowerCase() || "";
         if (title.includes(lowerQuery)) {
           (card as HTMLElement).style.display = "block";
-          hasMatch = true;
+          found = true;
         } else {
           (card as HTMLElement).style.display = "none";
         }
       });
 
-      if (noResults) noResults.style.display = hasMatch ? "none" : "block";
+      if (noResults) noResults.style.display = found ? "none" : "block";
     };
 
-    // Si on vient de l'accueil avec un mot clé
-    if (queryFromUrl && searchInput) {
-      searchInput.value = queryFromUrl;
-      filterGames(queryFromUrl);
+    // Si on arrive avec un mot-clé dans l'URL
+    if (initialQuery) {
+      searchInput.value = initialQuery;
+      runFilter(initialQuery);
     }
 
-    // Écouter les changements en temps réel
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        filterGames((e.target as HTMLInputElement).value);
-      });
-    }
+    // Filtrage dynamique quand on tape
+    searchInput.addEventListener('input', () => {
+      runFilter(searchInput.value);
+    });
   }
 
-  initSearch();
-  document.addEventListener('astro:after-swap', initSearch);
+  initFiltering();
+  document.addEventListener('astro:after-swap', initFiltering);
 </script>
 
 <style>
   .page-padding { padding: 140px 20px 120px; background: #060612; min-height: 100vh; color: white; }
   .container { max-width: 1200px; margin: 0 auto; }
-  .title { text-align: center; font-size: 3rem; margin-bottom: 10px; font-weight: 900; letter-spacing: -1px; }
-  .purple { color: #8a4fff; text-shadow: 0 0 20px rgba(138, 79, 255, 0.4); }
+  .title { text-align: center; font-size: 3rem; margin-bottom: 10px; font-weight: 900; }
+  .purple { color: #8a4fff; text-shadow: 0 0 20px rgba(138, 79, 255, 0.3); }
   .line { height: 4px; width: 60px; background: #8a4fff; margin: 0 auto 50px; border-radius: 10px; }
-  
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-  .card { background: #11111e; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  .card:hover { transform: translateY(-10px); border-color: #8a4fff; box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
-  
-  .cover { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .card { background: #11111e; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
+  .card:hover { transform: translateY(-10px); border-color: #8a4fff; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .cover { width: 100%; height: 200px; object-fit: cover; }
   .info { padding: 25px; }
-  .badge { color: #8a4fff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+  .badge { color: #8a4fff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
   h3 { margin: 12px 0 20px; font-size: 1.3rem; font-weight: 700; color: #fff; }
-  
-  .btn { display: block; background: #fff; color: #000; text-align: center; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 0.9rem; transition: 0.3s; }
-  .btn:hover { background: #8a4fff; color: white; transform: scale(1.02); }
+  .btn { display: block; background: #fff; color: #000; text-align: center; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+  .btn:hover { background: #8a4fff; color: white; }
 </style>
