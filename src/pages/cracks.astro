@@ -3,13 +3,32 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// On définit la liste des jeux ici pour que le catalogue puisse l'utiliser
+// Liste complète fusionnée du catalogue
 const games = [
-  { id: 'gta-v', title: 'GTA V', category: 'ACTION / OPEN WORLD', image: '/gameeasy-site/images/gtav.jpg' },
-  { id: 'cyberpunk-2077', title: 'Cyberpunk 2077', category: 'RPG / SCI-FI', image: '/gameeasy-site/images/cyberpunk.jpg' },
-  { id: 'elden-ring', title: 'Elden Ring', category: 'ACTION / RPG', image: '/gameeasy-site/images/elden-ring.jpg' }
+  { id: 'gta-v', title: "GTA V", category: "Action / Open World", image: "/gameeasy-site/images/gta5.jpg" },
+  { id: 'cyberpunk-2077', title: "Cyberpunk 2077", category: "RPG / Sci-Fi", image: "/gameeasy-site/images/cyberpunk.jpg" },
+  { id: 'elden-ring', title: "Elden Ring", category: "Action / RPG", image: "/gameeasy-site/images/elden-ring.jpg" },
+  { id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", category: "Aventure / Western", image: "/gameeasy-site/images/rdr2.jpg" },
+  { id: 'spiderman-2', title: "Marvel's Spider-Man 2", category: "Action / Aventure", image: "/gameeasy-site/images/spiderman2.jpg" },
+  { id: 'hogwarts-legacy', title: "Hogwarts Legacy", category: "Aventure / Magie", image: "/gameeasy-site/images/hogwarts.jpg" },
+  { id: 'forza-horizon-5', title: "Forza Horizon 5", category: "Course / Simulation", image: "/gameeasy-site/images/forza5.jpg" },
+  { id: 'god-of-war-ragnarok', title: "God of War Ragnarök", category: "Action / Mythologie", image: "/gameeasy-site/images/gow-ragnarok.jpg" },
+  { id: 'the-witcher-3', title: "The Witcher 3: Wild Hunt", category: "RPG / Fantasy", image: "/gameeasy-site/images/witcher3.jpg" },
+  { id: 'hades-2', title: "Hades II", category: "Roguelike / Action", image: "/gameeasy-site/images/hades2.jpg" },
+  { id: 'hollow-knight-silksong', title: "Hollow Knight: Silksong", category: "Metroidvania", image: "/gameeasy-site/images/silksong.jpg" },
+  { id: 'manor-lords', title: "Manor Lords", category: "Stratégie / Médiéval", image: "/gameeasy-site/images/manor-lords.jpg" },
+  { id: 'palworld', title: "Palworld", category: "Survie / Créatures", image: "/gameeasy-site/images/palworld.jpg" },
+  { id: 'lethal-company', title: "Lethal Company", category: "Horreur / Coop", image: "/gameeasy-site/images/lethal-company.jpg" },
+  { id: 'black-myth-wukong', title: "Black Myth: Wukong", category: "Action / RPG", image: "/gameeasy-site/images/wukong.jpg" },
+  { id: 'stardew-valley', title: "Stardew Valley", category: "Simulation / RPG", image: "/gameeasy-site/images/stardew.jpg" },
+  { id: 'schedules', title: "Schedules", category: "Indie / Horreur", image: "/gameeasy-site/images/schedules.jpg" },
+  { id: 'are-we-there-yet', title: "Are We There Yet?", category: "Indie / Aventure", image: "/gameeasy-site/images/rv-there-yet.jpg" },
+  { id: 'buckshot-roulette', title: "Buckshot Roulette", category: "Indie / Stratégie", image: "/gameeasy-site/images/buckshot.jpg" },
+  { id: 'chained-together', title: "Chained Together", category: "Coop / Plateforme", image: "/gameeasy-site/images/chained-together.jpg" },
+  { id: 'phasmophobia', title: "Phasmophobia", category: "Horreur / Coop", image: "/gameeasy-site/images/phasmophobia.jpg" }
 ];
 ---
+
 <Layout title="Tous les Cracks - GameEasy">
     <Header />
     <main class="page-padding">
@@ -21,7 +40,7 @@ const games = [
                     <img src={game.image} alt={game.title} class="cover" />
                     <div class="info">
                         <h3>{game.title}</h3>
-                        <span class="badge">{game.category}</span>
+                        <span class="badge">{game.category.toUpperCase()}</span>
                         <a href={`/gameeasy-site/${game.id}`} class="btn">VOIR LE JEU</a>
                     </div>
                 </div>
@@ -32,13 +51,76 @@ const games = [
 </Layout>
 
 <style>
-    .page-padding { padding: 120px 20px; background: #060612; min-height: 100vh; color: white; }
-    .title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
+    .page-padding { 
+        padding: 120px 20px; 
+        background: #060612; 
+        min-height: 100vh; 
+        color: white; 
+    }
+    .title { 
+        text-align: center; 
+        margin-bottom: 50px; 
+        font-size: 2.5rem; 
+        font-weight: bold;
+        text-transform: uppercase;
+    }
     .purple { color: #8b5cf6; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-    .card { background: #11111e; border-radius: 12px; overflow: hidden; border: 1px solid #1e1e2e; }
-    .cover { width: 100%; height: 200px; object-fit: cover; }
+    
+    .grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 30px; 
+        max-width: 1200px; 
+        margin: 0 auto; 
+    }
+    
+    .card { 
+        background: #11111e; 
+        border-radius: 12px; 
+        overflow: hidden; 
+        border: 1px solid #1e1e2e; 
+        transition: transform 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #8b5cf6;
+    }
+    
+    .cover { 
+        width: 100%; 
+        height: 180px; 
+        object-fit: cover; 
+    }
+    
     .info { padding: 20px; }
-    .badge { display: inline-block; background: rgba(139, 92, 246, 0.2); color: #8b5cf6; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin: 10px 0; }
-    .btn { display: block; background: white; color: black; text-align: center; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+    
+    h3 { margin: 0; font-size: 1.2rem; }
+
+    .badge { 
+        display: inline-block; 
+        background: rgba(139, 92, 246, 0.15); 
+        color: #8b5cf6; 
+        padding: 4px 12px; 
+        border-radius: 20px; 
+        font-size: 11px; 
+        margin: 10px 0; 
+        font-weight: bold;
+    }
+    
+    .btn { 
+        display: block; 
+        background: white; 
+        color: black; 
+        text-align: center; 
+        padding: 12px; 
+        border-radius: 8px; 
+        text-decoration: none; 
+        font-weight: bold; 
+        margin-top: 10px; 
+        transition: background 0.3s ease;
+    }
+    .btn:hover {
+        background: #8b5cf6;
+        color: white;
+    }
 </style>
