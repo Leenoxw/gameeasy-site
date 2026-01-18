@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact - GAMEASY">
+  <Header />
+
+  <main class="legal-container">
+    <div class="legal-content">
+      <h1>CONTACTEZ-<span>NOUS</span></h1>
+      <p class="subtitle">Une question, un problème technique ou une demande de partenariat ?</p>
+
+      <div class="contact-grid">
+        <div class="contact-card discord-card">
+          <i class="fab fa-discord"></i>
+          <h3>Support Communautaire</h3>
+          <p>Pour une aide rapide sur l'installation d'un jeu ou signaler un lien mort, rejoignez notre serveur.</p>
+          <a href="https://discord.gg/votre-lien" class="btn-contact">Ouvrir Discord</a>
+        </div>
+
+        <div class="contact-card mail-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email Officiel</h3>
+          <p>Pour les demandes de retrait (DMCA), partenariats ou problèmes de compte.</p>
+          <a href="mailto:contact@gameeasy.com" class="btn-contact">Nous écrire</a>
+        </div>
+      </div>
+
+      <section class="faq-mini">
+        <h2>Questions fréquentes</h2>
+        <div class="faq-item">
+          <strong>Le jeu ne se lance pas ?</strong>
+          <p>Vérifiez que votre antivirus est désactivé et que vous avez installé tous les "Redist" (DirectX, VCRedist).</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-container { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; display: flex; justify-content: center; }
+  .legal-content { max-width: 900px; width: 100%; text-align: center; }
+  
+  h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 10px; }
+  h1 span { color: #8a4fff; }
+  .subtitle { color: #a1a1aa; font-size: 1.2rem; margin-bottom: 50px; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px; }
+  .contact-card { background: #11111e; padding: 40px; border-radius: 24px; border: 1px solid #1e1e2e; transition: 0.3s; }
+  .contact-card:hover { border-color: #8a4fff; transform: translateY(-5px); }
+  
+  .contact-card i { font-size: 3rem; color: #8a4fff; margin-bottom: 20px; }
+  .contact-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+  .contact-card p { color: #a1a1aa; margin-bottom: 25px; line-height: 1.5; }
+
+  .btn-contact { display: inline-block; padding: 12px 25px; background: #8a4fff; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
+  .btn-contact:hover { opacity: 0.9; box-shadow: 0 0 20px rgba(138, 79, 255, 0.4); }
+
+  .faq-mini { text-align: left; background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; }
+  .faq-item { margin-top: 20px; }
+  .faq-item strong { color: #8a4fff; display: block; margin-bottom: 5px; }
+
+  @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>

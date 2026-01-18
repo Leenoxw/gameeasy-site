@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="DMCA - GAMEASY">
+  <Header />
+
+  <main class="legal-container">
+    <div class="legal-content">
+      <h1>Politique DMCA</h1>
+      <p class="last-update">Dernière mise à jour : 19 Janvier 2026</p>
+
+      <section>
+        <h2>1. Notification de violation</h2>
+        <p>
+          GAMEASY respecte la propriété intellectuelle d'autrui. Si vous pensez que votre travail a été copié d'une manière qui constitue une violation du droit d'auteur, veuillez nous contacter.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Procédure de retrait</h2>
+        <p>
+          Pour soumettre une plainte, merci de fournir les informations suivantes :
+        </p>
+        <ul>
+          <li>Une signature électronique ou physique du titulaire des droits.</li>
+          <li>L'identification de l'œuvre protégée par le droit d'auteur.</li>
+          <li>Le lien direct (URL) vers le contenu litigieux sur notre site.</li>
+          <li>Vos coordonnées complètes (Email, téléphone).</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-container {
+    padding: 140px 20px 80px;
+    background: #060612;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .legal-content {
+    max-width: 800px;
+    width: 100%;
+    line-height: 1.8;
+  }
+
+  h1 { font-size: 3rem; color: #8a4fff; margin-bottom: 10px; }
+  .last-update { color: #a1a1aa; margin-bottom: 40px; font-style: italic; }
+  h2 { font-size: 1.8rem; margin-top: 30px; margin-bottom: 15px; border-left: 4px solid #8a4fff; padding-left: 15px; }
+  p, li { color: #a1a1aa; font-size: 1.1rem; }
+  ul { padding-left: 20px; }
+  section { margin-bottom: 40px; }
+</style>
