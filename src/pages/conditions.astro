@@ -9,28 +9,39 @@ import Footer from '../components/Footer.astro';
 
   <main class="legal-container">
     <div class="legal-content">
-      <h1>Conditions d'utilisation</h1>
-      <p class="last-update">En vigueur au 19 Janvier 2026</p>
+      <div class="header-section">
+        <h1>CONDITIONS <span>D'UTILISATION</span></h1>
+        <p class="last-update">Date d'entrée en vigueur : 19 Janvier 2026</p>
+      </div>
 
       <section>
-        <h2>1. Acceptation des conditions</h2>
-        <p>En accédant au site GAMEASY, vous acceptez d'être lié par les présentes conditions d'utilisation et toutes les lois et réglementations applicables.</p>
+        <h2>1. Objet du site</h2>
+        <p>GAMEASY est une plateforme d'information et de référencement de logiciels de divertissement. L'accès au site est gratuit et ouvert à tout utilisateur disposant d'une connexion Internet.</p>
       </section>
 
       <section>
-        <h2>2. Responsabilité de l'utilisateur</h2>
-        <p>GAMEASY fournit des liens vers des fichiers tiers. Nous ne sommes pas responsables des dommages causés à votre matériel ou de l'utilisation que vous faites des logiciels téléchargés.</p>
-        <p><strong>Il vous incombe de :</strong></p>
+        <h2>2. Clause de non-responsabilité (Disclaimer)</h2>
+        <p>L'utilisation des fichiers téléchargés via des liens tiers présents sur GAMEASY se fait aux risques et périls de l'utilisateur. </p>
         <ul>
-          <li>Posséder une copie originale du jeu si la loi de votre pays l'exige.</li>
-          <li>Utiliser un antivirus à jour.</li>
-          <li>Ne pas redistribuer les fichiers à des fins commerciales.</li>
+          <li><strong>Logiciels tiers :</strong> Nous ne sommes pas les développeurs des cracks ou des jeux listés.</li>
+          <li><strong>Sécurité :</strong> Bien que nous testions les liens, nous ne garantissons pas l'absence totale de risques. L'utilisation d'un antivirus et d'un VPN est fortement recommandée.</li>
+          <li><strong>Dommages :</strong> GAMEASY ne pourra être tenu responsable des pertes de données ou des pannes matérielles résultant de l'utilisation du site.</li>
         </ul>
       </section>
 
       <section>
-        <h2>3. Disponibilité du service</h2>
-        <p>Nous nous efforçons de maintenir le site en ligne 24h/24, mais nous ne garantissons pas que le service sera ininterrompu ou sans erreur.</p>
+        <h2>3. Propriété du site</h2>
+        <p>Tous les éléments graphiques, le code source et le design de <em>gameeasy.netlify.app</em> sont la propriété exclusive de l'équipe GAMEASY. Toute reproduction sans autorisation est interdite.</p>
+      </section>
+
+      <section>
+        <h2>4. Liens Externes</h2>
+        <p>Notre site contient des liens vers des hébergeurs de fichiers externes (Mediafire, Mega, etc.). Nous n'exerçons aucun contrôle sur ces sites et déclinons toute responsabilité quant à leurs politiques de confidentialité ou leurs contenus.</p>
+      </section>
+
+      <section>
+        <h2>5. Modification des termes</h2>
+        <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Il est conseillé aux utilisateurs de consulter régulièrement cette page pour se tenir informés des changements.</p>
       </section>
     </div>
   </main>
@@ -40,9 +51,13 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .legal-container { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; display: flex; justify-content: center; }
-  .legal-content { max-width: 800px; width: 100%; line-height: 1.8; }
-  h1 { font-size: 3rem; color: #8a4fff; margin-bottom: 10px; }
-  .last-update { color: #444; margin-bottom: 40px; font-weight: bold; }
-  h2 { font-size: 1.8rem; margin-top: 30px; margin-bottom: 15px; color: #fff; border-bottom: 1px solid #1e1e2e; padding-bottom: 10px; }
-  p, li { color: #a1a1aa; font-size: 1.1rem; margin-bottom: 15px; }
+  .legal-content { max-width: 850px; width: 100%; line-height: 1.7; }
+  .header-section { text-align: center; margin-bottom: 50px; }
+  h1 { font-size: 3rem; font-weight: 900; }
+  h1 span { color: #8a4fff; }
+  .last-update { color: #444; font-weight: bold; }
+  h2 { font-size: 1.6rem; color: #8a4fff; margin: 35px 0 15px 0; border-left: 4px solid #8a4fff; padding-left: 15px; }
+  p, li { color: #a1a1aa; font-size: 1.05rem; margin-bottom: 15px; }
+  ul { padding-left: 20px; }
+  strong { color: #fff; }
 </style>
