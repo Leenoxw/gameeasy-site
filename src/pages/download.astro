@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Préparation du téléchargement - GAMEASY">
+  <main class="redirect-container">
+    <div class="glass-card">
+      <h1>Votre lien est <span>presque prêt</span></h1>
+      <p>Le téléchargement sécurisé va commencer dans quelques secondes...</p>
+      
+      <div class="ad-slot">
+        <p>Publicité</p>
+        <div class="fake-ad"></div>
+      </div>
+
+      <div id="timer" class="countdown">15</div>
+
+      <a id="dl-link" class="download-button disabled" href="#">
+        Veuillez patienter...
+      </a>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  // Récupérer l'URL finale passée dans l'adresse (ex: ?url=https://...)
+  const urlParams = new URLSearchParams(window.location.search);
+  const finalUrl = urlParams.get('url');
+
+  let timeLeft = 15;
+  const timerElement = document.getElementById('timer');
+  const linkElement = document.getElementById('dl-link');
+
+  const countdown = setInterval(() => {
+    timeLeft--;
+    if (timerElement) timerElement.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      if (linkElement && finalUrl) {
+        linkElement.textContent = "TÉLÉCHARGER MAINTENANT";
+        linkElement.classList.remove('disabled');
+        linkElement.href = finalUrl;
+        // Optionnel : décommenter pour redirection automatique
+        // window.location.href = finalUrl;
+      }
+    }
+  }, 1000);
+</script>
+
+<style>
+  .redirect-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #060612 100%);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+  }
+  h1 span { color: #8b5cf6; }
+  .countdown {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #8b5cf6;
+    margin: 2rem 0;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+  .download-button {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    background: #8b5cf6;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: 0.3s;
+  }
+  .download-button.disabled {
+    background: #333;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .ad-slot {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(0,0,0,0.3);
+    border: 1px dashed #444;
+  }
+  .fake-ad { height: 100px; background: #000; border-radius: 8px; margin-top: 10px; }
+</style>
