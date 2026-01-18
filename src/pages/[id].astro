@@ -202,136 +202,170 @@ export function getStaticPaths() {
   }));
 }
 
-const { title, cat, image, desc, min, rec, dl } = Astro.props;
+const { title, cat, image, desc, min, rec, dev, date, version, id } = Astro.props;
 ---
 
 <Layout title={`${title} - GAMEASY`}>
-  <main class="detail-page">
-    <div class="container">
-      <a href="/gameeasy-site/cracks" class="back-link">← Retour au catalogue</a>
-      
-      <section class="hero-section">
-        <img src={image} alt={title} class="hero-image" />
-        <div class="hero-info">
-          <span class="category-tag">{cat}</span>
-          <h1>{title}</h1>
-          <p class="description">{desc}</p>
-          <div class="dl-area">
-              <a href={`/gameeasy-site/download?url=${dl}`} class="download-button">
-                TÉLÉCHARGER LE CRACK (DIRECT)
-              </a>
-              <p class="file-info">Fichier : .zip / .exe • Testé sans virus • MDP: 123</p>
-          </div>
-        </div>
-      </section>
+  <Header />
+  
+  <main class="game-details-page">
+    <section class="hero-banner" style={`background-image: linear-gradient(to bottom, rgba(6, 6, 18, 0.2), #060612), url(${image});`}>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="tags">
+                    <span class="tag">{cat}</span>
+                </div>
+                <h1 class="game-title">{title}</h1>
+                <p class="meta-info">{dev} • {date}</p>
 
-      <section class="system-config">
-        <div class="config-header">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-            <h2>systemConfig</h2>
-        </div>
-
-        <div class="config-grid">
-            <div class="config-box minimal">
-                <h3><span class="dot">●</span> Configuration minimale</h3>
-                <ul>
-                    <li><strong>OS:</strong> {min.os}</li>
-                    <li><strong>CPU:</strong> {min.cpu}</li>
-                    <li><strong>RAM:</strong> {min.ram}</li>
-                    <li><strong>GPU:</strong> {min.gpu}</li>
-                    <li><strong>DirectX:</strong> {min.dx}</li>
-                    <li><strong>Stockage:</strong> {min.storage}</li>
-                </ul>
+                <div class="action-bar">
+                    <a href="#" class="btn-download"><i class="fas fa-download"></i> download</a>
+                    <a href="#" class="btn-trailer"><i class="far fa-play-circle"></i> Trailer</a>
+                    
+                    <div class="mini-actions">
+                        <button class="action-icon"><i class="far fa-thumbs-up"></i><span>12</span></button>
+                        <button class="action-icon"><i class="far fa-star"></i></button>
+                        <button class="action-icon"><i class="fas fa-exclamation-triangle"></i></button>
+                    </div>
+                </div>
             </div>
 
-            <div class="config-box recommended">
-                <h3><span class="dot">●</span> Configuration recommandée</h3>
-                <ul>
-                    <li><strong>OS:</strong> {rec.os}</li>
-                    <li><strong>CPU:</strong> {rec.cpu}</li>
-                    <li><strong>RAM:</strong> {rec.ram}</li>
-                    <li><strong>GPU:</strong> {rec.gpu}</li>
-                    <li><strong>DirectX:</strong> {rec.dx}</li>
-                    <li><strong>Stockage:</strong> {rec.storage}</li>
-                </ul>
+            <div class="staff-note">
+                <div class="note-header">
+                    <i class="far fa-comment-dots"></i>
+                    <span>staffNote</span>
+                </div>
+                <p>Le crack a été mis à jour en version <strong>{version}</strong>. Testé et fonctionnel à 100%.</p>
             </div>
         </div>
-      </section>
-    </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container grid-layout">
+            
+            <div class="left-column">
+                <h2 class="section-label">description</h2>
+                <div class="description-box">
+                    <p>{desc}</p>
+                    <img src={image} alt="Screenshot" class="desc-preview-img" />
+                </div>
+
+                <h2 class="section-label" style="margin-top: 50px;">systemConfig</h2>
+                <div class="config-grid">
+                    <div class="config-box minimal">
+                        <h3><span class="dot">●</span> Minimale</h3>
+                        <ul>
+                            <li><strong>OS:</strong> {min.os}</li>
+                            <li><strong>CPU:</strong> {min.cpu}</li>
+                            <li><strong>RAM:</strong> {min.ram}</li>
+                            <li><strong>GPU:</strong> {min.gpu}</li>
+                            <li><strong>DX:</strong> {min.dx}</li>
+                        </ul>
+                    </div>
+                    <div class="config-box recommended">
+                        <h3><span class="dot">●</span> Recommandée</h3>
+                        <ul>
+                            <li><strong>OS:</strong> {rec.os}</li>
+                            <li><strong>CPU:</strong> {rec.cpu}</li>
+                            <li><strong>RAM:</strong> {rec.ram}</li>
+                            <li><strong>GPU:</strong> {rec.gpu}</li>
+                            <li><strong>DX:</strong> {rec.dx}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="info-card">
+                    <div class="info-header">
+                        <i class="fas fa-info-circle"></i>
+                        <span>informations</span>
+                    </div>
+                    <div class="info-list">
+                        <div class="item"><span>developper</span><strong>{dev}</strong></div>
+                        <div class="item"><span>release</span><strong>{date}</strong></div>
+                        <div class="item"><span>age</span><strong class="pegi">PEGI 18</strong></div>
+                        <div class="item"><span>password</span><strong>123</strong></div>
+                        <div class="item"><span>status</span><strong class="status-online">En Ligne</strong></div>
+                    </div>
+                </div>
+
+                <div class="discord-card">
+                    <img src="https://img.freepik.com/vecteurs-premium/banniere-discord-fond-bleu_1150454-358.jpg" alt="Discord" />
+                </div>
+            </aside>
+
+        </div>
+    </section>
   </main>
 
   <Footer />
 </Layout>
 
 <style>
-  .detail-page { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  
-  .back-link { color: #8b5cf6; text-decoration: none; display: inline-block; margin-bottom: 30px; font-weight: 600; transition: 0.3s; }
-  .back-link:hover { color: #fff; transform: translateX(-5px); }
+  .game-details-page { background: #060612; color: white; min-height: 100vh; padding-top: 60px; }
+  .container { max-width: 1250px; margin: 0 auto; padding: 0 20px; }
 
-  /* Hero Layout */
-  .hero-section { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px; 
-    margin-bottom: 60px; 
-    background: #11111e; 
-    padding: 30px; 
-    border-radius: 24px; 
-    border: 1px solid #1e1e2e; 
+  /* Hero Banner */
+  .hero-banner { 
+    height: 550px; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    align-items: flex-end; 
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
-
-  .hero-image { width: 100%; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.2); }
+  .hero-container { display: flex; justify-content: space-between; align-items: flex-end; width: 100%; }
   
-  .category-tag { color: #8b5cf6; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-  h1 { font-size: 4rem; font-weight: 900; margin: 10px 0; line-height: 1; }
-  .description { color: #a1a1aa; line-height: 1.6; font-size: 1.1rem; margin-bottom: 30px; }
+  .game-title { font-size: 4.5rem; font-weight: 950; text-transform: uppercase; line-height: 0.9; margin: 15px 0; }
+  .tag { background: #8a4fff; color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
+  .meta-info { color: #888; font-size: 1rem; }
 
-  /* Bouton & Download Area */
-  .dl-area { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.1); }
+  /* Buttons Area */
+  .action-bar { display: flex; gap: 15px; margin-top: 30px; align-items: center; }
+  .btn-download { background: white; color: black; padding: 16px 32px; border-radius: 12px; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 10px; text-transform: lowercase; transition: 0.3s; }
+  .btn-download:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+  .btn-trailer { background: rgba(255,255,255,0.05); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
   
-  .download-button { 
-    display: block;
-    width: 100%;
-    padding: 20px;
-    background: #8b5cf6;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 900;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    transition: 0.4s;
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
-  }
-  
-  .download-button:hover { 
-    background: #7c3aed; 
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
-  }
+  .mini-actions { display: flex; gap: 8px; background: rgba(255,255,255,0.03); padding: 8px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+  .action-icon { background: transparent; border: none; color: #666; cursor: pointer; padding: 8px; font-size: 1.1rem; }
+  .action-icon:hover { color: #8a4fff; }
 
-  .file-info { text-align: center; color: #444; font-size: 0.8rem; margin-top: 12px; font-weight: 600; }
+  /* Staff Note Card */
+  .staff-note { background: rgba(138, 79, 255, 0.08); border: 1px solid rgba(138, 79, 255, 0.2); padding: 25px; border-radius: 20px; width: 320px; backdrop-filter: blur(10px); }
+  .note-header { color: #8a4fff; font-weight: 800; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; text-transform: lowercase; }
+  .staff-note p { font-size: 0.9rem; color: #ccc; line-height: 1.5; }
 
-  /* Config System UI */
-  .system-config { background: #0d0d0d; border-radius: 20px; padding: 40px; border: 1px solid #1a1a1a; }
-  .config-header { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
-  .config-header h2 { font-family: monospace; font-size: 1.8rem; letter-spacing: -1px; }
+  /* Content Layout */
+  .grid-layout { display: grid; grid-template-columns: 1fr 350px; gap: 50px; padding: 60px 20px; }
+  .section-label { font-size: 0.8rem; text-transform: uppercase; color: #8a4fff; letter-spacing: 2px; font-weight: 800; margin-bottom: 20px; }
+  .description-box p { color: #aaa; line-height: 1.8; font-size: 1.1rem; margin-bottom: 30px; }
+  .desc-preview-img { width: 100%; border-radius: 16px; border: 1px solid #1e1e2e; }
 
-  .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-  .config-box { background: rgba(255,255,255,0.02); padding: 25px; border-radius: 15px; border: 1px solid #1a1a1a; }
-  
-  .dot { margin-right: 10px; }
-  .minimal h3 { color: #ff6b6b; margin-bottom: 20px; }
-  .recommended h3 { color: #51cf66; margin-bottom: 20px; }
+  /* System Config UI */
+  .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .config-box { background: #0c0c1d; padding: 25px; border-radius: 16px; border: 1px solid #1e1e2e; }
+  .config-box h3 { margin-bottom: 15px; font-size: 1rem; }
+  .dot { color: #8a4fff; margin-right: 8px; }
+  .config-box ul { list-style: none; padding: 0; }
+  .config-box li { color: #888; font-size: 0.9rem; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.02); padding-bottom: 5px; }
+  .config-box li strong { color: #fff; }
 
-  ul { list-style: none; padding: 0; }
-  li { margin-bottom: 12px; color: #a1a1aa; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 8px; }
-  li strong { color: #fff; margin-right: 5px; }
+  /* Sidebar Infos */
+  .info-card { background: #0c0c1d; border-radius: 20px; padding: 25px; border: 1px solid #1e1e2e; }
+  .info-header { color: #8a4fff; font-weight: 800; display: flex; align-items: center; gap: 10px; margin-bottom: 25px; text-transform: lowercase; }
+  .info-list .item { display: flex; justify-content: space-between; margin-bottom: 18px; font-size: 0.9rem; }
+  .info-list span { color: #555; font-weight: 700; text-transform: lowercase; }
+  .pegi { background: #222; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; }
+  .status-online { color: #00ff88; }
+  .discord-card img { width: 100%; border-radius: 15px; margin-top: 20px; border: 1px solid rgba(138, 79, 255, 0.2); }
 
-  @media (max-width: 900px) {
-    .hero-section, .config-grid { grid-template-columns: 1fr; }
-    h1 { font-size: 3rem; }
+  /* Mobile Responsive */
+  @media (max-width: 1000px) {
+    .grid-layout { grid-template-columns: 1fr; }
+    .hero-container { flex-direction: column; align-items: flex-start; gap: 30px; }
+    .game-title { font-size: 3rem; }
+    .staff-note { width: 100%; }
   }
 </style>
