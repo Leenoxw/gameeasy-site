@@ -2,27 +2,27 @@
 import Card from './Card.astro';
 
 const games = [
-    { id: "gta-v", title: "GTA V", category: "Action / Open World", image: "/gameeasy-site/images/gta5.jpg" },
-    { id: "cyberpunk-2077", title: "Cyberpunk 2077", category: "RPG / Sci-Fi", image: "/gameeasy-site/images/cyberpunk.jpg" },
-    { id: "elden-ring", title: "Elden Ring", category: "Action / RPG", image: "/gameeasy-site/images/elden-ring.jpg" },
-    { id: "rdr2", title: "Red Dead Redemption 2", category: "Aventure / Western", image: "/gameeasy-site/images/rdr2.jpg" },
-    { id: "spiderman2", title: "Marvel's Spider-Man 2", category: "Action / Aventure", image: "/gameeasy-site/images/spiderman2.jpg" },
-    { id: "hogwarts", title: "Hogwarts Legacy", category: "Aventure / Magie", image: "/gameeasy-site/images/hogwarts.jpg" },
-    { id: "forza5", title: "Forza Horizon 5", category: "Course / Simulation", image: "/gameeasy-site/images/forza5.jpg" },
-    { id: "gow-ragnarok", title: "God of War Ragnarök", category: "Action / Mythologie", image: "/gameeasy-site/images/gow-ragnarok.jpg" },
-    { id: "witcher3", title: "The Witcher 3: Wild Hunt", category: "RPG / Fantasy", image: "/gameeasy-site/images/witcher3.jpg" },
-    { id: "hades2", title: "Hades II", category: "Roguelike / Action", image: "/gameeasy-site/images/hades2.jpg" },
-    { id: "silksong", title: "Hollow Knight: Silksong", category: "Metroidvania", image: "/gameeasy-site/images/silksong.jpg" },
-    { id: "manor-lords", title: "Manor Lords", category: "Stratégie / Médiéval", image: "/gameeasy-site/images/manor-lords.jpg" },
-    { id: "palworld", title: "Palworld", category: "Survie / Créatures", image: "/gameeasy-site/images/palworld.jpg" },
-    { id: "lethal-company", title: "Lethal Company", category: "Horreur / Coop", image: "/gameeasy-site/images/lethal-company.jpg" },
-    { id: "wukong", title: "Black Myth: Wukong", category: "Action / RPG", image: "/gameeasy-site/images/wukong.jpg" },
-    { id: "stardew", title: "Stardew Valley", category: "Simulation / RPG", image: "/gameeasy-site/images/stardew.jpg" },
-    { id: "schedules", title: "Schedules", category: "Indie / Horreur", image: "/gameeasy-site/images/schedules.jpg" },
-    { id: "are-we-there", title: "Are We There Yet?", category: "Indie / Aventure", image: "/gameeasy-site/images/rv-there-yet.jpg" },
-    { id: "buckshot", title: "Buckshot Roulette", category: "Indie / Stratégie", image: "/gameeasy-site/images/buckshot.jpg" },
-    { id: "chained-together", title: "Chained Together", category: "Coop / Plateforme", image: "/gameeasy-site/images/chained-together.jpg" },
-    { id: "phasmophobia", title: "Phasmophobia", category: "Horreur / Coop", image: "/gameeasy-site/images/phasmophobia.jpg" }
+    { title: "GTA V", category: "Action / Open World", image: "/images/gta5.jpg" },
+    { title: "Cyberpunk 2077", category: "RPG / Sci-Fi", image: "/images/cyberpunk.jpg" },
+    { title: "Elden Ring", category: "Action / RPG", image: "/images/elden-ring.jpg" },
+    { title: "Red Dead Redemption 2", category: "Aventure / Western", image: "/images/rdr2.jpg" },
+    { title: "Marvel's Spider-Man 2", category: "Action / Aventure", image: "/images/spiderman2.jpg" },
+    { title: "Hogwarts Legacy", category: "Aventure / Magie", image: "/images/hogwarts.jpg" },
+    { title: "Forza Horizon 5", category: "Course / Simulation", image: "/images/forza5.jpg" },
+    { title: "God of War Ragnarök", category: "Action / Mythologie", image: "/images/gow-ragnarok.jpg" },
+    { title: "The Witcher 3: Wild Hunt", category: "RPG / Fantasy", image: "/images/witcher3.jpg" },
+    { title: "Hades II", category: "Roguelike / Action", image: "/images/hades2.jpg" },
+    { title: "Hollow Knight: Silksong", category: "Metroidvania", image: "/images/silksong.jpg" },
+    { title: "Manor Lords", category: "Stratégie / Médiéval", image: "/images/manor-lords.jpg" },
+    { title: "Palworld", category: "Survie / Créatures", image: "/images/palworld.jpg" },
+    { title: "Lethal Company", category: "Horreur / Coop", image: "/images/lethal-company.jpg" },
+    { title: "Black Myth: Wukong", category: "Action / RPG", image: "/images/wukong.jpg" },
+    { title: "Stardew Valley", category: "Simulation / RPG", image: "/images/stardew.jpg" },
+    { title: "Schedules", category: "Indie / Horreur", image: "/images/schedules.jpg" },
+    { title: "Are We There Yet?", category: "Indie / Aventure", image: "/images/rv-there-yet.jpg" },
+    { title: "Buckshot Roulette", category: "Indie / Stratégie", image: "/images/buckshot.jpg" },
+    { title: "Chained Together", category: "Coop / Plateforme", image: "/images/chained-together.jpg" },
+    { title: "Phasmophobia", category: "Horreur / Coop", image: "/images/phasmophobia.jpg" }
 ];
 ---
 
@@ -40,9 +40,7 @@ const games = [
         <div class="grid" id="game-grid">
             {games.map((game) => (
                 <div class="game-item" data-title={game.title.toLowerCase()}>
-                    <a href={`/gameeasy-site/${game.id}`} style="text-decoration: none; color: inherit;">
-                        <Card title={game.title} category={game.category} image={game.image} />
-                    </a>
+                    <Card title={game.title} category={game.category} image={game.image} />
                 </div>
             ))}
         </div>
@@ -73,15 +71,77 @@ const games = [
 </script>
 
 <style>
-    .layout-ads { display: flex; justify-content: center; align-items: stretch; width: 100%; max-width: 100vw; min-height: 100vh; background: #060612; overflow-x: hidden; box-sizing: border-box; }
-    .catalogue-section { flex: 1; max-width: 1200px; padding: 40px 20px; box-sizing: border-box; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; }
-    .side-ad { width: 200px; min-width: 200px; display: flex; justify-content: center; background: rgba(255, 255, 255, 0.01); }
+    .layout-ads {
+        display: flex;
+        justify-content: center;
+        align-items: stretch; /* FORCE les colonnes de pub à faire toute la hauteur du catalogue */
+        width: 100%;
+        max-width: 100vw;
+        min-height: 100vh;
+        background: #060612;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .catalogue-section {
+        flex: 1;
+        max-width: 1200px;
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        width: 100%;
+    }
+
+    .side-ad {
+        width: 200px;
+        min-width: 200px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.01); /* Un fond très léger pour marquer la zone */
+    }
+
+    /* Bordures subtiles sur les côtés des publicités */
     .side-ad.left { border-right: 1px solid rgba(255, 255, 255, 0.05); }
     .side-ad.right { border-left: 1px solid rgba(255, 255, 255, 0.05); }
-    .ad-placeholder { width: 160px; height: 600px; background: rgba(255, 255, 255, 0.03); border: 1px dashed rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.2); font-weight: bold; position: sticky; top: 120px; margin-top: 40px; }
-    h2 { font-size: 32px; text-transform: uppercase; margin-bottom: 10px; color: white; }
+
+    .ad-placeholder {
+        width: 160px;
+        height: 600px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.2);
+        font-weight: bold;
+        position: sticky;
+        top: 120px;
+        margin-top: 40px; /* Espace pour ne pas coller au haut dès le début */
+    }
+
+    h2 {
+        font-size: 32px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: white;
+    }
     h2 span { color: #8a4fff; }
-    .line { height: 3px; width: 60px; background: #8a4fff; margin-bottom: 40px; }
-    @media (max-width: 1400px) { .side-ad { display: none; } }
+    
+    .line {
+        height: 3px;
+        width: 60px;
+        background: #8a4fff;
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 1400px) {
+        .side-ad {
+            display: none;
+        }
+    }
 </style>
