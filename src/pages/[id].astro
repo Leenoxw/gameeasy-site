@@ -5,90 +5,150 @@ import Footer from '../components/Footer.astro';
 
 export function getStaticPaths() {
   const commonGames = [
-    { id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Action", desc: "Braquages et monde ouvert.", min: "i5-2500K / 8GB / GTX 660", rec: "i7-4770K / 16GB / GTX 1060" },
-    { id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "RPG", desc: "Futur dystopique.", min: "i5-3570K / 8GB / GTX 970", rec: "i7-12700 / 16GB / RTX 3060" },
-    { id: 'elden-ring', title: "Elden Ring", image: "/gameeasy-site/images/elden-ring.jpg", cat: "RPG", desc: "Action RPG épique.", min: "i5-8400 / 12GB / GTX 1060", rec: "i7-8700K / 16GB / GTX 1070" },
-    { id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", image: "/gameeasy-site/images/rdr2.jpg", cat: "Western", desc: "Épopée sauvage.", min: "i5-2500K / 8GB / GTX 770", rec: "i7-4770K / 12GB / GTX 1060" },
-    { id: 'spiderman-2', title: "Spider-Man 2", image: "/gameeasy-site/images/spiderman2.jpg", cat: "Action", desc: "Incarnez Peter et Miles.", min: "i5-8400 / 16GB / RTX 2060", rec: "i7-12700 / 32GB / RTX 3070" },
-    { id: 'hogwarts-legacy', title: "Hogwarts Legacy", image: "/gameeasy-site/images/hogwarts.jpg", cat: "Magie", desc: "Poudlard au 19ème siècle.", min: "i5-6600 / 16GB / GTX 960", rec: "i7-8700 / 16GB / RTX 2060" },
-    { id: 'forza-horizon-5', title: "Forza Horizon 5", image: "/gameeasy-site/images/forza5.jpg", cat: "Course", desc: "Courses au Mexique.", min: "i5-4460 / 8GB / GTX 760", rec: "i7-10700 / 16GB / RTX 3060" },
-    { id: 'god-of-war-ragnarok', title: "God of War Ragnarök", image: "/gameeasy-site/images/gow-ragnarok.jpg", cat: "Action", desc: "La fin des mondes nordiques.", min: "i5-4670 / 8GB / GTX 1060", rec: "i7-7700 / 16GB / RTX 3060" },
-    { id: 'the-witcher-3', title: "The Witcher 3", image: "/gameeasy-site/images/witcher3.jpg", cat: "RPG", desc: "La traque sauvage.", min: "i5-2500K / 6GB / GTX 660", rec: "i7-3770 / 8GB / GTX 770" },
-    { id: 'hades-2', title: "Hades II", image: "/gameeasy-site/images/hades2.jpg", cat: "Roguelike", desc: "Affrontez Cronos.", min: "Dual Core / 4GB / GTX 950", rec: "Quad Core / 8GB / RTX 2060" },
-    { id: 'hollow-knight-silksong', title: "Silksong", image: "/gameeasy-site/images/silksong.jpg", cat: "Metroidvania", desc: "Le voyage de Hornet.", min: "i3-3220 / 4GB / GTX 660", rec: "i5-6600 / 8GB / GTX 960" },
-    { id: 'manor-lords', title: "Manor Lords", image: "/gameeasy-site/images/manor-lords.jpg", cat: "Stratégie", desc: "Construction médiévale.", min: "i5-4670 / 8GB / GTX 1050", rec: "i5-7600 / 16GB / GTX 1060" },
-    { id: 'palworld', title: "Palworld", image: "/gameeasy-site/images/palworld.jpg", cat: "Survie", desc: "Pokémon avec des flingues.", min: "i5-3570 / 16GB / GTX 1050", rec: "i9-9900 / 32GB / RTX 2070" },
-    { id: 'lethal-company', title: "Lethal Company", image: "/gameeasy-site/images/lethal-company.jpg", cat: "Horreur", desc: "Collectez pour la Compagnie.", min: "i5-7400 / 8GB / GTX 1050", rec: "i7-9700 / 16GB / GTX 1660" },
-    { id: 'black-myth-wukong', title: "Wukong", image: "/gameeasy-site/images/wukong.jpg", cat: "Action", desc: "Le Roi Singe.", min: "i5-8400 / 16GB / GTX 1060", rec: "i7-9700 / 16GB / RTX 2060" },
-    { id: 'stardew-valley', title: "Stardew Valley", image: "/gameeasy-site/images/stardew.jpg", cat: "Ferme", desc: "La vie à la campagne.", min: "2GHz / 2GB / 256MB VRAM", rec: "3GHz / 4GB / 1GB VRAM" },
-    { id: 'schedules', title: "Schedules", image: "/gameeasy-site/images/schedules.jpg", cat: "Horreur", desc: "Horreur indie.", min: "i3 / 4GB / GTX 750", rec: "i5 / 8GB / GTX 1050" },
-    { id: 'are-we-there-yet', title: "Are We There Yet?", image: "/gameeasy-site/images/rv-there-yet.jpg", cat: "Indie", desc: "Roadtrip étrange.", min: "Dual Core / 4GB / Intégré", rec: "Quad Core / 8GB / GTX 1050" },
-    { id: 'buckshot-roulette', title: "Buckshot Roulette", image: "/gameeasy-site/images/buckshot.jpg", cat: "Stratégie", desc: "Jouez votre vie.", min: "Intel Core / 2GB / Dédié", rec: "Intel Core / 4GB / GTX 660" },
-    { id: 'chained-together', title: "Chained Together", image: "/gameeasy-site/images/chained-together.jpg", cat: "Coop", desc: "Grimpez ensemble.", min: "i5-6600 / 8GB / GTX 1050", rec: "i7-8700 / 16GB / GTX 1660" },
-    { id: 'phasmophobia', title: "Phasmophobia", image: "/gameeasy-site/images/phasmophobia.jpg", cat: "Horreur", desc: "Chasse aux fantômes.", min: "i5-4590 / 8GB / GTX 970", rec: "i7-6700 / 16GB / GTX 1070" }
+    { 
+      id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Action", desc: "Braquages et monde ouvert.",
+      min: { os: "Windows 10", cpu: "Core i5-2500K", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "72 GB" },
+      rec: { os: "Windows 11", cpu: "Core i7-4770K", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "72 GB" }
+    },
+    { 
+      id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "RPG", desc: "Futur dystopique.",
+      min: { os: "Windows 10", cpu: "Core i5-3570K", ram: "8 GB", gpu: "GTX 970", dx: "12", storage: "70 GB (SSD)" },
+      rec: { os: "Windows 11", cpu: "Core i7-12700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "70 GB (SSD)" }
+    },
+    // ... Ajoute les autres jeux ici sur le même modèle
   ];
 
   return commonGames.map(game => ({
     params: { id: game.id },
-    props: { 
-      title: game.title, 
-      category: game.cat, 
-      image: game.image, 
-      desc: game.desc,
-      min: game.min,
-      rec: game.rec
-    }
+    props: { ...game }
   }));
 }
 
-const { title, category, image, desc, min, rec } = Astro.props;
+const { title, cat, image, desc, min, rec } = Astro.props;
 ---
 
-<Layout title={`${title} - Télécharger`}>
+<Layout title={`${title} - GameEasy`}>
   <Header />
-  <main class="page-padding">
+  <main class="detail-page">
     <div class="container">
-      <a href="/gameeasy-site/cracks" class="back">← Retour</a>
-      <div class="hero">
-        <img src={image} alt={title} />
-        <div class="hero-text">
-          <span class="badge">{category}</span>
+      <a href="/gameeasy-site/cracks" class="back-link">← Retour au catalogue</a>
+      
+      <section class="hero-section">
+        <img src={image} alt={title} class="hero-image" />
+        <div class="hero-info">
+          <span class="category-tag">{cat}</span>
           <h1>{title}</h1>
-          <p>{desc}</p>
-          <button class="dl">TÉLÉCHARGER</button>
+          <p class="description">{desc}</p>
+          <button class="download-button">TÉLÉCHARGER LE CRACK</button>
         </div>
-      </div>
+      </section>
 
-      <div class="configs">
-        <div class="conf-box">
-          <h3>MINIMUM</h3>
-          <p>{min}</p>
+      <section class="system-config">
+        <div class="config-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="monitor-icon"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            <h2>systemConfig</h2>
         </div>
-        <div class="conf-box rec">
-          <h3>RECOMMANDÉE</h3>
-          <p>{rec}</p>
+
+        <div class="config-grid">
+            <div class="config-box minimal">
+                <h3><span class="dot">●</span> Configuration minimale</h3>
+                <p class="subtitle">Minimum:</p>
+                <ul>
+                    <li>Requires a 64-bit processor and operating system</li>
+                    <li><strong>OS:</strong> {min.os}</li>
+                    <li><strong>Processor:</strong> {min.cpu} or equivalent</li>
+                    <li><strong>Memory:</strong> {min.ram} RAM</li>
+                    <li><strong>Graphics:</strong> {min.gpu} or equivalent</li>
+                    <li><strong>DirectX:</strong> Version {min.dx}</li>
+                    <li><strong>Storage:</strong> {min.storage} available space</li>
+                </ul>
+            </div>
+
+            <div class="config-box recommended">
+                <h3><span class="dot">●</span> Configuration recommandée</h3>
+                <p class="subtitle">Recommended:</p>
+                <ul>
+                    <li>Requires a 64-bit processor and operating system</li>
+                    <li><strong>OS:</strong> {rec.os}</li>
+                    <li><strong>Processor:</strong> {rec.cpu} or equivalent</li>
+                    <li><strong>Memory:</strong> {rec.ram} RAM</li>
+                    <li><strong>Graphics:</strong> {rec.gpu} or equivalent</li>
+                    <li><strong>DirectX:</strong> Version {rec.dx}</li>
+                    <li><strong>Storage:</strong> {rec.storage} available space</li>
+                </ul>
+            </div>
         </div>
-      </div>
+      </section>
     </div>
   </main>
   <Footer />
 </Layout>
 
 <style>
-  .page-padding { padding: 120px 20px; background: #060612; min-height: 100vh; color: white; }
-  .container { max-width: 900px; margin: 0 auto; }
-  .back { color: #8b5cf6; text-decoration: none; display: block; margin-bottom: 20px; }
-  .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #11111e; padding: 30px; border-radius: 15px; }
-  .hero img { width: 100%; border-radius: 10px; }
-  .badge { background: #8b5cf6; padding: 4px 10px; border-radius: 5px; font-size: 0.8rem; }
-  h1 { font-size: 2.5rem; margin: 15px 0; }
-  .dl { width: 100%; background: #8b5cf6; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 20px; }
-  
-  .configs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-  .conf-box { background: #11111e; padding: 20px; border-radius: 10px; border: 1px solid #1e1e2e; }
-  .conf-box.rec { border-color: #8b5cf6; }
-  h3 { color: #8b5cf6; margin-bottom: 10px; font-size: 0.9rem; }
-  p { color: #a1a1aa; font-size: 0.9rem; }
+  .detail-page { padding: 120px 20px 60px; background: #060612; min-height: 100vh; color: white; font-family: sans-serif; }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .back-link { color: #8b5cf6; text-decoration: none; display: block; margin-bottom: 20px; font-weight: 500; }
 
-  @media (max-width: 700px) { .hero, .configs { grid-template-columns: 1fr; } }
+  /* Hero Section */
+  .hero-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+  .hero-image { width: 100%; border-radius: 12px; border: 1px solid #1e1e2e; }
+  .category-tag { color: #8b5cf6; font-weight: bold; font-size: 0.9rem; }
+  h1 { font-size: 3rem; margin: 10px 0; }
+  .description { color: #a1a1aa; line-height: 1.6; margin-bottom: 30px; }
+  .download-button { background: #8b5cf6; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
+
+  /* Design SystemConfig (Inspiré de ton image) */
+  .system-config {
+    background: #0d0d0d;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid #1a1a1a;
+  }
+
+  .config-header { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; }
+  .config-header h2 { font-size: 1.5rem; font-family: monospace; }
+  .monitor-icon { color: #a1a1aa; }
+
+  .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .config-box {
+    background: #111111;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid transparent;
+  }
+
+  /* Couleurs spécifiques par colonne */
+  .minimal { border-color: rgba(255, 107, 107, 0.1); }
+  .minimal h3 { color: #ff6b6b; }
+  .minimal .dot { color: #ff6b6b; margin-right: 8px; }
+
+  .recommended { border-color: rgba(81, 207, 102, 0.1); }
+  .recommended h3 { color: #51cf66; }
+  .recommended .dot { color: #51cf66; margin-right: 8px; }
+
+  .subtitle { color: #ffffff; font-weight: bold; margin: 15px 0 10px 0; }
+
+  ul { list-style: none; padding: 0; }
+  li { 
+    color: #ced4da; 
+    font-size: 0.9rem; 
+    margin-bottom: 8px; 
+    line-height: 1.4;
+    position: relative;
+    padding-left: 15px;
+  }
+  li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #495057;
+  }
+  li strong { color: #ffffff; }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .hero-section, .config-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 2.2rem; }
+  }
 </style>
