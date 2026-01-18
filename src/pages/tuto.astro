@@ -4,70 +4,61 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Guide d'Installation - GAM EASY">
+<Layout title="Schéma d'Installation - GAM EASY">
   <Header />
 
   <main class="tuto-page">
     <div class="container">
       <section class="tuto-header">
-        <h1>GUIDE D'<span>INSTALLATION</span></h1>
-        <div class="line"></div>
-        <p>Suivez ces étapes essentielles pour configurer vos jeux sans aucune erreur technique.</p>
+        <h1>PARCOURS D'<span>INSTALLATION</span></h1>
+        <p>Le chemin le plus rapide pour lancer votre jeu.</p>
       </section>
 
-      <div class="tuto-grid">
-        <div class="step-card">
-          <div class="step-badge">Étape 01</div>
-          <div class="icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+      <div class="roadmap">
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-step">
+          <div class="bubble">1</div>
+          <div class="content">
+            <h3>Téléchargement</h3>
+            <p>Cliquez sur <strong>Download</strong>. Nous conseillons uBlock pour éviter les pubs.</p>
           </div>
-          <h3>Téléchargement</h3>
-          <p>Rendez-vous sur la fiche du jeu et cliquez sur <strong>Download</strong>. Utilisez un bloqueur de pub (uBlock Origin conseillé) pour une navigation fluide.</p>
         </div>
 
-        <div class="step-card highlight">
-          <div class="step-badge purple">Étape 02</div>
-          <div class="icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"/><rect width="18" height="5" x="3" y="3"/><path d="M10 12h4"/></svg>
+        <div class="roadmap-step">
+          <div class="bubble active">2</div>
+          <div class="content">
+            <h3>Extraction</h3>
+            <p>Utilisez <span class="highlight-soft">WinRAR</span> ou <span class="highlight-soft">7-Zip</span> pour décompresser l'archive (MDP: 123).</p>
           </div>
-          <h3>Extraction</h3>
-          <p>Extrayez l'archive avec <strong>WinRAR</strong> ou <strong>7-Zip</strong>. <br> 💡 <em>Mot de passe habituel : 123</em></p>
         </div>
 
-        <div class="step-card">
-          <div class="step-badge">Étape 03</div>
-          <div class="icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="roadmap-step">
+          <div class="bubble">3</div>
+          <div class="content">
+            <h3>Installation</h3>
+            <p>Lancez le <code>setup.exe</code> en <strong>Administrateur</strong> pour éviter les bugs.</p>
           </div>
-          <h3>Sécurité & Setup</h3>
-          <p>Lancez le <code>setup.exe</code> en <strong>Administrateur</strong>. Si l'antivirus bloque, désactivez-le temporairement (certains cracks sont détectés à tort).</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-badge">Étape 04</div>
-          <div class="icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <div class="roadmap-step">
+          <div class="bubble final">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <h3>Lancement</h3>
-          <p>Utilisez le raccourci bureau. Si le jeu ne se lance pas, vérifiez que vos pilotes graphiques et <strong>DirectX</strong> sont à jour.</p>
+          <div class="content">
+            <h3>Jouer</h3>
+            <p>Utilisez le raccourci bureau et profitez de votre jeu !</p>
+          </div>
         </div>
       </div>
 
-      <section class="software-section">
-        <div class="software-card">
-          <h2>LOGICIELS <span>INDISPENSABLES</span></h2>
-          <div class="software-links">
-            <a href="https://www.win-rar.com/" target="_blank">WinRAR</a>
-            <a href="https://www.7-zip.org/" target="_blank">7-Zip</a>
-            <a href="https://www.oracle.com/java/" target="_blank">Java</a>
-            <a href="https://get.daemon-tools.cc/" target="_blank">Daemon Tools</a>
-          </div>
+      <section class="softwares">
+        <h2>Logiciels requis</h2>
+        <div class="soft-grid">
+          <a href="https://www.win-rar.com/" class="soft-card winrar">WinRAR</a>
+          <a href="https://www.7-zip.org/" class="soft-card sevenzip">7-Zip</a>
         </div>
       </section>
-
-      <div class="warning-box">
-        <p><strong>Note :</strong> Tous nos cracks sont testés. En cas de fichier manquant (.dll), installez le pack <em>DirectX End-User Runtimes</em>.</p>
-      </div>
     </div>
   </main>
 
@@ -76,64 +67,104 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .tuto-page { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; }
-  .container { max-width: 1100px; margin: 0 auto; }
+  .container { max-width: 900px; margin: 0 auto; }
 
-  /* Header */
-  .tuto-header { text-align: center; margin-bottom: 60px; }
-  h1 { font-size: 3rem; font-weight: 800; margin-bottom: 15px; }
+  .tuto-header { text-align: center; margin-bottom: 80px; }
+  h1 { font-size: 2.8rem; font-weight: 800; }
   h1 span { color: #8b5cf6; }
-  .line { height: 4px; width: 80px; background: #8b5cf6; margin: 0 auto 20px; border-radius: 2px; }
-  .tuto-header p { color: #a1a1aa; font-size: 1.1rem; }
 
-  /* Grid */
-  .tuto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 60px; }
-  
-  .step-card { 
-    background: #11111e; 
-    padding: 35px 25px; 
-    border-radius: 20px; 
-    border: 1px solid #1e1e2e; 
-    position: relative;
+  /* Roadmap Schema */
+  .roadmap { 
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 40px; 
+    padding-left: 50px;
+  }
+
+  /* La ligne verticale qui relie les bulles */
+  .roadmap-line { 
+    position: absolute; 
+    left: 19px; 
+    top: 0; 
+    bottom: 0; 
+    width: 2px; 
+    background: linear-gradient(to bottom, #8b5cf6 0%, #1e1e2e 100%);
+  }
+
+  .roadmap-step { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
     transition: 0.3s;
   }
-  .step-card:hover { transform: translateY(-10px); border-color: #8b5cf6; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1); }
-  
-  .step-badge { 
-    position: absolute; top: -12px; left: 25px; 
-    background: #1e1e2e; color: #a1a1aa; 
-    padding: 5px 15px; border-radius: 8px; 
-    font-size: 0.8rem; font-weight: bold; border: 1px solid #333;
+
+  .bubble { 
+    position: absolute; 
+    left: -50px; 
+    width: 40px; 
+    height: 40px; 
+    background: #11111e; 
+    border: 2px solid #8b5cf6; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: bold; 
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
   }
-  .step-badge.purple { background: #8b5cf6; color: white; border-color: #8b5cf6; }
 
-  .icon-box { margin-bottom: 20px; background: rgba(139, 92, 246, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 12px; }
-  
-  h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
-  .step-card p { color: #a1a1aa; font-size: 0.95rem; line-height: 1.6; }
-  .step-card code { background: #060612; color: #8b5cf6; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+  .bubble.active { background: #8b5cf6; color: white; }
+  .bubble.final { background: #10b981; border-color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
 
-  /* Highlight Step */
-  .highlight { border-color: rgba(139, 92, 246, 0.5); background: linear-gradient(145deg, #11111e 0%, #16162a 100%); }
-
-  /* Software Section */
-  .software-card { background: #0d0d16; padding: 40px; border-radius: 20px; border: 1px solid #1e1e2e; text-align: center; }
-  .software-card h2 { font-size: 1.8rem; margin-bottom: 25px; }
-  .software-card h2 span { color: #8b5cf6; }
-  
-  .software-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-  .software-links a { 
-    background: #1e1e2e; color: white; text-decoration: none; 
-    padding: 12px 25px; border-radius: 10px; font-weight: 600; 
-    transition: 0.3s; border: 1px solid #333;
+  .content { 
+    background: #11111e; 
+    padding: 20px 30px; 
+    border-radius: 15px; 
+    border: 1px solid #1e1e2e; 
+    width: 100%;
+    transition: 0.3s;
   }
-  .software-links a:hover { background: #8b5cf6; border-color: #8b5cf6; transform: scale(1.05); }
+  .roadmap-step:hover .content { border-color: #8b5cf6; transform: translateX(10px); }
 
-  /* Warning Box */
-  .warning-box { margin-top: 40px; background: rgba(255, 184, 0, 0.05); border-left: 4px solid #ffb800; padding: 20px; border-radius: 0 12px 12px 0; }
-  .warning-box p { color: #d1d1d6; font-size: 0.9rem; }
+  h3 { margin-bottom: 5px; color: #8b5cf6; }
+  p { color: #a1a1aa; font-size: 0.95rem; }
 
-  @media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    .tuto-grid { grid-template-columns: 1fr; }
+  /* Surlignage WinRAR / 7Zip */
+  .highlight-soft { 
+    background: rgba(139, 92, 246, 0.2); 
+    color: #c4b5fd; 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: bold;
+    border-bottom: 2px solid #8b5cf6;
+  }
+
+  /* Section logiciels du bas */
+  .softwares { margin-top: 80px; text-align: center; }
+  .softwares h2 { margin-bottom: 30px; font-size: 1.5rem; }
+  .soft-grid { display: flex; gap: 20px; justify-content: center; }
+
+  .soft-card { 
+    padding: 15px 40px; 
+    border-radius: 10px; 
+    text-decoration: none; 
+    color: white; 
+    font-weight: bold; 
+    transition: 0.3s;
+    border: 2px solid transparent;
+  }
+
+  .winrar { background: #2a2a4a; border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.2); }
+  .sevenzip { background: #2a2a4a; border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.2); }
+  
+  .soft-card:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+  @media (max-width: 600px) {
+    .roadmap { padding-left: 40px; }
+    .bubble { left: -40px; width: 30px; height: 30px; font-size: 0.8rem; }
+    .roadmap-line { left: 14px; }
+    h1 { font-size: 2rem; }
   }
 </style>
