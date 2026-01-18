@@ -83,7 +83,7 @@
             searchInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     const val = searchInput.value.trim();
-                    // Redirige vers la page catalogue avec le paramètre de recherche
+                    // On redirige vers le catalogue avec la recherche
                     window.location.href = `/gameeasy-site/cracks?search=${encodeURIComponent(val)}`;
                 }
             });
