@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="À Propos - GAMEASY">
+  <Header />
+
+  <main class="about-page">
+    <div class="container">
+      <section class="about-hero">
+        <h1 class="gradient-text">À PROPOS DE GAMEASY</h1>
+        <p class="subtitle">La destination ultime pour le partage de jeux gratuits et illimités.</p>
+      </section>
+
+      <section class="content-grid">
+        <div class="text-block">
+          <h2>Pourquoi GAMEASY ?</h2>
+          <p>
+            GAMEASY est né d'une passion pour le gaming et de la volonté de rendre la culture vidéoludique accessible à tous. Nous savons que tout le monde n'a pas les moyens de s'offrir les derniers blockbusters à 70€. 
+          </p>
+          <p>
+            Notre mission est de fournir des fichiers **testés, sécurisés et simples à installer**, pour que vous puissiez vous concentrer sur ce qui compte vraiment : jouer.
+          </p>
+        </div>
+        <div class="stats-card">
+          <div class="stat-item">
+            <span class="number">500+</span>
+            <span class="label">Jeux disponibles</span>
+          </div>
+          <div class="stat-item">
+            <span class="number">100%</span>
+            <span class="label">Sans Virus</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="values">
+        <div class="value-card">
+          <div class="icon">🛡️</div>
+          <h3>Sécurité</h3>
+          <p>Chaque crack est vérifié avant d'être mis en ligne pour garantir une expérience sans risque.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🚀</div>
+          <h3>Vitesse</h3>
+          <p>Nous privilégions les téléchargements directs pour une vitesse maximale.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">💬</div>
+          <h3>Communauté</h3>
+          <p>Un problème ? Notre Discord est là pour vous aider 24h/24.</p>
+        </div>
+      </section>
+
+      <section class="about-cta">
+        <h2>Prêt à jouer ?</h2>
+        <div class="cta-btns">
+            <a href="/gameeasy-site/cracks" class="btn-primary">Explorer le catalogue</a>
+            <a href="https://discord.gg/votre-lien" class="btn-discord">Rejoindre le Discord</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .about-page { padding: 140px 20px 80px; background: #060612; color: white; min-height: 100vh; }
+  .container { max-width: 1000px; margin: 0 auto; }
+
+  /* Hero */
+  .about-hero { text-align: center; margin-bottom: 80px; }
+  h1 { font-size: 4rem; font-weight: 900; margin-bottom: 20px; }
+  .gradient-text {
+    background: linear-gradient(90deg, #8b5cf6, #d8b4fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle { color: #a1a1aa; font-size: 1.2rem; }
+
+  /* Content Grid */
+  .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; align-items: center; margin-bottom: 100px; }
+  h2 { font-size: 2rem; color: #8b5cf6; margin-bottom: 20px; }
+  .text-block p { color: #a1a1aa; line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; }
+  
+  .stats-card { background: #11111e; padding: 40px; border-radius: 24px; border: 1px solid #1e1e2e; display: flex; flex-direction: column; gap: 30px; text-align: center; }
+  .number { display: block; font-size: 3rem; font-weight: 900; color: #8b5cf6; }
+  .label { color: #a1a1aa; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+
+  /* Values */
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 100px; }
+  .value-card { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); text-align: center; transition: 0.3s; }
+  .value-card:hover { transform: translateY(-10px); background: rgba(139, 92, 246, 0.05); border-color: #8b5cf6; }
+  .icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+  .value-card h3 { margin-bottom: 15px; }
+  .value-card p { color: #a1a1aa; font-size: 0.95rem; line-height: 1.5; }
+
+  /* CTA */
+  .about-cta { text-align: center; background: linear-gradient(rgba(139, 92, 246, 0.1), transparent); padding: 60px; border-radius: 30px; }
+  .cta-btns { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
+  
+  .btn-primary { background: #8b5cf6; padding: 15px 30px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
+  .btn-discord { background: #5865F2; padding: 15px 30px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
+  .btn-primary:hover, .btn-discord:hover { opacity: 0.9; transform: scale(1.05); }
+
+  @media (max-width: 768px) {
+    .content-grid, .values { grid-template-columns: 1fr; }
+    h1 { font-size: 2.5rem; }
+    .cta-btns { flex-direction: column; }
+  }
+</style>
