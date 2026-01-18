@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// La source de vérité pour ta liste de jeux
 const games = [
   { id: 'gta-v', title: "GTA V", category: "Action / Open World", image: "/gameeasy-site/images/gta5.jpg" },
   { id: 'cyberpunk-2077', title: "Cyberpunk 2077", category: "RPG / Sci-Fi", image: "/gameeasy-site/images/cyberpunk.jpg" },
@@ -29,21 +28,18 @@ const games = [
 ];
 ---
 
-<Layout title="Tous les Cracks - GameEasy">
+<Layout title="Catalogue des Cracks - GameEasy">
   <Header />
   <main class="page-padding">
     <div class="container">
-      <h1 class="title">DERNIERS <span class="purple">CRACKS</span></h1>
+      <h1 class="title">TOUS LES <span class="purple">CRACKS</span></h1>
       <div class="line"></div>
-      
       <div class="grid">
         {games.map((game) => (
           <div class="card">
-            <div class="image-container">
-              <img src={game.image} alt={game.title} class="cover" />
-            </div>
+            <img src={game.image} alt={game.title} class="cover" />
             <div class="info">
-              <span class="badge">{game.category.toUpperCase()}</span>
+              <span class="badge">{game.category}</span>
               <h3>{game.title}</h3>
               <a href={`/gameeasy-site/${game.id}`} class="btn">VOIR LE JEU</a>
             </div>
@@ -58,53 +54,16 @@ const games = [
 <style>
   .page-padding { padding: 120px 20px; background: #060612; min-height: 100vh; color: white; }
   .container { max-width: 1200px; margin: 0 auto; }
-  .title { text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; }
+  .title { text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
   .purple { color: #8b5cf6; }
-  .line { height: 4px; width: 60px; background: #8b5cf6; margin: 0 auto 50px; border-radius: 2px; }
-  
-  .grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px; 
-  }
-  
-  .card { 
-    background: #11111e; 
-    border-radius: 15px; 
-    overflow: hidden; 
-    border: 1px solid #1e1e2e; 
-    transition: all 0.3s ease;
-  }
-  .card:hover { transform: translateY(-10px); border-color: #8b5cf6; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2); }
-  
-  .image-container { width: 100%; height: 180px; overflow: hidden; }
-  .cover { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-  .card:hover .cover { transform: scale(1.1); }
-  
+  .line { height: 4px; width: 60px; background: #8b5cf6; margin: 0 auto 50px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+  .card { background: #11111e; border-radius: 12px; overflow: hidden; border: 1px solid #1e1e2e; transition: 0.3s; }
+  .card:hover { transform: translateY(-5px); border-color: #8b5cf6; }
+  .cover { width: 100%; height: 180px; object-fit: cover; }
   .info { padding: 20px; }
-  h3 { margin: 10px 0; font-size: 1.25rem; }
-  
-  .badge { 
-    display: inline-block; 
-    background: rgba(139, 92, 246, 0.1); 
-    color: #8b5cf6; 
-    padding: 4px 10px; 
-    border-radius: 6px; 
-    font-size: 11px; 
-    font-weight: bold; 
-  }
-  
-  .btn { 
-    display: block; 
-    background: #fff; 
-    color: #000; 
-    text-align: center; 
-    padding: 12px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    margin-top: 15px; 
-    transition: 0.3s;
-  }
-  .btn:hover { background: #8b5cf6; color: #fff; }
+  .badge { color: #8b5cf6; font-size: 0.8rem; font-weight: bold; }
+  h3 { margin: 10px 0; font-size: 1.2rem; }
+  .btn { display: block; background: white; color: black; text-align: center; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+  .btn:hover { background: #8b5cf6; color: white; }
 </style>
