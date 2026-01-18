@@ -1,87 +1,24 @@
 ---
-// Correction IMPORTANTE du chemin car ton fichier est dans src/pages/
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 export function getStaticPaths() {
   return [
-    { 
-      params: { id: 'gta-v' }, 
-      props: { 
-        title: 'GTA V', 
-        description: 'Vivez l\'ascension de trois criminels très différents dans une série de braquages dangereux à Los Santos.',
-        image: '/gameeasy-site/images/gtav.jpg', // Chemin GitHub Pages
-        category: 'ACTION / OPEN WORLD',
-        downloadUrl: 'https://votre-lien.com'
-      }
-    },
-    { 
-      params: { id: 'cyberpunk-2077' }, 
-      props: { 
-        title: 'Cyberpunk 2077', 
-        description: 'Un RPG d\'action-aventure en monde ouvert qui se déroule dans la mégalopole de Night City.',
-        image: '/gameeasy-site/images/cyberpunk.jpg',
-        category: 'RPG / SCI-FI',
-        downloadUrl: 'https://votre-lien.com'
-      }
-    },
-    { 
-      params: { id: 'elden-ring' }, 
-      props: { 
-        title: 'Elden Ring', 
-        description: 'Explorez l\'Entre-terre et brandissez le pouvoir du Cercle d\'Elden pour devenir Seigneur d\'Elden.',
-        image: '/gameeasy-site/images/elden-ring.jpg',
-        category: 'ACTION / RPG',
-        downloadUrl: 'https://votre-lien.com'
-      }
-    }
+    { params: { id: 'gta-v' }, props: { title: 'GTA V', description: 'Description de GTA V...', image: '/gameeasy-site/images/gtav.jpg' }},
+    { params: { id: 'cyberpunk-2077' }, props: { title: 'Cyberpunk 2077', description: 'Description de Cyberpunk...', image: '/gameeasy-site/images/cyberpunk.jpg' }},
+    { params: { id: 'elden-ring' }, props: { title: 'Elden Ring', description: 'Description de Elden Ring...', image: '/gameeasy-site/images/elden-ring.jpg' }}
   ];
 }
-
-const { title, description, image, category, downloadUrl } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
-
-<Layout title={`${title} - GameEasy`}>
-  <Header />
-  
-  <main class="detail-container">
-    <div class="content-wrapper">
-      <a href="/gameeasy-site/cracks" class="nav-back">← Retour</a>
-      
-      <div class="game-view">
-        <div class="media-side">
-          <img src={image} alt={title} class="game-cover" />
-        </div>
-        
-        <div class="text-side">
-          <span class="tag">{category}</span>
-          <h1>{title}</h1>
-          <p class="desc">{description}</p>
-          
-          <div class="button-area">
-            <a href={downloadUrl} class="download-link">
-              TÉLÉCHARGER MAINTENANT
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <Footer />
+<Layout title={title}>
+    <Header />
+    <main style="padding: 150px 20px; color: white; background: #060612; min-height: 100vh; text-align: center;">
+        <img src={image} style="width: 100%; max-width: 600px; border-radius: 15px; border: 1px solid #8b5cf6;" />
+        <h1 style="font-size: 3rem; margin-top: 20px;">{title}</h1>
+        <p style="color: #a1a1aa; max-width: 600px; margin: 20px auto;">{description}</p>
+        <a href="/gameeasy-site/cracks" style="color: #8b5cf6;">← Retour</a>
+    </main>
+    <Footer />
 </Layout>
-
-<style>
-  .detail-container { padding-top: 120px; padding-bottom: 80px; background: #060612; min-height: 100vh; color: white; }
-  .content-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-  .nav-back { color: #8b5cf6; text-decoration: none; margin-bottom: 30px; display: inline-block; }
-  .game-view { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-  .game-cover { width: 100%; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.4); }
-  .tag { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; padding: 5px 15px; border-radius: 50px; font-size: 13px; }
-  h1 { font-size: 3.5rem; margin: 15px 0; }
-  .desc { color: #a1a1aa; line-height: 1.8; margin-bottom: 40px; }
-  .download-link { background: #8b5cf6; color: white; padding: 18px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 12px; width: fit-content; }
-  @media (max-width: 850px) { .game-view { grid-template-columns: 1fr; } }
-</style>
