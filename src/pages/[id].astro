@@ -4,21 +4,115 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 export function getStaticPaths() {
-  const commonGames = [
+  const gamesData = [
     { 
-      id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Action", desc: "Braquages et monde ouvert.",
-      min: { os: "Windows 10", cpu: "Core i5-2500K", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "72 GB" },
-      rec: { os: "Windows 11", cpu: "Core i7-4770K", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "72 GB" }
+      id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Action / Open World", desc: "Braquages et adrénaline dans la cité de Los Santos.",
+      min: { os: "Windows 10", cpu: "i5-2500K / AMD FX-8120", ram: "8 GB", gpu: "GTX 660 2GB", dx: "11", storage: "72 GB" },
+      rec: { os: "Windows 11", cpu: "i7-4770K / Ryzen 5 1500X", ram: "16 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "72 GB" }
     },
     { 
-      id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "RPG", desc: "Futur dystopique.",
-      min: { os: "Windows 10", cpu: "Core i5-3570K", ram: "8 GB", gpu: "GTX 970", dx: "12", storage: "70 GB (SSD)" },
-      rec: { os: "Windows 11", cpu: "Core i7-12700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "70 GB (SSD)" }
+      id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "RPG / Sci-Fi", desc: "Devenez une légende dans la mégalopole de Night City.",
+      min: { os: "Windows 10", cpu: "i5-3570K / FX-8310", ram: "8 GB", gpu: "GTX 970 / RX 470", dx: "12", storage: "70 GB SSD" },
+      rec: { os: "Windows 11", cpu: "i7-12700 / Ryzen 7 7800X", ram: "16 GB", gpu: "RTX 3060 / RX 6700 XT", dx: "12", storage: "70 GB SSD" }
     },
-    // ... Ajoute les autres jeux ici sur le même modèle
+    { 
+      id: 'elden-ring', title: "Elden Ring", image: "/gameeasy-site/images/elden-ring.jpg", cat: "Action / RPG", desc: "Explorez l'Entre-terre et devenez le Seigneur d'Elden.",
+      min: { os: "Windows 10", cpu: "i5-8400 / Ryzen 3 3300X", ram: "12 GB", gpu: "GTX 1060 3GB", dx: "12", storage: "60 GB" },
+      rec: { os: "Windows 11", cpu: "i7-8700K / Ryzen 5 3600X", ram: "16 GB", gpu: "GTX 1070 8GB", dx: "12", storage: "60 GB" }
+    },
+    { 
+      id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", image: "/gameeasy-site/images/rdr2.jpg", cat: "Aventure / Western", desc: "Une aventure épique au cœur de l'Amérique sauvage.",
+      min: { os: "Windows 10", cpu: "i5-2500K / FX-6300", ram: "8 GB", gpu: "GTX 770 2GB", dx: "11", storage: "150 GB" },
+      rec: { os: "Windows 11", cpu: "i7-4770K / Ryzen 5 1500X", ram: "12 GB", gpu: "GTX 1060 6GB", dx: "11", storage: "150 GB" }
+    },
+    { 
+      id: 'spiderman-2', title: "Spider-Man 2", image: "/gameeasy-site/images/spiderman2.jpg", cat: "Action / Aventure", desc: "Deux Spider-Men pour une ville en danger.",
+      min: { os: "Windows 10", cpu: "i5-8400 / Ryzen 5 3600", ram: "16 GB", gpu: "RTX 2060 / RX 5700", dx: "12", storage: "90 GB SSD" },
+      rec: { os: "Windows 11", cpu: "i7-12700 / Ryzen 7 7700X", ram: "32 GB", gpu: "RTX 3070 / RX 6800 XT", dx: "12", storage: "90 GB SSD" }
+    },
+    { 
+      id: 'hogwarts-legacy', title: "Hogwarts Legacy", image: "/gameeasy-site/images/hogwarts.jpg", cat: "Aventure / Magie", desc: "Votre lettre pour Poudlard est enfin arrivée.",
+      min: { os: "Windows 10", cpu: "i5-6600 / Ryzen 5 1400", ram: "16 GB", gpu: "GTX 960 4GB", dx: "12", storage: "85 GB" },
+      rec: { os: "Windows 11", cpu: "i7-8700 / Ryzen 5 3600", ram: "16 GB", gpu: "RTX 2060 / RX 5700", dx: "12", storage: "85 GB" }
+    },
+    { 
+      id: 'forza-horizon-5', title: "Forza Horizon 5", image: "/gameeasy-site/images/forza5.jpg", cat: "Course / Simulation", desc: "Explorez les paysages vibrants du Mexique.",
+      min: { os: "Windows 10", cpu: "i5-4460 / Ryzen 3 1200", ram: "8 GB", gpu: "GTX 760 / RX 460", dx: "12", storage: "110 GB" },
+      rec: { os: "Windows 11", cpu: "i7-10700 / Ryzen 7 3800XT", ram: "16 GB", gpu: "RTX 3060 / RX 6700 XT", dx: "12", storage: "110 GB" }
+    },
+    { 
+      id: 'god-of-war-ragnarok', title: "God of War Ragnarök", image: "/gameeasy-site/images/gow-ragnarok.jpg", cat: "Action / Mythologie", desc: "Kratos et Atreus face au Ragnarök.",
+      min: { os: "Windows 10", cpu: "i5-4670K / Ryzen 3 1200", ram: "8 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "190 GB SSD" },
+      rec: { os: "Windows 11", cpu: "i7-7700K / Ryzen 5 3600", ram: "16 GB", gpu: "RTX 3070 / RX 6800", dx: "12", storage: "190 GB SSD" }
+    },
+    { 
+      id: 'the-witcher-3', title: "The Witcher 3", image: "/gameeasy-site/images/witcher3.jpg", cat: "RPG / Fantasy", desc: "La traque sauvage de Geralt de Riv.",
+      min: { os: "Windows 10", cpu: "i5-2500K / Phenom II X4", ram: "6 GB", gpu: "GTX 660 / HD 7870", dx: "11", storage: "35 GB" },
+      rec: { os: "Windows 11", cpu: "i7-3770 / FX-8350", ram: "8 GB", gpu: "GTX 770 / R9 290", dx: "11", storage: "35 GB" }
+    },
+    { 
+      id: 'hades-2', title: "Hades II", image: "/gameeasy-site/images/hades2.jpg", cat: "Roguelike / Action", desc: "Affrontez le Titan du Temps.",
+      min: { os: "Windows 10", cpu: "Dual Core 2.4 GHz", ram: "4 GB", gpu: "GTX 950 / RX 460", dx: "12", storage: "10 GB" },
+      rec: { os: "Windows 11", cpu: "Quad Core 3.0 GHz", ram: "8 GB", gpu: "RTX 2060 / RX 5600 XT", dx: "12", storage: "10 GB" }
+    },
+    { 
+      id: 'hollow-knight-silksong', title: "Silksong", image: "/gameeasy-site/images/silksong.jpg", cat: "Metroidvania", desc: "L'aventure de Hornet dans un nouveau royaume.",
+      min: { os: "Windows 10", cpu: "i3-3220", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "9 GB" },
+      rec: { os: "Windows 11", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "9 GB" }
+    },
+    { 
+      id: 'manor-lords', title: "Manor Lords", image: "/gameeasy-site/images/manor-lords.jpg", cat: "Stratégie / Médiéval", desc: "Bâtissez votre cité médiévale.",
+      min: { os: "Windows 10", cpu: "i5-4670 / FX-4350", ram: "8 GB", gpu: "GTX 1050 2GB", dx: "12", storage: "15 GB" },
+      rec: { os: "Windows 11", cpu: "i5-7600 / Ryzen 5 2600", ram: "16 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "15 GB" }
+    },
+    { 
+      id: 'palworld', title: "Palworld", image: "/gameeasy-site/images/palworld.jpg", cat: "Survie / Créatures", desc: "Survivez avec vos Pals dans ce monde ouvert.",
+      min: { os: "Windows 10", cpu: "i5-3570K", ram: "16 GB", gpu: "GTX 1050 2GB", dx: "11", storage: "40 GB SSD" },
+      rec: { os: "Windows 11", cpu: "i9-9900K", ram: "32 GB", gpu: "RTX 2070", dx: "11", storage: "40 GB SSD" }
+    },
+    { 
+      id: 'lethal-company', title: "Lethal Company", image: "/gameeasy-site/images/lethal-company.jpg", cat: "Horreur / Coop", desc: "Collectez de la ferraille pour la Compagnie.",
+      min: { os: "Windows 10", cpu: "i5-7400", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" },
+      rec: { os: "Windows 11", cpu: "i7-9700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "1 GB" }
+    },
+    { 
+      id: 'black-myth-wukong', title: "Black Myth: Wukong", image: "/gameeasy-site/images/wukong.jpg", cat: "Action / RPG", desc: "L'épopée du Roi Singe.",
+      min: { os: "Windows 10", cpu: "i5-8400 / Ryzen 5 1600", ram: "16 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "130 GB SSD" },
+      rec: { os: "Windows 11", cpu: "i7-9700 / Ryzen 5 5500", ram: "16 GB", gpu: "RTX 2060 / RX 5700 XT", dx: "12", storage: "130 GB SSD" }
+    },
+    { 
+      id: 'stardew-valley', title: "Stardew Valley", image: "/gameeasy-site/images/stardew.jpg", cat: "Simulation / RPG", desc: "La vie paisible à la ferme.",
+      min: { os: "Windows 10", cpu: "2.0 GHz", ram: "2 GB", gpu: "256 MB VRAM", dx: "10", storage: "500 MB" },
+      rec: { os: "Windows 11", cpu: "3.0 GHz", ram: "4 GB", gpu: "1 GB VRAM", dx: "10", storage: "500 MB" }
+    },
+    { 
+      id: 'schedules', title: "Schedules", image: "/gameeasy-site/images/schedules.jpg", cat: "Indie / Horreur", desc: "Une expérience d'horreur psychologique.",
+      min: { os: "Windows 10", cpu: "i3", ram: "4 GB", gpu: "GTX 750", dx: "11", storage: "2 GB" },
+      rec: { os: "Windows 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "2 GB" }
+    },
+    { 
+      id: 'are-we-there-yet', title: "Are We There Yet?", image: "/gameeasy-site/images/rv-there-yet.jpg", cat: "Indie / Aventure", desc: "Un voyage étrange et mémorable.",
+      min: { os: "Windows 10", cpu: "Dual Core", ram: "4 GB", gpu: "Intel HD", dx: "11", storage: "1 GB" },
+      rec: { os: "Windows 11", cpu: "Quad Core", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" }
+    },
+    { 
+      id: 'buckshot-roulette', title: "Buckshot Roulette", image: "/gameeasy-site/images/buckshot.jpg", cat: "Indie / Stratégie", desc: "Jouez votre vie à la roulette russe.",
+      min: { os: "Windows 10", cpu: "Intel Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "300 MB" },
+      rec: { os: "Windows 11", cpu: "Intel Core", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "300 MB" }
+    },
+    { 
+      id: 'chained-together', title: "Chained Together", image: "/gameeasy-site/images/chained-together.jpg", cat: "Coop / Plateforme", desc: "Grimpez hors des enfers, mais ne tombez pas !",
+      min: { os: "Windows 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "6 GB" },
+      rec: { os: "Windows 11", cpu: "i7-8700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "6 GB" }
+    },
+    { 
+      id: 'phasmophobia', title: "Phasmophobia", image: "/gameeasy-site/images/phasmophobia.jpg", cat: "Horreur / Coop", desc: "Chassez les fantômes avec vos amis.",
+      min: { os: "Windows 10", cpu: "i5-4590 / FX-8350", ram: "8 GB", gpu: "GTX 970 / R9 290", dx: "11", storage: "21 GB" },
+      rec: { os: "Windows 11", cpu: "i7-6700 / Ryzen 5 1600", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" }
+    }
   ];
 
-  return commonGames.map(game => ({
+  return gamesData.map(game => ({
     params: { id: game.id },
     props: { ...game }
   }));
@@ -27,7 +121,7 @@ export function getStaticPaths() {
 const { title, cat, image, desc, min, rec } = Astro.props;
 ---
 
-<Layout title={`${title} - GameEasy`}>
+<Layout title={`${title} - Config & Download`}>
   <Header />
   <main class="detail-page">
     <div class="container">
@@ -39,7 +133,10 @@ const { title, cat, image, desc, min, rec } = Astro.props;
           <span class="category-tag">{cat}</span>
           <h1>{title}</h1>
           <p class="description">{desc}</p>
-          <button class="download-button">TÉLÉCHARGER LE CRACK</button>
+          <div class="dl-area">
+             <button class="download-button">TÉLÉCHARGER LE CRACK (DIRECT)</button>
+             <p class="file-info">Fichier : .zip / .exe • Testé sans virus</p>
+          </div>
         </div>
       </section>
 
@@ -56,11 +153,11 @@ const { title, cat, image, desc, min, rec } = Astro.props;
                 <ul>
                     <li>Requires a 64-bit processor and operating system</li>
                     <li><strong>OS:</strong> {min.os}</li>
-                    <li><strong>Processor:</strong> {min.cpu} or equivalent</li>
+                    <li><strong>Processor:</strong> {min.cpu}</li>
                     <li><strong>Memory:</strong> {min.ram} RAM</li>
-                    <li><strong>Graphics:</strong> {min.gpu} or equivalent</li>
+                    <li><strong>Graphics:</strong> {min.gpu}</li>
                     <li><strong>DirectX:</strong> Version {min.dx}</li>
-                    <li><strong>Storage:</strong> {min.storage} available space</li>
+                    <li><strong>Storage:</strong> {min.storage}</li>
                 </ul>
             </div>
 
@@ -70,11 +167,11 @@ const { title, cat, image, desc, min, rec } = Astro.props;
                 <ul>
                     <li>Requires a 64-bit processor and operating system</li>
                     <li><strong>OS:</strong> {rec.os}</li>
-                    <li><strong>Processor:</strong> {rec.cpu} or equivalent</li>
+                    <li><strong>Processor:</strong> {rec.cpu}</li>
                     <li><strong>Memory:</strong> {rec.ram} RAM</li>
-                    <li><strong>Graphics:</strong> {rec.gpu} or equivalent</li>
+                    <li><strong>Graphics:</strong> {rec.gpu}</li>
                     <li><strong>DirectX:</strong> Version {rec.dx}</li>
-                    <li><strong>Storage:</strong> {rec.storage} available space</li>
+                    <li><strong>Storage:</strong> {rec.storage}</li>
                 </ul>
             </div>
         </div>
@@ -85,70 +182,49 @@ const { title, cat, image, desc, min, rec } = Astro.props;
 </Layout>
 
 <style>
-  .detail-page { padding: 120px 20px 60px; background: #060612; min-height: 100vh; color: white; font-family: sans-serif; }
-  .container { max-width: 1000px; margin: 0 auto; }
-  .back-link { color: #8b5cf6; text-decoration: none; display: block; margin-bottom: 20px; font-weight: 500; }
+  .detail-page { padding: 120px 20px 80px; background: #060612; min-height: 100vh; color: white; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .back-link { color: #8b5cf6; text-decoration: none; display: block; margin-bottom: 25px; font-weight: 600; transition: 0.2s; }
+  .back-link:hover { transform: translateX(-5px); }
 
   /* Hero Section */
-  .hero-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-  .hero-image { width: 100%; border-radius: 12px; border: 1px solid #1e1e2e; }
-  .category-tag { color: #8b5cf6; font-weight: bold; font-size: 0.9rem; }
-  h1 { font-size: 3rem; margin: 10px 0; }
-  .description { color: #a1a1aa; line-height: 1.6; margin-bottom: 30px; }
-  .download-button { background: #8b5cf6; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
+  .hero-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-bottom: 60px; background: #11111e; padding: 40px; border-radius: 20px; border: 1px solid #1e1e2e; }
+  .hero-image { width: 100%; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .category-tag { color: #8b5cf6; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+  h1 { font-size: 3.5rem; margin: 15px 0; line-height: 1.1; }
+  .description { color: #a1a1aa; line-height: 1.7; font-size: 1.1rem; margin-bottom: 40px; }
+  
+  .dl-area { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+  .download-button { background: #8b5cf6; color: white; border: none; padding: 18px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1rem; transition: 0.3s; }
+  .download-button:hover { background: #7c3aed; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(139,92,246,0.4); }
+  .file-info { text-align: center; font-size: 0.8rem; color: #555; margin-top: 10px; }
 
-  /* Design SystemConfig (Inspiré de ton image) */
-  .system-config {
-    background: #0d0d0d;
-    border-radius: 16px;
-    padding: 30px;
-    border: 1px solid #1a1a1a;
-  }
+  /* systemConfig UI */
+  .system-config { background: #0d0d0d; border-radius: 16px; padding: 35px; border: 1px solid #1a1a1a; }
+  .config-header { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; }
+  .config-header h2 { font-size: 1.6rem; font-family: 'Courier New', Courier, monospace; letter-spacing: -1px; }
+  .monitor-icon { color: #555; }
 
-  .config-header { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; }
-  .config-header h2 { font-size: 1.5rem; font-family: monospace; }
-  .monitor-icon { color: #a1a1aa; }
+  .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+  .config-box { background: rgba(255,255,255,0.02); border-radius: 12px; padding: 30px; border: 1px solid transparent; }
+  
+  .minimal { border-color: rgba(255, 107, 107, 0.08); }
+  .minimal h3 { color: #ff6b6b; font-size: 1.1rem; }
+  .minimal .dot { color: #ff6b6b; margin-right: 10px; }
 
-  .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .recommended { border-color: rgba(81, 207, 102, 0.08); }
+  .recommended h3 { color: #51cf66; font-size: 1.1rem; }
+  .recommended .dot { color: #51cf66; margin-right: 10px; }
 
-  .config-box {
-    background: #111111;
-    border-radius: 12px;
-    padding: 25px;
-    border: 1px solid transparent;
-  }
-
-  /* Couleurs spécifiques par colonne */
-  .minimal { border-color: rgba(255, 107, 107, 0.1); }
-  .minimal h3 { color: #ff6b6b; }
-  .minimal .dot { color: #ff6b6b; margin-right: 8px; }
-
-  .recommended { border-color: rgba(81, 207, 102, 0.1); }
-  .recommended h3 { color: #51cf66; }
-  .recommended .dot { color: #51cf66; margin-right: 8px; }
-
-  .subtitle { color: #ffffff; font-weight: bold; margin: 15px 0 10px 0; }
-
+  .subtitle { color: white; font-weight: bold; margin: 20px 0 10px; font-size: 0.95rem; }
   ul { list-style: none; padding: 0; }
-  li { 
-    color: #ced4da; 
-    font-size: 0.9rem; 
-    margin-bottom: 8px; 
-    line-height: 1.4;
-    position: relative;
-    padding-left: 15px;
-  }
-  li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #495057;
-  }
-  li strong { color: #ffffff; }
+  li { color: #a1a1aa; font-size: 0.9rem; margin-bottom: 10px; line-height: 1.5; padding-left: 15px; position: relative; }
+  li::before { content: "•"; position: absolute; left: 0; color: #333; }
+  li strong { color: #ddd; margin-right: 5px; font-weight: 600; }
 
-  /* Responsive */
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     .hero-section, .config-grid { grid-template-columns: 1fr; }
-    h1 { font-size: 2.2rem; }
+    h1 { font-size: 2.5rem; }
+    .hero-section { padding: 20px; }
   }
 </style>
