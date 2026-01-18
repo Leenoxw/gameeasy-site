@@ -5,12 +5,11 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const { title } = Astro.props;
-
 ---
 <BaseLayout title={title}>
 	<Header />
 	<main>
 		<slot />
 	</main>
-	<Footer />
+	<Footer /> 
 </BaseLayout>
