@@ -1,23 +1,204 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Catalogue from '../components/Catalogue.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Welcome from '../components/Welcome.astro';
+
+// On affiche quelques jeux populaires sur l'accueil
+const featuredGames = [
+  { id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg" },
+  { id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg" },
+  { id: 'elden-ring', title: "Elden Ring", image: "/gameeasy-site/images/elden-ring.jpg" },
+  { id: 'black-myth-wukong', title: "Wukong", image: "/gameeasy-site/images/wukong.jpg" }
+];
 ---
 
-<Layout title="JeuxCracks - Accueil">
-    <Header />
+<Layout title="GAMEASY - Vos jeux préférés gratuitement">
+  <Header />
 
-    <main>
-        <Welcome />
-        </main>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="main-title">
+          VOS JEUX <br />
+          PRÉFÉRÉS <br />
+          <span class="gradient-text">GRATUITEMENT</span>
+        </h1>
+        <p class="subtitle">Découvrez un monde sans limite en illimité !</p>
+        
+        <div class="hero-btns">
+          <a href="/gameeasy-site/cracks" class="btn-primary">Découvrir le catalogue</a>
+          <a href="/gameeasy-site/tuto" class="btn-secondary">Comment télécharger ?</a>
+        </div>
+      </div>
+      
+      <div class="glow-sphere"></div>
+    </section>
 
+    <section class="trending">
+      <div class="container">
+        <div class="section-header">
+          <h2>🔥 EN CE MOMENT</h2>
+          <a href="/gameeasy-site/cracks" class="view-all">Tout voir →</a>
+        </div>
+        
+        <div class="game-grid">
+          {featuredGames.map(game => (
+            <a href={`/gameeasy-site/${game.id}`} class="game-card">
+              <img src={game.image} alt={game.title} />
+              <div class="card-overlay">
+                <h3>{game.title}</h3>
+                <span class="btn-mini">Voir le crack</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="feature-item">
+          <span class="icon">🚀</span>
+          <h3>Direct Download</h3>
+          <p>Pas de torrents lents, que du direct.</p>
+        </div>
+        <div class="feature-item">
+          <span class="icon">🛡️</span>
+          <h3>100% Safe</h3>
+          <p>Tous nos fichiers sont testés sans virus.</p>
+        </div>
+        <div class="feature-item">
+          <span class="icon">🔄</span>
+          <h3>Mises à jour</h3>
+          <p>Jeux mis à jour avec les derniers DLC.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
 </Layout>
 
 <style>
-    /* Optionnel : ajout d'un padding pour éviter que Welcome soit caché sous le Header fixe */
-    main {
-        padding-top: 80px;
-    }
+  /* Base & Hero */
+  main { background: #060612; color: white; overflow-x: hidden; }
+  
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+  }
+
+  .main-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #8b5cf6, #d8b4fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: #a1a1aa;
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+
+  /* Buttons */
+  .hero-btns { display: flex; gap: 20px; }
+  
+  .btn-primary {
+    background: #8b5cf6;
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+  }
+
+  .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(139, 92, 246, 0.6); }
+  .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+
+  /* Trending Section */
+  .trending { padding: 100px 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  
+  .section-header { 
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; 
+  }
+  
+  .view-all { color: #8b5cf6; text-decoration: none; font-weight: 600; }
+
+  .game-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 25px; 
+  }
+
+  .game-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.4s;
+  }
+
+  .game-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+  
+  .card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 20px; opacity: 0; transition: 0.3s;
+  }
+
+  .game-card:hover { transform: scale(1.03); border-color: #8b5cf6; }
+  .game-card:hover img { transform: scale(1.1); }
+  .game-card:hover .card-overlay { opacity: 1; }
+
+  /* Features */
+  .features { padding: 60px 0; background: rgba(255, 255, 255, 0.02); }
+  .features .container { display: flex; justify-content: space-around; gap: 40px; flex-wrap: wrap; }
+  .feature-item { text-align: center; max-width: 250px; }
+  .feature-item .icon { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+
+  /* Glow Effects */
+  .glow-sphere {
+    position: absolute; top: 20%; right: -10%;
+    width: 600px; height: 600px;
+    background: rgba(139, 92, 246, 0.1);
+    filter: blur(150px);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 0 5%; text-align: center; justify-content: center; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .main-title { font-size: 3.5rem; }
+  }
 </style>
