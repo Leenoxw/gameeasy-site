@@ -1,22 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Catalogue from '../components/Catalogue.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+// On définit la liste des jeux ici pour que le catalogue puisse l'utiliser
+const games = [
+  { id: 'gta-v', title: 'GTA V', category: 'ACTION / OPEN WORLD', image: '/gameeasy-site/images/gtav.jpg' },
+  { id: 'cyberpunk-2077', title: 'Cyberpunk 2077', category: 'RPG / SCI-FI', image: '/gameeasy-site/images/cyberpunk.jpg' },
+  { id: 'elden-ring', title: 'Elden Ring', category: 'ACTION / RPG', image: '/gameeasy-site/images/elden-ring.jpg' }
+];
 ---
-<Layout title="Tous les Cracks - JeuxCracks">
+<Layout title="Tous les Cracks - GameEasy">
     <Header />
-
     <main class="page-padding">
-        <Catalogue />
+        <h1 class="title">DERNIERS <span class="purple">CRACKS</span></h1>
+        
+        <div class="grid">
+            {games.map((game) => (
+                <div class="card">
+                    <img src={game.image} alt={game.title} class="cover" />
+                    <div class="info">
+                        <h3>{game.title}</h3>
+                        <span class="badge">{game.category}</span>
+                        <a href={`/gameeasy-site/${game.id}`} class="btn">VOIR LE JEU</a>
+                    </div>
+                </div>
+            ))}
+        </div>
     </main>
-
+    <Footer />
 </Layout>
 
 <style>
-    .page-padding {
-        padding-top: 100px;
-        background: #060612;
-        min-height: 100vh;
-    }
+    .page-padding { padding: 120px 20px; background: #060612; min-height: 100vh; color: white; }
+    .title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
+    .purple { color: #8b5cf6; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .card { background: #11111e; border-radius: 12px; overflow: hidden; border: 1px solid #1e1e2e; }
+    .cover { width: 100%; height: 200px; object-fit: cover; }
+    .info { padding: 20px; }
+    .badge { display: inline-block; background: rgba(139, 92, 246, 0.2); color: #8b5cf6; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin: 10px 0; }
+    .btn { display: block; background: white; color: black; text-align: center; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
 </style>
