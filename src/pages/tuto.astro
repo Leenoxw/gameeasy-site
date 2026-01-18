@@ -10,50 +10,50 @@ import Footer from '../components/Footer.astro';
   <main class="tuto-page">
     <div class="container">
       <section class="tuto-header">
-        <h1>PARCOURS D'<span>INSTALLATION</span></h1>
-        <p>Le chemin le plus rapide pour lancer votre jeu.</p>
+        <h1>GUIDE <span>INTERACTIF</span></h1>
+        <p>Suivez le chemin lumineux pour installer vos jeux sans erreur.</p>
       </section>
 
       <div class="roadmap">
         <div class="roadmap-line"></div>
 
-        <div class="roadmap-step">
+        <div class="roadmap-step" style="--delay: 0.1s">
           <div class="bubble">1</div>
           <div class="content">
             <h3>Téléchargement</h3>
-            <p>Cliquez sur <strong>Download</strong>. Nous conseillons uBlock pour éviter les pubs.</p>
+            <p>Cliquez sur <strong>Download</strong> sur la page du jeu. <br> <small>Conseil : Installez uBlock Origin pour bloquer les pubs.</small></p>
           </div>
         </div>
 
-        <div class="roadmap-step">
-          <div class="bubble active">2</div>
+        <div class="roadmap-step active-step" style="--delay: 0.3s">
+          <div class="bubble pulse">2</div>
           <div class="content">
-            <h3>Extraction</h3>
-            <p>Utilisez <span class="highlight-soft">WinRAR</span> ou <span class="highlight-soft">7-Zip</span> pour décompresser l'archive (MDP: 123).</p>
+            <h3>Extraction des fichiers</h3>
+            <p>Faites un clic droit sur le fichier téléchargé. <br> Utilisez <span class="neon-text">WinRAR</span> ou <span class="neon-text">7-Zip</span> pour extraire. <br> <strong>MDP : 123</strong></p>
           </div>
         </div>
 
-        <div class="roadmap-step">
+        <div class="roadmap-step" style="--delay: 0.5s">
           <div class="bubble">3</div>
           <div class="content">
-            <h3>Installation</h3>
-            <p>Lancez le <code>setup.exe</code> en <strong>Administrateur</strong> pour éviter les bugs.</p>
+            <h3>Installation (Setup)</h3>
+            <p>Ouvrez le dossier extrait et lancez le <code>setup.exe</code> en tant qu'<strong>administrateur</strong>.</p>
           </div>
         </div>
 
-        <div class="roadmap-step">
+        <div class="roadmap-step" style="--delay: 0.7s">
           <div class="bubble final">
-             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <div class="content">
-            <h3>Jouer</h3>
-            <p>Utilisez le raccourci bureau et profitez de votre jeu !</p>
+            <h3>C'est prêt !</h3>
+            <p>Lancez le jeu via le raccourci créé sur votre bureau.</p>
           </div>
         </div>
       </div>
 
       <section class="softwares">
-        <h2>Logiciels requis</h2>
+        <h2>OUTILS <span>REQUIS</span></h2>
         <div class="soft-grid">
           <a href="https://www.win-rar.com/" class="soft-card winrar">WinRAR</a>
           <a href="https://www.7-zip.org/" class="soft-card sevenzip">7-Zip</a>
@@ -66,105 +66,95 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
-  .tuto-page { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; }
-  .container { max-width: 900px; margin: 0 auto; }
+  .tuto-page { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; overflow-x: hidden; }
+  .container { max-width: 850px; margin: 0 auto; }
 
   .tuto-header { text-align: center; margin-bottom: 80px; }
-  h1 { font-size: 2.8rem; font-weight: 800; }
-  h1 span { color: #8b5cf6; }
+  h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; }
+  h1 span { color: #8b5cf6; text-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
 
-  /* Roadmap Schema */
-  .roadmap { 
-    position: relative; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 40px; 
-    padding-left: 50px;
-  }
-
-  /* La ligne verticale qui relie les bulles */
+  /* Roadmap Line & Steps */
+  .roadmap { position: relative; display: flex; flex-direction: column; gap: 50px; padding-left: 60px; }
+  
   .roadmap-line { 
-    position: absolute; 
-    left: 19px; 
-    top: 0; 
-    bottom: 0; 
-    width: 2px; 
-    background: linear-gradient(to bottom, #8b5cf6 0%, #1e1e2e 100%);
+    position: absolute; left: 24px; top: 0; bottom: 0; width: 3px; 
+    background: linear-gradient(to bottom, #8b5cf6, #1e1e2e);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
   }
 
   .roadmap-step { 
-    position: relative; 
-    display: flex; 
-    align-items: center; 
-    transition: 0.3s;
+    position: relative; opacity: 0; transform: translateX(-20px); 
+    animation: fadeInStep 0.6s forwards var(--delay);
+  }
+
+  @keyframes fadeInStep {
+    to { opacity: 1; transform: translateX(0); }
   }
 
   .bubble { 
-    position: absolute; 
-    left: -50px; 
-    width: 40px; 
-    height: 40px; 
-    background: #11111e; 
-    border: 2px solid #8b5cf6; 
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-weight: bold; 
-    z-index: 2;
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+    position: absolute; left: -55px; width: 45px; height: 45px; 
+    background: #060612; border: 3px solid #1e1e2e; border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; 
+    font-weight: 800; z-index: 2; transition: 0.3s;
   }
 
-  .bubble.active { background: #8b5cf6; color: white; }
-  .bubble.final { background: #10b981; border-color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+  /* Animation Pulse sur l'étape 2 */
+  .pulse { 
+    border-color: #8b5cf6; 
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+    animation: pulseAnim 2s infinite;
+  }
+
+  @keyframes pulseAnim {
+    0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+  }
+
+  .bubble.final { background: #10b981; border-color: #10b981; color: white; }
 
   .content { 
-    background: #11111e; 
-    padding: 20px 30px; 
-    border-radius: 15px; 
-    border: 1px solid #1e1e2e; 
-    width: 100%;
-    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.03); padding: 25px; 
+    border-radius: 15px; border: 1px solid #1e1e2e; 
+    backdrop-filter: blur(10px); transition: 0.3s;
   }
-  .roadmap-step:hover .content { border-color: #8b5cf6; transform: translateX(10px); }
+  .roadmap-step:hover .content { border-color: #8b5cf6; background: rgba(139, 92, 246, 0.05); }
 
-  h3 { margin-bottom: 5px; color: #8b5cf6; }
-  p { color: #a1a1aa; font-size: 0.95rem; }
+  h3 { font-size: 1.3rem; margin-bottom: 8px; color: #fff; }
+  p { color: #a1a1aa; line-height: 1.6; }
 
-  /* Surlignage WinRAR / 7Zip */
-  .highlight-soft { 
-    background: rgba(139, 92, 246, 0.2); 
-    color: #c4b5fd; 
-    padding: 2px 6px; 
-    border-radius: 4px; 
-    font-weight: bold;
-    border-bottom: 2px solid #8b5cf6;
+  /* Surlignage Néon WinRAR / 7Zip */
+  .neon-text { 
+    color: #fff; 
+    font-weight: 800; 
+    padding: 0 4px;
+    background: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
   }
 
-  /* Section logiciels du bas */
-  .softwares { margin-top: 80px; text-align: center; }
-  .softwares h2 { margin-bottom: 30px; font-size: 1.5rem; }
-  .soft-grid { display: flex; gap: 20px; justify-content: center; }
+  /* Softwares Buttons */
+  .softwares { margin-top: 100px; text-align: center; }
+  .softwares h2 { margin-bottom: 40px; font-weight: 800; }
+  .soft-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
   .soft-card { 
-    padding: 15px 40px; 
-    border-radius: 10px; 
-    text-decoration: none; 
-    color: white; 
-    font-weight: bold; 
-    transition: 0.3s;
-    border: 2px solid transparent;
+    padding: 16px 45px; border-radius: 12px; text-decoration: none; 
+    color: white; font-weight: 800; transition: 0.4s;
+    border: 2px solid #8b5cf6; background: transparent;
+    box-shadow: inset 0 0 0 0 #8b5cf6;
   }
 
-  .winrar { background: #2a2a4a; border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.2); }
-  .sevenzip { background: #2a2a4a; border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.2); }
-  
-  .soft-card:hover { transform: scale(1.05); filter: brightness(1.2); }
+  .soft-card:hover { 
+    box-shadow: inset 0 0 20px 0 #8b5cf6, 0 0 20px rgba(139, 92, 246, 0.4);
+    transform: translateY(-5px);
+  }
 
   @media (max-width: 600px) {
-    .roadmap { padding-left: 40px; }
-    .bubble { left: -40px; width: 30px; height: 30px; font-size: 0.8rem; }
-    .roadmap-line { left: 14px; }
-    h1 { font-size: 2rem; }
+    .roadmap { padding-left: 45px; }
+    .bubble { left: -45px; width: 35px; height: 35px; }
+    h1 { font-size: 2.2rem; }
   }
 </style>
