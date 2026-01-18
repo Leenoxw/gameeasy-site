@@ -5,20 +5,44 @@ import Footer from '../components/Footer.astro';
 
 export function getStaticPaths() {
   return [
-    { params: { id: 'gta-v' }, props: { title: 'GTA V', description: 'Description de GTA V...', image: '/gameeasy-site/images/gtav.jpg' }},
-    { params: { id: 'cyberpunk-2077' }, props: { title: 'Cyberpunk 2077', description: 'Description de Cyberpunk...', image: '/gameeasy-site/images/cyberpunk.jpg' }},
-    { params: { id: 'elden-ring' }, props: { title: 'Elden Ring', description: 'Description de Elden Ring...', image: '/gameeasy-site/images/elden-ring.jpg' }}
+    { params: { id: 'gta-v' }, props: { title: 'GTA V', category: 'Action', image: '/gameeasy-site/images/gta5.jpg', desc: 'Braquages et monde ouvert à Los Santos.' }},
+    { params: { id: 'cyberpunk-2077' }, props: { title: 'Cyberpunk 2077', category: 'RPG', image: '/gameeasy-site/images/cyberpunk.jpg', desc: 'Le futur dystopique de Night City.' }},
+    { params: { id: 'elden-ring' }, props: { title: 'Elden Ring', category: 'RPG', image: '/gameeasy-site/images/elden-ring.jpg', desc: 'Devenez le Seigneur d\'Elden.' }},
+    { params: { id: 'rdr2' }, props: { title: 'Red Dead Redemption 2', category: 'Aventure', image: '/gameeasy-site/images/rdr2.jpg', desc: 'L\'épopée sauvage d\'Arthur Morgan.' }},
+    { params: { id: 'spiderman2' }, props: { title: 'Spider-Man 2', category: 'Action', image: '/gameeasy-site/images/spiderman2.jpg', desc: 'Incarnez Peter et Miles contre Venom.' }},
+    { params: { id: 'hogwarts' }, props: { title: 'Hogwarts Legacy', category: 'Magie', image: '/gameeasy-site/images/hogwarts.jpg', desc: 'Votre lettre pour Poudlard est arrivée.' }}
   ];
 }
-const { title, description, image } = Astro.props;
+
+const { title, category, image, desc } = Astro.props;
 ---
 <Layout title={title}>
-    <Header />
-    <main style="padding: 150px 20px; color: white; background: #060612; min-height: 100vh; text-align: center;">
-        <img src={image} style="width: 100%; max-width: 600px; border-radius: 15px; border: 1px solid #8b5cf6;" />
-        <h1 style="font-size: 3rem; margin-top: 20px;">{title}</h1>
-        <p style="color: #a1a1aa; max-width: 600px; margin: 20px auto;">{description}</p>
-        <a href="/gameeasy-site/cracks" style="color: #8b5cf6;">← Retour</a>
-    </main>
-    <Footer />
+  <Header />
+  <main class="detail-page">
+    <div class="container">
+      <a href="/gameeasy-site/cracks" class="back">← Retour aux cracks</a>
+      <div class="content">
+        <img src={image} alt={title} />
+        <div class="text">
+          <span class="badge">{category}</span>
+          <h1>{title}</h1>
+          <p>{desc}</p>
+          <button class="download-btn">TÉLÉCHARGER (DIRECT)</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
 </Layout>
+
+<style>
+  .detail-page { padding: 140px 20px; background: #060612; min-height: 100vh; color: white; }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .back { color: #8a4fff; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+  .content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  img { width: 100%; border-radius: 12px; border: 1px solid #8a4fff; }
+  .badge { background: #8a4fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+  h1 { font-size: 3rem; margin: 10px 0; }
+  p { color: #a1a1aa; line-height: 1.6; }
+  .download-btn { background: #8a4fff; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+</style>
