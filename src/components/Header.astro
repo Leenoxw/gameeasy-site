@@ -53,3 +53,34 @@
     .search-container:hover .search-icon { color: #8a4fff; }
     .search-container input { background: transparent; border: none; color: white; padding: 8px 0; outline: none; width: 100%; font-size: 13px; }
 </style>
+<script>
+  // Fonction de recherche
+  const setupSearch = () => {
+    const searchInput = document.getElementById('mainSearch');
+    
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const searchValue = e.target.value.toLowerCase();
+        // On cible toutes les cartes de jeux présentes sur la page catalogue
+        const gameCards = document.querySelectorAll('.game-card');
+
+        gameCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          
+          // Filtre : Si le titre contient la lettre/mot, on garde, sinon on cache
+          if (title.includes(searchValue)) {
+            card.style.display = "block"; // Montre le jeu
+          } else {
+            card.style.display = "none";  // Cache le jeu
+          }
+        });
+      });
+    }
+  };
+
+  // S'exécute au chargement de la page
+  setupSearch();
+
+  // Si tu utilises les transitions d'Astro, ajoute ceci :
+  document.addEventListener('astro:after-swap', setupSearch);
+</script>

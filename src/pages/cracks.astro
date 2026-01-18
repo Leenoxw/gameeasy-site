@@ -34,9 +34,13 @@ const games = [
     <div class="container">
       <h1 class="title">TOUS LES <span class="purple">CRACKS</span></h1>
       <div class="line"></div>
+      
+      <p id="no-results" style="display: none; text-align: center; color: #888; margin-top: 50px;">Aucun jeu ne correspond à votre recherche...</p>
+
       <div class="grid">
         {games.map((game) => (
-          <div class="card">
+          /* J'ai ajouté la classe "game-card" ici */
+          <div class="card game-card">
             <img src={game.image} alt={game.title} class="cover" />
             <div class="info">
               <span class="badge">{game.category}</span>
@@ -51,19 +55,56 @@ const games = [
   <Footer />
 </Layout>
 
+<script>
+  // On crée la fonction de recherche
+  function initSearch() {
+    const searchInput = document.getElementById('mainSearch'); // Cible l'input du Header
+    const gameCards = document.querySelectorAll('.game-card');
+    const noResults = document.getElementById('no-results');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+        let hasMatch = false;
+
+        gameCards.forEach((card) => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          
+          // Vérification si le titre commence ou contient la recherche
+          if (title.includes(value)) {
+            card.style.display = "block";
+            hasMatch = true;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // Afficher le message "Aucun résultat" si besoin
+        if (noResults) {
+          noResults.style.display = hasMatch ? "none" : "block";
+        }
+      });
+    }
+  }
+
+  // Lancer au chargement et après chaque changement de page (Astro)
+  initSearch();
+  document.addEventListener('astro:after-swap', initSearch);
+</script>
+
 <style>
-  .page-padding { padding: 120px 20px; background: #060612; min-height: 100vh; color: white; }
+  .page-padding { padding: 140px 20px 120px; background: #060612; min-height: 100vh; color: white; }
   .container { max-width: 1200px; margin: 0 auto; }
-  .title { text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
+  .title { text-align: center; font-size: 2.5rem; margin-bottom: 10px; font-weight: 900; }
   .purple { color: #8b5cf6; }
-  .line { height: 4px; width: 60px; background: #8b5cf6; margin: 0 auto 50px; }
+  .line { height: 4px; width: 60px; background: #8b5cf6; margin: 0 auto 50px; border-radius: 2px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
   .card { background: #11111e; border-radius: 12px; overflow: hidden; border: 1px solid #1e1e2e; transition: 0.3s; }
-  .card:hover { transform: translateY(-5px); border-color: #8b5cf6; }
+  .card:hover { transform: translateY(-5px); border-color: #8b5cf6; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
   .cover { width: 100%; height: 180px; object-fit: cover; }
   .info { padding: 20px; }
-  .badge { color: #8b5cf6; font-size: 0.8rem; font-weight: bold; }
+  .badge { color: #8b5cf6; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
   h3 { margin: 10px 0; font-size: 1.2rem; }
-  .btn { display: block; background: white; color: black; text-align: center; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+  .btn { display: block; background: white; color: black; text-align: center; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
   .btn:hover { background: #8b5cf6; color: white; }
 </style>
