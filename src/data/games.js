@@ -1,32 +1,25 @@
 // src/data/games.js
 export const gamesData = [
   { 
-    id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Action / Open World", mode: "Solo / Multi",
-    desc: "Suivez les destins croisés de trois criminels à Los Santos. Un monde ouvert immense et des possibilités infinies.",
-    min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "72 GB" },
-    rec: { os: "Win 11", cpu: "i7-4770K", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "72 GB" },
-    dl: "#"
-  },
-  { 
     id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "RPG / Sci-Fi", mode: "Solo",
     desc: "Devenez un mercenaire dans la mégalopole de Night City, obsédée par les modifications corporelles.",
     min: { os: "Win 10", cpu: "i5-3570K", ram: "8 GB", gpu: "GTX 970", dx: "12", storage: "70 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-12700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "70 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/nPCVFTUK"
   },
   { 
     id: 'elden-ring', title: "Elden Ring", image: "/gameeasy-site/images/elden-ring.jpg", cat: "Action / RPG", mode: "Solo / Multi",
     desc: "Explorez l'Entre-terre et devenez le Seigneur d'Elden dans ce chef-d'œuvre de FromSoftware.",
     min: { os: "Win 10", cpu: "i5-8400", ram: "12 GB", gpu: "GTX 1060", dx: "12", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "GTX 1070", dx: "12", storage: "60 GB" },
-    dl: "#"
+    dl: "https://lockr.so/pPKemlbB"
   },
   { 
     id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", image: "/gameeasy-site/images/rdr2.jpg", cat: "Aventure / Western", mode: "Solo / Multi",
     desc: "Vivez la fin de l'ère de l'Ouest sauvage avec Arthur Morgan et le gang Van der Linde.",
     min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "150 GB" },
     rec: { os: "Win 11", cpu: "i7-4770K", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "150 GB" },
-    dl: "#"
+    dl: "https://lockr.so/lMrMw6eE"
   },
   { 
     id: 'spiderman-2', title: "Marvel's Spider-Man 2", image: "/gameeasy-site/images/spiderman2.jpg", cat: "Action / Aventure", mode: "Solo",
@@ -97,13 +90,6 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i5-7400", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" },
     rec: { os: "Win 11", cpu: "i7-9700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "1 GB" },
     dl: "https://lockr.so/ep3kx7x0"
-  },
-  { 
-    id: 'black-myth-wukong', title: "Black Myth: Wukong", image: "/gameeasy-site/images/wukong.jpg", cat: "Action / RPG", mode: "Solo",
-    desc: "Incarnez le Prédestiné dans ce RPG d'action spectaculaire inspiré de la mythologie.",
-    min: { os: "Win 10", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "130 GB SSD" },
-    rec: { os: "Win 11", cpu: "i7-9700", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "130 GB SSD" },
-    dl: "#"
   },
   { 
     id: 'stardew-valley', title: "Stardew Valley", image: "/gameeasy-site/images/stardew.jpg", cat: "Simulation / RPG", mode: "Solo / Multi",
