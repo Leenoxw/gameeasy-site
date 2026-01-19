@@ -671,24 +671,6 @@ export const gamesData = [
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "24 GB" },
     dl: "#"
   },
-
-  // --- FPS & BATTLE ROYALE / MULTI ---
-  { 
-    id: 'apex-legends', title: "Apex Legends", image: "/gameeasy-site/images/apex.jpg", cat: "FPS / Action", mode: "Multi",
-    desc: "Le Battle Royale héroïque où la stratégie d'équipe est la clé.",
-    min: { os: "Win 10", cpu: "i3-6300", ram: "6 GB", gpu: "GTX 640", dx: "11", storage: "56 GB" },
-    rec: { os: "Win 11", cpu: "i5-3570K", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "56 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'overwatch-2', title: "Overwatch 2", image: "/gameeasy-site/images/ow2.jpg", cat: "FPS", mode: "Multi",
-    desc: "Un jeu de tir par équipe dynamique avec des héros aux capacités uniques.",
-    min: { os: "Win 10", cpu: "i3", ram: "6 GB", gpu: "GTX 600", dx: "11", storage: "50 GB" },
-    rec: { os: "Win 11", cpu: "i7", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
-    dl: "#"
-  },
-
-  // --- SIMULATION & GESTION ---
   { 
     id: 'planet-zoo', title: "Planet Zoo", image: "/gameeasy-site/images/pzoo.jpg", cat: "Simulation / Gestion", mode: "Solo",
     desc: "Créez le zoo le plus incroyable en gérant le bien-être animal et les visiteurs.",
