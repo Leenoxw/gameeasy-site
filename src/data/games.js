@@ -1,7 +1,7 @@
 // src/data/games.js
 export const gamesData = [
   { 
-    id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "RPG / Sci-Fi", mode: "Solo",
+    id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "Sci-Fi", mode: "Solo",
     desc: "Devenez un mercenaire dans la mégalopole de Night City, obsédée par les modifications corporelles.",
     min: { os: "Win 10", cpu: "i5-3570K", ram: "8 GB", gpu: "GTX 970", dx: "12", storage: "70 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-12700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "70 GB SSD" },
@@ -134,67 +134,67 @@ export const gamesData = [
     dl: "https://lockr.so/YEfWZGhM"
   }, // Jeux sans image pour linstant //
   { 
-    id: 'resident-evil-4-remake', title: "Resident Evil 4", image: "/gameeasy-site/images/re4.jpg", cat: "Horreur / Action", mode: "Solo",
+    id: 'resident-evil-4-remake', title: "Resident Evil 4", image: "/gameeasy-site/images/resident-evil-4.jpg", cat: "Horreur / Action", mode: "Solo",
     desc: "Leon S. Kennedy doit sauver la fille du président dans un village européen terrifiant.",
     min: { os: "Win 10", cpu: "i5-7500", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "60 GB" },
-    dl: "#"
+    dl: "https://lockr.so/reH8cpnA"
   },
   { 
     id: 'ghost-of-tsushima', title: "Ghost of Tsushima", image: "/gameeasy-site/images/ghost-tsushima.jpg", cat: "Action", mode: "Solo / Multi",
     desc: "En pleine invasion mongole, devenez le Fantôme pour libérer l'île de Tsushima.",
     min: { os: "Win 10", cpu: "i3-7100", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "75 GB" },
     rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB" },
-    dl: "#"
+    dl: "https://lockr.so/uZBa8U2E"
   },
   { 
     id: 'ark-survival-ascended', title: "ARK: Ascended", image: "/gameeasy-site/images/ark-ascended.jpg", cat: "Survie", mode: "Solo / Multi",
     desc: "Réveillez-vous sur une île mystérieuse et survivez face aux dinosaures dans ce remake sous Unreal Engine 5.",
     min: { os: "Win 10", cpu: "i7-6800K", ram: "16 GB", gpu: "RTX 2080", dx: "12", storage: "80 GB SSD" },
     rec: { os: "Win 11", cpu: "i5-12600K", ram: "32 GB", gpu: "RTX 3080", dx: "12", storage: "80 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/mPXJDvqQ"
   },
   { 
     id: 'tekken-8', title: "Tekken 8", image: "/gameeasy-site/images/tekken8.jpg", cat: "Combat", mode: "Solo / Multi",
     desc: "Préparez-vous pour le prochain chapitre de la lignée Mishima avec des combats plus destructeurs que jamais.",
     min: { os: "Win 10", cpu: "i5-6600K", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB" },
     rec: { os: "Win 11", cpu: "i7-7700K", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "100 GB" },
-    dl: "#"
+    dl: "https://lockr.so/s9gdPmPI"
   },
   { 
     id: 'ready-or-not', title: "Ready or Not", image: "/gameeasy-site/images/ready-or-not.jpg", cat: "Simulation / FPS", mode: "Solo / Multi",
     desc: "Un FPS tactique intense où vous incarnez une unité d'élite du SWAT dans des situations critiques.",
     min: { os: "Win 10", cpu: "i3-4130", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i5-7600K", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/TrDuYbf1"
   },
   { 
     id: 'euro-truck-2', title: "Euro Truck Simulator 2", image: "/gameeasy-site/images/ets2.jpg", cat: "Simulation", mode: "Solo / Multi",
     desc: "Devenez le roi de la route en livrant des cargaisons importantes à travers toute l'Europe.",
     min: { os: "Win 10", cpu: "Dual Core 2.4 GHz", ram: "4 GB", gpu: "GTS 450", dx: "11", storage: "12 GB" },
     rec: { os: "Win 11", cpu: "Quad Core 3.0 GHz", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "12 GB" },
-    dl: "#"
+    dl: "https://lockr.so/zyf1LYqA"
   },
   { 
     id: 'content-warning', title: "Content Warning", image: "/gameeasy-site/images/content-warning.jpg", cat: "Coop / Horreur", mode: "Multi",
     desc: "Filmez vos amis en train de faire des trucs flippants pour devenir viral sur SpookTube.",
     min: { os: "Win 10", cpu: "i5 @ 2.5 GHz", ram: "8 GB", gpu: "GTX 1050 ti", dx: "11", storage: "4 GB" },
     rec: { os: "Win 11", cpu: "i5 @ 3.0 GHz", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "4 GB" },
-    dl: "#"
+    dl: "https://lockr.so/1j9toeGi"
   },
   { 
     id: 'assassins-creed-mirage', title: "Assassin's Creed Mirage", image: "/gameeasy-site/images/ac-mirage.jpg", cat: "Action", mode: "Solo",
     desc: "Suivez Basim dans le Bagdad du IXe siècle pour devenir un Maître Assassin.",
     min: { os: "Win 10", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "40 GB" },
     rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "40 GB" },
-    dl: "#"
+    dl: "https://lockr.so/C6twgzyR"
   },
   { 
     id: 'spider-man-remastered', title: "Spider-Man Remastered", image: "/gameeasy-site/images/spiderman.jpg", cat: "Action / Open World", mode: "Solo",
     desc: "Vigile urbain de New York, Peter Parker combat le crime tout en jonglant avec sa vie personnelle.",
     min: { os: "Win 10", cpu: "i3-4160", ram: "8 GB", gpu: "GTX 950", dx: "12", storage: "75 GB" },
     rec: { os: "Win 11", cpu: "i5-4670", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/MyHMXlNy"
   },
   { 
     id: 'horizon-forbidden-west', title: "Horizon Forbidden West", image: "/gameeasy-site/images/hfw.jpg", cat: "Action / RPG", mode: "Solo",
