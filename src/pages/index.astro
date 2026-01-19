@@ -9,6 +9,12 @@ const featuredGames = [
   { id: 'elden-ring', title: "Elden Ring", image: "/gameeasy-site/images/elden-ring.jpg", cat: "Fantasy" },
   { id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Open World" }
 ];
+
+const latestUpdates = [
+    { id: 'spider-man-2', title: "Spider-Man 2", version: "v1.2", time: "2h ago", img: "/gameeasy-site/images/spiderman2.jpg" },
+    { id: 'hogwarts-legacy', title: "Hogwarts Legacy", version: "v1.0.4", time: "5h ago", img: "/gameeasy-site/images/hogwarts.jpg" },
+    { id: 'forza-5', title: "Forza Horizon 5", version: "v3.1", time: "Hier", img: "/gameeasy-site/images/forza5.jpg" }
+];
 ---
 
 <Layout title="GAMEASY - L'élite du Gaming Gratuit">
@@ -53,33 +59,83 @@ const featuredGames = [
       </div>
     </section>
 
-    <section class="trending">
+    <section class="search-section">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="small-label">TOP DOWNLOADS</span>
-            <h2>LES PLUS <span class="purple">POPULAIRES</span></h2>
+        <div class="search-wrapper">
+          <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="gameSearch" placeholder="Rechercher un crack (GTA, Wukong...)" />
+            <button class="search-btn">RECHERCHER</button>
           </div>
-          <a href="/gameeasy-site/cracks" class="view-all">Voir tout le catalogue <i class="fas fa-arrow-right"></i></a>
+          <div class="search-filters">
+            <span class="filter-label">Filtres :</span>
+            <button class="chip active" data-filter="all">Tous</button>
+            <button class="chip" data-filter="action">Action</button>
+            <button class="chip" data-filter="rpg">RPG</button>
+            <button class="chip" data-filter="sci-fi">Sci-Fi</button>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="trending">
+      <div class="container main-grid-layout">
         
-        <div class="game-grid">
-          {featuredGames.map(game => (
-            <a href={`/gameeasy-site/${game.id}`} class="game-card">
-              <div class="card-inner">
-                <img src={game.image} alt={game.title} class="game-img" />
-                <div class="card-content">
-                  <span class="game-cat">{game.cat}</span>
-                  <h3>{game.title}</h3>
-                  <div class="card-footer">
-                    <span class="status"><i class="fas fa-check-circle"></i> Vérifié</span>
-                    <span class="dl-icon"><i class="fas fa-download"></i></span>
+        <div class="popular-column">
+          <div class="section-header">
+            <div>
+              <span class="small-label">TOP DOWNLOADS</span>
+              <h2>LES PLUS <span class="purple">POPULAIRES</span></h2>
+            </div>
+          </div>
+          
+          <div class="game-grid" id="gameGrid">
+            {featuredGames.map(game => (
+              <a href={`/gameeasy-site/${game.id}`} class="game-card" data-category={game.cat.toLowerCase()}>
+                <div class="card-inner">
+                  <img src={game.image} alt={game.title} class="game-img" />
+                  <div class="card-content">
+                    <span class="game-cat">{game.cat}</span>
+                    <h3>{game.title}</h3>
+                    <div class="card-footer">
+                      <span class="status"><i class="fas fa-check-circle"></i> Vérifié</span>
+                      <span class="dl-icon"><i class="fas fa-download"></i></span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))}
+          </div>
         </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-box">
+            <h3>DERNIERS <span class="purple">CRACKS</span></h3>
+            <div class="latest-list">
+              {latestUpdates.map(update => (
+                <a href={`/gameeasy-site/${update.id}`} class="latest-item">
+                  <img src={update.img} alt="" />
+                  <div class="latest-info">
+                    <h4>{update.title}</h4>
+                    <div class="latest-meta">
+                      <span class="v-tag">{update.version}</span>
+                      <span class="time">{update.time}</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <a href="/gameeasy-site/cracks" class="btn-sidebar-all">Tout le catalogue</a>
+          </div>
+
+          <div class="discord-promo">
+            <i class="fab fa-discord"></i>
+            <h4>Besoin d'aide ?</h4>
+            <p>Rejoins notre communauté pour du support 24/7.</p>
+            <a href="#" class="btn-discord">REJOINDRE</a>
+          </div>
+        </aside>
+
       </div>
     </section>
 
@@ -108,176 +164,119 @@ const featuredGames = [
 </Layout>
 
 <style>
-  /* Global Home Styles */
-  .home-wrapper { background: #060612; color: white; overflow-x: hidden; }
+  /* --- BASE & VARIABLES --- */
+  .home-wrapper { background: #060612; color: white; overflow-x: hidden; font-family: 'Segoe UI', sans-serif; }
   .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
   .purple { color: #8a4fff; }
 
-  /* Hero Section */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 80px;
-    background: radial-gradient(circle at 0% 0%, rgba(138, 79, 255, 0.1) 0%, transparent 40%);
-  }
-
-  .hero-bg-glow {
-    position: absolute;
-    top: 20%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: #8a4fff;
-    filter: blur(180px);
-    opacity: 0.15;
-    z-index: 0;
-  }
-
-  .hero-flex { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; position: relative; z-index: 1; }
-
-  .badge-new {
-    background: rgba(138, 79, 255, 0.1);
-    color: #8a4fff;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    display: inline-block;
-    border: 1px solid rgba(138, 79, 255, 0.2);
-    margin-bottom: 25px;
-  }
-
-  .main-title {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 950;
-    line-height: 0.95;
-    letter-spacing: -3px;
-    margin-bottom: 25px;
-  }
-
-  .outline-text {
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255,255,255,0.8);
-  }
-
-  .gradient-text {
-    background: linear-gradient(to right, #8a4fff, #d8b4fe);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .subtitle {
-    font-size: 1.15rem;
-    color: #888;
-    max-width: 550px;
-    line-height: 1.6;
-    margin-bottom: 45px;
-  }
-
+  /* --- HERO --- */
+  .hero { position: relative; min-height: 90vh; display: flex; align-items: center; padding-top: 80px; }
+  .hero-bg-glow { position: absolute; top: 10%; right: -5%; width: 500px; height: 500px; background: #8a4fff; filter: blur(180px); opacity: 0.15; }
+  .hero-flex { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; position: relative; z-index: 1; }
+  .badge-new { background: rgba(138, 79, 255, 0.1); color: #8a4fff; padding: 8px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 800; border: 1px solid rgba(138, 79, 255, 0.2); margin-bottom: 25px; display: inline-block; }
+  .main-title { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 950; line-height: 0.95; letter-spacing: -3px; }
+  .outline-text { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.8); }
+  .gradient-text { background: linear-gradient(to right, #8a4fff, #d8b4fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { color: #888; max-width: 550px; margin: 30px 0 45px; font-size: 1.15rem; line-height: 1.6; }
   .hero-btns { display: flex; gap: 15px; margin-bottom: 50px; }
-  .btn-primary {
-    background: #8a4fff;
-    color: white;
-    padding: 18px 35px;
-    border-radius: 14px;
-    font-weight: 800;
-    text-decoration: none;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 15px 30px rgba(138, 79, 255, 0.3);
-  }
-
-  .btn-secondary {
-    background: rgba(255,255,255,0.03);
-    color: white;
-    padding: 18px 35px;
-    border-radius: 14px;
-    font-weight: 800;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
-  }
-
-  .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(138, 79, 255, 0.5); }
-
+  .btn-primary { background: #8a4fff; color: white; padding: 18px 35px; border-radius: 14px; font-weight: 800; display: flex; align-items: center; gap: 10px; box-shadow: 0 15px 30px rgba(138, 79, 255, 0.3); transition: 0.3s; text-decoration: none;}
+  .btn-secondary { background: rgba(255,255,255,0.03); color: white; padding: 18px 35px; border-radius: 14px; font-weight: 800; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; text-decoration: none; display: flex; align-items: center; gap: 10px;}
+  .btn-primary:hover { transform: translateY(-5px); }
   .hero-stats { display: flex; gap: 40px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; }
-  .stat strong { display: block; font-size: 1.5rem; color: #fff; }
-  .stat span { color: #555; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; }
+  .stat strong { display: block; font-size: 1.5rem; }
+  .stat span { color: #555; font-size: 0.7rem; text-transform: uppercase; font-weight: 800; }
 
-  /* Hero Visual (Floating cards) */
-  .hero-visual { position: relative; height: 400px; }
-  .floating-card {
-    position: absolute;
-    width: 280px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(138, 79, 255, 0.3);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    transition: 0.5s;
-  }
-  .floating-card img { width: 100%; display: block; }
-  .card-1 { z-index: 2; top: 0; right: 20px; transform: rotate(5deg); animation: float 6s ease-in-out infinite; }
-  .card-2 { z-index: 1; bottom: 20px; left: 0; transform: rotate(-8deg); opacity: 0.5; animation: float 8s ease-in-out infinite reverse; }
+  /* --- SEARCH BAR --- */
+  .search-wrapper { margin-top: -50px; margin-bottom: 60px; position: relative; z-index: 10; }
+  .search-box { background: rgba(12, 12, 29, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(138, 79, 255, 0.3); border-radius: 20px; padding: 10px 10px 10px 25px; display: flex; align-items: center; gap: 15px; }
+  .search-box input { background: transparent; border: none; color: white; width: 100%; outline: none; font-size: 1.1rem; }
+  .search-btn { background: #8a4fff; color: white; border: none; padding: 12px 25px; border-radius: 14px; font-weight: 800; cursor: pointer; }
+  .search-filters { display: flex; gap: 12px; margin-top: 20px; align-items: center; }
+  .filter-label { font-size: 0.8rem; color: #444; font-weight: 800; }
+  .chip { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: #888; padding: 6px 18px; border-radius: 50px; cursor: pointer; transition: 0.3s; }
+  .chip.active, .chip:hover { border-color: #8a4fff; color: white; background: rgba(138, 79, 255, 0.1); }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(5deg); }
-    50% { transform: translateY(-20px) rotate(7deg); }
-  }
-
-  /* Trending Section */
-  .trending { padding: 100px 0; }
-  .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; }
-  .small-label { color: #8a4fff; font-weight: 900; font-size: 0.75rem; letter-spacing: 3px; }
-  .section-header h2 { font-size: 2.5rem; font-weight: 900; margin-top: 10px; }
-  .view-all { color: #888; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
-  .view-all:hover { color: #fff; }
-
+  /* --- LAYOUT GRID & SIDEBAR --- */
+  .main-grid-layout { display: grid; grid-template-columns: 1fr 380px; gap: 50px; padding-bottom: 100px; }
   .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-  .game-card { text-decoration: none; color: white; }
-  .card-inner {
-    background: #0c0c1d;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .game-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: 0.5s; }
+  .card-inner { background: #0c0c1d; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
+  .game-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
   .card-content { padding: 20px; }
   .game-cat { color: #8a4fff; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; }
-  .card-content h3 { font-size: 1.25rem; margin: 8px 0 15px; }
-  .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
+  .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; margin-top: 15px;}
   .status { font-size: 0.8rem; color: #00ff88; font-weight: 600; }
-  .dl-icon { background: rgba(255,255,255,0.05); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #8a4fff; }
+  .dl-icon { color: #8a4fff; }
 
-  .game-card:hover .card-inner { transform: translateY(-10px); border-color: #8a4fff; background: #111125; }
-  .game-card:hover .game-img { transform: scale(1.1); }
+  /* SIDEBAR STYLES */
+  .sidebar-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 30px; padding: 25px; margin-bottom: 30px; }
+  .sidebar-box h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 20px; }
+  .latest-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
+  .latest-item { display: flex; gap: 15px; text-decoration: none; color: white; padding: 10px; border-radius: 15px; background: rgba(255,255,255,0.02); transition: 0.3s; }
+  .latest-item:hover { background: rgba(138, 79, 255, 0.1); transform: translateX(5px); }
+  .latest-item img { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; }
+  .latest-info h4 { font-size: 0.9rem; margin-bottom: 5px; }
+  .v-tag { font-size: 0.7rem; background: #1a1a2e; color: #8a4fff; padding: 2px 8px; border-radius: 5px; font-weight: 800; margin-right: 10px; }
+  .time { font-size: 0.7rem; color: #555; }
+  .btn-sidebar-all { display: block; text-align: center; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; text-decoration: none; color: white; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;}
+  .btn-sidebar-all:hover { background: #8a4fff; }
 
-  /* Features Section */
+  .discord-promo { background: linear-gradient(135deg, #5865F2, #3a44a7); padding: 30px; border-radius: 30px; text-align: center; }
+  .discord-promo i { font-size: 3rem; margin-bottom: 15px; }
+  .btn-discord { display: inline-block; background: white; color: #5865F2; padding: 10px 25px; border-radius: 10px; font-weight: 800; text-decoration: none; margin-top: 15px; }
+
+  /* --- FEATURES --- */
   .features { padding: 80px 0; background: linear-gradient(to bottom, transparent, rgba(138, 79, 255, 0.05)); }
   .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-  .feature-card {
-    background: rgba(255,255,255,0.02);
-    padding: 40px;
-    border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.05);
-    text-align: center;
-    transition: 0.3s;
-  }
-  .feature-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(138, 79, 255, 0.3); }
+  .feature-card { background: rgba(255,255,255,0.02); padding: 40px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
   .icon-box { font-size: 3rem; margin-bottom: 20px; }
-  .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 800; }
-  .feature-card p { color: #888; line-height: 1.6; }
 
-  /* Responsive */
-  @media (max-width: 900px) {
+  /* --- RESPONSIVE --- */
+  @media (max-width: 1100px) {
+    .main-grid-layout { grid-template-columns: 1fr; }
     .hero-flex { grid-template-columns: 1fr; text-align: center; }
-    .hero-text-content { display: flex; flex-direction: column; align-items: center; }
-    .hero-btns { flex-direction: column; width: 100%; }
     .hero-visual { display: none; }
-    .main-title { font-size: 3.5rem; }
+    .hero-stats { justify-content: center; }
+    .hero-btns { justify-content: center; }
+    .hero-text-content { display: flex; flex-direction: column; align-items: center;}
   }
+
+  /* Animations */
+  .floating-card { position: absolute; width: 280px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(138, 79, 255, 0.3); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+  .card-1 { z-index: 2; top: 0; right: 20px; transform: rotate(5deg); animation: float 6s ease-in-out infinite; }
+  .card-2 { z-index: 1; bottom: 20px; left: 0; transform: rotate(-8deg); opacity: 0.5; animation: float 8s ease-in-out infinite reverse; }
+  @keyframes float { 0%, 100% { transform: translateY(0) rotate(5deg); } 50% { transform: translateY(-20px) rotate(7deg); } }
 </style>
+
+<script>
+  // INTERACTIVE SEARCH & FILTER
+  const searchInput = document.getElementById('gameSearch') as HTMLInputElement;
+  const gameCards = document.querySelectorAll('.game-card');
+  const chips = document.querySelectorAll('.chip');
+
+  // Search Logic
+  searchInput?.addEventListener('input', (e) => {
+    const val = (e.target as HTMLInputElement).value.toLowerCase();
+    gameCards.forEach(card => {
+      const title = card.querySelector('h3')?.textContent?.toLowerCase();
+      (card as HTMLElement).style.display = title?.includes(val) ? 'block' : 'none';
+    });
+  });
+
+  // Chip Filter Logic
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      
+      const filter = chip.getAttribute('data-filter')?.toLowerCase();
+      gameCards.forEach(card => {
+        const category = card.getAttribute('data-category')?.toLowerCase() || "";
+        if (filter === 'all' || category.includes(filter!)) {
+          (card as HTMLElement).style.display = 'block';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
