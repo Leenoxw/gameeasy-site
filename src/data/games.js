@@ -89,14 +89,14 @@ export const gamesData = [
     desc: "Capturez des créatures et faites-les travailler ou combattre dans ce monde ouvert.",
     min: { os: "Win 10", cpu: "i5-3570K", ram: "16 GB", gpu: "GTX 1050", dx: "11", storage: "40 GB SSD" },
     rec: { os: "Win 11", cpu: "i9-9900K", ram: "32 GB", gpu: "RTX 2070", dx: "11", storage: "40 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/oUDrrXTi"
   },
   { 
     id: 'lethal-company', title: "Lethal Company", image: "/gameeasy-site/images/lethal-company.jpg", cat: "Horreur / Coop", mode: "Multi",
     desc: "Récupérez de la ferraille sur des lunes industrielles pour la Compagnie.",
     min: { os: "Win 10", cpu: "i5-7400", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" },
     rec: { os: "Win 11", cpu: "i7-9700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "1 GB" },
-    dl: "#"
+    dl: "https://lockr.so/ep3kx7x0"
   },
   { 
     id: 'black-myth-wukong', title: "Black Myth: Wukong", image: "/gameeasy-site/images/wukong.jpg", cat: "Action / RPG", mode: "Solo",
