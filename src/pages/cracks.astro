@@ -16,18 +16,10 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     <div class="main-wrapper">
       
       <aside class="ads-side">
-        <div class="ads-stack">
-          <div class="ad-container">
-            <div class="ad-label">PUBLICITÉ</div>
-            <div class="ad-content"><i class="fas fa-ad"></i></div>
-          </div>
-          <div class="ad-container">
-            <div class="ad-label">PUBLICITÉ</div>
-            <div class="ad-content"><i class="fas fa-ad"></i></div>
-          </div>
-          <div class="ad-container">
-            <div class="ad-label">PUBLICITÉ</div>
-            <div class="ad-content"><i class="fas fa-ad"></i></div>
+        <div class="ad-container">
+          <div class="ad-label">PUBLICITÉ</div>
+          <div class="ad-content">
+             <i class="fas fa-ad"></i>
           </div>
         </div>
       </aside>
@@ -93,18 +85,10 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
       </div>
 
       <aside class="ads-side">
-        <div class="ads-stack">
-          <div class="ad-container">
-            <div class="ad-label">PUBLICITÉ</div>
-            <div class="ad-content"><i class="fas fa-ad"></i></div>
-          </div>
-          <div class="ad-container">
-            <div class="ad-label">PUBLICITÉ</div>
-            <div class="ad-content"><i class="fas fa-ad"></i></div>
-          </div>
-          <div class="ad-container">
-            <div class="ad-label">PUBLICITÉ</div>
-            <div class="ad-content"><i class="fas fa-ad"></i></div>
+        <div class="ad-container">
+          <div class="ad-label">PUBLICITÉ</div>
+          <div class="ad-content">
+             <i class="fas fa-ad"></i>
           </div>
         </div>
       </aside>
@@ -143,6 +127,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     });
   }
 
+  // Clic sur les catégories
   catBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       catBtns.forEach(b => b.classList.remove('active-cat'));
@@ -152,6 +137,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     });
   });
 
+  // Clic sur Solo/Multi
   modeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       modeBtns.forEach(b => b.classList.remove('active-mode'));
@@ -172,29 +158,23 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     display: flex;
     justify-content: center;
     gap: 30px;
-    max-width: 1800px; /* Légèrement augmenté pour les colonnes */
+    max-width: 1750px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
   .container { flex: 1; max-width: 1200px; width: 100%; }
   
-  /* --- SYSTÈME DE PUBS EMPILLÉES --- */
+  /* --- PUBLICITÉ --- */
   .ads-side {
     flex: 0 0 160px;
-  }
-
-  .ads-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Espace entre les blocs de pub */
     position: sticky;
     top: 100px;
-  }
-
-  .ad-container {
-    width: 160px;
     height: 600px;
+  }
+  .ad-container {
+    width: 100%;
+    height: 100%;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(138, 79, 255, 0.1);
     border-radius: 12px;
@@ -202,7 +182,6 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     flex-direction: column;
     overflow: hidden;
   }
-
   .ad-label {
     background: rgba(138, 79, 255, 0.1);
     font-size: 10px;
@@ -211,7 +190,6 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     color: #555;
     font-weight: 900;
   }
-
   .ad-content {
     flex: 1;
     display: flex;
@@ -221,13 +199,14 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     font-size: 2rem;
   }
 
-  /* --- HEADER & FILTRES (Tes styles d'origine) --- */
+  /* --- HEADER --- */
   .cat-header { text-align: center; margin-bottom: 40px; }
   .subtitle { color: #8a4fff; font-weight: 800; font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 10px; }
   .cat-header h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 10px; line-height: 1; }
   .purple { color: #8a4fff; text-shadow: 0 0 20px rgba(138, 79, 255, 0.4); }
   .count { color: #666; font-size: 1rem; }
 
+  /* --- FILTRES --- */
   .filter-container { 
     background: #0c0c1d; padding: 25px; border-radius: 20px; 
     border: 1px solid rgba(255,255,255,0.05); margin-bottom: 40px;
@@ -255,7 +234,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   .search-bar input { background: transparent; border: none; color: white; outline: none; width: 100%; font-size: 1rem; }
   .search-bar i { color: #8a4fff; }
 
-  /* --- GRILLE & CARTES (Tes styles d'origine) --- */
+  /* --- GRILLE & CARTES --- */
   .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
   .game-card { text-decoration: none; transition: 0.3s ease-out; }
   .card-inner { background: #11111e; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.03); position: relative; }
@@ -278,8 +257,8 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   .view-more { color: #8a4fff; font-size: 0.75rem; font-weight: 900; }
 
   /* --- RESPONSIVE --- */
-  @media (max-width: 1550px) {
-    .ads-side { display: none; }
+  @media (max-width: 1450px) {
+    .ads-side { display: none; } /* On cache les pubs sur écrans moyens */
     .main-wrapper { display: block; }
   }
 
