@@ -4,36 +4,52 @@
     <nav class="navbar">
         <a href="/gameeasy-site/" class="logo">GAM<span>EASY</span></a>
         
-        <ul class="nav-links">
+        <button class="burger-menu" id="burgerBtn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
             <li><a href="/gameeasy-site/">Accueil</a></li>
             <li><a href="/gameeasy-site/cracks" class="highlight"><i class="fas fa-rocket"></i> Cracks</a></li>
             <li><a href="/gameeasy-site/tuto" class="btn-tuto"><i class="fas fa-book"></i> Tuto</a></li>
-            <li><a href="https://discord.gg/TON-LIEN"><i class="fab fa-discord"></i> Discord</a></li>
+            <li><a href="https://discord.gg/YaP3akhcgQ"><i class="fab fa-discord"></i> Discord</a></li>
             <li><a href="/gameeasy-site/about">About</a></li>
         </ul>
-
     </nav>
 </header>
 
+<script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (burgerBtn && navLinks) {
+        burgerBtn.addEventListener('click', () => {
+            burgerBtn.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+    }
+</script>
+
 <style>
-    
+    /* --- STYLE COMMUN (PC & MOBILE) --- */
     .header-container {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 9999;
-        background: rgba(6, 6, 18, 0.7);
+        background: rgba(6, 6, 18, 0.9);
         backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        padding: 10px 0;
+        padding: 12px 0;
     }
     
     .navbar { 
         display: flex; 
         align-items: center; 
-        justify-content: flex-start; 
+        justify-content: space-between; 
         padding: 0 5%; 
         max-width: 1400px; 
         margin: 0 auto; 
@@ -44,18 +60,18 @@
        font-weight: 800; 
        color: white; 
        text-decoration: none;
-       flex-shrink: 0; 
+       z-index: 10001; /* Reste au dessus du menu mobile */
     }
     
     .logo span { color: #8a4fff; }
 
+    /* --- NAVIGATION DESKTOP (Par défaut) --- */
     .nav-links { 
         display: flex; 
         list-style: none; 
         gap: 15px; 
-        margin: 0 auto; 
+        margin: 0; 
         padding: 0; 
-        align-items: center; 
     }
 
     .nav-links a { 
@@ -73,16 +89,63 @@
         gap: 8px; 
     }
 
-    .nav-links a i {
-        font-size: 16px;
-    }
-
     .nav-links a.highlight { background: #8a4fff !important; color: white !important; }
     .nav-links a.btn-tuto { border: 1px solid #8a4fff !important; color: #8a4fff !important; }
-    
-    .nav-links a:hover { 
-        transform: translateY(-2px); 
-        background: rgba(138, 79, 255, 0.2); 
-        border-color: rgba(138, 79, 255, 0.5);
+    .nav-links a:hover { transform: translateY(-2px); border-color: #8a4fff; }
+
+    /* --- BOUTON BURGER (Caché sur PC) --- */
+    .burger-menu {
+        display: none;
+        cursor: pointer;
+        background: none;
+        border: none;
+        z-index: 10001;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .bar {
+        width: 28px;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    /* --- ADAPTATION MOBILE (Moins de 950px) --- */
+    @media (max-width: 950px) {
+        .burger-menu {
+            display: flex; /* On montre le burger */
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%; /* Sorti de l'écran */
+            height: 100vh;
+            width: 80%; /* Largeur du menu mobile */
+            max-width: 300px;
+            background: #060612;
+            flex-direction: column;
+            padding: 100px 20px 20px;
+            transition: 0.4s ease;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links.open {
+            right: 0; /* On fait glisser le menu */
+        }
+
+        .nav-links a {
+            width: 100%;
+            font-size: 16px;
+            padding: 15px;
+            justify-content: center;
+        }
+
+        /* Animation X du Burger */
+        .burger-menu.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .burger-menu.active .bar:nth-child(2) { opacity: 0; }
+        .burger-menu.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
     }
 </style>
