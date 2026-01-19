@@ -59,37 +59,4 @@
     .nav-links a.highlight { background: #8a4fff !important; color: white !important; }
     .nav-links a.btn-tuto { border: 1px solid #8a4fff !important; color: #8a4fff !important; }
     .nav-links a:hover { transform: translateY(-2px); background: rgba(138, 79, 255, 0.2); }
-
-    .search-container { 
-        display: flex; 
-        align-items: center; 
-        background: rgba(255, 255, 255, 0.05); 
-        border-radius: 20px; 
-        border: 1px solid rgba(255, 255, 255, 0.1); 
-        padding: 4px 15px; 
-        width: 180px; 
-        transition: 0.4s; 
-    }
-    .search-container:focus-within { width: 250px; border-color: #8a4fff; background: rgba(138, 79, 255, 0.1); }
-    .search-icon { color: rgba(255, 255, 255, 0.4); margin-right: 8px; }
-    .search-container input { background: transparent; border: none; color: white; padding: 8px 0; outline: none; width: 100%; font-size: 13px; }
 </style>
-
-<script>
-    const setupHeaderSearch = () => {
-        const searchInput = document.getElementById('mainSearch') as HTMLInputElement;
-        
-        if (searchInput) {
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    const val = searchInput.value.trim();
-                    // On redirige vers le catalogue avec la recherche
-                    window.location.href = `/gameeasy-site/cracks?search=${encodeURIComponent(val)}`;
-                }
-            });
-        }
-    };
-
-    setupHeaderSearch();
-    document.addEventListener('astro:after-swap', setupHeaderSearch);
-</script>
