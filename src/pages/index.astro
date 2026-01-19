@@ -9,13 +9,6 @@ const featuredGames = [
   { id: 'elden-ring', title: "Elden Ring", image: "/gameeasy-site/images/elden-ring.jpg", cat: "Fantasy" },
   { id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Open World" }
 ];
-
-const latestCracks = [
-    { id: 'black-myth-wukong', title: "Black Myth: Wukong", version: "v1.0.8", time: "2h ago", img: "/gameeasy-site/images/wukong.jpg" },
-    { id: 'elden-ring', title: "Elden Ring", version: "v1.12.3", time: "5h ago", img: "/gameeasy-site/images/elden-ring.jpg" },
-    { id: 'gta-v', title: "GTA V", version: "v3258.0", time: "Hier", img: "/gameeasy-site/images/gta5.jpg" },
-    { id: 'cyberpunk-2077', title: "Cyberpunk 2077", version: "v2.12 HF", time: "Hier", img: "/gameeasy-site/images/cyberpunk.jpg" },
-];
 ---
 
 <Layout title="GAMEASY - L'élite du Gaming Gratuit">
@@ -32,12 +25,27 @@ const latestCracks = [
             <span class="outline-text">PRÉFÉRÉS</span> <br />
             <span class="gradient-text">GRATUITEMENT</span>
           </h1>
-          <p class="subtitle">Accédez à la plus grande bibliothèque de jeux crackés. Sécurisé, rapide et mis à jour quotidiennement.</p>
+          <p class="subtitle">
+            Accédez à la plus grande bibliothèque de jeux crackés. 
+            Sécurisé, rapide et mis à jour quotidiennement par notre équipe.
+          </p>
+          
           <div class="hero-btns">
-            <a href="/gameeasy-site/cracks" class="btn-primary">EXPLORER LE CATALOGUE</a>
-            <a href="/gameeasy-site/tuto" class="btn-secondary">VOIR LE TUTO</a>
+            <a href="/gameeasy-site/cracks" class="btn-primary">
+              <i class="fas fa-rocket"></i> EXPLORER LE CATALOGUE
+            </a>
+            <a href="/gameeasy-site/tuto" class="btn-secondary">
+              <i class="fas fa-play"></i> VOIR LE TUTO
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><strong>+1.2k</strong> <span>Jeux</span></div>
+            <div class="stat"><strong>100%</strong> <span>Safe</span></div>
+            <div class="stat"><strong>24/7</strong> <span>Support</span></div>
           </div>
         </div>
+
         <div class="hero-visual">
             <div class="floating-card card-1"><img src="/gameeasy-site/images/wukong.jpg" /></div>
             <div class="floating-card card-2"><img src="/gameeasy-site/images/cyberpunk.jpg" /></div>
@@ -45,86 +53,53 @@ const latestCracks = [
       </div>
     </section>
 
-    <section class="search-section">
-        <div class="container">
-            <div class="search-wrapper">
-                <div class="search-box">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" id="gameSearch" placeholder="Rechercher un jeu (ex: GTA V, Wukong...)" />
-                    <button class="search-btn">RECHERCHER</button>
-                </div>
-                <div class="search-filters">
-                    <span class="filter-label">Filtres :</span>
-                    <button class="chip active">Tous</button>
-                    <button class="chip">Action</button>
-                    <button class="chip">RPG</button>
-                    <button class="chip">Horreur</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="main-grid-section">
-      <div class="container grid-layout">
-        
-        <div class="popular-column">
-          <div class="section-header">
-            <div>
-              <span class="small-label">TOP DOWNLOADS</span>
-              <h2>LES PLUS <span class="purple">POPULAIRES</span></h2>
-            </div>
+    <section class="trending">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="small-label">TOP DOWNLOADS</span>
+            <h2>LES PLUS <span class="purple">POPULAIRES</span></h2>
           </div>
-          
-          <div class="game-grid">
-            {featuredGames.map(game => (
-              <a href={`/gameeasy-site/${game.id}`} class="game-card">
-                <div class="card-inner">
-                  <img src={game.image} alt={game.title} class="game-img" />
-                  <div class="card-content">
-                    <span class="game-cat">{game.cat}</span>
-                    <h3>{game.title}</h3>
-                    <div class="card-footer">
-                      <span class="status"><i class="fas fa-check-circle"></i> Vérifié</span>
-                      <span class="dl-icon"><i class="fas fa-download"></i></span>
-                    </div>
+          <a href="/gameeasy-site/cracks" class="view-all">Voir tout le catalogue <i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="game-grid">
+          {featuredGames.map(game => (
+            <a href={`/gameeasy-site/${game.id}`} class="game-card">
+              <div class="card-inner">
+                <img src={game.image} alt={game.title} class="game-img" />
+                <div class="card-content">
+                  <span class="game-cat">{game.cat}</span>
+                  <h3>{game.title}</h3>
+                  <div class="card-footer">
+                    <span class="status"><i class="fas fa-check-circle"></i> Vérifié</span>
+                    <span class="dl-icon"><i class="fas fa-download"></i></span>
                   </div>
                 </div>
-              </a>
-            ))}
-          </div>
+              </div>
+            </a>
+          ))}
         </div>
+      </div>
+    </section>
 
-        <aside class="sidebar">
-          <div class="sidebar-box">
-            <div class="sidebar-header">
-                <span class="small-label">RECENT</span>
-                <h3>DERNIERS <span class="purple">AJOUTS</span></h3>
-            </div>
-            <div class="latest-list">
-                {latestCracks.map(crack => (
-                    <a href={`/gameeasy-site/${crack.id}`} class="latest-item">
-                        <div class="latest-thumb"><img src={crack.img} alt="" /></div>
-                        <div class="latest-info">
-                            <h4>{crack.title}</h4>
-                            <div class="latest-meta">
-                                <span class="time">{crack.time}</span>
-                                <span class="version">{crack.version}</span>
-                            </div>
-                        </div>
-                    </a>
-                ))}
-            </div>
-            <a href="/gameeasy-site/cracks" class="btn-sidebar">Tout voir</a>
-          </div>
-
-          <div class="discord-card">
-              <i class="fab fa-discord"></i>
-              <h4>Rejoignez la commu</h4>
-              <p>Besoin d'aide ? Rejoignez-nous sur Discord.</p>
-              <a href="#" class="btn-discord">Rejoindre</a>
-          </div>
-        </aside>
-
+    <section class="features">
+      <div class="container feature-grid">
+        <div class="feature-card">
+          <div class="icon-box">🚀</div>
+          <h3>Direct Download</h3>
+          <p>Oubliez les torrents. Téléchargez à la vitesse maximale de votre connexion.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box">🛡️</div>
+          <h3>Protection Totale</h3>
+          <p>Chaque fichier est scanné via 64 antivirus avant d'être mis en ligne.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box">🔄</div>
+          <h3>Auto-Update</h3>
+          <p>Nos cracks incluent les derniers DLC et mises à jour de performance.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -133,142 +108,176 @@ const latestCracks = [
 </Layout>
 
 <style>
-    /* --- VARIABLES & BASE --- */
-    :root {
-        --primary-purple: #8a4fff;
-        --dark-bg: #060612;
-        --glass-bg: rgba(255, 255, 255, 0.05);
-        --text-gray: #888;
-    }
+  /* Global Home Styles */
+  .home-wrapper { background: #060612; color: white; overflow-x: hidden; }
+  .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
+  .purple { color: #8a4fff; }
 
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', system-ui, sans-serif;
-        background-color: var(--dark-bg);
-        color: white;
-    }
+  /* Hero Section */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background: radial-gradient(circle at 0% 0%, rgba(138, 79, 255, 0.1) 0%, transparent 40%);
+  }
 
-    .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
-    .purple { color: var(--primary-purple); }
-    .small-label { color: var(--primary-purple); font-weight: 900; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
+  .hero-bg-glow {
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: #8a4fff;
+    filter: blur(180px);
+    opacity: 0.15;
+    z-index: 0;
+  }
 
-    /* --- GRADIENT TEXT --- */
-    .gradient-text {
-        background: linear-gradient(to right, #ffffff 30%, var(--primary-purple));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+  .hero-flex { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; position: relative; z-index: 1; }
 
-    .outline-text {
-        color: transparent;
-        -webkit-text-stroke: 1px rgba(255,255,255,0.5);
-    }
+  .badge-new {
+    background: rgba(138, 79, 255, 0.1);
+    color: #8a4fff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    display: inline-block;
+    border: 1px solid rgba(138, 79, 255, 0.2);
+    margin-bottom: 25px;
+  }
 
-    /* --- HERO SECTION --- */
-    .hero {
-        min-height: 85vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        padding-top: 60px;
-    }
+  .main-title {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 950;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+  }
 
-    .hero-bg-glow {
-        position: absolute; top: -10%; right: -10%; width: 600px; height: 600px;
-        background: var(--primary-purple); filter: blur(180px); opacity: 0.15; z-index: 0;
-    }
+  .outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.8);
+  }
 
-    .hero-flex { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; z-index: 1; }
-    
-    .badge-new {
-        background: rgba(138, 79, 255, 0.1); color: var(--primary-purple);
-        padding: 8px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 800;
-        border: 1px solid rgba(138, 79, 255, 0.2); margin-bottom: 25px; display: inline-block;
-    }
+  .gradient-text {
+    background: linear-gradient(to right, #8a4fff, #d8b4fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-    .main-title { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 950; line-height: 0.95; letter-spacing: -2px; margin-bottom: 25px; }
-    .subtitle { font-size: 1.2rem; color: var(--text-gray); max-width: 500px; margin-bottom: 40px; line-height: 1.6; }
+  .subtitle {
+    font-size: 1.15rem;
+    color: #888;
+    max-width: 550px;
+    line-height: 1.6;
+    margin-bottom: 45px;
+  }
 
-    .hero-btns { display: flex; gap: 15px; }
-    .btn-primary {
-        background: var(--primary-purple); color: white; padding: 18px 35px; border-radius: 14px;
-        font-weight: 800; box-shadow: 0 10px 30px rgba(138, 79, 255, 0.3); transition: 0.3s;
-    }
-    .btn-secondary {
-        background: var(--glass-bg); color: white; padding: 18px 35px; border-radius: 14px;
-        font-weight: 800; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
-    }
-    .btn-primary:hover { transform: translateY(-5px); }
+  .hero-btns { display: flex; gap: 15px; margin-bottom: 50px; }
+  .btn-primary {
+    background: #8a4fff;
+    color: white;
+    padding: 18px 35px;
+    border-radius: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 15px 30px rgba(138, 79, 255, 0.3);
+  }
 
-    .hero-visual { position: relative; height: 400px; }
-    .floating-card { position: absolute; width: 280px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(138, 79, 255, 0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-    .floating-card img { width: 100%; display: block; }
-    .card-1 { z-index: 2; top: 0; right: 0; transform: rotate(5deg); }
-    .card-2 { z-index: 1; bottom: 20px; left: 0; transform: rotate(-8deg); opacity: 0.4; }
+  .btn-secondary {
+    background: rgba(255,255,255,0.03);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+  }
 
-    /* --- SEARCH BAR --- */
-    .search-wrapper { margin-top: -30px; margin-bottom: 60px; position: relative; z-index: 10; }
-    .search-box {
-        background: rgba(12, 12, 29, 0.8); backdrop-filter: blur(20px);
-        border: 1px solid rgba(138, 79, 255, 0.3); border-radius: 20px;
-        padding: 10px 10px 10px 25px; display: flex; align-items: center; gap: 15px;
-    }
-    .search-box input { background: transparent; border: none; color: white; font-size: 1.1rem; width: 100%; outline: none; }
-    .search-btn { background: var(--primary-purple); border: none; color: white; padding: 12px 25px; border-radius: 14px; font-weight: 800; cursor: pointer; }
+  .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(138, 79, 255, 0.5); }
 
-    .search-filters { display: flex; gap: 10px; margin-top: 20px; align-items: center; }
-    .filter-label { font-size: 0.8rem; color: #444; font-weight: 800; }
-    .chip { background: var(--glass-bg); border: 1px solid rgba(255,255,255,0.05); color: #888; padding: 6px 15px; border-radius: 50px; cursor: pointer; }
-    .chip.active { border-color: var(--primary-purple); color: white; background: rgba(138, 79, 255, 0.1); }
+  .hero-stats { display: flex; gap: 40px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; }
+  .stat strong { display: block; font-size: 1.5rem; color: #fff; }
+  .stat span { color: #555; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; }
 
-    /* --- CONTENT GRID --- */
-    .grid-layout { display: grid; grid-template-columns: 1fr 380px; gap: 50px; padding-bottom: 100px; }
-    
-    .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-    .card-inner { background: #0c0c1d; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
-    .game-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
-    .card-content { padding: 20px; }
-    .game-cat { color: var(--primary-purple); font-size: 0.7rem; font-weight: 900; }
-    .card-content h3 { font-size: 1.3rem; margin: 10px 0; }
-    .card-footer { display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
-    .status { color: #00ff88; font-size: 0.8rem; font-weight: 600; }
-    .card-inner:hover { transform: translateY(-10px); border-color: var(--primary-purple); }
+  /* Hero Visual (Floating cards) */
+  .hero-visual { position: relative; height: 400px; }
+  .floating-card {
+    position: absolute;
+    width: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(138, 79, 255, 0.3);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transition: 0.5s;
+  }
+  .floating-card img { width: 100%; display: block; }
+  .card-1 { z-index: 2; top: 0; right: 20px; transform: rotate(5deg); animation: float 6s ease-in-out infinite; }
+  .card-2 { z-index: 1; bottom: 20px; left: 0; transform: rotate(-8deg); opacity: 0.5; animation: float 8s ease-in-out infinite reverse; }
 
-    /* --- SIDEBAR --- */
-    .sidebar-box { background: var(--glass-bg); border: 1px solid rgba(255,255,255,0.05); border-radius: 30px; padding: 25px; margin-bottom: 30px; }
-    .latest-list { display: flex; flex-direction: column; gap: 15px; margin: 25px 0; }
-    .latest-item { display: flex; gap: 15px; padding: 10px; border-radius: 15px; background: rgba(255,255,255,0.02); transition: 0.3s; }
-    .latest-item:hover { background: rgba(138, 79, 255, 0.1); transform: translateX(5px); }
-    .latest-thumb { width: 60px; height: 60px; border-radius: 10px; overflow: hidden; }
-    .latest-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .latest-info h4 { margin: 0; font-size: 0.9rem; }
-    .latest-meta { display: flex; gap: 10px; font-size: 0.7rem; margin-top: 5px; }
-    .version { color: var(--primary-purple); font-weight: 800; }
-    .btn-sidebar { display: block; text-align: center; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 12px; font-weight: 700; border: 1px solid rgba(255,255,255,0.1); }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(-20px) rotate(7deg); }
+  }
 
-    .discord-card { background: linear-gradient(135deg, #5865F2, #3a44a7); padding: 30px; border-radius: 30px; text-align: center; }
-    .discord-card i { font-size: 3rem; margin-bottom: 15px; }
-    .btn-discord { display: inline-block; background: white; color: #5865F2; padding: 10px 25px; border-radius: 10px; font-weight: 800; margin-top: 15px; }
+  /* Trending Section */
+  .trending { padding: 100px 0; }
+  .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; }
+  .small-label { color: #8a4fff; font-weight: 900; font-size: 0.75rem; letter-spacing: 3px; }
+  .section-header h2 { font-size: 2.5rem; font-weight: 900; margin-top: 10px; }
+  .view-all { color: #888; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+  .view-all:hover { color: #fff; }
 
-    @media (max-width: 1100px) {
-        .grid-layout { grid-template-columns: 1fr; }
-        .hero-flex { grid-template-columns: 1fr; text-align: center; }
-        .hero-btns { justify-content: center; }
-        .hero-visual { display: none; }
-    }
+  .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+  .game-card { text-decoration: none; color: white; }
+  .card-inner {
+    background: #0c0c1d;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .game-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: 0.5s; }
+  .card-content { padding: 20px; }
+  .game-cat { color: #8a4fff; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; }
+  .card-content h3 { font-size: 1.25rem; margin: 8px 0 15px; }
+  .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
+  .status { font-size: 0.8rem; color: #00ff88; font-weight: 600; }
+  .dl-icon { background: rgba(255,255,255,0.05); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #8a4fff; }
+
+  .game-card:hover .card-inner { transform: translateY(-10px); border-color: #8a4fff; background: #111125; }
+  .game-card:hover .game-img { transform: scale(1.1); }
+
+  /* Features Section */
+  .features { padding: 80px 0; background: linear-gradient(to bottom, transparent, rgba(138, 79, 255, 0.05)); }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .feature-card {
+    background: rgba(255,255,255,0.02);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    transition: 0.3s;
+  }
+  .feature-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(138, 79, 255, 0.3); }
+  .icon-box { font-size: 3rem; margin-bottom: 20px; }
+  .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 800; }
+  .feature-card p { color: #888; line-height: 1.6; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-flex { grid-template-columns: 1fr; text-align: center; }
+    .hero-text-content { display: flex; flex-direction: column; align-items: center; }
+    .hero-btns { flex-direction: column; width: 100%; }
+    .hero-visual { display: none; }
+    .main-title { font-size: 3.5rem; }
+  }
 </style>
-
-<script>
-    // Logique de recherche simple
-    const searchInput = document.getElementById('gameSearch');
-    const cards = document.querySelectorAll('.game-card');
-
-    searchInput?.addEventListener('input', (e) => {
-        const val = (e.target as HTMLInputElement).value.toLowerCase();
-        cards.forEach(card => {
-            const title = card.querySelector('h3')?.textContent?.toLowerCase();
-            (card as HTMLElement).style.display = title?.includes(val) ? 'block' : 'none';
-        });
-    });
-</script>
