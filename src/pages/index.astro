@@ -2,13 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { gamesData } from '../data/games.js';
 
-const featuredGames = [
-  { id: 'black-myth-wukong', title: "Wukong", image: "/gameeasy-site/images/wukong.jpg", cat: "Action / RPG" },
-  { id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "Sci-Fi" },
-  { id: 'elden-ring', title: "Elden Ring", image: "/gameeasy-site/images/elden-ring.jpg", cat: "Fantasy" },
-  { id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Open World" }
-];
+// Automatisation : On prend les 4 derniers jeux ajoutés à la liste
+const featuredGames = [...gamesData].slice(-4).reverse();
 ---
 
 <Layout title="GAMEASY - L'élite du Gaming Gratuit">
@@ -57,7 +54,7 @@ const featuredGames = [
       <div class="container">
         <div class="section-header">
           <div>
-            <span class="small-label">TOP DOWNLOADS</span>
+            <span class="small-label">DERNIÈRES SORTIES</span>
             <h2>LES PLUS <span class="purple">POPULAIRES</span></h2>
           </div>
           <a href="/gameeasy-site/cracks" class="view-all">Voir tout le catalogue <i class="fas fa-arrow-right"></i></a>
@@ -108,12 +105,11 @@ const featuredGames = [
 </Layout>
 
 <style>
-  /* Global Home Styles */
+  /* Tes styles CSS originaux ici sans changement */
   .home-wrapper { background: #060612; color: white; overflow-x: hidden; }
   .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
   .purple { color: #8a4fff; }
 
-  /* Hero Section */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -208,7 +204,6 @@ const featuredGames = [
   .stat strong { display: block; font-size: 1.5rem; color: #fff; }
   .stat span { color: #555; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; }
 
-  /* Hero Visual (Floating cards) */
   .hero-visual { position: relative; height: 400px; }
   .floating-card {
     position: absolute;
@@ -228,7 +223,6 @@ const featuredGames = [
     50% { transform: translateY(-20px) rotate(7deg); }
   }
 
-  /* Trending Section */
   .trending { padding: 100px 0; }
   .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; }
   .small-label { color: #8a4fff; font-weight: 900; font-size: 0.75rem; letter-spacing: 3px; }
@@ -256,7 +250,6 @@ const featuredGames = [
   .game-card:hover .card-inner { transform: translateY(-10px); border-color: #8a4fff; background: #111125; }
   .game-card:hover .game-img { transform: scale(1.1); }
 
-  /* Features Section */
   .features { padding: 80px 0; background: linear-gradient(to bottom, transparent, rgba(138, 79, 255, 0.05)); }
   .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
   .feature-card {
@@ -272,7 +265,6 @@ const featuredGames = [
   .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 800; }
   .feature-card p { color: #888; line-height: 1.6; }
 
-  /* Responsive */
   @media (max-width: 900px) {
     .hero-flex { grid-template-columns: 1fr; text-align: center; }
     .hero-text-content { display: flex; flex-direction: column; align-items: center; }
