@@ -113,14 +113,14 @@ export const gamesData = [
     dl: "#"
   },
   { 
-    id: 'schedules', title: "Schedules", image: "/gameeasy-site/images/schedules.jpg", cat: "Indie / Horreur", mode: "Solo",
+    id: 'schedules', title: "Schedules", image: "/gameeasy-site/images/schedules.jpg", cat: "Indie / Horreur", mode: "Solo / Multi",
     desc: "Suivez une routine stricte pour survivre à des entités qui vous surveillent.",
     min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 750", dx: "11", storage: "2 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "2 GB" },
     dl: "#"
   },
   { 
-    id: 'are-we-there-yet', title: "Are We There Yet?", image: "/gameeasy-site/images/rv-there-yet.jpg", cat: "Indie / Aventure", mode: "Solo",
+    id: 'rv-there-yet', title: "RV There Yet?", image: "/gameeasy-site/images/rv-there-yet.jpg", cat: "Indie / Aventure", mode: "Solo / Multi",
     desc: "Un roadtrip mystérieux à travers des paysages oniriques.",
     min: { os: "Win 10", cpu: "Dual Core", ram: "4 GB", gpu: "Intel HD", dx: "11", storage: "1 GB" },
     rec: { os: "Win 11", cpu: "Quad Core", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" },
