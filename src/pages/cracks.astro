@@ -15,11 +15,17 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     <div class="main-wrapper">
       
       <aside class="ads-side left-ad">
-        <div class="ad-placeholder">
-          <i class="fas fa-ad"></i>
-          <span>PUBLICITÉ</span>
-        </div>
-      </aside>
+  <div class="ad-container-real">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:160px;height:600px"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</aside>
 
       <div class="container">
         <header class="cat-header">
@@ -257,4 +263,19 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     }
     .filter-btn { flex: 0 0 auto; }
   }
+
+  .ad-container-real {
+    width: 160px;
+    height: 600px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* On retire la bordure pointillée si c'est une vraie pub */
+.ads-side {
+    background: none;
+    border: none;
+}
 </style>
