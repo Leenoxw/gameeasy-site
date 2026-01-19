@@ -33,28 +33,28 @@ export const gamesData = [
     desc: "Incarnez Peter et Miles face à Venom et Kraven dans une New York plus grande que jamais.",
     min: { os: "Win 10", cpu: "i5-8400", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "90 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-12700", ram: "32 GB", gpu: "RTX 3070", dx: "12", storage: "90 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/e9yQdsaP"
   },
   { 
     id: 'hogwarts-legacy', title: "Hogwarts Legacy", image: "/gameeasy-site/images/hogwarts.jpg", cat: "Aventure / Magie", mode: "Solo",
     desc: "Vivez l'expérience Poudlard au XIXe siècle. Apprenez des sorts et forgez votre propre héritage.",
     min: { os: "Win 10", cpu: "i5-6600", ram: "16 GB", gpu: "GTX 960", dx: "12", storage: "85 GB" },
     rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "85 GB" },
-    dl: "#"
+    dl: "https://lockr.so/7Fc4Utc7"
   },
   { 
     id: 'forza-horizon-5', title: "Forza Horizon 5", image: "/gameeasy-site/images/forza5.jpg", cat: "Course / Simulation", mode: "Solo / Multi",
     desc: "Parcourez les paysages magnifiques du Mexique au volant de centaines de voitures légendaires.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "12", storage: "110 GB" },
     rec: { os: "Win 11", cpu: "i7-10700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "110 GB" },
-    dl: "#"
+    dl: "https://lockr.so/yXNvrMpb"
   },
   { 
     id: 'god-of-war-ragnarok', title: "God of War Ragnarök", image: "/gameeasy-site/images/gow-ragnarok.jpg", cat: "Action / Mythologie", mode: "Solo",
     desc: "Kratos et Atreus doivent explorer les Neuf Royaumes alors que le Ragnarök approche.",
     min: { os: "Win 10", cpu: "i5-4670K", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "190 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-7700K", ram: "16 GB", gpu: "RTX 3070", dx: "12", storage: "190 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/97YR25eV"
   },
   { 
     id: 'the-witcher-3', title: "The Witcher 3", image: "/gameeasy-site/images/witcher3.jpg", cat: "RPG / Fantasy", mode: "Solo",
@@ -215,6 +215,156 @@ export const gamesData = [
     desc: "Suivez Basim dans le Bagdad du IXe siècle pour devenir un Maître Assassin.",
     min: { os: "Win 10", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "40 GB" },
     rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "40 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'spider-man-remastered', title: "Spider-Man Remastered", image: "/gameeasy-site/images/spiderman.jpg", cat: "Action / Open World", mode: "Solo",
+    desc: "Vigile urbain de New York, Peter Parker combat le crime tout en jonglant avec sa vie personnelle.",
+    min: { os: "Win 10", cpu: "i3-4160", ram: "8 GB", gpu: "GTX 950", dx: "12", storage: "75 GB" },
+    rec: { os: "Win 11", cpu: "i5-4670", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB SSD" },
+    dl: "#"
+  },
+  { 
+    id: 'horizon-forbidden-west', title: "Horizon Forbidden West", image: "/gameeasy-site/images/hfw.jpg", cat: "Action / RPG", mode: "Solo",
+    desc: "Explorez des terres lointaines, affrontez des machines plus imposantes et rencontrez de nouvelles tribus.",
+    min: { os: "Win 10", cpu: "i3-8100", ram: "16 GB", gpu: "GTX 1650", dx: "12", storage: "150 GB SSD" },
+    rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "150 GB SSD" },
+    dl: "#"
+  },
+  { 
+    id: 'uncharted-legacy', title: "Uncharted: Legacy of Thieves", image: "/gameeasy-site/images/uncharted.jpg", cat: "Aventure", mode: "Solo",
+    desc: "Incarnez Nathan Drake et Chloe Frazer dans leurs propres aventures à la recherche de trésors perdus.",
+    min: { os: "Win 10", cpu: "i5-4430", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "126 GB" },
+    rec: { os: "Win 11", cpu: "i7-4770", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "126 GB SSD" },
+    dl: "#"
+  },
+
+  // --- PACK SIMULATION & SPORT ---
+  { 
+    id: 'f1-24', title: "F1 24", image: "/gameeasy-site/images/f124.jpg", cat: "Course / Sport", mode: "Solo / Multi",
+    desc: "Devenez l'un des 20 pilotes officiels et vivez l'immersion totale du championnat du monde de Formule 1.",
+    min: { os: "Win 10", cpu: "i3-2130", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "100 GB" },
+    rec: { os: "Win 11", cpu: "i5-9600K", ram: "16 GB", gpu: "RTX 3070", dx: "12", storage: "100 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'assetto-corsa-competizione', title: "Assetto Corsa Comp.", image: "/gameeasy-site/images/acc.jpg", cat: "Simulation / Course", mode: "Solo / Multi",
+    desc: "La référence absolue de la simulation GT3 avec un réalisme époustouflant.",
+    min: { os: "Win 10", cpu: "i5-4460", ram: "4 GB", gpu: "GTX 460", dx: "11", storage: "50 GB" },
+    rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "50 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'the-sims-4', title: "The Sims 4 + All DLC", image: "/gameeasy-site/images/sims4.jpg", cat: "Simulation de vie", mode: "Solo",
+    desc: "Créez et contrôlez des personnages dans un monde virtuel sans règles.",
+    min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 650", dx: "11", storage: "60 GB" },
+    rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "60 GB" },
+    dl: "#"
+  },
+
+  // --- PACK SURVIE & HORREUR ---
+  { 
+    id: 'sons-of-the-forest', title: "Sons of the Forest", image: "/gameeasy-site/images/soft.jpg", cat: "Survie / Horreur", mode: "Solo / Multi",
+    desc: "Envoyé pour retrouver un milliardaire sur une île isolée, vous vous retrouvez face à des cannibales.",
+    min: { os: "Win 10", cpu: "i5-8400", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "20 GB SSD" },
+    rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 2060", dx: "11", storage: "20 GB SSD" },
+    dl: "#"
+  },
+  { 
+    id: 'rust', title: "Rust", image: "/gameeasy-site/images/rust.jpg", cat: "Survie / FPS", mode: "Multi",
+    desc: "Le seul but dans Rust est de survivre. Dominez les autres joueurs et construisez votre base.",
+    min: { os: "Win 10", cpu: "i7-3770", ram: "10 GB", gpu: "GTX 670", dx: "11", storage: "25 GB" },
+    rec: { os: "Win 11", cpu: "i7-4790K", ram: "16 GB", gpu: "GTX 980", dx: "11", storage: "25 GB SSD" },
+    dl: "#"
+  },
+  { 
+    id: 'outlast-trials', title: "The Outlast Trials", image: "/gameeasy-site/images/outlast-trials.jpg", cat: "Horreur / Coop", mode: "Solo / Multi",
+    desc: "Survivez à des expériences terrifiantes seul ou entre amis dans l'univers d'Outlast.",
+    min: { os: "Win 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 650 Ti", dx: "12", storage: "40 GB" },
+    rec: { os: "Win 11", cpu: "i7-9700K", ram: "16 GB", gpu: "GTX 1660", dx: "12", storage: "40 GB" },
+    dl: "#"
+  },
+
+  // --- PACK FPS & COMBAT ---
+  { 
+    id: 'doom-eternal', title: "DOOM Eternal", image: "/gameeasy-site/images/doom.jpg", cat: "FPS / Gore", mode: "Solo / Multi",
+    desc: "Les armées de l'enfer ont envahi la Terre. Devenez le Slayer et massacrez des démons.",
+    min: { os: "Win 10", cpu: "i5-3570", ram: "8 GB", gpu: "GTX 1050Ti", dx: "11", storage: "50 GB" },
+    rec: { os: "Win 11", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 1080", dx: "11", storage: "50 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'mortal-kombat-1', title: "Mortal Kombat 1", image: "/gameeasy-site/images/mk1.jpg", cat: "Combat / Gore", mode: "Solo / Multi",
+    desc: "Un univers Mortal Kombat renaît, créé par le Dieu du feu Liu Kang. Nouveau système de combat.",
+    min: { os: "Win 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 980", dx: "12", storage: "100 GB" },
+    rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "RTX 2070", dx: "12", storage: "100 GB" },
+    dl: "#"
+  },
+
+  // --- PACK INDÉ & TENDANCE ---
+  { 
+    id: 'balatro', title: "Balatro", image: "/gameeasy-site/images/balatro.jpg", cat: "Roguelike / Poker", mode: "Solo",
+    desc: "Le roguelike de poker terriblement addictif où vous créez des combos déments.",
+    min: { os: "Win 10", cpu: "Intel Core", ram: "1 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
+    rec: { os: "Win 11", cpu: "Intel Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
+    dl: "#"
+  },
+  { 
+    id: 'outer-wilds', title: "Outer Wilds", image: "/gameeasy-site/images/outer-wilds.jpg", cat: "Exploration / Mystère", mode: "Solo",
+    desc: "Un mystère en monde ouvert sur un système solaire piégé dans une boucle temporelle infinie.",
+    min: { os: "Win 10", cpu: "i5-2300", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
+    rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "8 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'cuphead', title: "Cuphead", image: "/gameeasy-site/images/cuphead.jpg", cat: "Boss Rush / Run & Gun", mode: "Solo / Coop",
+    desc: "Un jeu d'action classique inspiré des dessins animés des années 30.",
+    min: { os: "Win 10", cpu: "Dual Core", ram: "3 GB", gpu: "9600 GT", dx: "10", storage: "4 GB" },
+    rec: { os: "Win 11", cpu: "i3", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "4 GB" },
+    dl: "#"
+  },
+
+  // --- PACK RPG & STRATÉGIE ---
+  { 
+    id: 'starfield', title: "Starfield", image: "/gameeasy-site/images/starfield.jpg", cat: "RPG / Espace", mode: "Solo",
+    desc: "Le premier nouvel univers en 25 ans par Bethesda. Créez votre personnage et explorez les étoiles.",
+    min: { os: "Win 10", cpu: "i7-6800K", ram: "16 GB", gpu: "GTX 1070 Ti", dx: "12", storage: "125 GB SSD" },
+    rec: { os: "Win 11", cpu: "i5-10600K", ram: "16 GB", gpu: "RTX 2080", dx: "12", storage: "125 GB SSD" },
+    dl: "#"
+  },
+  { 
+    id: 'civilization-vi', title: "Civilization VI", image: "/gameeasy-site/images/civ6.jpg", cat: "Stratégie 4X", mode: "Solo / Multi",
+    desc: "Bâtissez un empire capable de résister au passage du temps, de l'âge de pierre à l'âge de l'information.",
+    min: { os: "Win 10", cpu: "i3 @ 2.5 GHz", ram: "4 GB", gpu: "GTX 450", dx: "11", storage: "12 GB" },
+    rec: { os: "Win 11", cpu: "i5 @ 3.0 GHz", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "12 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'cities-skylines-2', title: "Cities: Skylines II", image: "/gameeasy-site/images/cities2.jpg", cat: "Gestion / Ville", mode: "Solo",
+    desc: "Bâtissez une ville à partir de rien et transformez-la en une métropole prospère.",
+    min: { os: "Win 10", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "60 GB" },
+    rec: { os: "Win 11", cpu: "i5-12600K", ram: "16 GB", gpu: "RTX 3080", dx: "11", storage: "60 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'sea-of-thieves', title: "Sea of Thieves", image: "/gameeasy-site/images/sea-of-thieves.jpg", cat: "Aventure / Pirate", mode: "Multi",
+    desc: "Devenez le pirate de vos rêves dans ce monde ouvert rempli de trésors et de dangers.",
+    min: { os: "Win 10", cpu: "i3-4130", ram: "4 GB", gpu: "GTX 650", dx: "11", storage: "50 GB" },
+    rec: { os: "Win 11", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'lies-of-p', title: "Lies of P", image: "/gameeasy-site/images/lies-of-p.jpg", cat: "Souls-like / Action", mode: "Solo",
+    desc: "Une version sombre de Pinocchio où vous devez vous frayer un chemin à travers une ville en ruine.",
+    min: { os: "Win 10", cpu: "i3-6300", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "50 GB" },
+    rec: { os: "Win 11", cpu: "i5-12600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "50 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'detroit-become-human', title: "Detroit: Become Human", image: "/gameeasy-site/images/detroit.jpg", cat: "Narration / Sci-Fi", mode: "Solo",
+    desc: "Prenez en main le destin de trois androïdes dans un futur où les machines sont devenues conscientes.",
+    min: { os: "Win 10", cpu: "i5-2300", ram: "8 GB", gpu: "GTX 780", dx: "11", storage: "55 GB" },
+    rec: { os: "Win 11", cpu: "i5-6600", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "55 GB" },
     dl: "#"
   }
 ];
