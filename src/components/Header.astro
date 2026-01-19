@@ -1,47 +1,29 @@
 ---
-// Header.astro
 ---
 <header class="header-container">
     <nav class="navbar">
         <a href="/gameeasy-site/" class="logo">GAM<span>EASY</span></a>
         
-        <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav-links">
             <li><a href="/gameeasy-site/">Accueil</a></li>
             <li><a href="/gameeasy-site/cracks" class="highlight"><i class="fas fa-rocket"></i> Cracks</a></li>
             <li><a href="/gameeasy-site/tuto" class="btn-tuto"><i class="fas fa-book"></i> Tuto</a></li>
             <li><a href="https://discord.gg/TON-LIEN"><i class="fab fa-discord"></i> Discord</a></li>
             <li><a href="/gameeasy-site/about">About</a></li>
         </ul>
+
     </nav>
 </header>
 
-<script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    menuBtn?.addEventListener('click', () => {
-        navLinks?.classList.toggle('mobile-active');
-        // Change l'icône burger en X quand c'est ouvert
-        const icon = menuBtn.querySelector('i');
-        if (icon) {
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        }
-    });
-</script>
-
 <style>
+    
     .header-container {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 9999;
-        background: rgba(6, 6, 18, 0.85); /* Un peu plus opaque pour la lisibilité */
+        background: rgba(6, 6, 18, 0.7);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -51,7 +33,7 @@
     .navbar { 
         display: flex; 
         align-items: center; 
-        justify-content: space-between; /* Changé pour caler le logo à gauche et le burger à droite */
+        justify-content: flex-start; 
         padding: 0 5%; 
         max-width: 1400px; 
         margin: 0 auto; 
@@ -71,7 +53,7 @@
         display: flex; 
         list-style: none; 
         gap: 15px; 
-        margin: 0; 
+        margin: 0 auto; 
         padding: 0; 
         align-items: center; 
     }
@@ -91,6 +73,10 @@
         gap: 8px; 
     }
 
+    .nav-links a i {
+        font-size: 16px;
+    }
+
     .nav-links a.highlight { background: #8a4fff !important; color: white !important; }
     .nav-links a.btn-tuto { border: 1px solid #8a4fff !important; color: #8a4fff !important; }
     
@@ -98,52 +84,5 @@
         transform: translateY(-2px); 
         background: rgba(138, 79, 255, 0.2); 
         border-color: rgba(138, 79, 255, 0.5);
-    }
-
-    /* BOUTON BURGER */
-    .mobile-menu-btn {
-        display: none; /* Caché sur PC */
-        background: none;
-        border: none;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        padding: 5px;
-    }
-
-    /* RESPONSIVE MOBILE */
-    @media (max-width: 900px) {
-        .mobile-menu-btn {
-            display: block; /* Visible sur Mobile */
-        }
-
-        .nav-links {
-            display: none; /* Caché par défaut sur mobile */
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: rgba(12, 12, 29, 0.98);
-            padding: 20px;
-            gap: 10px;
-            border-bottom: 2px solid #8a4fff;
-            backdrop-filter: blur(20px);
-        }
-
-        .nav-links.mobile-active {
-            display: flex; /* S'affiche quand on clique */
-        }
-
-        .nav-links li {
-            width: 100%;
-        }
-
-        .nav-links a {
-            width: 100%;
-            justify-content: center;
-            padding: 15px;
-            font-size: 16px;
-        }
     }
 </style>

@@ -1,58 +1,11 @@
 ---
-// src/components/Header.astro
+import BaseLayout from './BaseLayout.astro';
+import '../styles/global.css';
+
+const { title } = Astro.props;
 ---
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="/gameeasy-site/" class="logo">GAME<span>ASY</span></a>
-    
-    <button class="mobile-menu-btn" id="mobileMenuBtn">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="nav-links" id="navLinks">
-      <a href="/gameeasy-site/">Accueil</a>
-      <a href="/gameeasy-site/cracks">Cracks</a>
-      <a href="/gameeasy-site/tutos">Tutos</a>
-      <a href="https://discord.gg/votrelien" class="discord-btn">Discord</a>
-    </div>
-  </div>
-</nav>
-
-<script>
-  const btn = document.getElementById('mobileMenuBtn');
-  const links = document.getElementById('navLinks');
-
-  btn?.addEventListener('click', () => {
-    links?.classList.toggle('active');
-    // Change l'icône de bars à xmark
-    const icon = btn.querySelector('i');
-    if (icon) icon.classList.toggle('fa-xmark');
-  });
-</script>
-
-<style>
-  .navbar { background: rgba(6, 6, 18, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(138, 79, 255, 0.1); }
-  .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px; }
-  .logo { color: white; text-decoration: none; font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
-  .logo span { color: #8a4fff; }
-  
-  .nav-links { display: flex; gap: 30px; align-items: center; }
-  .nav-links a { color: #aaa; text-decoration: none; font-weight: 700; transition: 0.3s; }
-  .nav-links a:hover { color: #8a4fff; }
-  .discord-btn { background: #5865F2; color: white !important; padding: 10px 20px; border-radius: 10px; }
-
-  .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .mobile-menu-btn { display: block; }
-    .nav-links {
-      display: none; /* Cache par défaut */
-      flex-direction: column;
-      position: absolute;
-      top: 100%; left: 0; width: 100%;
-      background: #0c0c1d; padding: 20px; border-bottom: 2px solid #8a4fff;
-    }
-    .nav-links.active { display: flex; }
-  }
-</style>
+<BaseLayout title={title}>
+	<main>
+		<slot />
+	</main>
+</BaseLayout>
