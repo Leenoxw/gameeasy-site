@@ -117,7 +117,7 @@ export const gamesData = [
     desc: "Suivez une routine stricte pour survivre à des entités qui vous surveillent.",
     min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 750", dx: "11", storage: "2 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "2 GB" },
-    dl: "#"
+    dl: "https://lockr.so/rQVAhyi7"
   },
   { 
     id: 'rv-there-yet', title: "RV There Yet?", image: "/gameeasy-site/images/rv-there-yet.jpg", cat: "Indie / Aventure", mode: "Solo / Multi",

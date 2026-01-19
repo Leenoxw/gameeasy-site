@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro';
 import { gamesData } from '../data/games.js';
 
 const allGames = [...gamesData];
-// On extrait les catégories uniques
 const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / ')[0]))];
 ---
 
@@ -13,63 +12,82 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   <Header />
   
   <main class="catalogue-page">
-    <div class="container">
-      <header class="cat-header">
-        <h1>BIBLIOTHÈQUE <span class="purple">COMPLÈTE</span></h1>
-        <p>Trouvez votre prochain jeu parmi nos {allGames.length} titres.</p>
-      </header>
+    <div class="main-wrapper">
+      
+      <aside class="ads-side left-ad">
+        <div class="ad-placeholder">
+          <i class="fas fa-ad"></i>
+          <span>PUBLICITÉ</span>
+        </div>
+      </aside>
 
-      <div class="filter-container">
-        <div class="filter-group">
-          <span class="filter-label">Genre :</span>
-          <div class="filter-options" id="categoryFilters">
-            {categories.map(cat => (
-              <button class="filter-btn active-cat" data-type="cat" data-value={cat.toLowerCase()}>{cat}</button>
-            ))}
+      <div class="container">
+        <header class="cat-header">
+          <p class="subtitle">BIBLIOTHÈQUE COMPLÈTE</p>
+          <h1>TOUS LES <span class="purple">CRACKS</span></h1>
+          <p class="count">Explorez notre collection de {allGames.length} jeux premium vérifiés.</p>
+        </header>
+
+        <div class="filter-container">
+          <div class="filter-group">
+            <span class="filter-label">Genre :</span>
+            <div class="filter-options" id="categoryFilters">
+              {categories.map(cat => (
+                <button class="filter-btn active-cat" data-type="cat" data-value={cat.toLowerCase()}>{cat}</button>
+              ))}
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Mode :</span>
+            <div class="filter-options" id="modeFilters">
+              <button class="filter-btn active-mode" data-type="mode" data-value="tous">Tous</button>
+              <button class="filter-btn" data-type="mode" data-value="solo">Solo</button>
+              <button class="filter-btn" data-type="mode" data-value="multi">Multi</button>
+            </div>
+          </div>
+
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="gameSearch" placeholder="Rechercher un titre..." />
           </div>
         </div>
 
-        <div class="filter-group">
-          <span class="filter-label">Mode :</span>
-          <div class="filter-options" id="modeFilters">
-            <button class="filter-btn active-mode" data-type="mode" data-value="tous">Tous</button>
-            <button class="filter-btn" data-type="mode" data-value="solo">Solo</button>
-            <button class="filter-btn" data-type="mode" data-value="multi">Multi</button>
-          </div>
-        </div>
-
-        <div class="search-bar">
-          <i class="fas fa-search"></i>
-          <input type="text" id="gameSearch" placeholder="Rechercher un titre..." />
-        </div>
-      </div>
-
-      <div class="game-grid" id="gameGrid">
-        {allGames.map(game => (
-          <a href={`/gameeasy-site/${game.id}`} 
-             class="game-card" 
-             data-title={game.title.toLowerCase()} 
-             data-cat={game.cat.toLowerCase()}
-             data-mode={game.mode.toLowerCase()}>
-            <div class="card-inner">
-              <div class="img-badges">
-                <span class="badge cat">{game.cat.split(' / ')[0]}</span>
-                <span class={`badge mode ${game.mode.toLowerCase().includes('multi') ? 'multi' : 'solo'}`}>
-                  {game.mode}
-                </span>
-              </div>
-              <img src={game.image} alt={game.title} />
-              <div class="card-info">
-                <h3>{game.title}</h3>
-                <div class="card-footer">
-                  <span class="status-ok">DISPONIBLE</span>
-                  <span class="view-more">VOIR +</span>
+        <div class="game-grid" id="gameGrid">
+          {allGames.map(game => (
+            <a href={`/gameeasy-site/${game.id}`} 
+               class="game-card" 
+               data-title={game.title.toLowerCase()} 
+               data-cat={game.cat.toLowerCase()}
+               data-mode={game.mode.toLowerCase()}>
+              <div class="card-inner">
+                <div class="img-badges">
+                  <span class="badge cat">{game.cat.split(' / ')[0]}</span>
+                  <span class={`badge mode ${game.mode.toLowerCase().includes('multi') ? 'multi' : 'solo'}`}>
+                    {game.mode}
+                  </span>
+                </div>
+                <img src={game.image} alt={game.title} loading="lazy" />
+                <div class="card-info">
+                  <h3>{game.title}</h3>
+                  <div class="card-footer">
+                    <span class="status-ok">DISPONIBLE</span>
+                    <span class="view-more">VOIR +</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          ))}
+        </div>
       </div>
+
+      <aside class="ads-side right-ad">
+        <div class="ad-placeholder">
+          <i class="fas fa-ad"></i>
+          <span>PUBLICITÉ</span>
+        </div>
+      </aside>
+
     </div>
   </main>
   <Footer />
@@ -104,7 +122,6 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     });
   }
 
-  // Gestion clics catégories
   catBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       catBtns.forEach(b => b.classList.remove('active-cat'));
@@ -114,7 +131,6 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     });
   });
 
-  // Gestion clics Solo/Multi
   modeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       modeBtns.forEach(b => b.classList.remove('active-mode'));
@@ -124,65 +140,121 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     });
   });
 
-  searchInput.addEventListener('input', filterGames);
+  searchInput?.addEventListener('input', filterGames);
 </script>
 
 <style>
-  .catalogue-page { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; }
-  .container { max-width: 1300px; margin: 0 auto; }
+  .catalogue-page { padding: 120px 0 80px; background: #060612; min-height: 100vh; color: white; }
   
-  .cat-header { text-align: center; margin-bottom: 50px; }
-  .cat-header h1 { font-size: 3.5rem; font-weight: 900; }
-  .purple { color: #8a4fff; text-shadow: 0 0 15px rgba(138, 79, 255, 0.3); }
+  .main-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-  /* Section Filtres */
+  .container { flex: 1; max-width: 1200px; }
+  
+  /* Colonnes de Pub */
+  .ads-side {
+    flex: 0 0 160px;
+    position: sticky;
+    top: 100px;
+    height: 600px;
+    z-index: 10;
+  }
+  
+  .ad-placeholder {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(138, 79, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #444;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+  .ad-placeholder i { font-size: 1.5rem; color: #222; }
+
+  /* Header */
+  .cat-header { text-align: center; margin-bottom: 50px; }
+  .subtitle { color: #8a4fff; font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 10px; }
+  .cat-header h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; }
+  .purple { color: #8a4fff; text-shadow: 0 0 15px rgba(138, 79, 255, 0.3); }
+  .count { color: #888; font-size: 1.1rem; }
+
+  /* Filtres */
   .filter-container { 
-    background: #0c0c1d; padding: 30px; border-radius: 20px; 
+    background: #0c0c1d; padding: 25px; border-radius: 20px; 
     border: 1px solid rgba(255,255,255,0.05); margin-bottom: 40px;
     display: flex; flex-direction: column; gap: 20px;
   }
-  .filter-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .filter-label { font-weight: 800; color: #555; text-transform: uppercase; font-size: 0.8rem; width: 70px; }
-  .filter-options { display: flex; gap: 10px; flex-wrap: wrap; }
+  .filter-group { display: flex; align-items: center; gap: 20px; }
+  .filter-label { font-weight: 800; color: #444; text-transform: uppercase; font-size: 0.75rem; width: 60px; }
+  .filter-options { display: flex; gap: 8px; flex-wrap: wrap; }
 
   .filter-btn {
-    background: #16162d; border: 1px solid #252545; color: #888;
-    padding: 8px 18px; border-radius: 10px; cursor: pointer;
-    font-weight: 700; font-size: 0.9rem; transition: 0.3s;
+    background: #16162d; border: 1px solid #252545; color: #777;
+    padding: 7px 16px; border-radius: 8px; cursor: pointer;
+    font-weight: 700; font-size: 0.85rem; transition: 0.3s;
   }
   .filter-btn:hover { border-color: #8a4fff; color: white; }
-  .filter-btn.active-cat, .filter-btn.active-mode { background: #8a4fff; color: white; border-color: #8a4fff; box-shadow: 0 5px 15px rgba(138, 79, 255, 0.3); }
+  .filter-btn.active-cat, .filter-btn.active-mode { 
+    background: #8a4fff; color: white; border-color: #8a4fff; 
+    box-shadow: 0 4px 12px rgba(138, 79, 255, 0.3); 
+  }
 
   .search-bar { 
     background: #16162d; border: 1px solid #252545; padding: 12px 20px; 
-    border-radius: 12px; display: flex; align-items: center; gap: 15px; margin-top: 10px;
+    border-radius: 12px; display: flex; align-items: center; gap: 15px;
   }
-  .search-bar input { background: transparent; border: none; color: white; outline: none; width: 100%; font-size: 1rem; }
+  .search-bar input { background: transparent; border: none; color: white; outline: none; width: 100%; font-size: 0.95rem; }
   .search-bar i { color: #8a4fff; }
 
-  /* Grid & Cards */
+  /* Grille */
   .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-  .game-card { text-decoration: none; transition: 0.4s ease; }
-  .card-inner { background: #11111e; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.03); position: relative; }
+  .game-card { text-decoration: none; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  .card-inner { background: #11111e; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.03); position: relative; }
   .game-card:hover { transform: translateY(-10px); }
-  .game-card:hover .card-inner { border-color: #8a4fff; box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+  .game-card:hover .card-inner { border-color: #8a4fff; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
 
-  .img-badges { position: absolute; top: 15px; left: 15px; display: flex; gap: 8px; z-index: 5; }
-  .badge { padding: 5px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: 900; color: white; text-transform: uppercase; }
-  .badge.cat { background: rgba(138, 79, 255, 0.9); backdrop-filter: blur(5px); }
+  .img-badges { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; z-index: 5; }
+  .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.65rem; font-weight: 900; color: white; }
+  .badge.cat { background: rgba(138, 79, 255, 0.95); backdrop-filter: blur(4px); }
   .badge.mode.solo { background: #3498db; }
   .badge.mode.multi { background: #e67e22; }
 
   .card-inner img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
-  .card-info { padding: 20px; }
-  .card-info h3 { color: white; font-size: 1.3rem; font-weight: 800; margin-bottom: 15px; }
+  .card-info { padding: 18px; }
+  .card-info h3 { color: white; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
   
   .card-footer { display: flex; justify-content: space-between; align-items: center; }
-  .status-ok { color: #00ff88; font-size: 0.75rem; font-weight: 800; }
-  .view-more { color: #8a4fff; font-size: 0.8rem; font-weight: 900; }
+  .status-ok { color: #00ff88; font-size: 0.7rem; font-weight: 800; }
+  .view-more { color: #8a4fff; font-size: 0.75rem; font-weight: 900; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1400px) {
+    .ads-side { display: none; } /* On cache les pubs sur écrans moyens/petits */
+    .main-wrapper { display: block; }
+  }
 
   @media (max-width: 768px) {
     .cat-header h1 { font-size: 2.2rem; }
-    .filter-group { flex-direction: column; align-items: flex-start; }
+    .filter-group { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .filter-options { 
+      overflow-x: auto; 
+      width: 100%; 
+      padding-bottom: 5px;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    .filter-btn { flex: 0 0 auto; }
   }
 </style>
