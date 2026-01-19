@@ -11,14 +11,7 @@
             <li><a href="https://discord.gg/TON-LIEN"><i class="fab fa-discord"></i> Discord</a></li>
             <li><a href="/gameeasy-site/about">About</a></li>
         </ul>
-
-        <div class="search-container">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="mainSearch" placeholder="Rechercher un jeu..." autocomplete="off">
-        </div>
+        
     </nav>
 </header>
 
@@ -36,10 +29,26 @@
         padding: 10px 0;
     }
     
-    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; max-width: 1400px; margin: 0 auto; }
+    .navbar { 
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; /* Logo à gauche, liens à droite */
+        padding: 0 5%; 
+        max-width: 1400px; 
+        margin: 0 auto; 
+    }
+
     .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
     .logo span { color: #8a4fff; }
-    .nav-links { display: flex; list-style: none; gap: 15px; margin: 0; padding: 0; align-items: center; }
+
+    .nav-links { 
+        display: flex; 
+        list-style: none; 
+        gap: 15px; 
+        margin: 0; 
+        padding: 0; 
+        align-items: center; 
+    }
     
     .nav-links a { 
         text-decoration: none; 
@@ -56,7 +65,17 @@
         gap: 8px; 
     }
     
+    /* Harmonisation des icônes dans les liens */
+    .nav-links a i {
+        font-size: 16px;
+    }
+
     .nav-links a.highlight { background: #8a4fff !important; color: white !important; }
     .nav-links a.btn-tuto { border: 1px solid #8a4fff !important; color: #8a4fff !important; }
-    .nav-links a:hover { transform: translateY(-2px); background: rgba(138, 79, 255, 0.2); }
+    
+    .nav-links a:hover { 
+        transform: translateY(-2px); 
+        background: rgba(138, 79, 255, 0.2); 
+        border-color: rgba(138, 79, 255, 0.5);
+    }
 </style>

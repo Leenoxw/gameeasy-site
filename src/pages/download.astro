@@ -67,6 +67,8 @@ import Layout from '../layouts/Layout.astro';
     max-width: 600px;
     width: 90%;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    /* Ajout de box-sizing pour que le padding n'élargisse pas la carte */
+    box-sizing: border-box; 
   }
 
   h1 span { color: #8b5cf6; }
@@ -79,16 +81,24 @@ import Layout from '../layouts/Layout.astro';
     text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
   }
 
-  /* Conteneur pour l'alignement */
   .button-wrapper {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    width: 100%; /* S'assure que le wrapper prend toute la place */
   }
 
   .download-button {
-    display: inline-block;
-    padding: 1.2rem 3rem;
+    /* Changement de inline-block à flex pour mieux contrôler l'espace interne */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* On utilise une largeur de 100% pour coller à la case grise */
+    width: 100%; 
+    max-width: 500px; /* On limite pour ne pas qu'il soit trop géant sur grand écran */
+    
+    padding: 1.2rem 1rem;
     background: #8b5cf6;
     color: white;
     text-decoration: none;
@@ -96,21 +106,22 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.1rem;
     text-transform: uppercase;
     border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transition fluide pour le zoom */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
     letter-spacing: 1px;
+    
+    /* IMPORTANT : empêche le bouton de dépasser à cause du padding */
+    box-sizing: border-box; 
   }
 
-  /* EFFET DE ZOOM AU SURVOL */
   .download-button:not(.disabled):hover {
-    transform: scale(1.08); /* Zoom de 8% */
+    transform: scale(1.02); /* Réduit légèrement le zoom pour éviter de toucher les bords */
     background: #7c3aed;
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
   }
 
-  /* Effet de clic */
   .download-button:not(.disabled):active {
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
 
   .download-button.disabled {
@@ -127,6 +138,11 @@ import Layout from '../layouts/Layout.astro';
     padding: 1rem;
     background: rgba(0,0,0,0.3);
     border: 1px dashed #444;
+    /* On aligne la largeur de la pub sur le bouton */
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
   }
 
   .fake-ad { height: 100px; background: #000; border-radius: 8px; margin-top: 10px; }
