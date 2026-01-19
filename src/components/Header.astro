@@ -16,6 +16,7 @@
 </header>
 
 <style>
+    
     .header-container {
         position: fixed;
         top: 0;
@@ -29,13 +30,9 @@
         padding: 10px 0;
     }
     
-<style>
-    /* ... reste du code identique ... */
-
     .navbar { 
         display: flex; 
         align-items: center; 
-        /* Changement ici : on n'utilise plus space-between */
         justify-content: flex-start; 
         padding: 0 5%; 
         max-width: 1400px; 
@@ -43,25 +40,24 @@
     }
 
     .logo { 
-        font-size: 24px; 
-        font-weight: 800; 
-        color: white; 
-        text-decoration: none;
-        /* Empêche le logo d'être écrasé */
-        flex-shrink: 0; 
+       font-size: 24px; 
+       font-weight: 800; 
+       color: white; 
+       text-decoration: none;
+       flex-shrink: 0; 
     }
+    
+    .logo span { color: #8a4fff; }
 
     .nav-links { 
         display: flex; 
         list-style: none; 
         gap: 15px; 
-        margin: 0 auto; /* MAGIE : pousse les liens au centre exact entre le logo et le bord droit */
+        margin: 0 auto; 
         padding: 0; 
         align-items: center; 
     }
-    
-</style>
-    
+
     .nav-links a { 
         text-decoration: none; 
         color: #efefef; 
@@ -76,8 +72,7 @@
         align-items: center; 
         gap: 8px; 
     }
-    
-    /* Harmonisation des icônes dans les liens */
+
     .nav-links a i {
         font-size: 16px;
     }
