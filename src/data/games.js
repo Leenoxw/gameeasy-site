@@ -15,7 +15,7 @@ export const gamesData = [
     dl: "https://lockr.so/pPKemlbB"
   },
   { 
-    id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", image: "/gameeasy-site/images/rdr2.jpg", cat: "Aventure / Western", mode: "Solo / Multi",
+    id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", image: "/gameeasy-site/images/rdr2.jpg", cat: "Aventure", mode: "Solo / Multi",
     desc: "Vivez la fin de l'ère de l'Ouest sauvage avec Arthur Morgan et le gang Van der Linde.",
     min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "150 GB" },
     rec: { os: "Win 11", cpu: "i7-4770K", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "150 GB" },
@@ -57,14 +57,14 @@ export const gamesData = [
     dl: "https://lockr.so/nkhF6lhi"
   },
   { 
-    id: 'hades-2', title: "Hades II", image: "/gameeasy-site/images/hades2.jpg", cat: "Roguelike / Action", mode: "Solo",
+    id: 'hades-2', title: "Hades II", image: "/gameeasy-site/images/hades2.jpg", cat: "Action", mode: "Solo",
     desc: "Affrontez le Titan du Temps avec la princesse immortelle des Enfers.",
     min: { os: "Win 10", cpu: "Dual Core", ram: "4 GB", gpu: "GTX 950", dx: "12", storage: "10 GB" },
     rec: { os: "Win 11", cpu: "Quad Core", ram: "8 GB", gpu: "RTX 2060", dx: "12", storage: "10 GB" },
     dl: "https://lockr.so/1PmeVLBt"
   },
   { 
-    id: 'hollow-knight-silksong', title: "Silksong", image: "/gameeasy-site/images/silksong.jpg", cat: "Metroidvania", mode: "Solo",
+    id: 'hollow-knight-silksong', title: "Silksong", image: "/gameeasy-site/images/silksong.jpg", cat: "Aventure", mode: "Solo",
     desc: "Incarnez Hornet dans un tout nouveau royaume hanté par le mystère et la musique.",
     min: { os: "Win 10", cpu: "i3-3220", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "9 GB" },
     rec: { os: "Win 11", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "9 GB" },
@@ -78,7 +78,7 @@ export const gamesData = [
     dl: "https://lockr.so/lQSgU5Fj"
   },
   { 
-    id: 'palworld', title: "Palworld", image: "/gameeasy-site/images/palworld.jpg", cat: "Survie / Créatures", mode: "Solo / Multi",
+    id: 'palworld', title: "Palworld", image: "/gameeasy-site/images/palworld.jpg", cat: "Survie", mode: "Solo / Multi",
     desc: "Capturez des créatures et faites-les travailler ou combattre dans ce monde ouvert.",
     min: { os: "Win 10", cpu: "i5-3570K", ram: "16 GB", gpu: "GTX 1050", dx: "11", storage: "40 GB SSD" },
     rec: { os: "Win 11", cpu: "i9-9900K", ram: "32 GB", gpu: "RTX 2070", dx: "11", storage: "40 GB SSD" },
@@ -120,7 +120,7 @@ export const gamesData = [
     dl: "https://lockr.so/u5m7o69h"
   },
   { 
-    id: 'chained-together', title: "Chained Together", image: "/gameeasy-site/images/chained-together.jpg", cat: "Coop / Plateforme", mode: "Multi",
+    id: 'chained-together', title: "Chained Together", image: "/gameeasy-site/images/chained-together.jpg", cat: "Coop", mode: "Multi",
     desc: "Enchaîné à vos amis, grimpez hors de l'enfer.",
     min: { os: "Win 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "6 GB" },
     rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "6 GB" },
@@ -134,13 +134,6 @@ export const gamesData = [
     dl: "https://lockr.so/YEfWZGhM"
   }, // Jeux sans image pour linstant //
   { 
-    id: 'baldurs-gate-3', title: "Baldur's Gate 3", image: "/gameeasy-site/images/bg3.jpg", cat: "RPG / Tour par tour", mode: "Solo / Multi",
-    desc: "Rassemblez votre groupe et retournez dans les Royaumes Oubliés dans une histoire de camaraderie et de trahison.",
-    min: { os: "Win 10", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "150 GB SSD" },
-    rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 2060", dx: "11", storage: "150 GB SSD" },
-    dl: "#"
-  },
-  { 
     id: 'resident-evil-4-remake', title: "Resident Evil 4", image: "/gameeasy-site/images/re4.jpg", cat: "Horreur / Action", mode: "Solo",
     desc: "Leon S. Kennedy doit sauver la fille du président dans un village européen terrifiant.",
     min: { os: "Win 10", cpu: "i5-7500", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "60 GB" },
@@ -148,21 +141,14 @@ export const gamesData = [
     dl: "#"
   },
   { 
-    id: 'minecraft', title: "Minecraft", image: "/gameeasy-site/images/minecraft.jpg", cat: "Bac à sable / Survie", mode: "Solo / Multi",
-    desc: "Explorez des mondes infinis et construisez tout ce qui vous passe par la tête, du plus simple abri au plus grand des châteaux.",
-    min: { os: "Win 10", cpu: "i3-3210", ram: "4 GB", gpu: "Intel HD 4000", dx: "11", storage: "1 GB" },
-    rec: { os: "Win 11", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 700 series", dx: "11", storage: "4 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'ghost-of-tsushima', title: "Ghost of Tsushima", image: "/gameeasy-site/images/ghost-tsushima.jpg", cat: "Action / Samouraï", mode: "Solo / Multi",
+    id: 'ghost-of-tsushima', title: "Ghost of Tsushima", image: "/gameeasy-site/images/ghost-tsushima.jpg", cat: "Action", mode: "Solo / Multi",
     desc: "En pleine invasion mongole, devenez le Fantôme pour libérer l'île de Tsushima.",
     min: { os: "Win 10", cpu: "i3-7100", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "75 GB" },
     rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB" },
     dl: "#"
   },
   { 
-    id: 'ark-survival-ascended', title: "ARK: Ascended", image: "/gameeasy-site/images/ark-ascended.jpg", cat: "Survie / Dinosaures", mode: "Solo / Multi",
+    id: 'ark-survival-ascended', title: "ARK: Ascended", image: "/gameeasy-site/images/ark-ascended.jpg", cat: "Survie", mode: "Solo / Multi",
     desc: "Réveillez-vous sur une île mystérieuse et survivez face aux dinosaures dans ce remake sous Unreal Engine 5.",
     min: { os: "Win 10", cpu: "i7-6800K", ram: "16 GB", gpu: "RTX 2080", dx: "12", storage: "80 GB SSD" },
     rec: { os: "Win 11", cpu: "i5-12600K", ram: "32 GB", gpu: "RTX 3080", dx: "12", storage: "80 GB SSD" },
@@ -183,7 +169,7 @@ export const gamesData = [
     dl: "#"
   },
   { 
-    id: 'euro-truck-2', title: "Euro Truck Simulator 2", image: "/gameeasy-site/images/ets2.jpg", cat: "Simulation / Conduite", mode: "Solo / Multi",
+    id: 'euro-truck-2', title: "Euro Truck Simulator 2", image: "/gameeasy-site/images/ets2.jpg", cat: "Simulation", mode: "Solo / Multi",
     desc: "Devenez le roi de la route en livrant des cargaisons importantes à travers toute l'Europe.",
     min: { os: "Win 10", cpu: "Dual Core 2.4 GHz", ram: "4 GB", gpu: "GTS 450", dx: "11", storage: "12 GB" },
     rec: { os: "Win 11", cpu: "Quad Core 3.0 GHz", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "12 GB" },
@@ -197,7 +183,7 @@ export const gamesData = [
     dl: "#"
   },
   { 
-    id: 'assassins-creed-mirage', title: "AC Mirage", image: "/gameeasy-site/images/ac-mirage.jpg", cat: "Action / Infiltration", mode: "Solo",
+    id: 'assassins-creed-mirage', title: "Assassin's Creed Mirage", image: "/gameeasy-site/images/ac-mirage.jpg", cat: "Action", mode: "Solo",
     desc: "Suivez Basim dans le Bagdad du IXe siècle pour devenir un Maître Assassin.",
     min: { os: "Win 10", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "40 GB" },
     rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "40 GB" },
@@ -241,7 +227,7 @@ export const gamesData = [
     dl: "#"
   },
   { 
-    id: 'the-sims-4', title: "The Sims 4 + All DLC", image: "/gameeasy-site/images/sims4.jpg", cat: "Simulation de vie", mode: "Solo",
+    id: 'the-sims-4', title: "The Sims 4 + All DLC", image: "/gameeasy-site/images/sims4.jpg", cat: "Simulation", mode: "Solo",
     desc: "Créez et contrôlez des personnages dans un monde virtuel sans règles.",
     min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 650", dx: "11", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "60 GB" },
@@ -273,14 +259,14 @@ export const gamesData = [
 
   // --- PACK FPS & COMBAT ---
   { 
-    id: 'doom-eternal', title: "DOOM Eternal", image: "/gameeasy-site/images/doom.jpg", cat: "FPS / Gore", mode: "Solo / Multi",
+    id: 'doom-eternal', title: "DOOM Eternal", image: "/gameeasy-site/images/doom.jpg", cat: "FPS", mode: "Solo / Multi",
     desc: "Les armées de l'enfer ont envahi la Terre. Devenez le Slayer et massacrez des démons.",
     min: { os: "Win 10", cpu: "i5-3570", ram: "8 GB", gpu: "GTX 1050Ti", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 1080", dx: "11", storage: "50 GB" },
     dl: "#"
   },
   { 
-    id: 'mortal-kombat-1', title: "Mortal Kombat 1", image: "/gameeasy-site/images/mk1.jpg", cat: "Combat / Gore", mode: "Solo / Multi",
+    id: 'mortal-kombat-1', title: "Mortal Kombat 1", image: "/gameeasy-site/images/mk1.jpg", cat: "Combat", mode: "Solo / Multi",
     desc: "Un univers Mortal Kombat renaît, créé par le Dieu du feu Liu Kang. Nouveau système de combat.",
     min: { os: "Win 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 980", dx: "12", storage: "100 GB" },
     rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "RTX 2070", dx: "12", storage: "100 GB" },
@@ -289,21 +275,21 @@ export const gamesData = [
 
   // --- PACK INDÉ & TENDANCE ---
   { 
-    id: 'balatro', title: "Balatro", image: "/gameeasy-site/images/balatro.jpg", cat: "Roguelike / Poker", mode: "Solo",
+    id: 'balatro', title: "Balatro", image: "/gameeasy-site/images/balatro.jpg", cat: "Poker", mode: "Solo",
     desc: "Le roguelike de poker terriblement addictif où vous créez des combos déments.",
     min: { os: "Win 10", cpu: "Intel Core", ram: "1 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
     rec: { os: "Win 11", cpu: "Intel Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
     dl: "#"
   },
   { 
-    id: 'outer-wilds', title: "Outer Wilds", image: "/gameeasy-site/images/outer-wilds.jpg", cat: "Exploration / Mystère", mode: "Solo",
+    id: 'outer-wilds', title: "Outer Wilds", image: "/gameeasy-site/images/outer-wilds.jpg", cat: "Aventure", mode: "Solo",
     desc: "Un mystère en monde ouvert sur un système solaire piégé dans une boucle temporelle infinie.",
     min: { os: "Win 10", cpu: "i5-2300", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
     rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "8 GB" },
     dl: "#"
   },
   { 
-    id: 'cuphead', title: "Cuphead", image: "/gameeasy-site/images/cuphead.jpg", cat: "Boss Rush / Run & Gun", mode: "Solo / Coop",
+    id: 'cuphead', title: "Cuphead", image: "/gameeasy-site/images/cuphead.jpg", cat: "Aventure", mode: "Solo / Coop",
     desc: "Un jeu d'action classique inspiré des dessins animés des années 30.",
     min: { os: "Win 10", cpu: "Dual Core", ram: "3 GB", gpu: "9600 GT", dx: "10", storage: "4 GB" },
     rec: { os: "Win 11", cpu: "i3", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "4 GB" },
@@ -312,42 +298,42 @@ export const gamesData = [
 
   // --- PACK RPG & STRATÉGIE ---
   { 
-    id: 'starfield', title: "Starfield", image: "/gameeasy-site/images/starfield.jpg", cat: "RPG / Espace", mode: "Solo",
+    id: 'starfield', title: "Starfield", image: "/gameeasy-site/images/starfield.jpg", cat: "RPG", mode: "Solo",
     desc: "Le premier nouvel univers en 25 ans par Bethesda. Créez votre personnage et explorez les étoiles.",
     min: { os: "Win 10", cpu: "i7-6800K", ram: "16 GB", gpu: "GTX 1070 Ti", dx: "12", storage: "125 GB SSD" },
     rec: { os: "Win 11", cpu: "i5-10600K", ram: "16 GB", gpu: "RTX 2080", dx: "12", storage: "125 GB SSD" },
     dl: "#"
   },
   { 
-    id: 'civilization-vi', title: "Civilization VI", image: "/gameeasy-site/images/civ6.jpg", cat: "Stratégie 4X", mode: "Solo / Multi",
+    id: 'civilization-vi', title: "Civilization VI", image: "/gameeasy-site/images/civ6.jpg", cat: "Stratégie", mode: "Solo / Multi",
     desc: "Bâtissez un empire capable de résister au passage du temps, de l'âge de pierre à l'âge de l'information.",
     min: { os: "Win 10", cpu: "i3 @ 2.5 GHz", ram: "4 GB", gpu: "GTX 450", dx: "11", storage: "12 GB" },
     rec: { os: "Win 11", cpu: "i5 @ 3.0 GHz", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "12 GB" },
     dl: "#"
   },
   { 
-    id: 'cities-skylines-2', title: "Cities: Skylines II", image: "/gameeasy-site/images/cities2.jpg", cat: "Gestion / Ville", mode: "Solo",
+    id: 'cities-skylines-2', title: "Cities: Skylines II", image: "/gameeasy-site/images/cities2.jpg", cat: "Simulation", mode: "Solo",
     desc: "Bâtissez une ville à partir de rien et transformez-la en une métropole prospère.",
     min: { os: "Win 10", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i5-12600K", ram: "16 GB", gpu: "RTX 3080", dx: "11", storage: "60 GB" },
     dl: "#"
   },
   { 
-    id: 'sea-of-thieves', title: "Sea of Thieves", image: "/gameeasy-site/images/sea-of-thieves.jpg", cat: "Aventure / Pirate", mode: "Multi",
+    id: 'sea-of-thieves', title: "Sea of Thieves", image: "/gameeasy-site/images/sea-of-thieves.jpg", cat: "Aventure", mode: "Multi",
     desc: "Devenez le pirate de vos rêves dans ce monde ouvert rempli de trésors et de dangers.",
     min: { os: "Win 10", cpu: "i3-4130", ram: "4 GB", gpu: "GTX 650", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
     dl: "#"
   },
   { 
-    id: 'lies-of-p', title: "Lies of P", image: "/gameeasy-site/images/lies-of-p.jpg", cat: "Souls-like / Action", mode: "Solo",
+    id: 'lies-of-p', title: "Lies of P", image: "/gameeasy-site/images/lies-of-p.jpg", cat: "Action", mode: "Solo",
     desc: "Une version sombre de Pinocchio où vous devez vous frayer un chemin à travers une ville en ruine.",
     min: { os: "Win 10", cpu: "i3-6300", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i5-12600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "50 GB" },
     dl: "#"
   },
   { 
-    id: 'detroit-become-human', title: "Detroit: Become Human", image: "/gameeasy-site/images/detroit.jpg", cat: "Narration / Sci-Fi", mode: "Solo",
+    id: 'detroit-become-human', title: "Detroit: Become Human", image: "/gameeasy-site/images/detroit.jpg", cat: "Sci-Fi", mode: "Solo",
     desc: "Prenez en main le destin de trois androïdes dans un futur où les machines sont devenues conscientes.",
     min: { os: "Win 10", cpu: "i5-2300", ram: "8 GB", gpu: "GTX 780", dx: "11", storage: "55 GB" },
     rec: { os: "Win 11", cpu: "i5-6600", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "55 GB" },

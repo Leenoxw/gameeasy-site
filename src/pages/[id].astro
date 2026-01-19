@@ -1,24 +1,29 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { gamesData } from '../data/games.js'; // Importation de la source unique
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { gamesData } from '../../data/games.js';
 
 export function getStaticPaths() {
-  // On utilise les données centralisées pour générer toutes les pages d'un coup
   return gamesData.map(game => ({
     params: { id: game.id },
-    props: { game } // On passe l'objet game entier en prop
+    props: { game }
   }));
 }
 
 const { id } = Astro.params;
 const { game } = Astro.props;
 const { title, cat, image, desc, min, rec } = game;
+
+// Logique pour trouver 3 jeux similaires (même catégorie, sauf le jeu actuel)
+const similarGames = gamesData
+  .filter(g => g.id !== id && g.cat.split(' / ')[0] === cat.split(' / ')[0])
+  .slice(0, 3);
 ---
 
 <Layout title={`${title} - GAMEASY`}>
   <Header />
+  
   <main class="detail-page">
     <div class="container">
       <a href="/gameeasy-site/cracks" class="back-link">
@@ -27,7 +32,7 @@ const { title, cat, image, desc, min, rec } = game;
       
       <section class="hero-section">
         <div class="image-wrapper">
-          <img src={image} alt={title} class="hero-image" />
+          <img src={image || "/gameeasy-site/images/default-game.jpg"} alt={title} class="hero-image" />
         </div>
         <div class="hero-info">
           <span class="category-tag">{cat}</span>
@@ -79,8 +84,29 @@ const { title, cat, image, desc, min, rec } = game;
             </div>
         </div>
       </section>
+
+      {similarGames.length > 0 && (
+        <section class="similar-section">
+          <div class="config-header">
+              <i class="fas fa-plus-circle"></i>
+              <h2>Vous aimerez aussi</h2>
+          </div>
+          <div class="similar-grid">
+            {similarGames.map(sim => (
+              <a href={`/gameeasy-site/games/${sim.id}`} class="sim-card">
+                <img src={sim.image} alt={sim.title} />
+                <div class="sim-content">
+                  <h4>{sim.title}</h4>
+                  <p>{sim.cat}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   </main>
+  
   <Footer />
 </Layout>
 
@@ -123,7 +149,7 @@ const { title, cat, image, desc, min, rec } = game;
   .file-badges { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
   .file-badges span { font-size: 0.75rem; color: #555; font-weight: 700; display: flex; align-items: center; gap: 6px; }
 
-  .system-config { background: #0c0c1d; border-radius: 30px; padding: 50px; border: 1px solid #1a1a2e; }
+  .system-config { background: #0c0c1d; border-radius: 30px; padding: 50px; border: 1px solid #1a1a2e; margin-bottom: 80px; }
   .config-header { display: flex; align-items: center; gap: 15px; margin-bottom: 40px; }
   .config-header h2 { font-size: 2rem; font-weight: 900; }
   
@@ -142,8 +168,20 @@ const { title, cat, image, desc, min, rec } = game;
   li small { color: #555; text-transform: uppercase; font-size: 0.7rem; font-weight: 800; }
   li strong { color: #ddd; font-size: 1rem; }
 
+  /* SIMILAR GAMES SECTION */
+  .similar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+  .sim-card { 
+    background: #11111e; border-radius: 20px; overflow: hidden; 
+    text-decoration: none; border: 1px solid #1e1e2e; transition: 0.3s;
+  }
+  .sim-card:hover { transform: translateY(-10px); border-color: #8a4fff; }
+  .sim-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+  .sim-content { padding: 20px; }
+  .sim-content h4 { color: white; margin: 0 0 5px 0; font-size: 1.2rem; }
+  .sim-content p { color: #8a4fff; font-size: 0.8rem; font-weight: bold; margin: 0; }
+
   @media (max-width: 900px) { 
-    .hero-section, .config-grid { grid-template-columns: 1fr; } 
+    .hero-section, .config-grid, .similar-grid { grid-template-columns: 1fr; } 
     h1 { font-size: 3rem; } 
     .detail-page { padding-top: 100px; }
   }
