@@ -2,217 +2,119 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { gamesData } from '../data/games.js';
 
-const games = [
-  { id: 'gta-v', title: "GTA V", category: "Action / Open World", image: "/gameeasy-site/images/gta5.jpg" },
-  { id: 'cyberpunk-2077', title: "Cyberpunk 2077", category: "RPG / Sci-Fi", image: "/gameeasy-site/images/cyberpunk.jpg" },
-  { id: 'elden-ring', title: "Elden Ring", category: "Action / RPG", image: "/gameeasy-site/images/elden-ring.jpg" },
-  { id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", category: "Aventure / Western", image: "/gameeasy-site/images/rdr2.jpg" },
-  { id: 'spiderman-2', title: "Marvel's Spider-Man 2", category: "Action / Aventure", image: "/gameeasy-site/images/spiderman2.jpg" },
-  { id: 'hogwarts-legacy', title: "Hogwarts Legacy", category: "Aventure / Magie", image: "/gameeasy-site/images/hogwarts.jpg" },
-  { id: 'forza-horizon-5', title: "Forza Horizon 5", category: "Course / Simulation", image: "/gameeasy-site/images/forza5.jpg" },
-  { id: 'god-of-war-ragnarok', title: "God of War Ragnarök", category: "Action / Mythologie", image: "/gameeasy-site/images/gow-ragnarok.jpg" },
-  { id: 'the-witcher-3', title: "The Witcher 3: Wild Hunt", category: "RPG / Fantasy", image: "/gameeasy-site/images/witcher3.jpg" },
-  { id: 'hades-2', title: "Hades II", category: "Roguelike / Action", image: "/gameeasy-site/images/hades2.jpg" },
-  { id: 'hollow-knight-silksong', title: "Hollow Knight: Silksong", category: "Metroidvania", image: "/gameeasy-site/images/silksong.jpg" },
-  { id: 'manor-lords', title: "Manor Lords", category: "Stratégie / Médiéval", image: "/gameeasy-site/images/manor-lords.jpg" },
-  { id: 'palworld', title: "Palworld", category: "Survie / Créatures", image: "/gameeasy-site/images/palworld.jpg" },
-  { id: 'lethal-company', title: "Lethal Company", category: "Horreur / Coop", image: "/gameeasy-site/images/lethal-company.jpg" },
-  { id: 'black-myth-wukong', title: "Black Myth: Wukong", category: "Action / RPG", image: "/gameeasy-site/images/wukong.jpg" },
-  { id: 'stardew-valley', title: "Stardew Valley", category: "Simulation / RPG", image: "/gameeasy-site/images/stardew.jpg" },
-  { id: 'schedules', title: "Schedules", category: "Indie / Horreur", image: "/gameeasy-site/images/schedules.jpg" },
-  { id: 'are-we-there-yet', title: "Are We There Yet?", category: "Indie / Aventure", image: "/gameeasy-site/images/rv-there-yet.jpg" },
-  { id: 'buckshot-roulette', title: "Buckshot Roulette", category: "Indie / Stratégie", image: "/gameeasy-site/images/buckshot.jpg" },
-  { id: 'chained-together', title: "Chained Together", category: "Coop / Plateforme", image: "/gameeasy-site/images/chained-together.jpg" },
-  { id: 'phasmophobia', title: "Phasmophobia", category: "Horreur / Coop", image: "/gameeasy-site/images/phasmophobia.jpg" }
-];
-
-const categories = ["Tous", "Action", "RPG", "Aventure", "Course", "Horreur", "Indie"];
+// On trie par titre pour un catalogue propre, ou on laisse tel quel
+const allGames = [...gamesData];
 ---
 
-<Layout title="Catalogue des Cracks - GameEasy">
+<Layout title="Catalogue des Cracks - GAMEASY">
   <Header />
-  <main class="page-padding">
+  
+  <main class="catalogue-page">
     <div class="container">
-      <h1 class="title">EXPLOREZ NOTRE <span class="purple">COLLECTION</span></h1>
-      
-      <div class="controls-bar">
-        <div class="filter-group">
-            {categories.map((cat) => (
-                <button class="filter-btn" data-category={cat.toLowerCase()}>{cat}</button>
-            ))}
-        </div>
+      <header class="cat-header">
+        <span class="label">BIBLIOTHÈQUE COMPLÈTE</span>
+        <h1>TOUS LES <span class="purple">CRACKS</span></h1>
+        <p>Explorez notre collection de {allGames.length} jeux premium vérifiés.</p>
+      </header>
 
-        <div class="sort-group">
-            <span>Trier par:</span>
-            <select id="sortSelect" class="sort-dropdown">
-                <option value="default">Populaires</option>
-                <option value="az">Nom (A-Z)</option>
-                <option value="za">Nom (Z-A)</option>
-            </select>
-        </div>
-      </div>
-
-      <div id="no-results" class="no-results-msg">
+      <div class="filter-bar">
+        <div class="search-box">
           <i class="fas fa-search"></i>
-          <p>Aucun jeu ne correspond à votre recherche...</p>
+          <input type="text" placeholder="Rechercher un jeu..." id="gameSearch" />
+        </div>
       </div>
 
-      <div class="grid" id="gameGrid">
-        {games.map((game) => (
-          <div class="card game-card" data-title={game.title} data-category={game.category.toLowerCase()}>
-            <div class="image-container">
-               <img src={game.image} alt={game.title} class="cover" loading="lazy" />
+      <div class="game-grid" id="gameGrid">
+        {allGames.map(game => (
+          <a href={`/gameeasy-site/${game.id}`} class="game-card" data-title={game.title.toLowerCase()}>
+            <div class="card-inner">
+              <div class="img-badge">{game.cat.split(' / ')[0]}</div>
+              <img src={game.image} alt={game.title} class="game-img" />
+              <div class="card-content">
+                <h3>{game.title}</h3>
+                <div class="card-footer">
+                  <span class="status">DISPONIBLE</span>
+                  <span class="btn-mini">VOIR <i class="fas fa-plus"></i></span>
+                </div>
+              </div>
             </div>
-            <div class="info">
-              <span class="badge">{game.category}</span>
-              <h3>{game.title}</h3>
-              <a href={`/gameeasy-site/${game.id}`} class="btn">VOIR LE JEU</a>
-            </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
   </main>
+
   <Footer />
 </Layout>
 
 <script>
-  function initCatalogue() {
-    const searchInput = document.getElementById('mainSearch') as HTMLInputElement;
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const sortSelect = document.getElementById('sortSelect') as HTMLSelectElement;
-    const gameGrid = document.getElementById('gameGrid');
-    const cards = Array.from(document.querySelectorAll('.game-card'));
-    const noResults = document.getElementById('no-results');
+  // Petit script pour la barre de recherche en temps réel
+  const searchInput = document.getElementById('gameSearch');
+  const cards = document.querySelectorAll('.game-card');
 
-    let activeCategory = 'tous';
-
-    const filterAndSort = () => {
-      const query = searchInput?.value.toLowerCase() || "";
-      let foundCount = 0;
-
-      cards.forEach((card) => {
-        const title = (card as HTMLElement).dataset.title?.toLowerCase() || "";
-        const gameCat = (card as HTMLElement).dataset.category || "";
-        
-        const matchesSearch = title.includes(query);
-        const matchesCat = activeCategory === 'tous' || gameCat.includes(activeCategory);
-
-        if (matchesSearch && matchesCat) {
-          (card as HTMLElement).style.display = "flex"; // On utilise flex pour garder la structure de la card
-          foundCount++;
-        } else {
-          (card as HTMLElement).style.display = "none";
-        }
-      });
-
-      // Tri
-      const sortVal = sortSelect.value;
-      if (sortVal !== 'default' && gameGrid) {
-          const sorted = [...cards].sort((a, b) => {
-              const valA = (a as HTMLElement).dataset.title || "";
-              const valB = (b as HTMLElement).dataset.title || "";
-              return sortVal === 'az' ? valA.localeCompare(valB) : valB.localeCompare(valA);
-          });
-          sorted.forEach(c => gameGrid.appendChild(c));
+  searchInput?.addEventListener('input', (e) => {
+    const term = (e.target as HTMLInputElement).value.toLowerCase();
+    cards.forEach(card => {
+      const title = card.getAttribute('data-title');
+      if (title?.includes(term)) {
+        (card as HTMLElement).style.display = 'block';
+      } else {
+        (card as HTMLElement).style.display = 'none';
       }
-
-      if (noResults) noResults.style.display = foundCount === 0 ? "block" : "none";
-    };
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        activeCategory = (btn as HTMLElement).dataset.category || 'tous';
-        filterAndSort();
-      });
     });
-
-    searchInput?.addEventListener('input', filterAndSort);
-    sortSelect?.addEventListener('change', filterAndSort);
-  }
-
-  initCatalogue();
-  document.addEventListener('astro:after-swap', initCatalogue);
+  });
 </script>
 
 <style>
-  .page-padding { padding: 140px 20px 100px; background: #060612; min-height: 100vh; color: white; }
+  .catalogue-page { padding: 140px 20px 80px; background: #060612; min-height: 100vh; }
   .container { max-width: 1300px; margin: 0 auto; }
-  .title { text-align: center; font-size: 3rem; font-weight: 900; margin-bottom: 40px; }
   .purple { color: #8a4fff; }
 
-  /* Controls */
-  .controls-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; gap: 20px; flex-wrap: wrap; }
-  .filter-group { display: flex; gap: 10px; flex-wrap: wrap; }
-  .filter-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #ccc; padding: 10px 22px; border-radius: 50px; cursor: pointer; transition: 0.3s; font-weight: 600; }
-  .filter-btn.active { background: #8a4fff; color: white; border-color: #8a4fff; box-shadow: 0 0 20px rgba(138, 79, 255, 0.3); }
-  .sort-dropdown { background: #11111e; color: white; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 12px; cursor: pointer; }
+  .cat-header { text-align: center; margin-bottom: 60px; }
+  .label { color: #8a4fff; font-weight: 900; letter-spacing: 4px; font-size: 0.8rem; }
+  h1 { font-size: 3.5rem; font-weight: 950; margin: 10px 0; color: white; }
+  .cat-header p { color: #888; font-size: 1.1rem; }
 
-  /* Grid System - FIX ANTI-ETIREMENT */
-  .grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-    gap: 30px;
-    justify-content: center; /* Centre la carte si elle est seule */
+  .filter-bar { margin-bottom: 40px; display: flex; justify-content: center; }
+  .search-box { 
+    background: #11111e; border: 1px solid #1e1e2e; 
+    padding: 15px 25px; border-radius: 15px; 
+    display: flex; align-items: center; gap: 15px; width: 100%; max-width: 500px; 
+  }
+  .search-box i { color: #8a4fff; }
+  .search-box input { 
+    background: transparent; border: none; color: white; 
+    outline: none; width: 100%; font-size: 1rem; 
   }
 
-  /* Card Style */
-  .card { 
-    background: #0c0c1d; 
-    border-radius: 20px; 
-    overflow: hidden; 
-    border: 1px solid rgba(255,255,255,0.05); 
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    max-width: 400px; /* Empeche la carte de devenir géante */
-    width: 100%;
-    margin: 0 auto; /* Centre la carte dans sa cellule */
+  .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+  
+  .game-card { text-decoration: none; color: white; transition: 0.4s; }
+  .card-inner { 
+    background: #0c0c1d; border-radius: 20px; overflow: hidden; 
+    border: 1px solid rgba(255,255,255,0.05); height: 100%; 
+    position: relative;
   }
   
-  .card:hover { transform: translateY(-10px); border-color: #8a4fff; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-
-  /* Image Fix - FIX POUR FORZA */
-  .image-container {
-    width: 100%;
-    aspect-ratio: 16/9; /* Bloque le format rectangulaire */
-    overflow: hidden;
-    background: #1a1a2e;
+  .img-badge { 
+    position: absolute; top: 12px; left: 12px; z-index: 2;
+    background: rgba(138, 79, 255, 0.9); padding: 4px 10px; 
+    border-radius: 6px; font-size: 0.65rem; font-weight: 800;
   }
-  .cover { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; /* Remplit sans étirer */
-    transition: 0.5s;
-  }
-  .card:hover .cover { transform: scale(1.1); }
 
-  .info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-  .badge { color: #8a4fff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-  h3 { margin: 0 0 20px; font-size: 1.3rem; font-weight: 800; line-height: 1.2; }
+  .game-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; transition: 0.5s; }
+  .card-content { padding: 20px; }
+  h3 { font-size: 1.2rem; margin-bottom: 15px; font-weight: 800; }
   
-  .btn { 
-    margin-top: auto;
-    display: block; 
-    background: white; 
-    color: black; 
-    text-align: center; 
-    padding: 12px; 
-    border-radius: 12px; 
-    text-decoration: none; 
-    font-weight: 900; 
-    transition: 0.3s; 
-  }
-  .btn:hover { background: #8a4fff; color: white; }
+  .card-footer { display: flex; justify-content: space-between; align-items: center; }
+  .status { font-size: 0.7rem; color: #00ff88; font-weight: 700; }
+  .btn-mini { font-size: 0.75rem; font-weight: 800; color: #8a4fff; }
 
-  .no-results-msg { display: none; text-align: center; padding: 100px 0; color: #444; }
-  .no-results-msg i { font-size: 3rem; margin-bottom: 20px; }
+  .game-card:hover { transform: translateY(-8px); }
+  .game-card:hover .card-inner { border-color: #8a4fff; box-shadow: 0 10px 30px rgba(138, 79, 255, 0.15); }
+  .game-card:hover .game-img { transform: scale(1.05); }
 
-  @media (max-width: 600px) {
-    .grid { grid-template-columns: 1fr; }
-    .title { font-size: 2.2rem; }
-  }
+  @media (max-width: 600px) { h1 { font-size: 2.5rem; } }
 </style>
