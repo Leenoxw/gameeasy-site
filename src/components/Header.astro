@@ -1,29 +1,25 @@
----
----
 <header class="header-container">
     <nav class="navbar">
         <a href="/gameeasy-site/" class="logo">GAM<span>EASY</span></a>
         
         <ul class="nav-links">
-            <li><a href="/gameeasy-site/">Accueil</a></li>
+            <li class="hide-mobile"><a href="/gameeasy-site/">Accueil</a></li>
             <li><a href="/gameeasy-site/cracks" class="highlight"><i class="fas fa-rocket"></i> Cracks</a></li>
-            <li><a href="/gameeasy-site/tuto" class="btn-tuto"><i class="fas fa-book"></i> Tuto</a></li>
-            <li><a href="https://discord.gg/YaP3akhcgQ"><i class="fab fa-discord"></i> Discord</a></li>
-            <li><a href="/gameeasy-site/about">About</a></li>
+            <li><a href="/gameeasy-site/tuto" class="btn-tuto"><i class="fas fa-book"></i> <span class="text-hide">Tuto</span></a></li>
+            <li><a href="https://discord.gg/YaP3akhcgQ"><i class="fab fa-discord"></i> <span class="text-hide">Discord</span></a></li>
+            <li class="hide-mobile"><a href="/gameeasy-site/about">About</a></li>
         </ul>
-
     </nav>
 </header>
 
 <style>
-    
     .header-container {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 9999;
-        background: rgba(6, 6, 18, 0.7);
+        background: rgba(6, 6, 18, 0.85); /* Un peu plus opaque pour la lisibilité */
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -33,7 +29,7 @@
     .navbar { 
         display: flex; 
         align-items: center; 
-        justify-content: flex-start; 
+        justify-content: space-between; /* Changé de flex-start à space-between */
         padding: 0 5%; 
         max-width: 1400px; 
         margin: 0 auto; 
@@ -52,8 +48,8 @@
     .nav-links { 
         display: flex; 
         list-style: none; 
-        gap: 15px; 
-        margin: 0 auto; 
+        gap: 12px; 
+        margin: 0; /* Retiré le margin: 0 auto */
         padding: 0; 
         align-items: center; 
     }
@@ -71,12 +67,10 @@
         display: flex; 
         align-items: center; 
         gap: 8px; 
+        white-space: nowrap; /* Empêche le texte de passer à la ligne */
     }
 
-    .nav-links a i {
-        font-size: 16px;
-    }
-
+    .nav-links a i { font-size: 16px; }
     .nav-links a.highlight { background: #8a4fff !important; color: white !important; }
     .nav-links a.btn-tuto { border: 1px solid #8a4fff !important; color: #8a4fff !important; }
     
@@ -84,5 +78,37 @@
         transform: translateY(-2px); 
         background: rgba(138, 79, 255, 0.2); 
         border-color: rgba(138, 79, 255, 0.5);
+    }
+
+    /* --- RESPONSIVE MOBILE --- */
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 0 15px;
+        }
+
+        .logo {
+            font-size: 20px;
+        }
+
+        .nav-links {
+            gap: 8px;
+        }
+
+        .nav-links a {
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+
+        .hide-mobile {
+            display: none; /* Cache Accueil et About sur mobile */
+        }
+
+        .text-hide {
+            display: none; /* Cache le mot "Tuto" et "Discord" mais garde l'icône */
+        }
+
+        .nav-links a i {
+            margin: 0; /* Centre l'icône quand le texte est masqué */
+        }
     }
 </style>
