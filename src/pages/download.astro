@@ -1,134 +1,91 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { gamesData } from '../data/games.js';
+
+// On ne met pas de getStaticPaths ici car c'est une page de rendu côté client (SSR ou statique avec recherche d'URL)
 ---
 
 <Layout title="Préparation du téléchargement - GAMEASY">
-  <main class="redirect-container">
-    <div class="glass-card">
-      <h1>Votre lien est <span>presque prêt</span></h1>
-      <p>Le téléchargement sécurisé va commencer dans quelques secondes...</p>
+  <Header />
+  <main class="download-container">
+    <div class="dl-card" id="dlCard">
+      <div class="loader-circle"></div>
+      <h1 id="gameTitle">Préparation de votre fichier...</h1>
+      <p class="status-text">Votre téléchargement sera prêt dans :</p>
+      <div class="timer" id="timer">15</div>
+      <p class="warning">Ne fermez pas cette page pour éviter l'erreur de transfert.</p>
       
-      <div class="ad-slot">
-        <p>Publicité</p>
-        <div class="fake-ad"></div>
+      <div id="buttonContainer" class="hidden">
+        <a href="#" id="finalDownloadBtn" class="final-btn">
+          <i class="fas fa-file-download"></i> CLIQUEZ ICI POUR TÉLÉCHARGER
+        </a>
       </div>
-
-      <div id="timer" class="countdown">15</div>
-
-      <a id="dl-link" class="download-button disabled" href="#">
-        VEUILLEZ PATIENTER...
-      </a>
     </div>
   </main>
+
+  <script>
+    import { gamesData } from '../data/games.js';
+
+    // 1. Récupérer l'ID du jeu dans l'URL
+    const params = new URLSearchParams(window.location.search);
+    const gameId = params.get('id');
+    const game = gamesData.find(g => g.id === gameId);
+
+    const timerDisplay = document.getElementById('timer');
+    const buttonContainer = document.getElementById('buttonContainer');
+    const finalDownloadBtn = document.getElementById('finalDownloadBtn');
+    const gameTitleDisplay = document.getElementById('gameTitle');
+
+    if (game) {
+      gameTitleDisplay.innerText = `Téléchargement de : ${game.title}`;
+      (finalDownloadBtn as HTMLAnchorElement).href = game.dl;
+      
+      let timeLeft = 15;
+      const countdown = setInterval(() => {
+        timeLeft--;
+        if(timerDisplay) timerDisplay.innerText = timeLeft.toString();
+
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          timerDisplay?.classList.add('hidden');
+          buttonContainer?.classList.remove('hidden');
+        }
+      }, 1000);
+    } else {
+      if(gameTitleDisplay) gameTitleDisplay.innerText = "Erreur : Jeu introuvable";
+    }
+  </script>
 </Layout>
 
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const finalUrl = urlParams.get('url');
-
-  let timeLeft = 15;
-  const timerElement = document.getElementById('timer');
-  const linkElement = document.getElementById('dl-link');
-
-  const countdown = setInterval(() => {
-    timeLeft--;
-    if (timerElement) timerElement.textContent = timeLeft.toString();
-
-    if (timeLeft <= 0) {
-      clearInterval(countdown);
-      if (linkElement && finalUrl) {
-        linkElement.textContent = "TÉLÉCHARGER MAINTENANT";
-        linkElement.classList.remove('disabled');
-        linkElement.href = finalUrl;
-      }
-    }
-  }, 1000);
-</script>
-
 <style>
-  .redirect-container {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 120px 20px 60px;
-    background: radial-gradient(circle at center, #1a1a2e 0%, #060612 100%);
+  .download-container { 
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; 
+    background: #060612; padding-top: 80px;
   }
-
-  .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
-    padding: 3rem 2rem; /* Légère réduction du padding latéral */
-    border-radius: 20px;
-    text-align: center;
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    box-sizing: border-box; 
-    margin: 0 auto;
+  .dl-card { 
+    background: #0c0c1d; padding: 60px; border-radius: 30px; 
+    border: 1px solid rgba(138, 79, 255, 0.2); text-align: center; max-width: 600px; width: 90%;
   }
-
-  h1 span { color: #8b5cf6; }
-
-  .countdown {
-    font-size: 5rem;
-    font-weight: 900;
-    color: #8b5cf6;
-    margin: 1.5rem 0;
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  h1 { font-size: 2rem; color: white; margin: 20px 0; font-weight: 900; }
+  .timer { font-size: 5rem; font-weight: 900; color: #8a4fff; margin: 20px 0; text-shadow: 0 0 20px rgba(138, 79, 255, 0.4); }
+  .status-text { color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+  .warning { color: #555; font-size: 0.8rem; margin-top: 20px; }
+  
+  .final-btn { 
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: #8a4fff; color: white; text-decoration: none; padding: 20px 40px; 
+    border-radius: 15px; font-weight: 900; font-size: 1.2rem; transition: 0.3s;
+    animation: pulse 2s infinite;
   }
+  .final-btn:hover { transform: scale(1.05); background: #9d6fff; }
+  
+  .hidden { display: none; }
 
-  .download-button {
-    /* Utilisation de block + margin auto pour un centrage parfait sans wrapper complexe */
-    display: block;
-    width: 100%;
-    max-width: 480px; /* Légèrement plus petit que l'ad-slot pour être sûr qu'il ne dépasse jamais */
-    margin: 20px auto 0;
-    
-    padding: 1.2rem 0; /* Padding vertical uniquement pour éviter les bugs de largeur */
-    background: #8b5cf6;
-    color: white;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-    letter-spacing: 1px;
-    box-sizing: border-box; 
-    border: none;
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(138, 79, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(138, 79, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(138, 79, 255, 0); }
   }
-
-  .download-button:not(.disabled):hover {
-    transform: translateY(-3px); /* Effet de levée plutôt que de zoom pour éviter les collisions */
-    background: #7c3aed;
-    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
-  }
-
-  .download-button:not(.disabled):active {
-    transform: translateY(0);
-  }
-
-  .download-button.disabled {
-    background: #222;
-    color: #555;
-    cursor: not-allowed;
-    pointer-events: none;
-    box-shadow: none;
-    opacity: 0.6;
-  }
-
-  .ad-slot {
-    margin: 2rem auto;
-    padding: 1rem;
-    background: rgba(0,0,0,0.3);
-    border: 1px dashed #444;
-    max-width: 480px;
-    box-sizing: border-box;
-    border-radius: 12px;
-  }
-
-  .fake-ad { height: 100px; background: #000; border-radius: 8px; margin-top: 10px; }
 </style>
