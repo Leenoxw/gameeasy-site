@@ -15,12 +15,20 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   <main class="catalogue-page">
     <div class="main-wrapper">
       
-      <aside class="ads-column">
-        <div class="ad-repeater">
-          <div class="ad-container"><div class="ad-label">PUBLICITÉ</div><div class="ad-content"><i class="fas fa-ad"></i></div></div>
-          <div class="ad-container"><div class="ad-label">PUBLICITÉ</div><div class="ad-content"><i class="fas fa-ad"></i></div></div>
-          <div class="ad-container"><div class="ad-label">PUBLICITÉ</div><div class="ad-content"><i class="fas fa-ad"></i></div></div>
-          <div class="ad-container"><div class="ad-label">PUBLICITÉ</div><div class="ad-content"><i class="fas fa-ad"></i></div></div>
+      <aside class="ads-side">
+        <div class="ads-stack">
+          <div class="ad-container">
+            <div class="ad-label">PUBLICITÉ</div>
+            <div class="ad-content"><i class="fas fa-ad"></i></div>
+          </div>
+          <div class="ad-container">
+            <div class="ad-label">PUBLICITÉ</div>
+            <div class="ad-content"><i class="fas fa-ad"></i></div>
+          </div>
+          <div class="ad-container">
+            <div class="ad-label">PUBLICITÉ</div>
+            <div class="ad-content"><i class="fas fa-ad"></i></div>
+          </div>
         </div>
       </aside>
 
@@ -84,12 +92,20 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
         </div>
       </div>
 
-      <aside class="ads-column">
-        <div class="ad-repeater">
-          <div class="ad-container"><div class="ad-label">PUBLICITÉ</div><div class="ad-content"><i class="fas fa-ad"></i></div></div>
-          <div class="ad-container"><div class="ad-label">PUBLICITÉ</div><div class="ad-content"><i class="fas fa-ad"></i></div></div>
-          <div class="ad-container"><div class="ad-label">PUBLICITÉ</div><div class="ad-content"><i class="fas fa-ad"></i></div></div>
-          <div class="ad-container"><div class="ad-label">PUBLICITÉ</div><div class="ad-content"><i class="fas fa-ad"></i></div></div>
+      <aside class="ads-side">
+        <div class="ads-stack">
+          <div class="ad-container">
+            <div class="ad-label">PUBLICITÉ</div>
+            <div class="ad-content"><i class="fas fa-ad"></i></div>
+          </div>
+          <div class="ad-container">
+            <div class="ad-label">PUBLICITÉ</div>
+            <div class="ad-content"><i class="fas fa-ad"></i></div>
+          </div>
+          <div class="ad-container">
+            <div class="ad-label">PUBLICITÉ</div>
+            <div class="ad-content"><i class="fas fa-ad"></i></div>
+          </div>
         </div>
       </aside>
 
@@ -149,44 +165,42 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
 </script>
 
 <style>
+  /* Base de la page */
   .catalogue-page { padding: 120px 0 80px; background: #060612; min-height: 100vh; color: white; overflow-x: hidden; }
   
   .main-wrapper {
     display: flex;
     justify-content: center;
     gap: 30px;
-    max-width: 1850px; /* Élargi pour accommoder les colonnes de pubs */
+    max-width: 1800px; /* Légèrement augmenté pour les colonnes */
     margin: 0 auto;
     padding: 0 20px;
   }
 
   .container { flex: 1; max-width: 1200px; width: 100%; }
   
-  /* --- SYSTÈME DE COLONNES DE PUB --- */
-  .ads-column {
+  /* --- SYSTÈME DE PUBS EMPILLÉES --- */
+  .ads-side {
     flex: 0 0 160px;
-    display: flex;
-    flex-direction: column;
   }
 
-  .ad-repeater {
+  .ads-stack {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px; /* Espace entre les blocs de pub */
     position: sticky;
-    top: 110px; /* Garde le haut de la colonne visible au scroll */
+    top: 100px;
   }
 
   .ad-container {
     width: 160px;
-    height: 600px; /* Taille Skyscraper standard */
+    height: 600px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(138, 79, 255, 0.1);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    flex-shrink: 0;
   }
 
   .ad-label {
@@ -207,14 +221,13 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
     font-size: 2rem;
   }
 
-  /* --- HEADER --- */
+  /* --- HEADER & FILTRES (Tes styles d'origine) --- */
   .cat-header { text-align: center; margin-bottom: 40px; }
   .subtitle { color: #8a4fff; font-weight: 800; font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 10px; }
   .cat-header h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 10px; line-height: 1; }
   .purple { color: #8a4fff; text-shadow: 0 0 20px rgba(138, 79, 255, 0.4); }
   .count { color: #666; font-size: 1rem; }
 
-  /* --- FILTRES --- */
   .filter-container { 
     background: #0c0c1d; padding: 25px; border-radius: 20px; 
     border: 1px solid rgba(255,255,255,0.05); margin-bottom: 40px;
@@ -242,7 +255,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   .search-bar input { background: transparent; border: none; color: white; outline: none; width: 100%; font-size: 1rem; }
   .search-bar i { color: #8a4fff; }
 
-  /* --- GRILLE & CARTES --- */
+  /* --- GRILLE & CARTES (Tes styles d'origine) --- */
   .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
   .game-card { text-decoration: none; transition: 0.3s ease-out; }
   .card-inner { background: #11111e; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.03); position: relative; }
@@ -266,7 +279,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
 
   /* --- RESPONSIVE --- */
   @media (max-width: 1550px) {
-    .ads-column { display: none; } /* Cache les colonnes si l'écran rétrécit trop */
+    .ads-side { display: none; }
     .main-wrapper { display: block; }
   }
 

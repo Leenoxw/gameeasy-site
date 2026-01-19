@@ -110,7 +110,7 @@ export const gamesData = [
     desc: "Héritez de la ferme de votre grand-père et commencez une nouvelle vie.",
     min: { os: "Win 10", cpu: "2.0 GHz", ram: "2 GB", gpu: "256 MB", dx: "10", storage: "500 MB" },
     rec: { os: "Win 11", cpu: "3.0 GHz", ram: "4 GB", gpu: "1 GB", dx: "10", storage: "500 MB" },
-    dl: "#"
+    dl: "https://lockr.so/zuhQ6dqV"
   },
   { 
     id: 'schedules', title: "Schedules", image: "/gameeasy-site/images/schedules.jpg", cat: "Indie / Horreur", mode: "Solo / Multi",
@@ -131,14 +131,14 @@ export const gamesData = [
     desc: "Une roulette russe revisitée avec un fusil à pompe de calibre 12.",
     min: { os: "Win 10", cpu: "Intel Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "300 MB" },
     rec: { os: "Win 11", cpu: "Intel Core", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "300 MB" },
-    dl: "#"
+    dl: "https://lockr.so/u5m7o69h"
   },
   { 
     id: 'chained-together', title: "Chained Together", image: "/gameeasy-site/images/chained-together.jpg", cat: "Coop / Plateforme", mode: "Multi",
     desc: "Enchaîné à vos amis, grimpez hors de l'enfer.",
     min: { os: "Win 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "6 GB" },
     rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "6 GB" },
-    dl: "#"
+    dl: "https://lockr.so/W3ailhYr"
   },
   { 
     id: 'phasmophobia', title: "Phasmophobia", image: "/gameeasy-site/images/phasmophobia.jpg", cat: "Horreur / Coop", mode: "Multi",
