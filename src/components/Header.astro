@@ -11,7 +11,7 @@
             <li><a href="https://discord.gg/TON-LIEN"><i class="fab fa-discord"></i> Discord</a></li>
             <li><a href="/gameeasy-site/about">About</a></li>
         </ul>
-        
+
     </nav>
 </header>
 
@@ -29,26 +29,38 @@
         padding: 10px 0;
     }
     
+<style>
+    /* ... reste du code identique ... */
+
     .navbar { 
         display: flex; 
         align-items: center; 
-        justify-content: space-between; /* Logo à gauche, liens à droite */
+        /* Changement ici : on n'utilise plus space-between */
+        justify-content: flex-start; 
         padding: 0 5%; 
         max-width: 1400px; 
         margin: 0 auto; 
     }
 
-    .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
-    .logo span { color: #8a4fff; }
+    .logo { 
+        font-size: 24px; 
+        font-weight: 800; 
+        color: white; 
+        text-decoration: none;
+        /* Empêche le logo d'être écrasé */
+        flex-shrink: 0; 
+    }
 
     .nav-links { 
         display: flex; 
         list-style: none; 
         gap: 15px; 
-        margin: 0; 
+        margin: 0 auto; /* MAGIE : pousse les liens au centre exact entre le logo et le bord droit */
         padding: 0; 
         align-items: center; 
     }
+    
+</style>
     
     .nav-links a { 
         text-decoration: none; 

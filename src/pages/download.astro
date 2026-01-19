@@ -15,11 +15,9 @@ import Layout from '../layouts/Layout.astro';
 
       <div id="timer" class="countdown">15</div>
 
-      <div class="button-wrapper">
-        <a id="dl-link" class="download-button disabled" href="#">
-          VEUILLEZ PATIENTER...
-        </a>
-      </div>
+      <a id="dl-link" class="download-button disabled" href="#">
+        VEUILLEZ PATIENTER...
+      </a>
     </div>
   </main>
 </Layout>
@@ -61,14 +59,14 @@ import Layout from '../layouts/Layout.astro';
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(139, 92, 246, 0.3);
-    padding: 3rem;
+    padding: 3rem 2rem; /* Légère réduction du padding latéral */
     border-radius: 20px;
     text-align: center;
     max-width: 600px;
     width: 90%;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    /* Ajout de box-sizing pour que le padding n'élargisse pas la carte */
     box-sizing: border-box; 
+    margin: 0 auto;
   }
 
   h1 span { color: #8b5cf6; }
@@ -81,24 +79,14 @@ import Layout from '../layouts/Layout.astro';
     text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
   }
 
-  .button-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    width: 100%; /* S'assure que le wrapper prend toute la place */
-  }
-
   .download-button {
-    /* Changement de inline-block à flex pour mieux contrôler l'espace interne */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Utilisation de block + margin auto pour un centrage parfait sans wrapper complexe */
+    display: block;
+    width: 100%;
+    max-width: 480px; /* Légèrement plus petit que l'ad-slot pour être sûr qu'il ne dépasse jamais */
+    margin: 20px auto 0;
     
-    /* On utilise une largeur de 100% pour coller à la case grise */
-    width: 100%; 
-    max-width: 500px; /* On limite pour ne pas qu'il soit trop géant sur grand écran */
-    
-    padding: 1.2rem 1rem;
+    padding: 1.2rem 0; /* Padding vertical uniquement pour éviter les bugs de largeur */
     background: #8b5cf6;
     color: white;
     text-decoration: none;
@@ -106,22 +94,21 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.1rem;
     text-transform: uppercase;
     border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
     letter-spacing: 1px;
-    
-    /* IMPORTANT : empêche le bouton de dépasser à cause du padding */
     box-sizing: border-box; 
+    border: none;
   }
 
   .download-button:not(.disabled):hover {
-    transform: scale(1.02); /* Réduit légèrement le zoom pour éviter de toucher les bords */
+    transform: translateY(-3px); /* Effet de levée plutôt que de zoom pour éviter les collisions */
     background: #7c3aed;
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
   }
 
   .download-button:not(.disabled):active {
-    transform: scale(0.98);
+    transform: translateY(0);
   }
 
   .download-button.disabled {
@@ -130,19 +117,17 @@ import Layout from '../layouts/Layout.astro';
     cursor: not-allowed;
     pointer-events: none;
     box-shadow: none;
-    border: 1px solid rgba(255,255,255,0.05);
+    opacity: 0.6;
   }
 
   .ad-slot {
-    margin: 2rem 0;
+    margin: 2rem auto;
     padding: 1rem;
     background: rgba(0,0,0,0.3);
     border: 1px dashed #444;
-    /* On aligne la largeur de la pub sur le bouton */
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 480px;
     box-sizing: border-box;
+    border-radius: 12px;
   }
 
   .fake-ad { height: 100px; background: #000; border-radius: 8px; margin-top: 10px; }
