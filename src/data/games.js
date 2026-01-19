@@ -124,7 +124,7 @@ export const gamesData = [
     desc: "Un roadtrip mystérieux à travers des paysages oniriques.",
     min: { os: "Win 10", cpu: "Dual Core", ram: "4 GB", gpu: "Intel HD", dx: "11", storage: "1 GB" },
     rec: { os: "Win 11", cpu: "Quad Core", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" },
-    dl: "#"
+    dl: "https://lockr.so/YMHLddCG"
   },
   { 
     id: 'buckshot-roulette', title: "Buckshot Roulette", image: "/gameeasy-site/images/buckshot.jpg", cat: "Indie / Stratégie", mode: "Solo / Multi",
