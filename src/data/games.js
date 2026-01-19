@@ -146,5 +146,75 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i5-4590", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "21 GB" },
     rec: { os: "Win 11", cpu: "i7-6700", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" },
     dl: "https://lockr.so/YEfWZGhM"
+  },
+  { 
+    id: 'baldurs-gate-3', title: "Baldur's Gate 3", image: "/gameeasy-site/images/bg3.jpg", cat: "RPG / Tour par tour", mode: "Solo / Multi",
+    desc: "Rassemblez votre groupe et retournez dans les Royaumes Oubliés dans une histoire de camaraderie et de trahison.",
+    min: { os: "Win 10", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "150 GB SSD" },
+    rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 2060", dx: "11", storage: "150 GB SSD" },
+    dl: "#"
+  },
+  { 
+    id: 'resident-evil-4-remake', title: "Resident Evil 4", image: "/gameeasy-site/images/re4.jpg", cat: "Horreur / Action", mode: "Solo",
+    desc: "Leon S. Kennedy doit sauver la fille du président dans un village européen terrifiant.",
+    min: { os: "Win 10", cpu: "i5-7500", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "60 GB" },
+    rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "60 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'minecraft', title: "Minecraft", image: "/gameeasy-site/images/minecraft.jpg", cat: "Bac à sable / Survie", mode: "Solo / Multi",
+    desc: "Explorez des mondes infinis et construisez tout ce qui vous passe par la tête, du plus simple abri au plus grand des châteaux.",
+    min: { os: "Win 10", cpu: "i3-3210", ram: "4 GB", gpu: "Intel HD 4000", dx: "11", storage: "1 GB" },
+    rec: { os: "Win 11", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 700 series", dx: "11", storage: "4 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'ghost-of-tsushima', title: "Ghost of Tsushima", image: "/gameeasy-site/images/ghost-tsushima.jpg", cat: "Action / Samouraï", mode: "Solo / Multi",
+    desc: "En pleine invasion mongole, devenez le Fantôme pour libérer l'île de Tsushima.",
+    min: { os: "Win 10", cpu: "i3-7100", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "75 GB" },
+    rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'ark-survival-ascended', title: "ARK: Ascended", image: "/gameeasy-site/images/ark-ascended.jpg", cat: "Survie / Dinosaures", mode: "Solo / Multi",
+    desc: "Réveillez-vous sur une île mystérieuse et survivez face aux dinosaures dans ce remake sous Unreal Engine 5.",
+    min: { os: "Win 10", cpu: "i7-6800K", ram: "16 GB", gpu: "RTX 2080", dx: "12", storage: "80 GB SSD" },
+    rec: { os: "Win 11", cpu: "i5-12600K", ram: "32 GB", gpu: "RTX 3080", dx: "12", storage: "80 GB SSD" },
+    dl: "#"
+  },
+  { 
+    id: 'tekken-8', title: "Tekken 8", image: "/gameeasy-site/images/tekken8.jpg", cat: "Combat", mode: "Solo / Multi",
+    desc: "Préparez-vous pour le prochain chapitre de la lignée Mishima avec des combats plus destructeurs que jamais.",
+    min: { os: "Win 10", cpu: "i5-6600K", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB" },
+    rec: { os: "Win 11", cpu: "i7-7700K", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "100 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'ready-or-not', title: "Ready or Not", image: "/gameeasy-site/images/ready-or-not.jpg", cat: "Simulation / FPS", mode: "Solo / Multi",
+    desc: "Un FPS tactique intense où vous incarnez une unité d'élite du SWAT dans des situations critiques.",
+    min: { os: "Win 10", cpu: "i3-4130", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "50 GB" },
+    rec: { os: "Win 11", cpu: "i5-7600K", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'euro-truck-2', title: "Euro Truck Simulator 2", image: "/gameeasy-site/images/ets2.jpg", cat: "Simulation / Conduite", mode: "Solo / Multi",
+    desc: "Devenez le roi de la route en livrant des cargaisons importantes à travers toute l'Europe.",
+    min: { os: "Win 10", cpu: "Dual Core 2.4 GHz", ram: "4 GB", gpu: "GTS 450", dx: "11", storage: "12 GB" },
+    rec: { os: "Win 11", cpu: "Quad Core 3.0 GHz", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "12 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'content-warning', title: "Content Warning", image: "/gameeasy-site/images/content-warning.jpg", cat: "Coop / Horreur", mode: "Multi",
+    desc: "Filmez vos amis en train de faire des trucs flippants pour devenir viral sur SpookTube.",
+    min: { os: "Win 10", cpu: "i5 @ 2.5 GHz", ram: "8 GB", gpu: "GTX 1050 ti", dx: "11", storage: "4 GB" },
+    rec: { os: "Win 11", cpu: "i5 @ 3.0 GHz", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "4 GB" },
+    dl: "#"
+  },
+  { 
+    id: 'assassins-creed-mirage', title: "AC Mirage", image: "/gameeasy-site/images/ac-mirage.jpg", cat: "Action / Infiltration", mode: "Solo",
+    desc: "Suivez Basim dans le Bagdad du IXe siècle pour devenir un Maître Assassin.",
+    min: { os: "Win 10", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "40 GB" },
+    rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "40 GB" },
+    dl: "#"
   }
 ];
