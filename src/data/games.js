@@ -146,7 +146,7 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i5-4590", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "21 GB" },
     rec: { os: "Win 11", cpu: "i7-6700", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" },
     dl: "https://lockr.so/YEfWZGhM"
-  },
+  }, // Jeux sans image pour linstant //
   { 
     id: 'baldurs-gate-3', title: "Baldur's Gate 3", image: "/gameeasy-site/images/bg3.jpg", cat: "RPG / Tour par tour", mode: "Solo / Multi",
     desc: "Rassemblez votre groupe et retournez dans les Royaumes Oubliés dans une histoire de camaraderie et de trahison.",
