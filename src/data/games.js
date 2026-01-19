@@ -145,6 +145,6 @@ export const gamesData = [
     desc: "Identifiez le fantôme avant qu'il ne vous chasse.",
     min: { os: "Win 10", cpu: "i5-4590", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "21 GB" },
     rec: { os: "Win 11", cpu: "i7-6700", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" },
-    dl: "#"
+    dl: "https://lockr.so/YEfWZGhM"
   }
 ];
