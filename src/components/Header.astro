@@ -1,16 +1,44 @@
+---
+---
 <header class="header-container">
     <nav class="navbar">
         <a href="/gameeasy-site/" class="logo">GAM<span>EASY</span></a>
         
-        <ul class="nav-links">
-            <li class="hide-mobile"><a href="/gameeasy-site/">Accueil</a></li>
+        <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/gameeasy-site/">Accueil</a></li>
             <li><a href="/gameeasy-site/cracks" class="highlight"><i class="fas fa-rocket"></i> Cracks</a></li>
-            <li><a href="/gameeasy-site/tuto" class="btn-tuto"><i class="fas fa-book"></i> <span class="text-hide">Tuto</span></a></li>
-            <li><a href="https://discord.gg/YaP3akhcgQ"><i class="fab fa-discord"></i> <span class="text-hide">Discord</span></a></li>
-            <li class="hide-mobile"><a href="/gameeasy-site/about">About</a></li>
+            <li><a href="/gameeasy-site/tuto" class="btn-tuto"><i class="fas fa-book"></i> Tuto</a></li>
+            <li><a href="https://discord.gg/YaP3akhcgQ"><i class="fab fa-discord"></i> Discord</a></li>
+            <li><a href="/gameeasy-site/about">About</a></li>
         </ul>
     </nav>
 </header>
+
+<script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    burgerBtn.addEventListener('click', () => {
+        // Alterne la classe 'active' pour afficher le menu et animer le bouton
+        burgerBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Fermer le menu si on clique sur un lien (utile pour les ancres)
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            burgerBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
 
 <style>
     .header-container {
@@ -19,9 +47,8 @@
         left: 0;
         width: 100%;
         z-index: 9999;
-        background: rgba(6, 6, 18, 0.85); /* Un peu plus opaque pour la lisibilité */
+        background: rgba(6, 6, 18, 0.9);
         backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         padding: 10px 0;
     }
@@ -29,7 +56,7 @@
     .navbar { 
         display: flex; 
         align-items: center; 
-        justify-content: space-between; /* Changé de flex-start à space-between */
+        justify-content: space-between; 
         padding: 0 5%; 
         max-width: 1400px; 
         margin: 0 auto; 
@@ -40,16 +67,16 @@
        font-weight: 800; 
        color: white; 
        text-decoration: none;
-       flex-shrink: 0; 
     }
     
     .logo span { color: #8a4fff; }
 
+    /* --- NAVIGATION DESKTOP --- */
     .nav-links { 
         display: flex; 
         list-style: none; 
-        gap: 12px; 
-        margin: 0; /* Retiré le margin: 0 auto */
+        gap: 15px; 
+        margin: 0; 
         padding: 0; 
         align-items: center; 
     }
@@ -67,48 +94,65 @@
         display: flex; 
         align-items: center; 
         gap: 8px; 
-        white-space: nowrap; /* Empêche le texte de passer à la ligne */
     }
 
-    .nav-links a i { font-size: 16px; }
     .nav-links a.highlight { background: #8a4fff !important; color: white !important; }
     .nav-links a.btn-tuto { border: 1px solid #8a4fff !important; color: #8a4fff !important; }
-    
-    .nav-links a:hover { 
-        transform: translateY(-2px); 
-        background: rgba(138, 79, 255, 0.2); 
-        border-color: rgba(138, 79, 255, 0.5);
+
+    /* --- BOUTON BURGER --- */
+    .burger-menu {
+        display: none; /* Caché sur PC */
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 10001;
     }
 
-    /* --- RESPONSIVE MOBILE --- */
-    @media (max-width: 768px) {
-        .navbar {
-            padding: 0 15px;
-        }
+    .burger-menu span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: white;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
 
-        .logo {
-            font-size: 20px;
-        }
+    /* Animation du Burger en "X" */
+    .burger-menu.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .burger-menu.active span:nth-child(2) { opacity: 0; }
+    .burger-menu.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    /* --- RESPONSIVE MOBILE --- */
+    @media (max-width: 900px) {
+        .burger-menu { display: flex; }
 
         .nav-links {
-            gap: 8px;
+            position: fixed;
+            top: 0;
+            right: -100%; /* Caché à droite */
+            width: 70%;
+            height: 100vh;
+            background: #0b0b1a;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            transition: 0.4s ease-in-out;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            padding: 40px;
+        }
+
+        .nav-links.active {
+            right: 0; /* Apparaît */
         }
 
         .nav-links a {
-            padding: 8px 10px;
-            font-size: 13px;
-        }
-
-        .hide-mobile {
-            display: none; /* Cache Accueil et About sur mobile */
-        }
-
-        .text-hide {
-            display: none; /* Cache le mot "Tuto" et "Discord" mais garde l'icône */
-        }
-
-        .nav-links a i {
-            margin: 0; /* Centre l'icône quand le texte est masqué */
+            width: 100%;
+            justify-content: center;
+            font-size: 1.2rem;
+            padding: 15px;
         }
     }
 </style>
