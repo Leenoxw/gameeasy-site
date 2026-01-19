@@ -61,28 +61,28 @@ export const gamesData = [
     desc: "Traquez l'enfant de la prophétie dans un monde dévasté par la guerre et les monstres.",
     min: { os: "Win 10", cpu: "i5-2500K", ram: "6 GB", gpu: "GTX 660", dx: "11", storage: "35 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "35 GB" },
-    dl: "#"
+    dl: "https://lockr.so/nkhF6lhi"
   },
   { 
     id: 'hades-2', title: "Hades II", image: "/gameeasy-site/images/hades2.jpg", cat: "Roguelike / Action", mode: "Solo",
     desc: "Affrontez le Titan du Temps avec la princesse immortelle des Enfers.",
     min: { os: "Win 10", cpu: "Dual Core", ram: "4 GB", gpu: "GTX 950", dx: "12", storage: "10 GB" },
     rec: { os: "Win 11", cpu: "Quad Core", ram: "8 GB", gpu: "RTX 2060", dx: "12", storage: "10 GB" },
-    dl: "#"
+    dl: "https://lockr.so/1PmeVLBt"
   },
   { 
     id: 'hollow-knight-silksong', title: "Silksong", image: "/gameeasy-site/images/silksong.jpg", cat: "Metroidvania", mode: "Solo",
     desc: "Incarnez Hornet dans un tout nouveau royaume hanté par le mystère et la musique.",
     min: { os: "Win 10", cpu: "i3-3220", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "9 GB" },
     rec: { os: "Win 11", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "9 GB" },
-    dl: "#"
+    dl: "https://lockr.so/SGwnoQqm"
   },
   { 
     id: 'manor-lords', title: "Manor Lords", image: "/gameeasy-site/images/manor-lords.jpg", cat: "Stratégie / Médiéval", mode: "Solo",
     desc: "Bâtissez votre cité médiévale et menez vos troupes dans des batailles tactiques.",
     min: { os: "Win 10", cpu: "i5-4670", ram: "8 GB", gpu: "GTX 1050", dx: "12", storage: "15 GB" },
     rec: { os: "Win 11", cpu: "i5-7600", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "15 GB" },
-    dl: "#"
+    dl: "https://lockr.so/lQSgU5Fj"
   },
   { 
     id: 'palworld', title: "Palworld", image: "/gameeasy-site/images/palworld.jpg", cat: "Survie / Créatures", mode: "Solo / Multi",

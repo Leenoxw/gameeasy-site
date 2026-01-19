@@ -28,9 +28,10 @@ import Footer from '../components/Footer.astro';
         <div class="roadmap-step" style="--delay: 0.3s">
           <div class="bubble active-glow">02</div>
           <div class="content focus-border">
-            <h3>Extraction</h3>
+            <h3>Récupération & Extraction</h3>
             <p>
-              Utilisez <span class="software-highlight">WinRAR</span> ou <span class="software-highlight">7-Zip</span> pour extraire les fichiers. 
+              Ouvrez le fichier téléchargé avec <span class="software-highlight">qBittorrent</span> pour récupérer les dossiers du jeu. 
+              Une fois terminé, utilisez <span class="software-highlight">WinRAR</span> ou <span class="software-highlight">7-Zip</span> pour extraire les fichiers. 
               <br/> 💡 <em>Si un mot de passe est demandé, c'est <strong>online-fix.me</strong>.</em>
             </p>
           </div>
@@ -58,6 +59,7 @@ import Footer from '../components/Footer.astro';
       <section class="software-section">
         <h2>Logiciels <span>Recommandés</span></h2>
         <div class="software-grid">
+          <a href="https://www.qbittorrent.org/download" target="_blank" class="soft-btn">qBittorrent</a>
           <a href="https://www.win-rar.com/" target="_blank" class="soft-btn">WinRAR</a>
           <a href="https://www.7-zip.org/" target="_blank" class="soft-btn">7-Zip</a>
           <a href="https://get.daemon-tools.cc/" target="_blank" class="soft-btn">Daemon Tools</a>
@@ -131,7 +133,7 @@ import Footer from '../components/Footer.astro';
   h3 { color: #8b5cf6; margin-bottom: 8px; font-size: 1.3rem; }
   p { color: #ccc; line-height: 1.6; font-size: 0.95rem; }
 
-  /* Surlignage WinRAR / 7Zip */
+  /* Surlignage Logiciels */
   .software-highlight { 
     background: rgba(139, 92, 246, 0.2); 
     color: #fff; 
