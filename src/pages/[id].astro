@@ -6,193 +6,151 @@ import Footer from '../components/Footer.astro';
 export function getStaticPaths() {
   const gamesData = [
     { 
-      id: 'gta-v', 
-      title: "GTA V", 
-      image: "/gameeasy-site/images/gta5.jpg", 
-      cat: "Action / Open World", 
+      id: 'gta-v', title: "GTA V", image: "/gameeasy-site/images/gta5.jpg", cat: "Action / Open World", 
       desc: "Plongez dans l'expérience ultime du monde ouvert. Suivez les destins croisés de trois criminels très différents : Michael, un ancien braqueur de banques dont la retraite est moins paisible que prévu ; Franklin, un jeune arnaqueur de rue en quête de réussite ; et Trevor, un psychopathe imprévisible porté par la violence. Ensemble, ils vont risquer leur vie dans une série de braquages audacieux à travers la métropole tentaculaire de Los Santos et les contrées sauvages de Blaine County. Entre courses-poursuites effrénées, fusillades intenses et une satire acide de l'Amérique moderne, GTA V reste le roi incontesté du genre.",
       min: { os: "Windows 10", cpu: "i5-2500K / AMD FX-8120", ram: "8 GB", gpu: "GTX 660 2GB", dx: "11", storage: "72 GB" },
-      rec: { os: "Windows 11", cpu: "i7-4770K / Ryzen 5 1500X", ram: "16 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "72 GB" }
+      rec: { os: "Windows 11", cpu: "i7-4770K / Ryzen 5 1500X", ram: "16 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "72 GB" },
+      dl: "#"
     },
     { 
-      id: 'cyberpunk-2077', 
-      title: "Cyberpunk 2077", 
-      image: "/gameeasy-site/images/cyberpunk.jpg", 
-      cat: "RPG / Sci-Fi", 
-      desc: "Cyberpunk 2077 est un RPG d'action et d'aventure en monde ouvert se déroulant à Night City, une mégalopole obsédée par le pouvoir, le glamour et les modifications corporelles. Vous incarnez V, un mercenaire hors-la-loi à la recherche d'un implant unique qui détient la clé de l'immortalité. Accompagné par le spectre numérique du rocker rebelle Johnny Silverhand (incarné par Keanu Reeves), vous devrez naviguer entre corporations corrompues, gangs impitoyables et choix moraux complexes qui façonneront votre destin et celui de la ville. Avec ses graphismes époustouflants et sa narration profonde, c'est l'expérience futuriste ultime.",
+      id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/gameeasy-site/images/cyberpunk.jpg", cat: "RPG / Sci-Fi", 
+      desc: "Cyberpunk 2077 est un RPG d'action et d'aventure en monde ouvert se déroulant à Night City, une mégalopole obsédée par le pouvoir, le glamour et les modifications corporelles. Vous incarnez V, un mercenaire hors-la-loi à la recherche d'un implant unique qui détient la clé de l'immortalité. Accompagné par le spectre numérique du rocker rebelle Johnny Silverhand (incarné par Keanu Reeves), vous devrez naviguer entre corporations corrompues, gangs impitoyables et choix moraux complexes qui façonneront votre destin et celui de la ville.",
       min: { os: "Windows 10", cpu: "i5-3570K / FX-8310", ram: "8 GB", gpu: "GTX 970 / RX 470", dx: "12", storage: "70 GB SSD" },
-      rec: { os: "Windows 11", cpu: "i7-12700 / Ryzen 7 7800X", ram: "16 GB", gpu: "RTX 3060 / RX 6700 XT", dx: "12", storage: "70 GB SSD" }
+      rec: { os: "Windows 11", cpu: "i7-12700 / Ryzen 7 7800X", ram: "16 GB", gpu: "RTX 3060 / RX 6700 XT", dx: "12", storage: "70 GB SSD" },
+      dl: "#"
     },
     { 
-      id: 'elden-ring', 
-      title: "Elden Ring", 
-      image: "/gameeasy-site/images/elden-ring.jpg", 
-      cat: "Action / RPG", 
-      desc: "Levez-vous, Guerrier d'éclat, et laissez la grâce guider vos pas pour brandir la puissance du Cercle d'Elden. Dans l'Entre-terre, un monde vaste et mystérieux imaginé par Hidetaka Miyazaki (Dark Souls) et George R.R. Martin (Game of Thrones), vous devrez explorer des paysages grandioses, des donjons complexes et affronter des boss légendaires d'une difficulté redoutable. Personnalisez votre style de combat, apprivoisez votre monture Torrent et percez les secrets de la Volonté Suprême. Un chef-d'œuvre de l'exploration où chaque sommet cache un secret et chaque ennemi une leçon.",
+      id: 'elden-ring', title: "Elden Ring", image: "/gameeasy-site/images/elden-ring.jpg", cat: "Action / RPG", 
+      desc: "Levez-vous, Guerrier d'éclat, et laissez la grâce guider vos pas pour brandir la puissance du Cercle d'Elden. Dans l'Entre-terre, un monde vaste et mystérieux imaginé par Hidetaka Miyazaki et George R.R. Martin, vous devrez explorer des paysages grandioses, des donjons complexes et affronter des boss légendaires d'une difficulté redoutable. Personnalisez votre style de combat, apprivoisez votre monture Torrent et percez les secrets de la Volonté Suprême.",
       min: { os: "Windows 10", cpu: "i5-8400 / Ryzen 3 3300X", ram: "12 GB", gpu: "GTX 1060 3GB", dx: "12", storage: "60 GB" },
-      rec: { os: "Windows 11", cpu: "i7-8700K / Ryzen 5 3600X", ram: "16 GB", gpu: "GTX 1070 8GB", dx: "12", storage: "60 GB" }
+      rec: { os: "Windows 11", cpu: "i7-8700K / Ryzen 5 3600X", ram: "16 GB", gpu: "GTX 1070 8GB", dx: "12", storage: "60 GB" },
+      dl: "#"
     },
     { 
-      id: 'red-dead-redemption-2', 
-      title: "Red Dead Redemption 2", 
-      image: "/gameeasy-site/images/rdr2.jpg", 
-      cat: "Aventure / Western", 
-      desc: "Amérique, 1899. La fin de l'ère de l'Ouest sauvage a commencé. Après un braquage raté dans la ville de Blackwater, Arthur Morgan et le gang de Van der Linde sont contraints de prendre la fuite. Poursuivis par les agents fédéraux et les meilleurs chasseurs de primes du pays, le gang doit piller, voler et se battre à travers les terres rudes des États-Unis pour survivre. Mais alors que des querelles internes menacent de diviser le gang, Arthur doit choisir entre ses propres idéaux et sa loyauté envers l'homme qui l'a élevé. Une aventure humaine poignante dans le monde le plus détaillé jamais créé par Rockstar.",
+      id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", image: "/gameeasy-site/images/rdr2.jpg", cat: "Aventure / Western", 
+      desc: "Amérique, 1899. La fin de l'ère de l'Ouest sauvage a commencé. Après un braquage raté dans la ville de Blackwater, Arthur Morgan et le gang de Van der Linde sont contraints de prendre la fuite. Poursuivis par les agents fédéraux et les meilleurs chasseurs de primes du pays, le gang doit piller, voler et se battre à travers les terres rudes des États-Unis pour survivre.",
       min: { os: "Windows 10", cpu: "i5-2500K / FX-6300", ram: "8 GB", gpu: "GTX 770 2GB", dx: "11", storage: "150 GB" },
-      rec: { os: "Windows 11", cpu: "i7-4770K / Ryzen 5 1500X", ram: "12 GB", gpu: "GTX 1060 6GB", dx: "11", storage: "150 GB" }
+      rec: { os: "Windows 11", cpu: "i7-4770K / Ryzen 5 1500X", ram: "12 GB", gpu: "GTX 1060 6GB", dx: "11", storage: "150 GB" },
+      dl: "#"
     },
     { 
-      id: 'spiderman-2', 
-      title: "Spider-Man 2", 
-      image: "/gameeasy-site/images/spiderman2.jpg", 
-      cat: "Action / Aventure", 
-      desc: "Les Spider-Men Peter Parker et Miles Morales sont de retour pour une nouvelle aventure incroyable dans la New York de Marvel. Alors que le redoutable Kraven le Chasseur arrive en ville pour traquer les êtres les plus puissants, une menace encore plus sombre surgit : le symbiote Venom. Alternez instantanément entre les deux héros pour utiliser leurs pouvoirs uniques, comme les bras mécaniques de Peter ou les attaques bio-électriques de Miles. Avec des déplacements à la toile plus rapides que jamais grâce aux ailes de toile, vivez une histoire émouvante sur l'amitié, le sacrifice et la responsabilité.",
+      id: 'spiderman-2', title: "Marvel's Spider-Man 2", image: "/gameeasy-site/images/spiderman2.jpg", cat: "Action / Aventure", 
+      desc: "Les Spider-Men Peter Parker et Miles Morales sont de retour pour une nouvelle aventure incroyable. Alors que le redoutable Kraven le Chasseur arrive en ville pour traquer les êtres les plus puissants, une menace encore plus sombre surgit : le symbiote Venom. Alternez instantanément entre les deux héros pour utiliser leurs pouvoirs uniques.",
       min: { os: "Windows 10", cpu: "i5-8400 / Ryzen 5 3600", ram: "16 GB", gpu: "RTX 2060 / RX 5700", dx: "12", storage: "90 GB SSD" },
-      rec: { os: "Windows 11", cpu: "i7-12700 / Ryzen 7 7700X", ram: "32 GB", gpu: "RTX 3070 / RX 6800 XT", dx: "12", storage: "90 GB SSD" }
+      rec: { os: "Windows 11", cpu: "i7-12700 / Ryzen 7 7700X", ram: "32 GB", gpu: "RTX 3070 / RX 6800 XT", dx: "12", storage: "90 GB SSD" },
+      dl: "#"
     },
     { 
-      id: 'hogwarts-legacy', 
-      title: "Hogwarts Legacy", 
-      image: "/gameeasy-site/images/hogwarts.jpg", 
-      cat: "Aventure / Magie", 
-      desc: "Votre histoire à Poudlard commence ici. Hogwarts Legacy : L'Héritage de Poudlard est un RPG d'action-aventure en monde ouvert se déroulant dans l'univers des livres Harry Potter, mais au XIXe siècle. Vous incarnez un élève détenant la clé d'un secret ancien qui menace de déchirer le monde des sorciers. Forgez des alliances, combattez des mages noirs et déterminez le sort du monde magique. Explorez librement le château, Pré-au-Lard et la Forêt Interdite, apprenez des sortilèges puissants, préparez des potions et maîtrisez des animaux fantastiques dans cette aventure magique sans précédent.",
+      id: 'hogwarts-legacy', title: "Hogwarts Legacy", image: "/gameeasy-site/images/hogwarts.jpg", cat: "Aventure / Magie", 
+      desc: "Votre histoire à Poudlard commence ici. Hogwarts Legacy est un RPG d'action-aventure en monde ouvert se déroulant au XIXe siècle. Vous incarnez un élève détenant la clé d'un secret ancien qui menace de déchirer le monde des sorciers. Forgez des alliances, combattez des mages noirs et déterminez le sort du monde magique.",
       min: { os: "Windows 10", cpu: "i5-6600 / Ryzen 5 1400", ram: "16 GB", gpu: "GTX 960 4GB", dx: "12", storage: "85 GB" },
-      rec: { os: "Windows 11", cpu: "i7-8700 / Ryzen 5 3600", ram: "16 GB", gpu: "RTX 2060 / RX 5700", dx: "12", storage: "85 GB" }
+      rec: { os: "Windows 11", cpu: "i7-8700 / Ryzen 5 3600", ram: "16 GB", gpu: "RTX 2060 / RX 5700", dx: "12", storage: "85 GB" },
+      dl: "#"
     },
     { 
-      id: 'forza-horizon-5', 
-      title: "Forza Horizon 5", 
-      image: "/gameeasy-site/images/forza5.jpg", 
-      cat: "Course / Simulation", 
-      desc: "Votre aventure Horizon ultime vous attend ! Explorez les paysages vibrants et évolutifs du Mexique au volant de centaines de voitures parmi les plus performantes au monde. Lancez-vous dans des expéditions à couper le souffle à travers des déserts vivants, des jungles luxuriantes, des cités historiques, des ruines cachées et même au sommet d'un volcan enneigé. Participez à des centaines de défis, personnalisez vos véhicules à l'extrême et rejoignez une communauté immense dans ce festival de la vitesse où la liberté est le seul maître mot.",
+      id: 'forza-horizon-5', title: "Forza Horizon 5", image: "/gameeasy-site/images/forza5.jpg", cat: "Course / Simulation", 
+      desc: "Votre aventure Horizon ultime vous attend ! Explorez les paysages vibrants et évolutifs du Mexique au volant de centaines de voitures parmi les plus performantes au monde. Lancez-vous dans des expéditions à couper le souffle à travers des déserts vivants, des jungles luxuriantes et des cités historiques.",
       min: { os: "Windows 10", cpu: "i5-4460 / Ryzen 3 1200", ram: "8 GB", gpu: "GTX 760 / RX 460", dx: "12", storage: "110 GB" },
-      rec: { os: "Windows 11", cpu: "i7-10700 / Ryzen 7 3800XT", ram: "16 GB", gpu: "RTX 3060 / RX 6700 XT", dx: "12", storage: "110 GB" }
+      rec: { os: "Windows 11", cpu: "i7-10700 / Ryzen 7 3800XT", ram: "16 GB", gpu: "RTX 3060 / RX 6700 XT", dx: "12", storage: "110 GB" },
+      dl: "#"
     },
     { 
-      id: 'god-of-war-ragnarok', 
-      title: "God of War Ragnarök", 
-      image: "/gameeasy-site/images/gow-ragnarok.jpg", 
-      cat: "Action / Mythologie", 
-      desc: "Le Fimbulvetr approche. Kratos et Atreus doivent explorer chacun des neuf royaumes à la recherche de réponses, tandis que les forces d'Asgard se préparent à une bataille prophétisée qui détruira le monde. Au cours de leur voyage, ils découvriront des paysages mythiques époustouflants et affronteront des ennemis redoutables, sous la forme de dieux nordiques et de monstres. Alors que la menace du Ragnarök se fait de plus en plus pressante, Kratos et Atreus doivent choisir entre leur propre sécurité et celle des royaumes. Une conclusion magistrale à la saga nordique du Fantôme de Sparte.",
+      id: 'god-of-war-ragnarok', title: "God of War Ragnarök", image: "/gameeasy-site/images/gow-ragnarok.jpg", cat: "Action / Mythologie", 
+      desc: "Le Fimbulvetr approche. Kratos et Atreus doivent explorer chacun des neuf royaumes à la recherche de réponses, tandis que les forces d'Asgard se préparent à une bataille prophétisée qui détruira le monde. Affrontez des dieux nordiques et des monstres dans cette conclusion magistrale de la saga.",
       min: { os: "Windows 10", cpu: "i5-4670K / Ryzen 3 1200", ram: "8 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "190 GB SSD" },
-      rec: { os: "Windows 11", cpu: "i7-7700K / Ryzen 5 3600", ram: "16 GB", gpu: "RTX 3070 / RX 6800", dx: "12", storage: "190 GB SSD" }
+      rec: { os: "Windows 11", cpu: "i7-7700K / Ryzen 5 3600", ram: "16 GB", gpu: "RTX 3070 / RX 6800", dx: "12", storage: "190 GB SSD" },
+      dl: "#"
     },
     { 
-      id: 'the-witcher-3', 
-      title: "The Witcher 3", 
-      image: "/gameeasy-site/images/witcher3.jpg", 
-      cat: "RPG / Fantasy", 
-      desc: "Devenez Geralt de Riv, un tueur de monstres professionnel, et lancez-vous dans une quête épique pour retrouver Ciri, l'enfant de la prophétie, dont le pouvoir pourrait changer la face du monde. Dans un univers de dark fantasy dévasté par la guerre et infesté de créatures sanguinaires, vos choix auront des conséquences dramatiques sur le destin des royaumes et des personnages que vous rencontrerez. Avec son écriture d'une maturité rare, son monde ouvert d'une richesse incroyable et ses combats tactiques mêlant épées et magie, The Witcher 3 est considéré comme l'un des meilleurs RPG de tous les temps.",
+      id: 'the-witcher-3', title: "The Witcher 3", image: "/gameeasy-site/images/witcher3.jpg", cat: "RPG / Fantasy", 
+      desc: "Devenez Geralt de Riv, un tueur de monstres professionnel, et lancez-vous dans une quête épique pour retrouver Ciri, l'enfant de la prophétie. Dans un univers de dark fantasy dévasté par la guerre, vos choix auront des conséquences dramatiques sur le destin des royaumes.",
       min: { os: "Windows 10", cpu: "i5-2500K / Phenom II X4", ram: "6 GB", gpu: "GTX 660 / HD 7870", dx: "11", storage: "35 GB" },
-      rec: { os: "Windows 11", cpu: "i7-3770 / FX-8350", ram: "8 GB", gpu: "GTX 770 / R9 290", dx: "11", storage: "35 GB" }
+      rec: { os: "Windows 11", cpu: "i7-3770 / FX-8350", ram: "8 GB", gpu: "GTX 770 / R9 290", dx: "11", storage: "35 GB" },
+      dl: "#"
     },
     { 
-      id: 'hades-2', 
-      title: "Hades II", 
-      image: "/gameeasy-site/images/hades2.jpg", 
-      cat: "Roguelike / Action", 
-      desc: "La suite tant attendue du roguelike primé de Supergiant Games. Dans Hades II, vous incarnez Melinoë, la princesse immortelle des Enfers et sœur de Zagreus, dans une quête pour vaincre le redoutable Titan du Temps, Cronos. Appuyée par la puissance de l'Olympe et les arts occultes de la sorcellerie, vous devrez traverser des environnements en constante évolution, gagner en puissance après chaque défaite et lever le voile sur les secrets de la famille royale des Enfers. Un gameplay addictif, une direction artistique sublime et une narration qui se dévoile au fil de vos tentatives.",
+      id: 'hades-2', title: "Hades II", image: "/gameeasy-site/images/hades2.jpg", cat: "Roguelike / Action", 
+      desc: "La suite tant attendue du roguelike primé de Supergiant Games. Dans Hades II, vous incarnez Melinoë, la princesse immortelle des Enfers, dans une quête pour vaincre le redoutable Titan du Temps, Cronos. Appuyée par la puissance de l'Olympe et les arts occultes, traversez des environnements en constante évolution.",
       min: { os: "Windows 10", cpu: "Dual Core 2.4 GHz", ram: "4 GB", gpu: "GTX 950 / RX 460", dx: "12", storage: "10 GB" },
-      rec: { os: "Windows 11", cpu: "Quad Core 3.0 GHz", ram: "8 GB", gpu: "RTX 2060 / RX 5600 XT", dx: "12", storage: "10 GB" }
+      rec: { os: "Windows 11", cpu: "Quad Core 3.0 GHz", ram: "8 GB", gpu: "RTX 2060 / RX 5600 XT", dx: "12", storage: "10 GB" },
+      dl: "#"
     },
     { 
-      id: 'hollow-knight-silksong', 
-      title: "Silksong", 
-      image: "/gameeasy-site/images/silksong.jpg", 
-      cat: "Metroidvania", 
-      desc: "Explorez un royaume vaste et hanté dans Hollow Knight: Silksong ! Incarnez Hornet, la princesse-protectrice de Hallownest, capturée et emmenée dans le monde inconnu de Pharloom. Dans cette suite du metroidvania culte, vous devrez affronter plus de 150 nouveaux ennemis, maîtriser des mouvements acrobatiques inédits et fabriquer des outils puissants pour survivre. Découvrez des cités dorées, des landes de corail et des sommets brumeux tout en cherchant à atteindre la citadelle étincelante au sommet du monde. Une aventure épique alliant précision, exploration et mystère.",
+      id: 'hollow-knight-silksong', title: "Silksong", image: "/gameeasy-site/images/silksong.jpg", cat: "Metroidvania", 
+      desc: "Explorez un royaume vaste et hanté dans Hollow Knight: Silksong ! Incarnez Hornet, la princesse-protectrice de Hallownest, capturée et emmenée dans le monde inconnu de Pharloom. Affrontez plus de 150 nouveaux ennemis et maîtrisez des mouvements acrobatiques inédits.",
       min: { os: "Windows 10", cpu: "i3-3220", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "9 GB" },
-      rec: { os: "Windows 11", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "9 GB" }
+      rec: { os: "Windows 11", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "9 GB" },
+      dl: "#"
     },
     { 
-      id: 'manor-lords', 
-      title: "Manor Lords", 
-      image: "/gameeasy-site/images/manor-lords.jpg", 
-      cat: "Stratégie / Médiéval", 
-      desc: "Manor Lords est un jeu de stratégie médiéval qui propose un système détaillé de construction de ville, des batailles tactiques à grande échelle et des simulations économiques et sociales complexes. Dirigez votre village en tant que seigneur médiéval, gérez les ressources, développez les chaînes de production et étendez votre territoire par la diplomatie ou la force. Le jeu met l'accent sur le réalisme historique, avec une construction sans grille et une gestion des saisons qui influencera directement la survie de votre peuple. Préparez vos troupes, car la guerre pour la terre est inévitable.",
+      id: 'manor-lords', title: "Manor Lords", image: "/gameeasy-site/images/manor-lords.jpg", cat: "Stratégie / Médiéval", 
+      desc: "Manor Lords est un jeu de stratégie médiéval qui propose un système détaillé de construction de ville, des batailles tactiques à grande échelle et des simulations économiques complexes. Dirigez votre village en tant que seigneur médiéval et étendez votre territoire par la diplomatie ou la force.",
       min: { os: "Windows 10", cpu: "i5-4670 / FX-4350", ram: "8 GB", gpu: "GTX 1050 2GB", dx: "12", storage: "15 GB" },
-      rec: { os: "Windows 11", cpu: "i5-7600 / Ryzen 5 2600", ram: "16 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "15 GB" }
+      rec: { os: "Windows 11", cpu: "i5-7600 / Ryzen 5 2600", ram: "16 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "15 GB" },
+      dl: "#"
     },
     { 
-      id: 'palworld', 
-      title: "Palworld", 
-      image: "/gameeasy-site/images/palworld.jpg", 
-      cat: "Survie / Créatures", 
-      desc: "Bienvenue dans Palworld, un jeu de survie et d'artisanat en monde ouvert où vous pouvez collectionner des créatures mystérieuses appelées 'Pals'. Faites-les combattre, bâtir des structures, travailler dans des usines ou même cultiver vos champs. Dans ce monde impitoyable, vous devrez faire face au manque de nourriture, aux conditions météorologiques extrêmes et aux braconniers illégaux. Que vous choisissiez de vivre en harmonie avec vos Pals ou de les exploiter sans vergogne, votre survie dépendra de votre capacité à apprivoiser l'environnement et à construire une base imprenable.",
+      id: 'palworld', title: "Palworld", image: "/gameeasy-site/images/palworld.jpg", cat: "Survie / Créatures", 
+      desc: "Bienvenue dans Palworld, un jeu de survie où vous pouvez collectionner des créatures appelées 'Pals'. Faites-les combattre, bâtir des structures ou travailler dans des usines. Dans ce monde impitoyable, votre survie dépendra de votre capacité à apprivoiser l'environnement.",
       min: { os: "Windows 10", cpu: "i5-3570K", ram: "16 GB", gpu: "GTX 1050 2GB", dx: "11", storage: "40 GB SSD" },
-      rec: { os: "Windows 11", cpu: "i9-9900K", ram: "32 GB", gpu: "RTX 2070", dx: "11", storage: "40 GB SSD" }
+      rec: { os: "Windows 11", cpu: "i9-9900K", ram: "32 GB", gpu: "RTX 2070", dx: "11", storage: "40 GB SSD" },
+      dl: "#"
     },
     { 
-      id: 'lethal-company', 
-      title: "Lethal Company", 
-      image: "/gameeasy-site/images/lethal-company.jpg", 
-      cat: "Horreur / Coop", 
-      desc: "Vous êtes un travailleur contractuel pour la Compagnie. Votre mission : collecter de la ferraille sur des lunes industrielles abandonnées pour atteindre le quota de profit de la Compagnie. Explorez des complexes sombres, évitez des créatures terrifiantes et communiquez avec votre équipe pour survivre. Mais attention, le temps presse et chaque erreur peut être fatale. Utilisez vos gains pour améliorer votre vaisseau, acheter des outils de protection ou décorer votre intérieur. Un jeu coopératif hilarant et terrifiant où la communication vocale joue un rôle crucial dans l'immersion.",
+      id: 'lethal-company', title: "Lethal Company", image: "/gameeasy-site/images/lethal-company.jpg", cat: "Horreur / Coop", 
+      desc: "Vous êtes un travailleur contractuel pour la Compagnie. Votre mission : collecter de la ferraille sur des lunes industrielles abandonnées pour atteindre le quota de profit. Explorez des complexes sombres, évitez des créatures terrifiantes et communiquez avec votre équipe pour survivre.",
       min: { os: "Windows 10", cpu: "i5-7400", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" },
-      rec: { os: "Windows 11", cpu: "i7-9700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "1 GB" }
+      rec: { os: "Windows 11", cpu: "i7-9700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "1 GB" },
+      dl: "#"
     },
     { 
-      id: 'black-myth-wukong', 
-      title: "Black Myth: Wukong", 
-      image: "/gameeasy-site/images/wukong.jpg", 
-      cat: "Action / RPG", 
-      desc: "Inspiré du célèbre roman chinois 'La Pérégrination vers l'Ouest', Black Myth: Wukong est un action-RPG qui vous met dans la peau du Prédestiné. Explorez des paysages époustouflants tirés de la mythologie chinoise et affrontez des démons puissants en utilisant votre bâton magique et vos capacités de transformation. Maîtrisez des sorts variés et découvrez une narration riche qui revisite les légendes anciennes avec une esthétique moderne incroyable. Un défi de taille pour les amateurs de combats techniques et d'univers visuellement saisissants.",
+      id: 'black-myth-wukong', title: "Black Myth: Wukong", image: "/gameeasy-site/images/wukong.jpg", cat: "Action / RPG", 
+      desc: "Inspiré de 'La Pérégrination vers l'Ouest', incarnez le Prédestiné. Explorez des paysages mythiques et affrontez des démons puissants en utilisant votre bâton magique et vos transformations. Un défi de taille pour les amateurs de combats techniques.",
       min: { os: "Windows 10", cpu: "i5-8400 / Ryzen 5 1600", ram: "16 GB", gpu: "GTX 1060 6GB", dx: "12", storage: "130 GB SSD" },
-      rec: { os: "Windows 11", cpu: "i7-9700 / Ryzen 5 5500", ram: "16 GB", gpu: "RTX 2060 / RX 5700 XT", dx: "12", storage: "130 GB SSD" }
+      rec: { os: "Windows 11", cpu: "i7-9700 / Ryzen 5 5500", ram: "16 GB", gpu: "RTX 2060 / RX 5700 XT", dx: "12", storage: "130 GB SSD" },
+      dl: "#"
     },
     { 
-      id: 'stardew-valley', 
-      title: "Stardew Valley", 
-      image: "/gameeasy-site/images/stardew.jpg", 
-      cat: "Simulation / RPG", 
-      desc: "Vous avez hérité de la vieille ferme de votre grand-père dans la vallée de Stardew. Armé de vieux outils et de quelques pièces de monnaie, vous partez pour commencer votre nouvelle vie. Apprenez à vivre de la terre et à transformer ces champs envahis par la végétation en une ferme prospère. Mais la ville voisine de Pelican Town cache bien des secrets et des opportunités : rencontrez les habitants, tombez amoureux, explorez des mines mystérieuses et restaurez le centre communautaire. Un jeu relaxant, profond et incroyablement généreux qui a conquis des millions de joueurs.",
+      id: 'stardew-valley', title: "Stardew Valley", image: "/gameeasy-site/images/stardew.jpg", cat: "Simulation / RPG", 
+      desc: "Héritez de la vieille ferme de votre grand-père. Armé de vieux outils, partez pour commencer votre nouvelle vie. Apprenez à vivre de la terre et transformez ces champs envahis en une ferme prospère. Rencontrez les habitants, tombez amoureux et explorez des mines mystérieuses.",
       min: { os: "Windows 10", cpu: "2.0 GHz", ram: "2 GB", gpu: "256 MB VRAM", dx: "10", storage: "500 MB" },
-      rec: { os: "Windows 11", cpu: "3.0 GHz", ram: "4 GB", gpu: "1 GB VRAM", dx: "10", storage: "500 MB" }
+      rec: { os: "Windows 11", cpu: "3.0 GHz", ram: "4 GB", gpu: "1 GB VRAM", dx: "10", storage: "500 MB" },
+      dl: "#"
     },
     { 
-      id: 'schedules', 
-      title: "Schedules", 
-      image: "/gameeasy-site/images/schedules.jpg", 
-      cat: "Indie / Horreur", 
-      desc: "Schedules est un jeu d'horreur indépendant qui joue avec vos nerfs et votre perception de la réalité. Dans un environnement quotidien qui devient lentement étrange, vous devrez suivre une routine stricte tout en évitant des entités qui semblent observer chacun de vos mouvements. La peur ne vient pas seulement de ce que vous voyez, mais de ce que vous entendez et du sentiment persistant d'être traqué. Chaque 'horaire' réussi vous rapproche de la vérité, ou de votre perte. Un titre indie court mais intense pour les amateurs de frissons psychologiques.",
+      id: 'schedules', title: "Schedules", image: "/gameeasy-site/images/schedules.jpg", cat: "Indie / Horreur", 
+      desc: "Schedules est un jeu d'horreur indépendant qui joue avec vos nerfs. Suivez une routine stricte tout en évitant des entités qui semblent observer chacun de vos mouvements. La peur vient de ce que vous voyez, mais surtout de ce que vous entendez.",
       min: { os: "Windows 10", cpu: "i3", ram: "4 GB", gpu: "GTX 750", dx: "11", storage: "2 GB" },
-      rec: { os: "Windows 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "2 GB" }
+      rec: { os: "Windows 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "2 GB" },
+      dl: "#"
     },
     { 
-      id: 'are-we-there-yet', 
-      title: "Are We There Yet?", 
-      image: "/gameeasy-site/images/rv-there-yet.jpg", 
-      cat: "Indie / Aventure", 
-      desc: "Embarquez pour un roadtrip mystérieux dans 'Are We There Yet?'. Ce jeu d'aventure narratif indépendant vous transporte dans un voyage à travers des paysages oniriques où la destination importe moins que les rencontres et les choix que vous faites en chemin. Gérez votre véhicule, discutez avec des auto-stoppeurs étranges et découvrez des lieux oubliés dans une ambiance mélancolique et envoûtante. Une expérience contemplative qui questionne notre rapport au voyage et au temps, portée par une bande-son originale immersive.",
+      id: 'are-we-there-yet', title: "Are We There Yet?", image: "/gameeasy-site/images/rv-there-yet.jpg", cat: "Indie / Aventure", 
+      desc: "Embarquez pour un roadtrip mystérieux à travers des paysages oniriques où la destination importe moins que les rencontres. Gérez votre véhicule, discutez avec des auto-stoppeurs étranges et découvrez des lieux oubliés dans une ambiance envoûtante.",
       min: { os: "Windows 10", cpu: "Dual Core", ram: "4 GB", gpu: "Intel HD", dx: "11", storage: "1 GB" },
-      rec: { os: "Windows 11", cpu: "Quad Core", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" }
+      rec: { os: "Windows 11", cpu: "Quad Core", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "1 GB" },
+      dl: "#"
     },
     { 
-      id: 'buckshot-roulette', 
-      title: "Buckshot Roulette", 
-      image: "/gameeasy-site/images/buckshot.jpg", 
-      cat: "Indie / Stratégie", 
-      desc: " Buckshot Roulette est un jeu de table court et intense qui revisite la roulette russe avec un fusil à pompe de calibre 12. Face à un mystérieux croupier dans une salle sombre d'une boîte de nuit souterraine, vous devrez utiliser des objets stratégiques (bière, menottes, cigarettes) pour influencer vos chances de survie. Chargez des balles réelles ou à blanc, prenez des risques calculés et essayez d'être le dernier debout pour repartir avec le prix. Un gameplay rapide, une esthétique 'grunge' saisissante et une tension palpable à chaque pression sur la gâchette.",
+      id: 'buckshot-roulette', title: "Buckshot Roulette", image: "/gameeasy-site/images/buckshot.jpg", cat: "Indie / Stratégie", 
+      desc: "Buckshot Roulette est un jeu de table intense qui revisite la roulette russe avec un fusil à pompe. Face à un mystérieux croupier, utilisez des objets stratégiques pour influencer vos chances de survie. Prenez des risques calculés et repartez avec le prix.",
       min: { os: "Windows 10", cpu: "Intel Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "300 MB" },
-      rec: { os: "Windows 11", cpu: "Intel Core", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "300 MB" }
+      rec: { os: "Windows 11", cpu: "Intel Core", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "300 MB" },
+      dl: "#"
     },
     { 
-      id: 'chained-together', 
-      title: "Chained Together", 
-      image: "/gameeasy-site/images/chained-together.jpg", 
-      cat: "Coop / Plateforme", 
-      desc: "Dans Chained Together, la coordination est votre seule chance de salut. Enchaîné à vos partenaires (jusqu'à 4 joueurs), vous devez grimper hors des profondeurs des enfers en surmontant des obstacles de plateforme de plus en plus difficiles. Si l'un de vous tombe, vous tombez tous ! Communiquez, sautez en rythme et gérez la physique de la chaîne pour progresser à travers différents biomes. Un test ultime pour vos amitiés où chaque erreur peut vous faire perdre des heures de progression, ou créer des moments de rire inoubliables.",
+      id: 'chained-together', title: "Chained Together", image: "/gameeasy-site/images/chained-together.jpg", cat: "Coop / Plateforme", 
+      desc: "Dans Chained Together, la coordination est votre seule chance de salut. Enchaîné à vos partenaires, grimpez hors des profondeurs des enfers en surmontant des obstacles difficiles. Si l'un de vous tombe, vous tombez tous ! Communiquez pour progresser.",
       min: { os: "Windows 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "6 GB" },
-      rec: { os: "Windows 11", cpu: "i7-8700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "6 GB" }
+      rec: { os: "Windows 11", cpu: "i7-8700", ram: "16 GB", gpu: "GTX 1660", dx: "11", storage: "6 GB" },
+      dl: "#"
     },
     { 
-      id: 'phasmophobia', 
-      title: "Phasmophobia", 
-      image: "/gameeasy-site/images/phasmophobia.jpg", 
-      cat: "Horreur / Coop", 
-      desc: "Phasmophobia est un jeu d'horreur psychologique coopératif en ligne où vous et votre équipe d'enquêteurs paranormaux entrez dans des lieux hantés pour recueillir autant de preuves que possible. Utilisez votre équipement de chasse aux fantômes (lecteurs EMF, Spirit Box, caméras thermiques) pour identifier le type d'entité qui hante les lieux. Mais attention, plus vous restez longtemps, plus le fantôme devient agressif et risque de lancer une phase de chasse. Serez-vous capable de garder votre sang-froid alors que les lumières clignotent et que les portes se verrouillent derrière vous ?",
+      id: 'phasmophobia', title: "Phasmophobia", image: "/gameeasy-site/images/phasmophobia.jpg", cat: "Horreur / Coop", 
+      desc: "Phasmophobia est un jeu d'horreur psychologique coopératif. Entrez dans des lieux hantés pour recueillir des preuves avec votre équipement de chasse aux fantômes. Mais attention, plus vous restez longtemps, plus le fantôme devient agressif.",
       min: { os: "Windows 10", cpu: "i5-4590 / FX-8350", ram: "8 GB", gpu: "GTX 970 / R9 290", dx: "11", storage: "21 GB" },
-      rec: { os: "Windows 11", cpu: "i7-6700 / Ryzen 5 1600", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" }
+      rec: { os: "Windows 11", cpu: "i7-6700 / Ryzen 5 1600", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" },
+      dl: "#"
     }
   ];
 
@@ -206,132 +164,101 @@ const { title, cat, image, desc, min, rec, dl } = Astro.props;
 ---
 
 <Layout title={`${title} - GAMEASY`}>
+  <Header />
   <main class="detail-page">
     <div class="container">
-      <a href="/gameeasy-site/cracks" class="back-link">← Retour au catalogue</a>
+      <a href="/gameeasy-site/cracks" class="back-link">
+        <i class="fas fa-arrow-left"></i> Retour au catalogue
+      </a>
       
       <section class="hero-section">
-        <img src={image} alt={title} class="hero-image" />
+        <div class="image-wrapper">
+          <img src={image} alt={title} class="hero-image" />
+        </div>
         <div class="hero-info">
           <span class="category-tag">{cat}</span>
           <h1>{title}</h1>
           <p class="description">{desc}</p>
+          
           <div class="dl-area">
-              <a href={`/gameeasy-site/download?url=${dl}`} class="download-button">
-                TÉLÉCHARGER LE CRACK (DIRECT)
+              <a href={dl} class="download-button" target="_blank">
+                <i class="fas fa-download"></i> TÉLÉCHARGER LE CRACK
               </a>
-              <p class="file-info">Fichier : .zip / .exe • Testé sans virus • MDP: 123</p>
+              <div class="file-badges">
+                <span><i class="fas fa-file-archive"></i> .ZIP / .ISO</span>
+                <span><i class="fas fa-shield-alt"></i> SANS VIRUS</span>
+                <span><i class="fas fa-key"></i> MDP: 123</span>
+              </div>
           </div>
         </div>
       </section>
 
       <section class="system-config">
         <div class="config-header">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-            <h2>systemConfig</h2>
+            <i class="fas fa-microchip"></i>
+            <h2>Configuration Requise</h2>
         </div>
 
         <div class="config-grid">
             <div class="config-box minimal">
-                <h3><span class="dot">●</span> Configuration minimale</h3>
+                <h3><span class="status-dot"></span> MINIMALE</h3>
                 <ul>
-                    <li><strong>OS:</strong> {min.os}</li>
-                    <li><strong>CPU:</strong> {min.cpu}</li>
-                    <li><strong>RAM:</strong> {min.ram}</li>
-                    <li><strong>GPU:</strong> {min.gpu}</li>
-                    <li><strong>DirectX:</strong> {min.dx}</li>
-                    <li><strong>Stockage:</strong> {min.storage}</li>
+                    <li><small>Système</small> <strong>{min.os}</strong></li>
+                    <li><small>Processeur</small> <strong>{min.cpu}</strong></li>
+                    <li><small>Mémoire</small> <strong>{min.ram}</strong></li>
+                    <li><small>Graphiques</small> <strong>{min.gpu}</strong></li>
+                    <li><small>DirectX</small> <strong>{min.dx}</strong></li>
+                    <li><small>Espace disque</small> <strong>{min.storage}</strong></li>
                 </ul>
             </div>
 
             <div class="config-box recommended">
-                <h3><span class="dot">●</span> Configuration recommandée</h3>
+                <h3><span class="status-dot"></span> RECOMMANDÉE</h3>
                 <ul>
-                    <li><strong>OS:</strong> {rec.os}</li>
-                    <li><strong>CPU:</strong> {rec.cpu}</li>
-                    <li><strong>RAM:</strong> {rec.ram}</li>
-                    <li><strong>GPU:</strong> {rec.gpu}</li>
-                    <li><strong>DirectX:</strong> {rec.dx}</li>
-                    <li><strong>Stockage:</strong> {rec.storage}</li>
+                    <li><small>Système</small> <strong>{rec.os}</strong></li>
+                    <li><small>Processeur</small> <strong>{rec.cpu}</strong></li>
+                    <li><small>Mémoire</small> <strong>{rec.ram}</strong></li>
+                    <li><small>Graphiques</small> <strong>{rec.gpu}</strong></li>
+                    <li><small>DirectX</small> <strong>{rec.dx}</strong></li>
+                    <li><small>Espace disque</small> <strong>{rec.storage}</strong></li>
                 </ul>
             </div>
         </div>
       </section>
     </div>
   </main>
-
   <Footer />
 </Layout>
 
 <style>
   .detail-page { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  
-  .back-link { color: #8b5cf6; text-decoration: none; display: inline-block; margin-bottom: 30px; font-weight: 600; transition: 0.3s; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .back-link { color: #8a4fff; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-bottom: 40px; font-weight: 600; transition: 0.3s; }
   .back-link:hover { color: #fff; transform: translateX(-5px); }
-
-  /* Hero Layout */
-  .hero-section { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px; 
-    margin-bottom: 60px; 
-    background: #11111e; 
-    padding: 30px; 
-    border-radius: 24px; 
-    border: 1px solid #1e1e2e; 
-  }
-
-  .hero-image { width: 100%; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.2); }
-  
-  .category-tag { color: #8b5cf6; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-  h1 { font-size: 4rem; font-weight: 900; margin: 10px 0; line-height: 1; }
-  .description { color: #a1a1aa; line-height: 1.6; font-size: 1.1rem; margin-bottom: 30px; }
-
-  /* Bouton & Download Area */
-  .dl-area { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.1); }
-  
-  .download-button { 
-    display: block;
-    width: 100%;
-    padding: 20px;
-    background: #8b5cf6;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 900;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    transition: 0.4s;
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
-  }
-  
-  .download-button:hover { 
-    background: #7c3aed; 
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
-  }
-
-  .file-info { text-align: center; color: #444; font-size: 0.8rem; margin-top: 12px; font-weight: 600; }
-
-  /* Config System UI */
-  .system-config { background: #0d0d0d; border-radius: 20px; padding: 40px; border: 1px solid #1a1a1a; }
-  .config-header { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
-  .config-header h2 { font-family: monospace; font-size: 1.8rem; letter-spacing: -1px; }
-
-  .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-  .config-box { background: rgba(255,255,255,0.02); padding: 25px; border-radius: 15px; border: 1px solid #1a1a1a; }
-  
-  .dot { margin-right: 10px; }
-  .minimal h3 { color: #ff6b6b; margin-bottom: 20px; }
-  .recommended h3 { color: #51cf66; margin-bottom: 20px; }
-
+  .hero-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 80px; align-items: center; }
+  .image-wrapper { border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); aspect-ratio: 16/9; }
+  .hero-image { width: 100%; height: 100%; object-fit: cover; }
+  .category-tag { color: #8a4fff; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
+  h1 { font-size: 4rem; font-weight: 900; margin: 15px 0; line-height: 1; letter-spacing: -2px; }
+  .description { color: #a1a1aa; line-height: 1.7; font-size: 1.1rem; margin-bottom: 40px; }
+  .dl-area { background: #11111e; padding: 30px; border-radius: 20px; border: 1px solid #1e1e2e; }
+  .download-button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 22px; background: #8a4fff; color: white; text-decoration: none; font-weight: 900; border-radius: 14px; font-size: 1.2rem; transition: 0.4s; }
+  .download-button:hover { background: #9d6fff; transform: translateY(-5px); }
+  .file-badges { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+  .file-badges span { font-size: 0.75rem; color: #555; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+  .system-config { background: #0c0c1d; border-radius: 30px; padding: 50px; border: 1px solid #1a1a2e; }
+  .config-header { display: flex; align-items: center; gap: 15px; margin-bottom: 40px; }
+  .config-header h2 { font-size: 2rem; font-weight: 900; }
+  .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .config-box { background: rgba(0,0,0,0.2); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.03); }
+  .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px; }
+  .minimal h3 { color: #ff4757; margin-bottom: 25px; }
+  .minimal .status-dot { background: #ff4757; box-shadow: 0 0 10px #ff4757; }
+  .recommended h3 { color: #2ed573; margin-bottom: 25px; }
+  .recommended .status-dot { background: #2ed573; box-shadow: 0 0 10px #2ed573; }
   ul { list-style: none; padding: 0; }
-  li { margin-bottom: 12px; color: #a1a1aa; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 8px; }
-  li strong { color: #fff; margin-right: 5px; }
-
-  @media (max-width: 900px) {
-    .hero-section, .config-grid { grid-template-columns: 1fr; }
-    h1 { font-size: 3rem; }
-  }
+  li { margin-bottom: 18px; display: flex; flex-direction: column; gap: 4px; }
+  li small { color: #555; text-transform: uppercase; font-size: 0.7rem; font-weight: 800; }
+  li strong { color: #ddd; font-size: 1rem; }
+  @media (max-width: 900px) { .hero-section, .config-grid { grid-template-columns: 1fr; } h1 { font-size: 3rem; } }
 </style>
