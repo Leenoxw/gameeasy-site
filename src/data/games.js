@@ -197,7 +197,7 @@ export const gamesData = [
     dl: "https://lockr.so/MyHMXlNy"
   },
   { 
-    id: 'f1-24', title: "F1 24", image: "/gameeasy-site/images/f124.jpg", cat: "Course / Sport", mode: "Solo / Multi",
+    id: 'f1-22', title: "F1 22", image: "/gameeasy-site/images/f122.jpg", cat: "Course / Sport", mode: "Solo / Multi",
     desc: "Devenez l'un des 20 pilotes officiels et vivez l'immersion totale du championnat du monde de Formule 1.",
     min: { os: "Win 10", cpu: "i3-2130", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "100 GB" },
     rec: { os: "Win 11", cpu: "i5-9600K", ram: "16 GB", gpu: "RTX 3070", dx: "12", storage: "100 GB" },
