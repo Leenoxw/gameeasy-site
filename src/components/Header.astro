@@ -97,7 +97,7 @@
     border-radius: 8px; 
     background: rgba(255, 255, 255, 0.03); 
     border: 1px solid rgba(255, 255, 255, 0.08); 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 11); 
     display: flex; 
     align-items: center; 
     gap: 8px;
@@ -147,32 +147,6 @@
             padding: 15px 40px;
             width: 250px; /* Boutons larges et alignés */
             justify-content: center;
-        }
-        .nav-links a:hover {
-            color: white;
-            background: rgba(138, 79, 255, 0.1); /* Fond violet très léger */
-            border-color: #8a4fff; /* La bordure devient violette */
-            transform: translateY(-3px) scale(1.05); /* Le bouton monte et grossit */
-            box-shadow: 0 5px 15px rgba(138, 79, 255, 0.3); /* Glow violet */
-        }
-
-        /* Animation spéciale pour l'icône dans le lien au survol */
-        .nav-links a:hover i {
-            transform: rotate(10deg) scale(1.2);
-            color: #8a4fff;
-            transition: 0.3s;
-        }
-
-        /* Bouton Cracks (Highlight) */
-        .nav-links a.highlight:hover {
-            background: #9d6fff !important; /* Devient un peu plus clair */
-            box-shadow: 0 0 20px rgba(138, 79, 255, 0.6);
-        }
-
-        /* Bouton Tuto */
-        .nav-links a.btn-tuto:hover {
-            background: #8a4fff !important;
-            color: white !important;
         }
 
         .burger-menu {
