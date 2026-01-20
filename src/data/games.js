@@ -224,15 +224,6 @@ export const gamesData = [
     rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "8 GB" },
     dl: "https://lockr.so/LvJv0ONC"
   },
-
-  // --- PACK RPG & STRATÉGIE ---
-  { 
-    id: 'starfield', title: "Starfield", image: "/gameeasy-site/images/starfield.jpg", cat: "RPG", mode: "Solo",
-    desc: "Le premier nouvel univers en 25 ans par Bethesda. Créez votre personnage et explorez les étoiles.",
-    min: { os: "Win 10", cpu: "i7-6800K", ram: "16 GB", gpu: "GTX 1070 Ti", dx: "12", storage: "125 GB SSD" },
-    rec: { os: "Win 11", cpu: "i5-10600K", ram: "16 GB", gpu: "RTX 2080", dx: "12", storage: "125 GB SSD" },
-    dl: "#"
-  },
   { 
     id: 'civilization-vi', title: "Civilization VI", image: "/gameeasy-site/images/civ6.jpg", cat: "Stratégie", mode: "Solo / Multi",
     desc: "Bâtissez un empire capable de résister au passage du temps, de l'âge de pierre à l'âge de l'information.",
@@ -343,20 +334,6 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 560", dx: "9", storage: "5 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "4 GB", gpu: "GTX 970", dx: "11", storage: "5 GB" },
     dl: "https://lockr.so/U5Gy7jQx"
-  },
-  { 
-    id: 'tunic', title: "Tunic", image: "/gameeasy-site/images/tunic.jpg", cat: "Aventure", mode: "Solo",
-    desc: "Incarnez un petit renard dans un grand monde rempli de secrets et d'énigmes complexes.",
-    min: { os: "Win 10", cpu: "i5", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "2 GB" },
-    rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "2 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'cult-of-the-lamb', title: "Cult of the Lamb", image: "/gameeasy-site/images/cotl.jpg", cat: "Roguelike", mode: "Solo",
-    desc: "Fondez votre propre culte dans un pays de faux prophètes et devenez l'unique agneau.",
-    min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "4 GB" },
-    rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "4 GB" },
-    dl: "#"
   },
   { 
     id: 'beamng-drive', title: "BeamNG.drive", image: "/gameeasy-site/images/beamng.jpg", cat: "Simulation", mode: "Solo",
