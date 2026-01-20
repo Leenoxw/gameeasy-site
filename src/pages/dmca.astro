@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="DMCA - GAMEASY">
+  <Header />
+
+  <main class="legal-container">
+    <div class="legal-content">
+      <div class="header-section">
+        <h1>POLITIQUE <span>DMCA</span></h1>
+        <p class="last-update">Version 2.0 - Mise à jour le 19 Janvier 2026</p>
+      </div>
+
+      <section>
+        <p>GAMEASY fonctionne comme un index de contenu disponible publiquement sur Internet. Nous respectons les droits de propriété intellectuelle et nous nous conformons au <strong>Digital Millennium Copyright Act (DMCA)</strong>.</p>
+      </section>
+
+      <section>
+        <h2>1. Procédure de notification de retrait</h2>
+        <p>Si vous êtes titulaire d'un droit d'auteur et que vous souhaitez demander le retrait d'un lien pointant vers votre œuvre, votre demande doit impérativement contenir :</p>
+        <ul>
+          <li><strong>Preuve d'autorité :</strong> Une signature physique ou électronique de la personne autorisée à agir au nom du titulaire du droit.</li>
+          <li><strong>Identification de l'œuvre :</strong> Une description détaillée de l'œuvre protégée que vous prétendez avoir été violée.</li>
+          <li><strong>Localisation précise :</strong> L'URL exacte sur <em>gameeasy.netlify.app</em> menant au contenu litigieux.</li>
+          <li><strong>Coordonnées :</strong> Votre adresse, numéro de téléphone et adresse e-mail.</li>
+          <li><strong>Déclaration de bonne foi :</strong> Une déclaration affirmant que vous croyez de bonne foi que l'utilisation du matériel n'est pas autorisée par le titulaire du droit.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. Délai de traitement</h2>
+        <p>Toute demande complète et valide sera traitée dans un délai de <strong>24 à 48 heures ouvrées</strong>. Le contenu concerné sera supprimé ou l'accès aux liens sera désactivé immédiatement après vérification.</p>
+      </section>
+
+      <section>
+        <h2>3. Contre-notification</h2>
+        <p>Si un contenu que vous avez posté a été supprimé par erreur, vous pouvez envoyer une contre-notification écrite à notre équipe. Nous nous réservons le droit de rétablir le contenu si la plainte initiale s'avère infondée ou abusive.</p>
+      </section>
+
+      <section class="warning-box">
+        <strong>Attention :</strong> Toute fausse déclaration dans une notification DMCA peut entraîner des poursuites judiciaires pour dommages et intérêts.
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-container { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; display: flex; justify-content: center; }
+  .legal-content { max-width: 850px; width: 100%; line-height: 1.7; }
+  .header-section { text-align: center; margin-bottom: 50px; }
+  h1 { font-size: 3rem; font-weight: 900; }
+  h1 span { color: #8a4fff; }
+  .last-update { color: #444; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+  h2 { font-size: 1.6rem; color: #8a4fff; margin: 35px 0 15px 0; border-bottom: 1px solid #1e1e2e; padding-bottom: 10px; }
+  p, li { color: #a1a1aa; font-size: 1.05rem; margin-bottom: 15px; }
+  ul { padding-left: 20px; list-style-type: square; }
+  ul li strong { color: #ddd; }
+  .warning-box { background: rgba(255, 0, 0, 0.05); border: 1px solid rgba(255, 0, 0, 0.2); padding: 20px; border-radius: 12px; color: #ff6b6b; margin-top: 40px; text-align: center; }
+</style>
