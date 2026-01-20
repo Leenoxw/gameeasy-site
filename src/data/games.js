@@ -201,14 +201,14 @@ export const gamesData = [
     desc: "Devenez l'un des 20 pilotes officiels et vivez l'immersion totale du championnat du monde de Formule 1.",
     min: { os: "Win 10", cpu: "i3-2130", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "100 GB" },
     rec: { os: "Win 11", cpu: "i5-9600K", ram: "16 GB", gpu: "RTX 3070", dx: "12", storage: "100 GB" },
-    dl: "#"
+    dl: "https://lockr.so/Hw7Z8YVN"
   },
   { 
     id: 'the-sims-4', title: "The Sims 4 + All DLC", image: "/gameeasy-site/images/sims4.jpg", cat: "Simulation", mode: "Solo",
     desc: "Créez et contrôlez des personnages dans un monde virtuel sans règles.",
     min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 650", dx: "11", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "60 GB" },
-    dl: "#"
+    dl: "https://lockr.so/65TFZDZP"
   },
   { 
     id: 'rust', title: "Rust", image: "/gameeasy-site/images/rust.jpg", cat: "Survie / FPS", mode: "Multi",
@@ -218,27 +218,11 @@ export const gamesData = [
     dl: "#"
   },
   { 
-    id: 'outlast-trials', title: "The Outlast Trials", image: "/gameeasy-site/images/outlast-trials.jpg", cat: "Horreur / Coop", mode: "Solo / Multi",
-    desc: "Survivez à des expériences terrifiantes seul ou entre amis dans l'univers d'Outlast.",
-    min: { os: "Win 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 650 Ti", dx: "12", storage: "40 GB" },
-    rec: { os: "Win 11", cpu: "i7-9700K", ram: "16 GB", gpu: "GTX 1660", dx: "12", storage: "40 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'mortal-kombat-1', title: "Mortal Kombat 1", image: "/gameeasy-site/images/mk1.jpg", cat: "Combat", mode: "Solo / Multi",
-    desc: "Un univers Mortal Kombat renaît, créé par le Dieu du feu Liu Kang. Nouveau système de combat.",
-    min: { os: "Win 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 980", dx: "12", storage: "100 GB" },
-    rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "RTX 2070", dx: "12", storage: "100 GB" },
-    dl: "#"
-  },
-
-  // --- PACK INDÉ & TENDANCE ---
-  { 
     id: 'outer-wilds', title: "Outer Wilds", image: "/gameeasy-site/images/outer-wilds.jpg", cat: "Aventure", mode: "Solo",
     desc: "Un mystère en monde ouvert sur un système solaire piégé dans une boucle temporelle infinie.",
     min: { os: "Win 10", cpu: "i5-2300", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
     rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "8 GB" },
-    dl: "#"
+    dl: "https://lockr.so/LvJv0ONC"
   },
 
   // --- PACK RPG & STRATÉGIE ---
@@ -254,35 +238,35 @@ export const gamesData = [
     desc: "Bâtissez un empire capable de résister au passage du temps, de l'âge de pierre à l'âge de l'information.",
     min: { os: "Win 10", cpu: "i3 @ 2.5 GHz", ram: "4 GB", gpu: "GTX 450", dx: "11", storage: "12 GB" },
     rec: { os: "Win 11", cpu: "i5 @ 3.0 GHz", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "12 GB" },
-    dl: "#"
+    dl: "https://lockr.so/rO2pApP0"
   },
   { 
     id: 'sea-of-thieves', title: "Sea of Thieves", image: "/gameeasy-site/images/sea-of-thieves.jpg", cat: "Aventure", mode: "Multi",
     desc: "Devenez le pirate de vos rêves dans ce monde ouvert rempli de trésors et de dangers.",
     min: { os: "Win 10", cpu: "i3-4130", ram: "4 GB", gpu: "GTX 650", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/jaN4fZOR"
   },
   { 
     id: 'horizon-forbidden-west', title: "Horizon Forbidden West", image: "/gameeasy-site/images/hfw.jpg", cat: "Action / RPG", mode: "Solo",
     desc: "Explorez des terres lointaines, affrontez des machines plus imposantes et rencontrez de nouvelles tribus.",
     min: { os: "Win 10", cpu: "i3-8100", ram: "16 GB", gpu: "GTX 1650", dx: "12", storage: "150 GB SSD" },
     rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "150 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/Nt4QUsuB"
   },
   { 
     id: 'uncharted-legacy', title: "Uncharted: Legacy of Thieves", image: "/gameeasy-site/images/uncharted.jpg", cat: "Aventure", mode: "Solo",
     desc: "Incarnez Nathan Drake et Chloe Frazer dans leurs propres aventures à la recherche de trésors perdus.",
     min: { os: "Win 10", cpu: "i5-4430", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "126 GB" },
     rec: { os: "Win 11", cpu: "i7-4770", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "126 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/rW2gREHE"
   },
   { 
     id: 'assetto-corsa-competizione', title: "Assetto Corsa Comp.", image: "/gameeasy-site/images/acc.jpg", cat: "Simulation / Course", mode: "Solo / Multi",
     desc: "La référence absolue de la simulation GT3 avec un réalisme époustouflant.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "4 GB", gpu: "GTX 460", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/u4qUWHbQ"
   },
 
   // --- PACK SURVIE & HORREUR ---
@@ -291,7 +275,7 @@ export const gamesData = [
     desc: "Envoyé pour retrouver un milliardaire sur une île isolée, vous vous retrouvez face à des cannibales.",
     min: { os: "Win 10", cpu: "i5-8400", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "20 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 2060", dx: "11", storage: "20 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/tmM240Rl"
   },
 
   // --- PACK FPS & COMBAT ---
@@ -300,7 +284,7 @@ export const gamesData = [
     desc: "Les armées de l'enfer ont envahi la Terre. Devenez le Slayer et massacrez des démons.",
     min: { os: "Win 10", cpu: "i5-3570", ram: "8 GB", gpu: "GTX 1050Ti", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 1080", dx: "11", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/SbS0DuTe"
   },
 
   // --- PACK INDÉ & TENDANCE ---
@@ -309,63 +293,42 @@ export const gamesData = [
     desc: "Le roguelike de poker terriblement addictif où vous créez des combos déments.",
     min: { os: "Win 10", cpu: "Intel Core", ram: "1 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
     rec: { os: "Win 11", cpu: "Intel Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
-    dl: "#"
+    dl: "https://lockr.so/ccENw7eA"
   },
   { 
     id: 'cuphead', title: "Cuphead", image: "/gameeasy-site/images/cuphead.jpg", cat: "Aventure", mode: "Solo / Coop",
     desc: "Un jeu d'action classique inspiré des dessins animés des années 30.",
     min: { os: "Win 10", cpu: "Dual Core", ram: "3 GB", gpu: "9600 GT", dx: "10", storage: "4 GB" },
     rec: { os: "Win 11", cpu: "i3", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "4 GB" },
-    dl: "#"
+    dl: "https://lockr.so/9u6K8jBe"
   },
   { 
     id: 'cities-skylines-2', title: "Cities: Skylines II", image: "/gameeasy-site/images/cities2.jpg", cat: "Simulation", mode: "Solo",
     desc: "Bâtissez une ville à partir de rien et transformez-la en une métropole prospère.",
     min: { os: "Win 10", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i5-12600K", ram: "16 GB", gpu: "RTX 3080", dx: "11", storage: "60 GB" },
-    dl: "#"
+    dl: "https://lockr.so/JP2WicPs"
   },
   { 
     id: 'lies-of-p', title: "Lies of P", image: "/gameeasy-site/images/lies-of-p.jpg", cat: "Action", mode: "Solo",
     desc: "Une version sombre de Pinocchio où vous devez vous frayer un chemin à travers une ville en ruine.",
     min: { os: "Win 10", cpu: "i3-6300", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i5-12600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/q9dfR0al"
   },
   { 
     id: 'detroit-become-human', title: "Detroit: Become Human", image: "/gameeasy-site/images/detroit.jpg", cat: "Sci-Fi", mode: "Solo",
     desc: "Prenez en main le destin de trois androïdes dans un futur où les machines sont devenues conscientes.",
     min: { os: "Win 10", cpu: "i5-2300", ram: "8 GB", gpu: "GTX 780", dx: "11", storage: "55 GB" },
     rec: { os: "Win 11", cpu: "i5-6600", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "55 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'baldurs-gate-3', title: "Baldur's Gate 3", image: "/gameeasy-site/images/bg3.jpg", cat: "RPG", mode: "Solo / Multi",
-    desc: "Le RPG ultime basé sur l'univers de Donjons & Dragons. Vos choix changent le monde.",
-    min: { os: "Win 10", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "150 GB SSD" },
-    rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 2060", dx: "11", storage: "150 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/cFMvqfTx"
   },
   { 
     id: 'final-fantasy-xvi', title: "Final Fantasy XVI", image: "/gameeasy-site/images/ff16.jpg", cat: "RPG", mode: "Solo",
     desc: "Une épopée fantastique sombre où le destin du monde repose sur les épaules de Clive Rosfield.",
     min: { os: "Win 10", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 1070", dx: "12", storage: "170 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-10700", ram: "16 GB", gpu: "RTX 3080", dx: "12", storage: "170 GB SSD" },
-    dl: "#"
-  },
-  { 
-    id: 'age-of-empires-4', title: "Age of Empires IV", image: "/gameeasy-site/images/aoe4.jpg", cat: "Stratégie", mode: "Solo / Multi",
-    desc: "Le retour du roi des jeux de stratégie en temps réel. Menez votre civilisation à travers les âges.",
-    min: { os: "Win 10", cpu: "i5-6300U", ram: "8 GB", gpu: "Intel HD 520", dx: "12", storage: "50 GB" },
-    rec: { os: "Win 11", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 970", dx: "12", storage: "50 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'dead-space-remake', title: "Dead Space Remake", image: "/gameeasy-site/images/dead-space.jpg", cat: "Horreur", mode: "Solo",
-    desc: "Le classique du survival-horror spatial revient avec des graphismes époustouflants.",
-    min: { os: "Win 10", cpu: "i5-8600", ram: "16 GB", gpu: "GTX 1070", dx: "12", storage: "50 GB SSD" },
-    rec: { os: "Win 11", cpu: "i5-11600K", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "50 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/C2KO5gP3"
   },
   { 
     id: 'subnautica', title: "Subnautica", image: "/gameeasy-site/images/subnautica.jpg", cat: "Survie", mode: "Solo",
@@ -379,7 +342,7 @@ export const gamesData = [
     desc: "Seul survivant d'un crash d'avion, vous devez construire, explorer et survivre face à des mutants.",
     min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 560", dx: "9", storage: "5 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "4 GB", gpu: "GTX 970", dx: "11", storage: "5 GB" },
-    dl: "#"
+    dl: "https://lockr.so/U5Gy7jQx"
   },
   { 
     id: 'tunic', title: "Tunic", image: "/gameeasy-site/images/tunic.jpg", cat: "Aventure", mode: "Solo",
@@ -400,7 +363,7 @@ export const gamesData = [
     desc: "Le simulateur de physique automobile le plus avancé, connu pour ses crashs ultra-réalistes.",
     min: { os: "Win 10", cpu: "i3", ram: "8 GB", gpu: "GTX 550 Ti", dx: "11", storage: "30 GB" },
     rec: { os: "Win 11", cpu: "i7", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "30 GB" },
-    dl: "#"
+    dl: "https://lockr.so/l6oYD1FO"
   },
   { 
     id: 'farming-simulator-22', title: "Farming Simulator 22", image: "/gameeasy-site/images/fs22.jpg", cat: "Simulation", mode: "Solo / Multi",
