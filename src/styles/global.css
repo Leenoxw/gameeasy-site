@@ -11,6 +11,7 @@ body {
     color: white;
 }
 
+
 .gradient-text {
     background: linear-gradient(to right, #ffffff 30%, var(--primary-purple));
     -webkit-background-clip: text;
