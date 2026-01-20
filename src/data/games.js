@@ -287,7 +287,7 @@ export const gamesData = [
     dl: "https://lockr.so/ccENw7eA"
   },
   { 
-    id: 'cuphead', title: "Cuphead", image: "/gameeasy-site/images/cuphead.jpg", cat: "Aventure", mode: "Solo / Coop",
+    id: 'cuphead', title: "Cuphead", image: "/gameeasy-site/images/cuphead.jpg", cat: "Aventure", mode: "Solo / Multi",
     desc: "Un jeu d'action classique inspiré des dessins animés des années 30.",
     min: { os: "Win 10", cpu: "Dual Core", ram: "3 GB", gpu: "9600 GT", dx: "10", storage: "4 GB" },
     rec: { os: "Win 11", cpu: "i3", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "4 GB" },
