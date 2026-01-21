@@ -95,26 +95,15 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
 
       </div>
 
-      <aside class="ads-side">
-        <div class="ad-container">
-          <div class="ad-label">PUBLICITÉ</div>
-          <div id="ezoic-pub-ad-placeholder-120"></div>
+      <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
+          <iframe data-aa='2425087' src='//acceptable.a-ads.com/2425087/?size=Adaptive'
+                            style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
         </div>
-      </aside>
 
     </div>
   </main>
   <Footer />
 </Layout>
-
-<script is:inline>
-  window.ezstandalone = window.ezstandalone || {};
-  ezstandalone.cmd = ezstandalone.cmd || [];
-  ezstandalone.cmd.push(function() {
-    // Active les deux emplacements en même temps
-    ezstandalone.showAds(119, 120);
-  });
-</script>
 
 <script>
   const searchInput = document.getElementById('gameSearch') as HTMLInputElement;
@@ -159,15 +148,6 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
 
     // 4. Update UI boutons
     updatePaginationUI(totalPages);
-
-    // --- AJOUT EZOIC ICI ---
-    // On demande à Ezoic de recharger les pubs car le contenu a changé
-    if (typeof ezstandalone !== 'undefined') {
-        ezstandalone.cmd.push(function() {
-            ezstandalone.showAds(); 
-        });
-    }
-    // -----------------------
   }
 
   function updatePaginationUI(totalPages: number) {
