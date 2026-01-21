@@ -24,7 +24,7 @@ import { gamesData } from '../data/games.js';
         <div class="grid" id="game-grid">
             {gamesData.map((game) => (
                 <div class="game-item" data-title={game.title.toLowerCase()} data-cat={game.cat.toLowerCase()}>
-                    <a href={`/gameeasy-site/games/${game.id}`} class="card-link">
+                    <a href={`/games/${game.id}`} class="card-link">
                         <Card title={game.title} category={game.cat} image={game.image} />
                     </a>
                 </div>
