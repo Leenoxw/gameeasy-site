@@ -410,7 +410,7 @@ export const gamesData = [
     desc: "Grimpez les échelons de la mafia pendant la Prohibition dans ce remake intégral.",
     min: { os: "Win 10", cpu: "i5-2550K", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "16 GB", gpu: "GTX 1080", dx: "11", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/f7HzvMMS"
   },
   { 
     id: 'need-for-speed-unbound', title: "NFS Unbound", image: "/images/nfsunbound.jpg", cat: "Course", mode: "Solo / Multi",
@@ -431,7 +431,7 @@ export const gamesData = [
     desc: "Fauchez des milliers de créatures de la nuit et survivez jusqu'à l'aube.",
     min: { os: "Win 10", cpu: "Pentium", ram: "1 GB", gpu: "Dédié", dx: "11", storage: "250 MB" },
     rec: { os: "Win 11", cpu: "Dual Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "250 MB" },
-    dl: "#"
+    dl: "https://lockr.so/Or0E0UJS"
   },
   { 
     id: 'dredge', title: "DREDGE", image: "/images/dredge.jpg", cat: "Indie / Aventure", mode: "Solo",
@@ -452,14 +452,14 @@ export const gamesData = [
     desc: "L'Agent 47 revient pour conclure la trilogie World of Assassination dans des lieux exotiques.",
     min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 660", dx: "12", storage: "80 GB" },
     rec: { os: "Win 11", cpu: "i7-4790", ram: "16 GB", gpu: "GTX 1070", dx: "12", storage: "80 GB" },
-    dl: "#"
+    dl: "https://lockr.so/dBAi1T4V"
   },
   { 
     id: 'ghostwire-tokyo', title: "Ghostwire: Tokyo", image: "/images/ghostwire.jpg", cat: "Aventure / Fantaisie", mode: "Solo",
     desc: "Affrontez des forces surnaturelles dans une ville de Tokyo dont la population a disparu.",
     min: { os: "Win 10", cpu: "i7-4770K", ram: "12 GB", gpu: "GTX 1060", dx: "12", storage: "40 GB" },
     rec: { os: "Win 11", cpu: "i7-6700", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "40 GB" },
-    dl: "#"
+    dl: "https://lockr.so/lPrVliES"
   },
   { 
     id: 'sniper-elite-5', title: "Sniper Elite 5", image: "/images/sniper5.jpg", cat: "FPS / Tactique", mode: "Solo / Multi",
@@ -691,7 +691,7 @@ export const gamesData = [
     desc: "La conclusion épique de la trilogie Total War dans l'univers de Warhammer Fantasy.",
     min: { os: "Win 10", cpu: "i3", ram: "6 GB", gpu: "GTX 900", dx: "11", storage: "120 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1660 Ti", dx: "11", storage: "120 GB" },
-    dl: "#"
+    dl: "https://lockr.so/LnP7LmuI"
   },
   { 
     id: 'stellaris', title: "Stellaris", image: "/images/stellaris.jpg", cat: "Stratégie / Sci-Fi", mode: "Solo / Multi",
