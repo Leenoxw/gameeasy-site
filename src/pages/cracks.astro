@@ -18,7 +18,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
       <aside class="ads-side">
         <div class="ad-container">
           <div class="ad-label">PUBLICITÉ</div>
-          <div class="ad-content"><i class="fas fa-ad"></i></div>
+          <div id="ezoic-pub-ad-placeholder-119"></div>
         </div>
       </aside>
 
@@ -92,7 +92,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
       <aside class="ads-side">
         <div class="ad-container">
           <div class="ad-label">PUBLICITÉ</div>
-          <div class="ad-content"><i class="fas fa-ad"></i></div>
+          <div id="ezoic-pub-ad-placeholder-120"></div>
         </div>
       </aside>
 
@@ -100,6 +100,15 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   </main>
   <Footer />
 </Layout>
+
+<script is:inline>
+  window.ezstandalone = window.ezstandalone || {};
+  ezstandalone.cmd = ezstandalone.cmd || [];
+  ezstandalone.cmd.push(function() {
+    // Active les deux emplacements en même temps
+    ezstandalone.showAds(119, 120);
+  });
+</script>
 
 <script>
   const searchInput = document.getElementById('gameSearch') as HTMLInputElement;
