@@ -14,7 +14,9 @@ import { gamesData } from '../data/games.js';
       <aside class="side-ad left-ad">
         <div class="ad-box vertical">
           <span class="ad-tag">PUBLICITÉ</span>
-          <div class="ad-placeholder"><i class="fas fa-ad"></i></div>
+          <div class="iframe-container">
+            <iframe data-aa='2425086' src='//acceptable.a-ads.com/2425086/?size=160x600' style='border:0; padding:0; width:160px; height:600px; overflow:hidden; background-color: transparent;'></iframe>
+          </div>
         </div>
       </aside>
 
@@ -23,19 +25,28 @@ import { gamesData } from '../data/games.js';
         <div class="horizontal-ad top-ad">
           <div class="ad-box banner">
             <span class="ad-tag">PUBLICITÉ</span>
-            <div class="ad-placeholder">BANNIÈRE PUBLICITAIRE</div>
+            <div class="iframe-container">
+              <iframe data-aa='2425088' src='//acceptable.a-ads.com/2425088/?size=728x90' style='border:0; padding:0; width:100%; height:90px; overflow:hidden; background-color: transparent;'></iframe>
+            </div>
           </div>
         </div>
 
         <div class="dl-card" id="dlCard">
-          <div class="loader-circle"></div>
           <h1 id="gameTitle">Préparation de votre fichier...</h1>
           <p class="status-text">Votre téléchargement sera prêt dans :</p>
           <div class="timer" id="timer">15</div>
           
           <div class="inner-card-ad">
-             <p style="color: #444; font-size: 10px; margin-bottom: 5px;">SPONSORISÉ</p>
-             <div style="width: 100%; height: 100px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px dashed #222;"></div>
+             <p class="sponsor-tag">SPONSORISÉ</p>
+             <div class="ad-frame-wrapper">
+                <iframe data-aa='2425090' src='//acceptable.a-ads.com/2425090/?size=Adaptive' style='border:0; padding:0; width:100%; height:100px; overflow:hidden; background-color: transparent;'></iframe>
+             </div>
+          </div>
+
+          <div class="pre-button-ad">
+             <div class="ad-frame-wrapper">
+                <iframe data-aa='2425091' src='//acceptable.a-ads.com/2425091/?size=Adaptive' style='border:0; padding:0; width:100%; height:100px; overflow:hidden; background-color: transparent;'></iframe>
+             </div>
           </div>
 
           <p class="warning">Ne fermez pas cette page pour éviter l'erreur de transfert.</p>
@@ -50,16 +61,19 @@ import { gamesData } from '../data/games.js';
         <div class="horizontal-ad bottom-ad">
           <div class="ad-box banner">
             <span class="ad-tag">PUBLICITÉ</span>
-            <div class="ad-placeholder">BANNIÈRE PUBLICITAIRE</div>
+            <div class="iframe-container">
+              <iframe data-aa='2425089' src='//acceptable.a-ads.com/2425089/?size=728x90' style='border:0; padding:0; width:100%; height:90px; overflow:hidden; background-color: transparent;'></iframe>
+            </div>
           </div>
         </div>
-
       </div>
 
       <aside class="side-ad right-ad">
         <div class="ad-box vertical">
           <span class="ad-tag">PUBLICITÉ</span>
-          <div class="ad-placeholder"><i class="fas fa-ad"></i></div>
+          <div class="iframe-container">
+            <iframe data-aa='2425087' src='//acceptable.a-ads.com/2425087/?size=160x600' style='border:0; padding:0; width:160px; height:600px; overflow:hidden; background-color: transparent;'></iframe>
+          </div>
         </div>
       </aside>
 
@@ -120,7 +134,7 @@ import { gamesData } from '../data/games.js';
 
   /* --- STYLES DES PUBS --- */
   .ad-box {
-    background: rgba(255, 255, 255, 0.02);
+    background: #0c0c1d;
     border: 1px solid rgba(138, 79, 255, 0.1);
     border-radius: 12px;
     display: flex;
@@ -130,32 +144,38 @@ import { gamesData } from '../data/games.js';
   
   .ad-tag {
     font-size: 9px;
-    color: #444;
+    color: #555;
     text-align: center;
     padding: 4px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.5);
     font-weight: 900;
   }
 
-  .ad-placeholder {
-    flex: 1;
+  .iframe-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #222;
-    font-weight: 800;
+    align-items: center;
+    background: transparent;
   }
 
-  /* Pubs Verticales (Côtés) */
+  .ad-frame-wrapper {
+    width: 100%;
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Pubs Verticales */
   .side-ad {
     flex: 0 0 160px;
     height: 600px;
     position: sticky;
     top: 100px;
   }
-  .ad-box.vertical { height: 100%; }
 
-  /* Pubs Horizontales (Haut/Bas) */
+  /* Pubs Horizontales */
   .center-content {
     flex: 1;
     display: flex;
@@ -164,7 +184,6 @@ import { gamesData } from '../data/games.js';
     gap: 30px;
   }
   .horizontal-ad { width: 100%; max-width: 728px; }
-  .ad-box.banner { height: 90px; }
 
   /* --- BLOC DE TÉLÉCHARGEMENT --- */
   .dl-card { 
@@ -181,9 +200,10 @@ import { gamesData } from '../data/games.js';
   h1 { font-size: 1.8rem; color: white; margin: 20px 0; font-weight: 900; }
   .timer { font-size: 4rem; font-weight: 900; color: #8a4fff; margin: 15px 0; text-shadow: 0 0 20px rgba(138, 79, 255, 0.4); }
   .status-text { color: #888; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+  .sponsor-tag { color: #444; font-size: 10px; margin-bottom: 5px; font-weight: 800; }
   .warning { color: #555; font-size: 0.75rem; margin: 20px 0; }
   
-  .inner-card-ad { margin: 20px 0; }
+  .inner-card-ad, .pre-button-ad { margin: 20px 0; }
 
   .final-btn { 
     display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -195,9 +215,8 @@ import { gamesData } from '../data/games.js';
   
   .hidden { display: none !important; }
 
-  /* --- RESPONSIVE --- */
   @media (max-width: 1200px) {
-    .side-ad { display: none; } /* On cache les pubs sur les côtés si l'écran est trop petit */
+    .side-ad { display: none; }
   }
 
   @keyframes pulse {
