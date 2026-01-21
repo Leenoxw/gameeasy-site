@@ -138,6 +138,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
       const matchMode = activeMode === 'tous' || mode.includes(activeMode);
 
       return matchSearch && matchCat && matchMode;
+      ezstandalone.cmd.push(function() { ezstandalone.showAds(); });
     });
 
     // 2. Calculer les pages
