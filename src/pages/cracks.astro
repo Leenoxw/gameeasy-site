@@ -126,20 +126,30 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   let filteredCards: Element[] = [];
 
   function applyPagination() {
-    // 1. Filtrer les cartes selon les critères (Recherche, Cat, Mode)
+    // 1. Filtrer les cartes
     const search = searchInput.value.toLowerCase();
     filteredCards = Array.from(cards).filter(card => {
-      const title = card.getAttribute('data-title') || '';
-      const cat = card.getAttribute('data-cat') || '';
-      const mode = card.getAttribute('data-mode') || '';
+        const title = card.getAttribute('data-title') || '';
+        const cat = card.getAttribute('data-cat') || '';
+        const mode = card.getAttribute('data-mode') || '';
 
-      const matchSearch = title.includes(search);
-      const matchCat = activeCat === 'tous' || cat.includes(activeCat);
-      const matchMode = activeMode === 'tous' || mode.includes(activeMode);
+        const matchSearch = title.includes(search);
+        const matchCat = activeCat === 'tous' || cat.includes(activeCat);
+        const matchMode = activeMode === 'tous' || mode.includes(activeMode);
 
-      return matchSearch && matchCat && matchMode;
-      ezstandalone.cmd.push(function() { ezstandalone.showAds(); });
+        return matchSearch && matchCat && matchMode;
     });
+
+    // 2. Ton code de pagination habituel ici (affichage/masquage des cartes)
+    // ...
+
+    // 3. Rafraîchir les publicités Ezoic (À METTRE TOUT À LA FIN)
+    if (typeof ezstandalone !== 'undefined') {
+        ezstandalone.cmd.push(function() { 
+            ezstandalone.showAds(); 
+        });
+    }
+}
 
     // 2. Calculer les pages
     const totalPages = Math.ceil(filteredCards.length / gamesPerPage);
