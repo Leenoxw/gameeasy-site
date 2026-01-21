@@ -1,5 +1,4 @@
 ---
-// Footer.astro
 ---
 <footer class="footer">
     <div class="footer-content">
@@ -31,10 +30,6 @@
             </a>
         </div>
     </div>
-
-    <div class="footer-ezoic-privacy">
-        <span id="ezoic-privacy-policy-embed"></span>
-    </div>
     
     <div class="footer-bottom">
         <p>&copy; {new Date().getFullYear()} GAMEASY - Tous droits réservés.</p>
@@ -56,23 +51,6 @@
         grid-template-columns: 2fr 2fr 1fr;
         gap: 40px;
         margin-bottom: 40px;
-    }
-
-    /* Style spécifique pour le texte de confidentialité Ezoic */
-    .footer-ezoic-privacy {
-        max-width: 1400px;
-        margin: 0 auto 30px auto;
-        padding: 0 20px;
-        color: #555; /* Gris discret pour ne pas polluer le design */
-        font-size: 11px;
-        line-height: 1.6;
-        text-align: justify;
-    }
-
-    /* Force le style des liens injectés par Ezoic */
-    .footer-ezoic-privacy :global(a) {
-        color: #8a4fff;
-        text-decoration: underline;
     }
 
     .logo { 
