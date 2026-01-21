@@ -125,13 +125,9 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   const gamesPerPage = 18; // Change ici pour afficher plus ou moins de jeux par page
   let filteredCards: Element[] = [];
 
-  <script>
-  // ... tes variables (searchInput, cards, etc.) ...
-
   function applyPagination() {
+    // 1. Filtrer les cartes selon les critères (Recherche, Cat, Mode)
     const search = searchInput.value.toLowerCase();
-    
-    // Filtrage des cartes
     filteredCards = Array.from(cards).filter(card => {
       const title = card.getAttribute('data-title') || '';
       const cat = card.getAttribute('data-cat') || '';
@@ -144,27 +140,29 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
       return matchSearch && matchCat && matchMode;
     });
 
-    // Affichage des cartes (Logique de pagination)
+    // 2. Calculer les pages
     const totalPages = Math.ceil(filteredCards.length / gamesPerPage);
+    if (currentPage > totalPages) currentPage = totalPages || 1;
+
+    // 3. Afficher / Cacher les cartes
     const start = (currentPage - 1) * gamesPerPage;
     const end = start + gamesPerPage;
 
-    cards.forEach(card => (card as HTMLElement).style.display = 'none');
-    filteredCards.slice(start, end).forEach(card => (card as HTMLElement).style.display = 'block');
+    cards.forEach(card => (card as HTMLElement).style.display = 'none'); // On cache tout
+    filteredCards.slice(start, end).forEach(card => (card as HTMLElement).style.display = 'block'); // On montre la page
 
+    // 4. Update UI boutons
     updatePaginationUI(totalPages);
 
-    // RAFRAÎCHIR LES PUBS (Code Ezoic)
-    // On vérifie si ezstandalone existe pour éviter les erreurs au build
-    if (typeof (window as any).ezstandalone !== 'undefined') {
-        (window as any).ezstandalone.cmd.push(function() { 
-            (window as any).ezstandalone.showAds(119, 120); 
+    // --- AJOUT EZOIC ICI ---
+    // On demande à Ezoic de recharger les pubs car le contenu a changé
+    if (typeof ezstandalone !== 'undefined') {
+        ezstandalone.cmd.push(function() {
+            ezstandalone.showAds(); 
         });
     }
+    // -----------------------
   }
-
-  // ... le reste de tes events (catBtns, searchInput.addEventListener, etc.) ...
-</script>
 
   function updatePaginationUI(totalPages: number) {
     if (pageNumbersContainer) {
