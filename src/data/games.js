@@ -368,7 +368,7 @@ export const gamesData = [
     desc: "Liez-vous à un Titan et vivez l'une des meilleures campagnes solo de l'histoire du FPS.",
     min: { os: "Win 10", cpu: "i3-3600t", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "45 GB" },
     rec: { os: "Win 11", cpu: "i5-6600", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "45 GB" },
-    dl: "#"
+    dl: "https://lockr.so/m8SStMFK"
   },
   { 
     id: 'resident-evil-village', title: "RE Village", image: "/images/revillage.jpg", cat: "Horreur", mode: "Solo",
@@ -382,7 +382,7 @@ export const gamesData = [
     desc: "Un soldat français piégé dans un bunker de la 1ère Guerre mondiale doit échapper à une bête traqueuse.",
     min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 460", dx: "11", storage: "35 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "35 GB" },
-    dl: "#"
+    dl: "https://lockr.so/A1vxd8ym"
   },
   { 
     id: 'dead-by-daylight', title: "Dead by Daylight", image: "/images/dbd.jpg", cat: "Horreur / Multi", mode: "Multi",
