@@ -125,46 +125,46 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
   const gamesPerPage = 18; // Change ici pour afficher plus ou moins de jeux par page
   let filteredCards: Element[] = [];
 
+  <script>
+  // ... tes variables (searchInput, cards, etc.) ...
+
   function applyPagination() {
-    // 1. Filtrer les cartes
     const search = searchInput.value.toLowerCase();
+    
+    // Filtrage des cartes
     filteredCards = Array.from(cards).filter(card => {
-        const title = card.getAttribute('data-title') || '';
-        const cat = card.getAttribute('data-cat') || '';
-        const mode = card.getAttribute('data-mode') || '';
+      const title = card.getAttribute('data-title') || '';
+      const cat = card.getAttribute('data-cat') || '';
+      const mode = card.getAttribute('data-mode') || '';
 
-        const matchSearch = title.includes(search);
-        const matchCat = activeCat === 'tous' || cat.includes(activeCat);
-        const matchMode = activeMode === 'tous' || mode.includes(activeMode);
+      const matchSearch = title.includes(search);
+      const matchCat = activeCat === 'tous' || cat.includes(activeCat);
+      const matchMode = activeMode === 'tous' || mode.includes(activeMode);
 
-        return matchSearch && matchCat && matchMode;
+      return matchSearch && matchCat && matchMode;
     });
 
-    // 2. Ton code de pagination habituel ici (affichage/masquage des cartes)
-    // ...
-
-    // 3. Rafraîchir les publicités Ezoic (À METTRE TOUT À LA FIN)
-    if (typeof ezstandalone !== 'undefined') {
-        ezstandalone.cmd.push(function() { 
-            ezstandalone.showAds(); 
-        });
-    }
-}
-
-    // 2. Calculer les pages
+    // Affichage des cartes (Logique de pagination)
     const totalPages = Math.ceil(filteredCards.length / gamesPerPage);
-    if (currentPage > totalPages) currentPage = totalPages || 1;
-
-    // 3. Afficher / Cacher les cartes
     const start = (currentPage - 1) * gamesPerPage;
     const end = start + gamesPerPage;
 
-    cards.forEach(card => (card as HTMLElement).style.display = 'none'); // On cache tout
-    filteredCards.slice(start, end).forEach(card => (card as HTMLElement).style.display = 'block'); // On montre la page
+    cards.forEach(card => (card as HTMLElement).style.display = 'none');
+    filteredCards.slice(start, end).forEach(card => (card as HTMLElement).style.display = 'block');
 
-    // 4. Update UI boutons
     updatePaginationUI(totalPages);
+
+    // RAFRAÎCHIR LES PUBS (Code Ezoic)
+    // On vérifie si ezstandalone existe pour éviter les erreurs au build
+    if (typeof (window as any).ezstandalone !== 'undefined') {
+        (window as any).ezstandalone.cmd.push(function() { 
+            (window as any).ezstandalone.showAds(119, 120); 
+        });
+    }
   }
+
+  // ... le reste de tes events (catBtns, searchInput.addEventListener, etc.) ...
+</script>
 
   function updatePaginationUI(totalPages: number) {
     if (pageNumbersContainer) {
