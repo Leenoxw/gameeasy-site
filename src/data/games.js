@@ -347,7 +347,7 @@ export const gamesData = [
     desc: "Gérez votre propre exploitation agricole avec des machines réelles et des cycles de saisons.",
     min: { os: "Win 10", cpu: "i5-3330", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "35 GB" },
     rec: { os: "Win 11", cpu: "i5-5675C", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "35 GB" },
-    dl: "#"
+    dl: "https://lockr.so/NC9i4AVS"
   },
   { 
     id: 'battlefield-2042', title: "Battlefield 2042", image: "/images/bf2042.jpg", cat: "FPS / Action", mode: "Multi",
@@ -389,21 +389,21 @@ export const gamesData = [
     desc: "Un jeu d'horreur asymétrique 4 contre 1 où un tueur traque quatre survivants.",
     min: { os: "Win 10", cpu: "i3-4170", ram: "8 GB", gpu: "GTX 460", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/pRqHOv3H"
   },
   { 
     id: 'days-gone', title: "Days Gone", image: "/images/daysgone.jpg", cat: "Action / Open World", mode: "Solo",
     desc: "Incarnez Deacon St. John et survivez à travers le désert de l'Oregon face à des hordes de mutants.",
     min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 780", dx: "11", storage: "70 GB" },
     rec: { os: "Win 11", cpu: "i7-4770K", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "70 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/3WF7lLtX"
   },
   { 
     id: 'assassins-creed-odyssey', title: "AC Odyssey", image: "/images/odyssey.jpg", cat: "Aventure / RPG", mode: "Solo",
     desc: "Écrivez votre propre odyssée épique pour devenir un héros grec légendaire.",
     min: { os: "Win 10", cpu: "i5-2400", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "46 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "46 GB" },
-    dl: "#"
+    dl: "https://lockr.so/uyhMUr8v"
   },
   { 
     id: 'mafia-definitive-edition', title: "Mafia: Def. Edition", image: "/images/mafia.jpg", cat: "Action / Aventure", mode: "Solo",
