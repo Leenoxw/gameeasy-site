@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://leenoxw.github.io',
-  base: '/gameeasy-site', // Sans cela, les liens "/cracks" ne marcheront jamais
+  // Remplace l'ancienne adresse par ton nouveau domaine
+  site: 'https://www.gameeasy.fr/',
+  base: '/', 
 });
