@@ -56,7 +56,7 @@ const categories = ["Tous", ...new Set(allGames.map(game => game.cat.split(' / '
 
         <div class="game-grid" id="gameGrid">
           {allGames.map(game => (
-            <a href={`${game.id}`} 
+            <a href={`/${game.id}`} 
                class="game-card" 
                data-title={game.title.toLowerCase()} 
                data-cat={game.cat.toLowerCase()}
