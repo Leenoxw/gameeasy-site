@@ -132,7 +132,7 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i5-4590", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "21 GB" },
     rec: { os: "Win 11", cpu: "i7-6700", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" },
     dl: "https://lockr.so/YEfWZGhM"
-  }, // Jeux sans image pour linstant //
+  },
   { 
     id: 'resident-evil-4-remake', title: "Resident Evil 4", image: "/images/resident-evil-4.jpg", cat: "Horreur / Action", mode: "Solo",
     desc: "Leon S. Kennedy doit sauver la fille du président dans un village européen terrifiant.",
@@ -259,8 +259,6 @@ export const gamesData = [
     rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "50 GB" },
     dl: "https://lockr.so/u4qUWHbQ"
   },
-
-  // --- PACK SURVIE & HORREUR ---
   { 
     id: 'sons-of-the-forest', title: "Sons of the Forest", image: "/images/soft.jpg", cat: "Survie / Horreur", mode: "Solo / Multi",
     desc: "Envoyé pour retrouver un milliardaire sur une île isolée, vous vous retrouvez face à des cannibales.",
@@ -268,8 +266,6 @@ export const gamesData = [
     rec: { os: "Win 11", cpu: "i7-8700K", ram: "16 GB", gpu: "RTX 2060", dx: "11", storage: "20 GB SSD" },
     dl: "https://lockr.so/tmM240Rl"
   },
-
-  // --- PACK FPS & COMBAT ---
   { 
     id: 'doom-eternal', title: "DOOM Eternal", image: "/images/doom.jpg", cat: "FPS", mode: "Solo / Multi",
     desc: "Les armées de l'enfer ont envahi la Terre. Devenez le Slayer et massacrez des démons.",
@@ -277,8 +273,6 @@ export const gamesData = [
     rec: { os: "Win 11", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 1080", dx: "11", storage: "50 GB" },
     dl: "https://lockr.so/SbS0DuTe"
   },
-
-  // --- PACK INDÉ & TENDANCE ---
   { 
     id: 'balatro', title: "Balatro", image: "/images/balatro.jpg", cat: "Poker", mode: "Solo",
     desc: "Le roguelike de poker terriblement addictif où vous créez des combos déments.",
