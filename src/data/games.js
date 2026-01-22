@@ -477,61 +477,39 @@ export const gamesData = [
     dl: "https://lockr.so/kN1kshGa"
   },
   { 
-    id: 'slay-the-spire', title: "Slay the Spire", image: "/images/slaythespire.jpg", cat: "Roguelike / Cartes", mode: "Solo",
-    desc: "Fusionnez jeux de cartes et roguelike pour construire le deck ultime et grimper la tour.",
-    min: { os: "Win 7", cpu: "2.0 GHz", ram: "2 GB", gpu: "1 GB", dx: "10", storage: "1 GB" },
-    rec: { os: "Win 11", cpu: "2.5 GHz", ram: "4 GB", gpu: "2 GB", dx: "11", storage: "1 GB" },
-    dl: "#"
-  },
-  { 
     id: 'the-last-of-us-p1', title: "The Last of Us Part I", image: "/images/tlou1.jpg", cat: "Action / Aventure", mode: "Solo",
     desc: "Vivez l'histoire poignante de Joel et Ellie dans un monde post-apocalyptique dévasté.",
     min: { os: "Win 10", cpu: "i7-4770K", ram: "16 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB SSD" },
     rec: { os: "Win 11", cpu: "i5-12600K", ram: "32 GB", gpu: "RTX 3060", dx: "12", storage: "100 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/zKhA3U66"
   },
   { 
     id: 'returnal', title: "Returnal", image: "/images/returnal.jpg", cat: "Sci-Fi / Roguelike", mode: "Solo / Multi",
     desc: "Brisez le cycle sur une planète extraterrestre qui change à chaque mort dans ce shooter intense.",
     min: { os: "Win 10", cpu: "i5-6400", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "60 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-8700", ram: "32 GB", gpu: "RTX 3080", dx: "12", storage: "60 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/aVNT9vqb"
   },
   { 
     id: 'monster-hunter-rise', title: "Monster Hunter Rise", image: "/images/mhrise.jpg", cat: "Action / RPG", mode: "Solo / Multi",
     desc: "Traquez des monstres géants dans des environnements inspirés du folklore japonais.",
     min: { os: "Win 10", cpu: "i3-4130", ram: "8 GB", gpu: "GTX 1030", dx: "12", storage: "23 GB" },
     rec: { os: "Win 11", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "23 GB" },
-    dl: "#"
+    dl: "https://lockr.so/b4ppByOf"
   },
   { 
     id: 'kcd-2', title: "Kingdom Come: Deliverance II", image: "/images/kcd2.jpg", cat: "RPG / Médiéval", mode: "Solo",
     desc: "L'épopée de Henry continue dans une Bohême médiévale ultra-réaliste.",
     min: { os: "Win 10", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 1660", dx: "12", storage: "80 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-12700", ram: "32 GB", gpu: "RTX 3070", dx: "12", storage: "80 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/ppaF3eey"
   },
   { 
     id: 'stalker-2', title: "S.T.A.L.K.E.R. 2", image: "/images/stalker2.jpg", cat: "FPS / Survie", mode: "Solo",
     desc: "Explorez la Zone d'exclusion de Tchernobyl, remplie d'anomalies et de mutants.",
     min: { os: "Win 10", cpu: "i7-7700K", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "150 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-10700K", ram: "32 GB", gpu: "RTX 3070 Ti", dx: "12", storage: "150 GB SSD" },
-    dl: "#"
-  },
-  // --- SAGA FAR CRY ---
-  { 
-    id: 'far-cry-3', title: "Far Cry 3", image: "/images/fc3.jpg", cat: "FPS / Action", mode: "Solo",
-    desc: "Survivez à Vaas sur une île tropicale démentielle. Un classique du FPS en monde ouvert.",
-    min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 460", dx: "11", storage: "15 GB" },
-    rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "15 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'far-cry-4', title: "Far Cry 4", image: "/images/fc4.jpg", cat: "FPS / Action", mode: "Solo / Multi",
-    desc: "Affrontez le dictateur Pagan Min dans les montagnes de l'Himalaya.",
-    min: { os: "Win 10", cpu: "i5-750", ram: "4 GB", gpu: "GTX 460", dx: "11", storage: "30 GB" },
-    rec: { os: "Win 11", cpu: "i5-2400S", ram: "8 GB", gpu: "GTX 680", dx: "11", storage: "30 GB" },
-    dl: "#"
+    dl: "https://lockr.so/ZlCNkRbH"
   },
   { 
     id: 'far-cry-5', title: "Far Cry 5", image: "/images/fc5.jpg", cat: "FPS / Action", mode: "Solo / Multi",
@@ -547,17 +525,15 @@ export const gamesData = [
     rec: { os: "Win 11", cpu: "i7-7700", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "60 GB" },
     dl: "#"
   },
-
-  // --- SAGA RESIDENT EVIL ---
   { 
-    id: 're-2-remake', title: "Resident Evil 2 Remake", image: "/images/re2.jpg", cat: "Horreur", mode: "Solo",
+    id: 're-2', title: "Resident Evil 2", image: "/images/re2.jpg", cat: "Horreur", mode: "Solo",
     desc: "Le remake magistral du cauchemar à Raccoon City avec Leon et Claire.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "26 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "26 GB" },
     dl: "#"
   },
   { 
-    id: 're-3-remake', title: "Resident Evil 3 Remake", image: "/images/re3.jpg", cat: "Horreur / Action", mode: "Solo",
+    id: 're-3', title: "Resident Evil 3", image: "/images/re3.jpg", cat: "Horreur / Action", mode: "Solo",
     desc: "Échappez à l'invincible Nemesis dans les rues de Raccoon City.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "45 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "45 GB" },
