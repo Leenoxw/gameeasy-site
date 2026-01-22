@@ -4,184 +4,160 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Soutenir GAMEASY - Donations Crypto">
+<Layout title="Soutenir GAMEASY - Faire un Don">
   <Header />
   
   <main class="donation-page">
-    <div class="donation-bg-glow"></div>
-    
-    <section class="container">
-      <div class="donation-card">
-        <div class="card-header">
-          <div class="icon-circle">🧡</div>
-          <h1>SOUTENIR LE PROJET</h1>
-          <p>GAMEASY est maintenu par passion. Vos dons nous aident à payer les serveurs et à acheter les derniers jeux pour les cracker.</p>
+    <div class="donation-wrapper">
+      
+      <aside class="side-ad left-ad">
+        <div class="ad-sticky">
+          <span class="ad-label">SPONSOR</span>
+          <iframe data-aa='2425086' src='//acceptable.a-ads.com/2425086/?size=160x600' style='border:0; padding:0; width:160px; height:600px; overflow:hidden; background-color: transparent;'></iframe>
         </div>
+      </aside>
 
-        <div class="goal-section">
-          <div class="goal-info">
-            <span>Objectif Serveur Janvier</span>
-            <span>75%</span>
+      <div class="center-content">
+        <div class="donation-card">
+          <div class="card-header">
+            <div class="icon-circle">🎁</div>
+            <h1>SOUTENIR LE PROJET</h1>
+            <p>Vos dons permettent de maintenir les serveurs en vie et de garantir des téléchargements ultra-rapides sans limites.</p>
           </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 75%;"></div>
-          </div>
-          <p class="goal-sub">Encore 25€ pour sécuriser l'hébergement ce mois-ci !</p>
-        </div>
 
-        <div class="crypto-grid">
-          <div class="crypto-item">
-            <div class="crypto-info">
-              <i class="fab fa-bitcoin"></i>
-              <div>
-                <strong>Bitcoin (BTC / Lightning)</strong>
-                <code>bc1qxy2kgdygj... (Ton Adresse)</code>
+          <div class="paypal-section">
+            <a href="https://paypal.me/TON_PSEUDO" target="_blank" class="paypal-btn">
+              <i class="fab fa-paypal"></i> FAIRE UN DON VIA PAYPAL
+            </a>
+            <p class="paypal-notice">Simple, rapide et sécurisé (Carte Bancaire acceptée)</p>
+          </div>
+
+          <div class="separator"><span>OU VIA CRYPTO</span></div>
+
+          <div class="crypto-grid">
+            <div class="crypto-item">
+              <div class="crypto-info">
+                <i class="fab fa-bitcoin" style="color: #f7931a;"></i>
+                <div>
+                  <strong>Bitcoin / Lightning</strong>
+                  <code id="btc-addr">bc1qxy2kgdygj... (Ton Adresse)</code>
+                </div>
               </div>
+              <button class="copy-btn" onclick="copyToClipboard('btc-addr')">COPIER</button>
             </div>
-            <button class="copy-btn">COPIER</button>
-          </div>
 
-          <div class="crypto-item">
-            <div class="crypto-info">
-              <i class="fab fa-ethereum"></i>
-              <div>
-                <strong>Ethereum (ETH)</strong>
-                <code>0x71C765... (Ton Adresse)</code>
+            <div class="crypto-item">
+              <div class="crypto-info">
+                <i class="fab fa-ethereum" style="color: #627eea;"></i>
+                <div>
+                  <strong>Ethereum (ETH)</strong>
+                  <code id="eth-addr">0x71C765... (Ton Adresse)</code>
+                </div>
               </div>
+              <button class="copy-btn" onclick="copyToClipboard('eth-addr')">COPIER</button>
             </div>
-            <button class="copy-btn">COPIER</button>
+          </div>
+
+          <div class="lightning-alert">
+            <i class="fas fa-bolt"></i> Soutenez-nous via <strong>Lightning Network</strong> pour 0 frais !
           </div>
         </div>
-
-        <div class="lightning-notice">
-          <i class="fas fa-bolt"></i>
-          <p>Nous préférons le réseau <strong>Lightning</strong> pour des frais de transaction nuls !</p>
-        </div>
-
-        <a href="/" class="back-link">Retour à l'accueil</a>
       </div>
-    </section>
+
+      <aside class="side-ad right-ad">
+        <div class="ad-sticky">
+          <span class="ad-label">SPONSOR</span>
+          <iframe data-aa='2425087' src='//acceptable.a-ads.com/2425087/?size=160x600' style='border:0; padding:0; width:160px; height:600px; overflow:hidden; background-color: transparent;'></iframe>
+        </div>
+      </aside>
+
+    </div>
   </main>
 
   <Footer />
 </Layout>
 
+<script is:inline>
+  function copyToClipboard(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Adresse copiée !");
+    });
+  }
+</script>
+
 <style>
-  .donation-page {
-    min-height: 100vh;
-    background: #060612;
-    padding: 150px 20px 80px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-  }
+  .donation-page { min-height: 100vh; background: #060612; padding: 120px 20px 60px; }
+  .donation-wrapper { display: flex; justify-content: center; gap: 40px; max-width: 1600px; margin: 0 auto; }
 
-  .donation-bg-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: #f97316;
-    filter: blur(150px);
-    opacity: 0.1;
-    z-index: 0;
-  }
+  /* --- STYLE DES PUBS LATÉRALES --- */
+  .side-ad { flex: 0 0 160px; }
+  .ad-sticky { position: sticky; top: 100px; text-align: center; }
+  .ad-label { display: block; font-size: 10px; color: #444; font-weight: 900; margin-bottom: 5px; letter-spacing: 2px; }
 
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    width: 100%;
-  }
-
-  .donation-card {
-    background: #0c0c1d;
-    border: 1px solid rgba(249, 115, 22, 0.2);
-    border-radius: 30px;
-    padding: 50px;
+  /* --- CARTE CENTRALE --- */
+  .center-content { flex: 1; max-width: 800px; }
+  .donation-card { 
+    background: #0c0c1d; 
+    border: 1px solid rgba(138, 79, 255, 0.2); 
+    border-radius: 30px; 
+    padding: 50px; 
     text-align: center;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   }
 
-  .icon-circle {
-    font-size: 3rem;
-    background: rgba(249, 115, 22, 0.1);
-    width: 80px;
-    height: 80px;
+  .icon-circle { font-size: 3rem; margin-bottom: 20px; }
+  h1 { color: white; font-size: 2.5rem; font-weight: 950; margin-bottom: 15px; }
+  p { color: #888; margin-bottom: 30px; line-height: 1.6; }
+
+  /* --- PAYPAL --- */
+  .paypal-section { margin-bottom: 40px; }
+  .paypal-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    border: 1px solid rgba(249, 115, 22, 0.3);
-  }
-
-  h1 { font-size: 2.5rem; font-weight: 900; color: white; margin-bottom: 15px; }
-  p { color: #888; line-height: 1.6; margin-bottom: 30px; }
-
-  /* --- BARRE DE PROGRESSION --- */
-  .goal-section {
-    background: rgba(255,255,255,0.03);
+    gap: 15px;
+    background: #ffc439;
+    color: #003087;
+    text-decoration: none;
     padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 40px;
+    border-radius: 15px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    transition: 0.3s;
   }
-  .goal-info { display: flex; justify-content: space-between; color: white; font-weight: 800; margin-bottom: 10px; }
-  .progress-bar { height: 12px; background: #1a1a2e; border-radius: 10px; overflow: hidden; }
-  .progress-fill { height: 100%; background: linear-gradient(to right, #f97316, #ff8c00); box-shadow: 0 0 15px rgba(249, 115, 22, 0.5); }
-  .goal-sub { font-size: 0.85rem; margin-top: 10px; margin-bottom: 0; color: #666; }
+  .paypal-btn:hover { transform: scale(1.02); background: #ffd36b; }
+  .paypal-notice { font-size: 0.8rem; margin-top: 10px; color: #555; }
 
-  /* --- CRYPTO LIST --- */
-  .crypto-grid { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+  .separator { 
+    display: flex; align-items: center; text-align: center; color: #333; margin: 30px 0; 
+    font-weight: 900; font-size: 0.8rem;
+  }
+  .separator::before, .separator::after { content: ''; flex: 1; border-bottom: 1px solid #1a1a2e; }
+  .separator span { padding: 0 15px; }
+
+  /* --- CRYPTO --- */
+  .crypto-grid { display: flex; flex-direction: column; gap: 15px; }
   .crypto-item {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.05);
-    padding: 15px 25px;
+    padding: 15px 20px;
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    transition: 0.3s;
   }
-  .crypto-item:hover { background: rgba(255,255,255,0.05); border-color: #f97316; }
-  .crypto-info { display: flex; align-items: center; gap: 20px; }
-  .crypto-info i { font-size: 1.5rem; color: #f97316; }
-  .crypto-info strong { display: block; color: white; font-size: 1rem; }
-  .crypto-info code { color: #555; font-size: 0.8rem; }
-
-  .copy-btn {
-    background: #1a1a2e;
-    color: #f97316;
-    border: 1px solid #f97316;
-    padding: 8px 15px;
-    border-radius: 8px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.3s;
+  .crypto-info { display: flex; align-items: center; gap: 15px; }
+  .crypto-info strong { display: block; color: white; }
+  .crypto-info code { color: #666; font-size: 0.8rem; }
+  .copy-btn { 
+    background: #1a1a2e; color: #8a4fff; border: 1px solid #8a4fff; 
+    padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: 800;
   }
-  .copy-btn:hover { background: #f97316; color: white; }
+  .copy-btn:hover { background: #8a4fff; color: white; }
 
-  .lightning-notice {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: #00ff88;
-    font-size: 0.85rem;
-    margin-bottom: 30px;
-  }
+  .lightning-alert { color: #00ff88; font-size: 0.85rem; margin-top: 30px; font-weight: 700; }
 
-  .back-link { color: #555; text-decoration: none; font-size: 0.9rem; font-weight: 700; transition: 0.3s; }
-  .back-link:hover { color: white; }
-
-  @media (max-width: 600px) {
-    .donation-card { padding: 30px 20px; }
-    .crypto-item { flex-direction: column; gap: 15px; text-align: center; }
-    .crypto-info { flex-direction: column; gap: 10px; }
-  }
+  @media (max-width: 1100px) { .side-ad { display: none; } }
 </style>
