@@ -2,13 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-// Ces données seront remplacées par l'API une fois connectée
-// Pour l'instant, c'est ta configuration de base
-const targetAmount = 100;
 ---
 
-<Layout title="Soutenir GAMEASY - Automation & Sécurité">
+<Layout title="Soutenir GAMEASY - Faire un Don">
   <Header />
   
   <main class="donation-page">
@@ -24,51 +20,46 @@ const targetAmount = 100;
       <div class="center-content">
         <div class="donation-card">
           <div class="card-header">
-            <div class="icon-circle">⚡</div>
-            <h1>SYSTÈME DE DON AUTOMATISÉ</h1>
-            <p>Soutenez GAMEASY. Vos dons sont désormais traités automatiquement via notre passerelle sécurisée.</p>
+            <div class="icon-circle">🎁</div>
+            <h1>SOUTENIR LE PROJET</h1>
+            <p>Vos dons permettent de maintenir les serveurs en vie et de garantir des téléchargements ultra-rapides sans limites.</p>
           </div>
 
-          <div class="goal-container">
-            <div class="goal-header">
-              <span class="goal-title">Objectif Maintenance</span>
-              <span class="goal-value"><span id="current-val">0</span>€ / {targetAmount}€</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-bar-fill" id="goal-bar" style="width: 0%;"></div>
-            </div>
-            <p class="goal-status">🚀 <strong id="percent-text">0%</strong> collectés par la communauté.</p>
+          <div class="paypal-section">
+            <a href="https://paypal.me/TON_PSEUDO" target="_blank" class="paypal-btn">
+              <i class="fab fa-paypal"></i> FAIRE UN DON VIA PAYPAL
+            </a>
+            <p class="paypal-notice">Simple, rapide et sécurisé (Carte Bancaire acceptée)</p>
           </div>
 
-          <div class="payment-methods">
-            <h3>Choisir un montant</h3>
-            <div class="payment-grid">
-              <button class="pay-btn sellix" onclick="openSellix('5.00')">
-                <i class="fas fa-coffee"></i> 5€ (Support)
-              </button>
-              <button class="pay-btn sellix highlight-pay" onclick="openSellix('10.00')">
-                <i class="fas fa-heart"></i> 10€ (Premium)
-              </button>
-              <button class="pay-btn paypal" onclick="window.open('https://paypal.me/TON_PSEUDO/20', '_blank')">
-                <i class="fab fa-paypal"></i> 20€ (Elite)
-              </button>
+          <div class="separator"><span>OU VIA CRYPTO</span></div>
+
+          <div class="crypto-grid">
+            <div class="crypto-item">
+              <div class="crypto-info">
+                <i class="fab fa-bitcoin" style="color: #f7931a;"></i>
+                <div>
+                  <strong>Bitcoin / Lightning</strong>
+                  <code id="btc-addr">bc1qxy2kgdygj... (Ton Adresse)</code>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('btc-addr')">COPIER</button>
             </div>
-            <p class="automation-notice"><i class="fas fa-sync-alt fa-spin"></i> Traitement instantané via Sellix Cloud</p>
+
+            <div class="crypto-item">
+              <div class="crypto-info">
+                <i class="fab fa-ethereum" style="color: #627eea;"></i>
+                <div>
+                  <strong>Ethereum (ETH)</strong>
+                  <code id="eth-addr">0x71C765... (Ton Adresse)</code>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('eth-addr')">COPIER</button>
+            </div>
           </div>
 
-          <div class="separator"><span>DERNIERS DONATEURS</span></div>
-
-          <div class="donors-container">
-            <div id="donors-list" class="donors-list">
-                <div class="loading-dots">Chargement des dons en cours...</div>
-            </div>
-          </div>
-
-          <div class="crypto-footer">
-            <p>Besoin d'anonymat total ?</p>
-            <div class="mini-crypto">
-                <code>BTC: bc1qxy2kgdygj... <i class="fas fa-copy" onclick="copyToClipboard('bc1q...')"></i></code>
-            </div>
+          <div class="lightning-alert">
+            <i class="fas fa-bolt"></i> Soutenez-nous via <strong>Lightning Network</strong> pour 0 frais !
           </div>
         </div>
       </div>
@@ -86,98 +77,87 @@ const targetAmount = 100;
   <Footer />
 </Layout>
 
-<script is:inline define:vars={{ targetAmount }}>
-  // SIMULATION DE L'API AUTOMATIQUE (À connecter à Sellix/Supabase)
-  const mockData = {
-    current: 68,
-    donors: [
-      { name: "Lukas_K", amount: 10, time: "Il y a 5 min" },
-      { name: "Anonyme", amount: 5, time: "Il y a 1h" },
-      { name: "X-Gamer", amount: 20, time: "Aujourd'hui" },
-      { name: "Shadow", amount: 2, time: "Hier" }
-    ]
-  };
-
-  function initAutomation() {
-    const bar = document.getElementById('goal-bar');
-    const currentText = document.getElementById('current-val');
-    const percentText = document.getElementById('percent-text');
-    const list = document.getElementById('donors-list');
-
-    const percent = Math.round((mockData.current / targetAmount) * 100);
-
-    // 1. Animer la barre et les chiffres
-    setTimeout(() => {
-        bar.style.width = percent + '%';
-        currentText.innerText = mockData.current;
-        percentText.innerText = percent + '%';
-    }, 500);
-
-    // 2. Générer la liste des donateurs
-    list.innerHTML = mockData.donors.map(don => `
-      <div class="donor-row">
-        <div class="d-left">
-            <span class="d-avatar">${don.name.charAt(0)}</span>
-            <span class="d-name">${don.name}</span>
-        </div>
-        <div class="d-right">
-            <span class="d-amount">${don.amount}€</span>
-            <span class="d-time">${don.time}</span>
-        </div>
-      </div>
-    `).join('');
+<script is:inline>
+  function copyToClipboard(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Adresse copiée !");
+    });
   }
-
-  // Fonction pour Sellix (Ouvre leur checkout sécurisé)
-  window.openSellix = (val) => {
-    // Ici tu mettrais ton lien de produit Sellix
-    alert("Redirection vers le paiement sécurisé de " + val + "€...");
-    window.open('https://sellix.io/ton-shop', '_blank');
-  }
-
-  window.copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text);
-    alert("Copié !");
-  }
-
-  document.addEventListener('DOMContentLoaded', initAutomation);
 </script>
 
 <style>
-  .donation-page { min-height: 100vh; background: #060612; padding: 120px 20px 60px; color: white; }
-  .donation-wrapper { display: flex; justify-content: center; gap: 40px; max-width: 1500px; margin: 0 auto; }
+  .donation-page { min-height: 100vh; background: #060612; padding: 120px 20px 60px; }
+  .donation-wrapper { display: flex; justify-content: center; gap: 40px; max-width: 1600px; margin: 0 auto; }
 
-  /* PUBS */
+  /* --- STYLE DES PUBS LATÉRALES --- */
   .side-ad { flex: 0 0 160px; }
   .ad-sticky { position: sticky; top: 100px; text-align: center; }
   .ad-label { display: block; font-size: 10px; color: #444; font-weight: 900; margin-bottom: 5px; letter-spacing: 2px; }
 
-  /* CARTE CENTRALE */
+  /* --- CARTE CENTRALE --- */
   .center-content { flex: 1; max-width: 800px; }
   .donation-card { 
-    background: #0c0c1d; border: 1px solid rgba(138, 79, 255, 0.15); border-radius: 40px; 
-    padding: 50px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    background: #0c0c1d; 
+    border: 1px solid rgba(138, 79, 255, 0.2); 
+    border-radius: 30px; 
+    padding: 50px; 
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   }
 
-  .icon-circle { 
-    width: 80px; height: 80px; background: rgba(138, 79, 255, 0.1); 
-    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-    margin: 0 auto 20px; font-size: 2.5rem; border: 1px solid #8a4fff;
+  .icon-circle { font-size: 3rem; margin-bottom: 20px; }
+  h1 { color: white; font-size: 2.5rem; font-weight: 950; margin-bottom: 15px; }
+  p { color: #888; margin-bottom: 30px; line-height: 1.6; }
+
+  /* --- PAYPAL --- */
+  .paypal-section { margin-bottom: 40px; }
+  .paypal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: #ffc439;
+    color: #003087;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    transition: 0.3s;
   }
+  .paypal-btn:hover { transform: scale(1.02); background: #ffd36b; }
+  .paypal-notice { font-size: 0.8rem; margin-top: 10px; color: #555; }
 
-  h1 { font-size: 2.2rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 10px; }
-  p { color: #888; margin-bottom: 30px; }
-
-  /* GOAL */
-  .goal-container { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 25px; margin-bottom: 40px; }
-  .goal-header { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: 800; }
-  .progress-track { height: 16px; background: #15152a; border-radius: 50px; overflow: hidden; }
-  .progress-bar-fill { 
-    height: 100%; background: linear-gradient(90deg, #8a4fff, #f97316); 
-    box-shadow: 0 0 20px rgba(138, 79, 255, 0.4); transition: 2s cubic-bezier(0.2, 1, 0.2, 1); 
+  .separator { 
+    display: flex; align-items: center; text-align: center; color: #333; margin: 30px 0; 
+    font-weight: 900; font-size: 0.8rem;
   }
-  .goal-status { margin-top: 15px; font-size: 0.9rem; color: #555; }
+  .separator::before, .separator::after { content: ''; flex: 1; border-bottom: 1px solid #1a1a2e; }
+  .separator span { padding: 0 15px; }
 
-  /* BOUTONS PAIEMENT */
-  .payment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-  .pay-btn {
+  /* --- CRYPTO --- */
+  .crypto-grid { display: flex; flex-direction: column; gap: 15px; }
+  .crypto-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  .crypto-info { display: flex; align-items: center; gap: 15px; }
+  .crypto-info strong { display: block; color: white; }
+  .crypto-info code { color: #666; font-size: 0.8rem; }
+  .copy-btn { 
+    background: #1a1a2e; color: #8a4fff; border: 1px solid #8a4fff; 
+    padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: 800;
+  }
+  .copy-btn:hover { background: #8a4fff; color: white; }
+
+  .lightning-alert { color: #00ff88; font-size: 0.85rem; margin-top: 30px; font-weight: 700; }
+
+  @media (max-width: 1100px) { .side-ad { display: none; } }
+</style>
