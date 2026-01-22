@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="À Propos - GAMEASY">
+  <Header />
+
+  <main class="about-container">
+    <div class="content-wrapper">
+      
+      <section class="about-hero">
+        <h1 class="glitch-text">À PROPOS DE <span>GAMEASY</span></h1>
+        <p class="lead-text">La référence du partage de jeux gratuits et illimités depuis 2024.</p>
+      </section>
+
+      <div class="grid-content">
+        <section class="text-section">
+          <h2>Pourquoi GAMEASY ?</h2>
+          <p>
+            GAMEASY est né d'une passion pour le gaming et de la volonté de rendre la culture vidéoludique accessible à tous. Nous pensons que le divertissement ne devrait pas être limité par le budget.
+          </p>
+          <p>
+            Notre équipe travaille quotidiennement pour répertorier les meilleurs cracks, vérifier leur sécurité et vous proposer des guides d'installation simplifiés.
+          </p>
+          
+          <div class="features-list">
+            <div class="feat">
+              <span class="feat-icon">🛡️</span>
+              <div>
+                <strong>Sécurité Garantie</strong>
+                <p>Tous nos fichiers sont scannés et testés sur des machines virtuelles.</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-icon">🚀</span>
+              <div>
+                <strong>Vitesse Maximum</strong>
+                <p>Pas de limite de bridage, nous utilisons des serveurs ultra-rapides.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="stats-sidebar">
+          <div class="stat-box">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Jeux disponibles</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Gratuit & Safe</span>
+          </div>
+          <a href="https://discord.gg/YaP3akhcgQ" class="discord-cta">
+            <i class="fab fa-discord"></i> Rejoindre la communauté
+          </a>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* CONFIGURATION DE LA PAGE */
+  .about-container {
+    padding-top: 120px; /* Espace pour le Header fixe */
+    padding-bottom: 80px;
+    min-height: 100vh;
+    background: #060612;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    width: 90%;
+    max-width: 1100px;
+  }
+
+  /* HERO */
+  .about-hero {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+  }
+
+  h1 span {
+    color: #8a4fff;
+    text-shadow: 0 0 20px rgba(138, 79, 255, 0.5);
+  }
+
+  .lead-text {
+    font-size: 1.2rem;
+    color: #a1a1aa;
+  }
+
+  /* GRID SYSTEM */
+  .grid-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #fff;
+  }
+
+  .text-section p {
+    color: #a1a1aa;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+
+  /* FEATURES */
+  .features-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .feat {
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .feat-icon {
+    font-size: 2rem;
+  }
+
+  .feat strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #8a4fff;
+  }
+
+  .feat p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  /* SIDEBAR STATS */
+  .stats-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-box {
+    background: linear-gradient(145deg, #11111e, #0a0a16);
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(138, 79, 255, 0.2);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #8a4fff;
+  }
+
+  .stat-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #a1a1aa;
+  }
+
+  .discord-cta {
+    background: #5865F2;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .discord-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 850px) {
+    .grid-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-container {
+      padding-top: 100px;
+    }
+  }
+</style>

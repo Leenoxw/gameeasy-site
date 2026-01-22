@@ -1,0 +1,25 @@
+:root {
+    --primary-purple: #8a4fff;
+    --dark-bg: #060612;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--dark-bg);
+    color: white;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #ffffff 30%, var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+html {
+    scroll-behavior: smooth;
+}
