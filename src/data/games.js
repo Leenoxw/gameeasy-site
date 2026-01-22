@@ -516,31 +516,31 @@ export const gamesData = [
     desc: "Libérez Hope County d'un culte fanatique dirigé par Joseph Seed.",
     min: { os: "Win 10", cpu: "i5-2400", ram: "8 GB", gpu: "GTX 670", dx: "11", storage: "40 GB" },
     rec: { os: "Win 11", cpu: "i7-4770", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "40 GB" },
-    dl: "#"
+    dl: "https://lockr.so/0pPAnOQe"
   },
   { 
     id: 'far-cry-6', title: "Far Cry 6", image: "/images/fc6.jpg", cat: "FPS / Action", mode: "Solo / Multi",
     desc: "Rejoignez la guérilla moderne pour libérer l'île de Yara du dictateur Anton Castillo.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i7-7700", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "60 GB" },
-    dl: "#"
+    dl: "https://lockr.so/fo8wAfJ7"
   },
   { 
-    id: 're-2', title: "Resident Evil 2", image: "/images/re2.jpg", cat: "Horreur", mode: "Solo",
+    id: 'resient-evil-2', title: "Resident Evil 2", image: "/images/re2.jpg", cat: "Horreur", mode: "Solo",
     desc: "Le remake magistral du cauchemar à Raccoon City avec Leon et Claire.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "26 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "26 GB" },
     dl: "#"
   },
   { 
-    id: 're-3', title: "Resident Evil 3", image: "/images/re3.jpg", cat: "Horreur / Action", mode: "Solo",
+    id: 'resident-evil-3', title: "Resident Evil 3", image: "/images/re3.jpg", cat: "Horreur / Action", mode: "Solo",
     desc: "Échappez à l'invincible Nemesis dans les rues de Raccoon City.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "45 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "45 GB" },
     dl: "#"
   },
   { 
-    id: 're-7-biohazard', title: "Resident Evil 7", image: "/images/re7.jpg", cat: "Horreur", mode: "Solo",
+    id: 'resident-evil-7-biohazard', title: "Resident Evil 7", image: "/images/re7.jpg", cat: "Horreur", mode: "Solo",
     desc: "Une expérience d'horreur pure à la première personne dans une Louisiane lugubre.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "24 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "24 GB" },
