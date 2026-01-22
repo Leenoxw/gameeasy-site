@@ -211,13 +211,6 @@ export const gamesData = [
     dl: "https://lockr.so/65TFZDZP"
   },
   { 
-    id: 'rust', title: "Rust", image: "/images/rust.jpg", cat: "Survie / FPS", mode: "Multi",
-    desc: "Le seul but dans Rust est de survivre. Dominez les autres joueurs et construisez votre base.",
-    min: { os: "Win 10", cpu: "i7-3770", ram: "10 GB", gpu: "GTX 670", dx: "11", storage: "25 GB" },
-    rec: { os: "Win 11", cpu: "i7-4790K", ram: "16 GB", gpu: "GTX 980", dx: "11", storage: "25 GB SSD" },
-    dl: "#"
-  },
-  { 
     id: 'outer-wilds', title: "Outer Wilds", image: "/images/outer-wilds.jpg", cat: "Aventure", mode: "Solo",
     desc: "Un mystère en monde ouvert sur un système solaire piégé dans une boucle temporelle infinie.",
     min: { os: "Win 10", cpu: "i5-2300", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
@@ -344,20 +337,6 @@ export const gamesData = [
     dl: "https://lockr.so/NC9i4AVS"
   },
   { 
-    id: 'battlefield-2042', title: "Battlefield 2042", image: "/images/bf2042.jpg", cat: "FPS / Action", mode: "Multi",
-    desc: "Un jeu de tir à la première personne marquant le retour à la guerre totale emblématique de la franchise.",
-    min: { os: "Win 10", cpu: "i5-6600K", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB" },
-    rec: { os: "Win 11", cpu: "i7-4790", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "100 GB SSD" },
-    dl: "#"
-  },
-  { 
-    id: 'halo-infinite', title: "Halo Infinite", image: "/images/halo.jpg", cat: "FPS / Sci-Fi", mode: "Solo / Multi",
-    desc: "Incarnez le Major dans la plus grande aventure Halo à ce jour sur l'anneau Zeta.",
-    min: { os: "Win 10", cpu: "i5-4440", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "50 GB" },
-    rec: { os: "Win 11", cpu: "i7-9700K", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "50 GB" },
-    dl: "#"
-  },
-  { 
     id: 'titanfall-2', title: "Titanfall 2", image: "/images/titanfall2.jpg", cat: "FPS / Sci-Fi", mode: "Solo / Multi",
     desc: "Liez-vous à un Titan et vivez l'une des meilleures campagnes solo de l'histoire du FPS.",
     min: { os: "Win 10", cpu: "i3-3600t", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "45 GB" },
@@ -365,11 +344,11 @@ export const gamesData = [
     dl: "https://lockr.so/m8SStMFK"
   },
   { 
-    id: 'resident-evil-village', title: "RE Village", image: "/images/revillage.jpg", cat: "Horreur", mode: "Solo",
+    id: 'resident-evil-village', title: "Resident Evil Village", image: "/images/revillage.jpg", cat: "Horreur", mode: "Solo",
     desc: "Survivez dans un village européen hanté par des créatures cauchemardesques et la famille Dimitrescu.",
     min: { os: "Win 10", cpu: "i5-7500", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "28 GB" },
     rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "28 GB" },
-    dl: "#"
+    dl: "https://lockr.so/QtlLYU2C"
   },
   { 
     id: 'amnesia-the-bunker', title: "Amnesia: The Bunker", image: "/images/amnesia-bunker.jpg", cat: "Horreur", mode: "Solo",
@@ -407,18 +386,11 @@ export const gamesData = [
     dl: "https://lockr.so/f7HzvMMS"
   },
   { 
-    id: 'need-for-speed-unbound', title: "NFS Unbound", image: "/images/nfsunbound.jpg", cat: "Course", mode: "Solo / Multi",
+    id: 'need-for-speed-heat', title: "NFS Heat", image: "/images/nfsheat.jpg", cat: "Course", mode: "Solo / Multi",
     desc: "Le monde est votre toile. Prouvez que vous avez ce qu'il faut pour gagner le Grand.",
     min: { os: "Win 10", cpu: "i5-8600", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "50 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'dirt-5', title: "DiRT 5", image: "/images/dirt5.jpg", cat: "Course", mode: "Solo / Multi",
-    desc: "Lâchez-vous dans la plus ambitieuse expérience de course tout-terrain à ce jour.",
-    min: { os: "Win 10", cpu: "i3-2130", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "60 GB" },
-    rec: { os: "Win 11", cpu: "i5-9600K", ram: "16 GB", gpu: "GTX 1070 Ti", dx: "12", storage: "60 GB" },
-    dl: "#"
+    dl: "https://lockr.so/zjVwQxHU"
   },
   { 
     id: 'vampire-survivors', title: "Vampire Survivors", image: "/images/vampire.jpg", cat: "Indie / Roguelike", mode: "Solo",
@@ -428,18 +400,11 @@ export const gamesData = [
     dl: "https://lockr.so/Or0E0UJS"
   },
   { 
-    id: 'dredge', title: "DREDGE", image: "/images/dredge.jpg", cat: "Indie / Aventure", mode: "Solo",
-    desc: "Un jeu de pêche sinistre en solo où vous vendez votre prise et explorez des secrets enfouis.",
-    min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "2 GB" },
-    rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "2 GB" },
-    dl: "#"
-  },
-  { 
     id: 'space-marine-2', title: "Warhammer 40k: Space Marine 2", image: "/images/sm2.jpg", cat: "Action / FPS", mode: "Solo / Multi",
     desc: "Incarnez un Space Marine, un guerrier surhumain, et massacrez des hordes de Tyranides.",
     min: { os: "Win 10", cpu: "i5-8600K", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "75 GB SSD" },
     rec: { os: "Win 11", cpu: "i7-12700", ram: "16 GB", gpu: "RTX 3070", dx: "12", storage: "75 GB SSD" },
-    dl: "#"
+    dl: "https://lockr.so/LnP7LmuI"
   },
   { 
     id: 'hitman-3', title: "Hitman 3", image: "/images/hitman3.jpg", cat: "Action / Infiltration", mode: "Solo",
@@ -456,60 +421,60 @@ export const gamesData = [
     dl: "https://lockr.so/lPrVliES"
   },
   { 
-    id: 'sniper-elite-5', title: "Sniper Elite 5", image: "/images/sniper5.jpg", cat: "FPS / Tactique", mode: "Solo / Multi",
+    id: 'sniper-elite-4', title: "Sniper Elite 4", image: "/images/sniper4.jpg", cat: "FPS / Tactique", mode: "Solo / Multi",
     desc: "Éliminez des cibles nazies avec une physique de tir ultra-réaliste en France occupée.",
     min: { os: "Win 10", cpu: "i3-8100", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "85 GB" },
     rec: { os: "Win 11", cpu: "i5-8400", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "85 GB" },
-    dl: "#"
+    dl: "https://lockr.so/bU3fERLy"
   },
   { 
     id: 'valheim', title: "Valheim", image: "/images/valheim.jpg", cat: "Survie / Coop", mode: "Solo / Multi",
     desc: "Un jeu de survie brutal dans un purgatoire généré de manière procédurale inspiré de la culture viking.",
     min: { os: "Win 10", cpu: "Dual Core 2.6 GHz", ram: "8 GB", gpu: "GTX 950", dx: "11", storage: "1 GB" },
     rec: { os: "Win 11", cpu: "i5 3 GHz", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "1 GB" },
-    dl: "#"
+    dl: "https://lockr.so/QtlLYU2C"
   },
   { 
     id: 'raft', title: "Raft", image: "/images/raft.jpg", cat: "Survie", mode: "Solo / Multi",
     desc: "Survivez sur un petit radeau perdu au milieu d'un océan infini rempli de requins.",
     min: { os: "Win 10", cpu: "i5 2.6 GHz", ram: "4 GB", gpu: "GTX 700", dx: "11", storage: "10 GB" },
     rec: { os: "Win 11", cpu: "i7 3.0 GHz", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "10 GB" },
-    dl: "#"
+    dl: "https://lockr.so/ZKKtMWSy"
   },
   { 
     id: 'grounded', title: "Grounded", image: "/images/grounded.jpg", cat: "Survie / Aventure", mode: "Solo / Multi",
     desc: "Vous avez été réduit à la taille d'une fourmi. Survivez aux dangers du jardin.",
     min: { os: "Win 10", cpu: "i3-3225", ram: "4 GB", gpu: "GTX 650 Ti", dx: "11", storage: "8 GB" },
     rec: { os: "Win 11", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "8 GB" },
-    dl: "#"
+    dl: "https://lockr.so/9xytczsS"
   },
   { 
-    id: 'football-manager-24', title: "Football Manager 2024", image: "/images/fm24.jpg", cat: "Gestion / Sport", mode: "Solo",
+    id: 'football-manager-23', title: "Football Manager 2023", image: "/images/fm23.jpg", cat: "Gestion / Sport", mode: "Solo",
     desc: "Prenez les commandes des plus grands clubs de foot et menez-les vers la gloire.",
     min: { os: "Win 10", cpu: "i3-530", ram: "4 GB", gpu: "GTX 960M", dx: "11", storage: "7 GB" },
     rec: { os: "Win 11", cpu: "i5-9600", ram: "8 GB", gpu: "RTX 2060", dx: "11", storage: "7 GB" },
-    dl: "#"
+    dl: "https://lockr.so/GPX1LUMr"
   },
   { 
     id: 'tropico-6', title: "Tropico 6", image: "/images/tropico6.jpg", cat: "Gestion / Stratégie", mode: "Solo / Multi",
     desc: "Devenez El Presidente et gérez votre archipel avec une main de fer ou un esprit démocratique.",
     min: { os: "Win 10", cpu: "i3-2000", ram: "8 GB", gpu: "GTX 750", dx: "11", storage: "16 GB" },
     rec: { os: "Win 11", cpu: "i5-4000", ram: "16 GB", gpu: "GTX 960", dx: "11", storage: "16 GB" },
-    dl: "#"
+    dl: "https://lockr.so/vuVuV2Vt"
   },
   { 
     id: 'powerwash-sim', title: "PowerWash Simulator", image: "/images/powerwash.jpg", cat: "Simulation", mode: "Solo / Multi",
     desc: "Nettoyez tout au jet haute pression. C'est bizarrement l'un des jeux les plus satisfaisants au monde.",
     min: { os: "Win 10", cpu: "i5-9400", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "6 GB" },
     rec: { os: "Win 11", cpu: "i7-10700", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "6 GB" },
-    dl: "#"
+    dl: "https://lockr.so/0JMGYKuw"
   },
   { 
     id: 'goat-simulator-3', title: "Goat Simulator 3", image: "/images/goat3.jpg", cat: "Simulation / Action", mode: "Solo / Multi",
     desc: "Incarnez une chèvre et semez le chaos total dans un monde ouvert sans aucune règle.",
     min: { os: "Win 10", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "11", storage: "12 GB" },
     rec: { os: "Win 11", cpu: "i5-9400", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "12 GB" },
-    dl: "#"
+    dl: "https://lockr.so/kN1kshGa"
   },
   { 
     id: 'slay-the-spire', title: "Slay the Spire", image: "/images/slaythespire.jpg", cat: "Roguelike / Cartes", mode: "Solo",
@@ -685,7 +650,7 @@ export const gamesData = [
     desc: "La conclusion épique de la trilogie Total War dans l'univers de Warhammer Fantasy.",
     min: { os: "Win 10", cpu: "i3", ram: "6 GB", gpu: "GTX 900", dx: "11", storage: "120 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1660 Ti", dx: "11", storage: "120 GB" },
-    dl: "https://lockr.so/LnP7LmuI"
+    dl: "#"
   },
   { 
     id: 'stellaris', title: "Stellaris", image: "/images/stellaris.jpg", cat: "Stratégie / Sci-Fi", mode: "Solo / Multi",
