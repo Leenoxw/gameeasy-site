@@ -372,7 +372,7 @@ export const gamesData = [
     dl: "https://lockr.so/3WF7lLtX"
   },
   { 
-    id: 'assassins-creed-odyssey', title: "AC Odyssey", image: "/images/odyssey.jpg", cat: "Aventure / RPG", mode: "Solo",
+    id: 'assassins-creed-odyssey', title: "Assassin's creed Odyssey", image: "/images/odyssey.jpg", cat: "Aventure / RPG", mode: "Solo",
     desc: "Écrivez votre propre odyssée épique pour devenir un héros grec légendaire.",
     min: { os: "Win 10", cpu: "i5-2400", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "46 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "46 GB" },
