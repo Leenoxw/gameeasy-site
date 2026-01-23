@@ -530,45 +530,29 @@ export const gamesData = [
     desc: "Le remake magistral du cauchemar à Raccoon City avec Leon et Claire.",
     min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "26 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "26 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'resident-evil-3', title: "Resident Evil 3", image: "/images/re3.jpg", cat: "Horreur / Action", mode: "Solo",
-    desc: "Échappez à l'invincible Nemesis dans les rues de Raccoon City.",
-    min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "45 GB" },
-    rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "45 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'resident-evil-7-biohazard', title: "Resident Evil 7", image: "/images/re7.jpg", cat: "Horreur", mode: "Solo",
-    desc: "Une expérience d'horreur pure à la première personne dans une Louisiane lugubre.",
-    min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "11", storage: "24 GB" },
-    rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "24 GB" },
-    dl: "#"
+    dl: "https://lockr.so/PBYEOzmH"
   },
   { 
     id: 'planet-zoo', title: "Planet Zoo", image: "/images/pzoo.jpg", cat: "Simulation / Gestion", mode: "Solo",
     desc: "Créez le zoo le plus incroyable en gérant le bien-être animal et les visiteurs.",
     min: { os: "Win 10", cpu: "i5-2500", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "16 GB" },
     rec: { os: "Win 11", cpu: "i7-4770", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "16 GB" },
-    dl: "#"
+    dl: "https://lockr.so/O5GiiCBl"
   },
   { 
     id: 'planet-coaster', title: "  ", image: "/images/pcoaster.jpg", cat: "Simulation / Gestion", mode: "Solo",
     desc: "Construisez vos propres parcs d'attractions et montagnes russes de folie.",
     min: { os: "Win 10", cpu: "i5-2300", ram: "8 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
     rec: { os: "Win 11", cpu: "i7-4770", ram: "12 GB", gpu: "GTX 980", dx: "11", storage: "8 GB" },
-    dl: "#"
+    dl: "https://lockr.so/hsmLU5gY"
   },
   { 
     id: 'rimworld', title: "RimWorld", image: "/images/rimworld.jpg", cat: "Simulation / Indie", mode: "Solo",
     desc: "Gérez une colonie sur une planète lointaine. Chaque partie est une histoire unique.",
     min: { os: "Win 10", cpu: "Core 2 Duo", ram: "4 GB", gpu: "Intel HD", dx: "11", storage: "1 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "Dédié", dx: "11", storage: "1 GB" },
-    dl: "#"
+    dl: "https://lockr.so/RTogK4p9"
   },
-
-  // --- ACTION / RPG ---
   { 
     id: 'sekiro', title: "Sekiro: Shadows Die Twice", image: "/images/sekiro.jpg", cat: "Action / RPG", mode: "Solo",
     desc: "Devenez le Loup à un bras et vengez votre maître dans le Japon féodal.",
