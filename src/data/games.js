@@ -554,7 +554,7 @@ export const gamesData = [
     dl: "#"
   },
   { 
-    id: 'planet-coaster', title: "Planet Coaster", image: "/images/pcoaster.jpg", cat: "Simulation / Gestion", mode: "Solo",
+    id: 'planet-coaster', title: "  ", image: "/images/pcoaster.jpg", cat: "Simulation / Gestion", mode: "Solo",
     desc: "Construisez vos propres parcs d'attractions et montagnes russes de folie.",
     min: { os: "Win 10", cpu: "i5-2300", ram: "8 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
     rec: { os: "Win 11", cpu: "i7-4770", ram: "12 GB", gpu: "GTX 980", dx: "11", storage: "8 GB" },
