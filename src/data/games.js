@@ -558,29 +558,21 @@ export const gamesData = [
     desc: "Devenez le Loup à un bras et vengez votre maître dans le Japon féodal.",
     min: { os: "Win 10", cpu: "i3-2100", ram: "4 GB", gpu: "GTX 760", dx: "11", storage: "25 GB" },
     rec: { os: "Win 11", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "25 GB" },
-    dl: "#"
+    dl: "https://lockr.so/lygiknCQ"
   },
   { 
     id: 'dark-souls-3', title: "Dark Souls III", image: "/images/ds3.jpg", cat: "Action / RPG", mode: "Solo / Multi",
     desc: "Le dernier chapitre de la saga légendaire. Un défi de chaque instant.",
     min: { os: "Win 10", cpu: "i3-2100", ram: "4 GB", gpu: "GTX 750 Ti", dx: "11", storage: "25 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "25 GB" },
-    dl: "#"
+    dl: "https://lockr.so/vByGgWku"
   },
-  { 
-    id: 'dragon-age-veilguard', title: "Dragon Age: The Veilguard", image: "/images/dav.jpg", cat: "RPG", mode: "Solo",
-    desc: "Entrez dans le monde de Thédas, une terre sauvage dont le destin ne tient qu'à un fil.",
-    min: { os: "Win 10", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 970", dx: "12", storage: "100 GB SSD" },
-    rec: { os: "Win 11", cpu: "i9-9900K", ram: "16 GB", gpu: "RTX 2080", dx: "12", storage: "100 GB SSD" },
-    dl: "#"
-  },
-  // --- SAGA CALL OF DUTY ---
   { 
     id: 'cod-mw3-remaster', title: "CoD: Modern Warfare III", image: "/images/mw3.jpg", cat: "FPS", mode: "Solo / Multi",
     desc: "La suite directe de Modern Warfare II. Le capitaine Price affronte la menace Makarov.",
     min: { os: "Win 10", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "149 GB" },
     rec: { os: "Win 11", cpu: "i7-6700K", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "149 GB" },
-    dl: "#"
+    dl: "https://lockr.so/DYq2DREp"
   },
   { 
     id: 'cod-vanguard', title: "Call of Duty: Vanguard", image: "/images/vanguard.jpg", cat: "FPS", mode: "Solo / Multi",
