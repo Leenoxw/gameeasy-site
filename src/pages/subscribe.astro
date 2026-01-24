@@ -3,52 +3,54 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-<section class="sub-page">
-    <div class="sub-header">
-        <h1>Passez au niveau <span>supérieur</span></h1>
-        <p>Choisissez le plan qui vous correspond et profitez d'une expérience sans limites.</p>
-    </div>
 
-    <div class="pricing-container">
-        <div class="pricing-card">
-            <h3>Basique</h3>
-            <div class="price">0€<span>/mois</span></div>
-            <ul class="features">
-                <li><i class="fas fa-check"></i> Accès aux jeux gratuits</li>
-                <li><i class="fas fa-times"></i> Présence de publicités</li>
-                <li><i class="fas fa-times"></i> Support standard</li>
-            </ul>
-            <a href="/" class="btn-sub">Continuer ainsi</a>
-        </div>
+<Layout title="Abonnement - GAM EASY">
+    <Header />
 
-        <div class="pricing-card popular">
-            <div class="badge">Recommandé</div>
-            <h3>Premium</h3>
-            <div class="price">2.99€<span>/mois</span></div>
-            <ul class="features">
-                <li><i class="fas fa-check"></i> <strong>Zéro publicité</strong></li>
-                <li><i class="fas fa-check"></i> Accès prioritaire aux cracks</li>
-                <li><i class="fas fa-check"></i> Support Discord VIP</li>
-                <li><i class="fas fa-check"></i> Badge exclusif</li>
-            </ul>
-            <a href="#" class="btn-sub btn-gold">Devenir Premium</a>
-        </div>
+    <main>
+        <section class="sub-page">
+            <div class="sub-header">
+                <h1>Passez au niveau <span>supérieur</span></h1>
+                <p>Choisissez le plan qui vous correspond et profitez d'une expérience sans limites.</p>
+            </div>
 
-        <div class="pricing-card">
-            <h3>Ultimate</h3>
-            <div class="price">4.99€<span>/mois</span></div>
-            <ul class="features">
-                <li><i class="fas fa-check"></i> Tout le contenu Premium</li>
-                <li><i class="fas fa-check"></i> Réponses aux mails et/ou discord le plus rapidement</li>
-                <li><i class="fas fa-check"></i> Demandes de cracks prioritaires</li>
-            </ul>
-            <a href="#" class="btn-sub">Choisir Ultimate</a>
-        </div>
-    </div>
-</section>
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <h3>Basique</h3>
+                    <div class="price">0€<span>/mois</span></div>
+                    <ul class="features">
+                        <li>Accès aux jeux gratuits</li>
+                    </ul>
+                    <a href="/" class="btn-sub">Continuer</a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="badge">Recommandé</div>
+                    <h3>Premium</h3>
+                    <div class="price">4.99€<span>/mois</span></div>
+                    <ul class="features">
+                        <li><strong>Zéro publicité</strong></li>
+                        <li>Accès prioritaire</li>
+                    </ul>
+                    <a href="#" class="btn-sub btn-gold">Devenir Premium</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Ultimate</h3>
+                    <div class="price">9.99€<span>/mois</span></div>
+                    <ul class="features">
+                        <li>Tout le contenu Premium</li>
+                    </ul>
+                    <a href="#" class="btn-sub">Choisir Ultimate</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
 
 <style>
-    /* 1. RESET COMPLET : Supprime les marges blanches du navigateur */
     html, body {
         margin: 0;
         padding: 0;
@@ -56,24 +58,18 @@ import Footer from '../components/Footer.astro';
         overflow-x: hidden; /* Évite les barres de défilement horizontales bizarres */
         width: 100%;
     }
-
     * {
         box-sizing: border-box; /* Pour que le padding ne casse pas la largeur */
     }
-
-    /* --- ANIMATIONS --- */
     @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(30px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes goldGlow {
         0% { box-shadow: 0 0 10px rgba(255, 202, 40, 0.2); }
         50% { box-shadow: 0 0 25px rgba(255, 202, 40, 0.5); }
         100% { box-shadow: 0 0 10px rgba(255, 202, 40, 0.2); }
     }
-
-    /* --- PAGE ABONNEMENT --- */
     .sub-page {
         padding: 120px 5% 60px;
         min-height: 100vh;
@@ -85,8 +81,6 @@ import Footer from '../components/Footer.astro';
         flex-direction: column;
         align-items: center;
     }
-
-    /* ... (Reste des styles inchangés) ... */
     .sub-header {
         text-align: center;
         margin-bottom: 50px;
@@ -172,10 +166,8 @@ import Footer from '../components/Footer.astro';
         align-items: center;
         gap: 10px;
     }
-
     .fa-check { color: #4caf50; }
     .fa-times { color: #f44336; }
-
     .btn-sub {
         text-align: center;
         text-decoration: none;
@@ -201,5 +193,14 @@ import Footer from '../components/Footer.astro';
 
     @media (max-width: 768px) {
         .pricing-card { width: 100%; }
+    }
+    .sub-page {
+        padding: 120px 5% 60px;
+        min-height: 100vh;
+        background: #060612;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 </style>
