@@ -3,12 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 ---
 
-<Layout title="Inscription - GAM EASY">
+<Layout title="Authentification - GAM EASY">
     <Header />
     <main class="auth-container">
         <div class="auth-card">
-            <h1>Créer un <span>compte</span></h1>
-            <form id="register-form">
+            <h1 id="auth-title">Créer un <span>compte</span></h1>
+            
+            <form id="auth-form">
                 <div class="input-group">
                     <label>Email</label>
                     <input type="email" id="email" required placeholder="votre@email.com" />
@@ -17,8 +18,13 @@ import Header from '../components/Header.astro';
                     <label>Mot de passe</label>
                     <input type="password" id="password" required placeholder="••••••••" />
                 </div>
-                <button type="submit" class="btn-auth">S'inscrire</button>
+                <button type="submit" id="submit-btn" class="btn-auth">S'inscrire</button>
             </form>
+
+            <div class="toggle-container">
+                <p id="toggle-text">Déjà un compte ? <button id="toggle-btn">Se connecter</button></p>
+            </div>
+
             <p id="message"></p>
         </div>
     </main>
@@ -26,50 +32,75 @@ import Header from '../components/Header.astro';
 
 <script>
     import { auth, db } from '../lib/firebase';
-    import { createUserWithEmailAndPassword } from "firebase/auth";
+    import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
     import { doc, setDoc } from "firebase/firestore";
 
-    const form = document.getElementById('register-form');
+    const form = document.getElementById('auth-form');
+    const authTitle = document.getElementById('auth-title');
+    const submitBtn = document.getElementById('submit-btn');
+    const toggleBtn = document.getElementById('toggle-btn');
+    const toggleText = document.getElementById('toggle-text');
     const message = document.getElementById('message');
+
+    let isLoginMode = false; // Par défaut, on est en mode inscription
+
+    // Fonction pour basculer entre Inscription et Connexion
+    toggleBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLoginMode = !isLoginMode;
+
+        if (isLoginMode) {
+            authTitle!.innerHTML = "Se <span>connecter</span>";
+            submitBtn!.innerText = "Connexion";
+            toggleText!.innerHTML = "Pas encore de compte ? <button id='toggle-btn'>S'inscrire</button>";
+        } else {
+            authTitle!.innerHTML = "Créer un <span>compte</span>";
+            submitBtn!.innerText = "S'inscrire";
+            toggleText!.innerHTML = "Déjà un compte ? <button id='toggle-btn'>Se connecter</button>";
+        }
+
+        // On réattache l'évenement au nouveau bouton créé par le innerHTML
+        document.getElementById('toggle-btn')?.addEventListener('click', () => toggleBtn.click());
+    });
 
     if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // On récupère les éléments proprement
             const emailInput = document.getElementById('email') as HTMLInputElement;
             const passwordInput = document.getElementById('password') as HTMLInputElement;
-            
-            if (!emailInput || !passwordInput) return;
-
             const email = emailInput.value;
             const password = passwordInput.value;
 
             try {
-                // 1. Création du compte
-                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                const user = userCredential.user;
+                if (isLoginMode) {
+                    // --- MODE CONNEXION ---
+                    await signInWithEmailAndPassword(auth, email, password);
+                    if (message) message.innerText = "Connexion réussie ! Redirection...";
+                } else {
+                    // --- MODE INSCRIPTION ---
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    const user = userCredential.user;
 
-                // 2. Création du profil dans la base de données
-                await setDoc(doc(db, "users", user.uid), {
-                    email: user.email,
-                    plan: "basique",
-                    createdAt: new Date()
-                });
-
-                if (message) {
-                    message.style.color = "#4caf50";
-                    message.innerText = "Compte créé ! Redirection...";
+                    await setDoc(doc(db, "users", user.uid), {
+                        email: user.email,
+                        plan: "basique",
+                        createdAt: new Date()
+                    });
+                    if (message) message.innerText = "Compte créé ! Redirection...";
                 }
-                
-                setTimeout(() => {
-                    window.location.href = "/";
-                }, 2000);
+
+                if (message) message.style.color = "#4caf50";
+                setTimeout(() => window.location.href = "/", 2000);
 
             } catch (error: any) {
                 if (message) {
                     message.style.color = "#f44336";
-                    message.innerText = "Erreur : " + error.message;
+                    // Traduction des erreurs communes
+                    if (error.code === 'auth/email-already-in-use') message.innerText = "Cet email est déjà utilisé.";
+                    else if (error.code === 'auth/wrong-password') message.innerText = "Mot de passe incorrect.";
+                    else if (error.code === 'auth/user-not-found') message.innerText = "Utilisateur non trouvé.";
+                    else message.innerText = "Erreur : " + error.message;
                 }
             }
         });
@@ -105,7 +136,9 @@ import Header from '../components/Header.astro';
         border: 1px solid rgba(255, 255, 255, 0.1);
         background: rgba(255, 255, 255, 0.05);
         color: white;
+        outline: none;
     }
+    input:focus { border-color: #8a4fff; }
     .btn-auth {
         width: 100%;
         padding: 12px;
@@ -118,5 +151,20 @@ import Header from '../components/Header.astro';
         transition: 0.3s;
     }
     .btn-auth:hover { background: #7036e0; transform: translateY(-2px); }
-    #message { margin-top: 15px; font-size: 14px; }
+    
+    .toggle-container {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #a0a0a0;
+    }
+    #toggle-btn {
+        background: none;
+        border: none;
+        color: #8a4fff;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: underline;
+        padding: 0 5px;
+    }
+    #message { margin-top: 15px; font-size: 14px; min-height: 20px; }
 </style>
