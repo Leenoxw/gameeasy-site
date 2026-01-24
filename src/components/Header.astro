@@ -14,9 +14,18 @@
         </ul>
 
         <div class="nav-right">
-            <a href="/inscription" class="btn-auth-nav">
-                <i class="fas fa-user-plus"></i> S'inscrire/se connecter
-            </a>
+            <div id="logged-out-view" style="display: none;">
+                <a href="/inscription" class="btn-auth-nav">
+                    <i class="fas fa-user-plus"></i> S'inscription/connection
+                </a>
+            </div>
+
+            <div id="logged-in-view" style="display: none; align-items: center; gap: 15px;">
+                <span id="user-email" style="color: #a0a0a0; font-size: 13px;"></span>
+                <button id="logout-btn" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
             <a href="/subscribe" class="btn-premium">
                 <i class="fas fa-crown"></i> Premium
             </a>
