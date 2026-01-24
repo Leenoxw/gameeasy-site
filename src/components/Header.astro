@@ -39,6 +39,32 @@
 </header>
 
 <script>
+    import { auth } from '../lib/firebase';
+    import { onAuthStateChanged, signOut } from "firebase/auth";
+
+    const loggedOutView = document.getElementById('logged-out-view');
+    const loggedInView = document.getElementById('logged-in-view');
+    const userEmailSpan = document.getElementById('user-email');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // L'utilisateur est connecté
+            if (loggedOutView) loggedOutView.style.display = 'none';
+            if (loggedInView) loggedInView.style.display = 'flex';
+            if (userEmailSpan) userEmailSpan.innerText = user.email;
+        } else {
+            // L'utilisateur est déconnecté
+            if (loggedOutView) loggedOutView.style.display = 'block';
+            if (loggedInView) loggedInView.style.display = 'none';
+        }
+    });
+
+    // Gestion de la déconnexion
+    logoutBtn?.addEventListener('click', async () => {
+        await signOut(auth);
+        window.location.href = "/";
+    });
     const burgerBtn = document.getElementById('burgerBtn');
     const navLinks = document.getElementById('navLinks');
 
@@ -266,5 +292,18 @@
         .btn-auth-nav span, .btn-auth-nav {
             display: none; /* Cache le bouton inscription sur mobile très petit pour éviter de surcharger */
         }
+    }
+    .btn-logout {
+        background: rgba(255, 59, 59, 0.1);
+        border: 1px solid rgba(255, 59, 59, 0.2);
+        color: #ff3b3b;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btn-logout:hover {
+        background: #ff3b3b;
+        color: white;
     }
 </style>
