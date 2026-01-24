@@ -25,43 +25,55 @@ import Header from '../components/Header.astro';
 </Layout>
 
 <script>
-    // Utilise des imports directs depuis le package pour aider Rollup
-    import { initializeApp } from "firebase/app";
-    import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-    import { getFirestore, doc, setDoc } from "firebase/firestore";
+    import { auth, db } from '../lib/firebase';
+    import { createUserWithEmailAndPassword } from "firebase/auth";
+    import { doc, setDoc } from "firebase/firestore";
 
-    // Tes clés ici (ou utilise ton fichier lib si tu préfères, mais teste en direct ici d'abord)
-    const firebaseConfig = { ... }; 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
+    const form = document.getElementById('register-form');
+    const message = document.getElementById('message');
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // On récupère les éléments proprement
+            const emailInput = document.getElementById('email') as HTMLInputElement;
+            const passwordInput = document.getElementById('password') as HTMLInputElement;
+            
+            if (!emailInput || !passwordInput) return;
 
-        try {
-            // 1. Création du compte dans Auth
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
+            const email = emailInput.value;
+            const password = passwordInput.value;
 
-            // 2. Création du document dans Firestore (L'ÉTAPE 5 !)
-            await setDoc(doc(db, "users", user.uid), {
-                email: user.email,
-                plan: "basique", // Statut par défaut
-                createdAt: new Date()
-            });
+            try {
+                // 1. Création du compte
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
 
-            message.style.color = "#4caf50";
-            message.innerText = "Compte créé avec succès ! Redirection...";
-            setTimeout(() => window.location.href = "/", 2000);
+                // 2. Création du profil dans la base de données
+                await setDoc(doc(db, "users", user.uid), {
+                    email: user.email,
+                    plan: "basique",
+                    createdAt: new Date()
+                });
 
-        } catch (error) {
-            message.style.color = "#f44336";
-            message.innerText = "Erreur : " + error.message;
-        }
-    });
+                if (message) {
+                    message.style.color = "#4caf50";
+                    message.innerText = "Compte créé ! Redirection...";
+                }
+                
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 2000);
+
+            } catch (error: any) {
+                if (message) {
+                    message.style.color = "#f44336";
+                    message.innerText = "Erreur : " + error.message;
+                }
+            }
+        });
+    }
 </script>
 
 <style>
