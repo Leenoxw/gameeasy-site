@@ -179,4 +179,36 @@
         
         .nav-left { flex: 2; }
     }
+    /* STYLE DU BOUTON PREMIUM (OR) */
+    .btn-premium {
+        text-decoration: none; 
+        color: #060612 !important; /* Texte sombre pour contraster avec l'or */
+        font-size: 13px; 
+        font-weight: 800; 
+        padding: 8px 16px; 
+        border-radius: 8px; 
+        background: linear-gradient(135deg, #ffca28, #ff8f00); /* Dégradé doré */
+        display: flex; 
+        align-items: center; 
+        gap: 6px;
+        margin-right: 15px; /* Espace avant le menu burger */
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        box-shadow: 0 4px 15px rgba(255, 143, 0, 0.3);
+    }
+
+    .btn-premium:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(255, 202, 40, 0.5);
+        filter: brightness(1.1);
+    }
+
+    /* Ajustement pour mobile */
+    @media (max-width: 1024px) {
+        .btn-premium {
+            padding: 6px 12px;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+    }
 </style>
