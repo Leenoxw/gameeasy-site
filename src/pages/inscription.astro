@@ -25,12 +25,16 @@ import Header from '../components/Header.astro';
 </Layout>
 
 <script>
-    import { auth, db } from '../lib/firebase';
-    import { createUserWithEmailAndPassword } from "firebase/auth";
-    import { doc, setDoc } from "firebase/firestore";
+    // Utilise des imports directs depuis le package pour aider Rollup
+    import { initializeApp } from "firebase/app";
+    import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+    import { getFirestore, doc, setDoc } from "firebase/firestore";
 
-    const form = document.getElementById('register-form');
-    const message = document.getElementById('message');
+    // Tes clés ici (ou utilise ton fichier lib si tu préfères, mais teste en direct ici d'abord)
+    const firebaseConfig = { ... }; 
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
