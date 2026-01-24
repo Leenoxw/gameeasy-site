@@ -14,9 +14,12 @@
         </ul>
 
         <div class="nav-right">
+            <a href="/inscription" class="btn-auth-nav">
+                <i class="fas fa-user-plus"></i> S'inscrire
+            </a>
             <a href="/subscribe" class="btn-premium">
                 <i class="fas fa-crown"></i> Premium
-        </a>
+            </a>
             <button class="burger-menu" id="burgerBtn">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -209,6 +212,50 @@
             padding: 6px 12px;
             font-size: 12px;
             margin-right: 10px;
+        }
+    }
+    /* STYLE DU BOUTON INSCRIPTION DANS LE HEADER */
+    .btn-auth-nav {
+        text-decoration: none;
+        color: white;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .btn-auth-nav:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #8a4fff; /* Lueur violette au survol */
+        transform: translateY(-2px);
+    }
+
+    .btn-auth-nav i {
+        color: #8a4fff; /* Icône violette pour rappeler le logo */
+    }
+
+    /* Ajustement mobile pour cacher le bouton texte sur très petit écran si besoin 
+       ou réduire sa taille */
+    @media (max-width: 1024px) {
+        .btn-auth-nav {
+            padding: 6px 10px;
+            font-size: 11px;
+            margin-right: 8px;
+        }
+    }
+    
+    /* Si l'écran est vraiment petit (iPhone), on peut cacher le texte pour ne garder que l'icône */
+    @media (max-width: 480px) {
+        .btn-auth-nav span, .btn-auth-nav {
+            display: none; /* Cache le bouton inscription sur mobile très petit pour éviter de surcharger */
         }
     }
 </style>
