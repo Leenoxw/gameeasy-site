@@ -1,11 +1,11 @@
 // src/data/games.js
 export const gamesData = [
   { 
-    id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/images/cyberpunk.jpg", cat: "Sci-Fi", mode: "Solo",
-    desc: "Devenez un mercenaire dans la mégalopole de Night City, obsédée par les modifications corporelles.",
-    min: { os: "Win 10", cpu: "i5-3570K", ram: "8 GB", gpu: "GTX 970", dx: "12", storage: "70 GB SSD" },
-    rec: { os: "Win 11", cpu: "i7-12700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "70 GB SSD" },
-    dl: "https://lockr.so/nPCVFTUK"
+    id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", image: "/images/rdr2.jpg", cat: "Aventure", mode: "Solo / Multi",
+    desc: "Vivez la fin de l'ère de l'Ouest sauvage avec Arthur Morgan et le gang Van der Linde.",
+    min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "150 GB" },
+    rec: { os: "Win 11", cpu: "i7-4770K", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "150 GB" },
+    dl: "https://lockr.so/lMrMw6eE"
   },
   { 
     id: 'elden-ring', title: "Elden Ring", image: "/images/elden-ring.jpg", cat: "Action / RPG", mode: "Solo / Multi",
@@ -15,32 +15,25 @@ export const gamesData = [
     dl: "https://lockr.so/pPKemlbB"
   },
   { 
-    id: 'red-dead-redemption-2', title: "Red Dead Redemption 2", image: "/images/rdr2.jpg", cat: "Aventure", mode: "Solo / Multi",
-    desc: "Vivez la fin de l'ère de l'Ouest sauvage avec Arthur Morgan et le gang Van der Linde.",
-    min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "150 GB" },
-    rec: { os: "Win 11", cpu: "i7-4770K", ram: "12 GB", gpu: "GTX 1060", dx: "11", storage: "150 GB" },
-    dl: "https://lockr.so/lMrMw6eE"
+    id: 'the-witcher-3', title: "The Witcher 3", image: "/images/witcher3.jpg", cat: "RPG / Fantasy", mode: "Solo",
+    desc: "Traquez l'enfant de la prophétie dans un monde dévasté par la guerre et les monstres.",
+    min: { os: "Win 10", cpu: "i5-2500K", ram: "6 GB", gpu: "GTX 660", dx: "11", storage: "35 GB" },
+    rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "35 GB" },
+    dl: "https://lockr.so/nkhF6lhi"
   },
   { 
-    id: 'spiderman-2', title: "Marvel's Spider-Man 2", image: "/images/spiderman2.jpg", cat: "Action / Aventure", mode: "Solo",
-    desc: "Incarnez Peter et Miles face à Venom et Kraven dans une New York plus grande que jamais.",
-    min: { os: "Win 10", cpu: "i5-8400", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "90 GB SSD" },
-    rec: { os: "Win 11", cpu: "i7-12700", ram: "32 GB", gpu: "RTX 3070", dx: "12", storage: "90 GB SSD" },
-    dl: "https://lockr.so/e9yQdsaP"
+    id: 'cyberpunk-2077', title: "Cyberpunk 2077", image: "/images/cyberpunk.jpg", cat: "Sci-Fi", mode: "Solo",
+    desc: "Devenez un mercenaire dans la mégalopole de Night City, obsédée par les modifications corporelles.",
+    min: { os: "Win 10", cpu: "i5-3570K", ram: "8 GB", gpu: "GTX 970", dx: "12", storage: "70 GB SSD" },
+    rec: { os: "Win 11", cpu: "i7-12700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "70 GB SSD" },
+    dl: "https://lockr.so/nPCVFTUK"
   },
   { 
-    id: 'hogwarts-legacy', title: "Hogwarts Legacy", image: " /images/hogwarts.jpg", cat: "Aventure / Magie", mode: "Solo",
-    desc: "Vivez l'expérience Poudlard au XIXe siècle. Apprenez des sorts et forgez votre propre héritage.",
-    min: { os: "Win 10", cpu: "i5-6600", ram: "16 GB", gpu: "GTX 960", dx: "12", storage: "85 GB" },
-    rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "85 GB" },
-    dl: "https://lockr.so/7Fc4Utc7"
-  },
-  { 
-    id: 'forza-horizon-5', title: "Forza Horizon 5", image: "/images/forza5.jpg", cat: "Course / Simulation", mode: "Solo / Multi",
-    desc: "Parcourez les paysages magnifiques du Mexique au volant de centaines de voitures légendaires.",
-    min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "12", storage: "110 GB" },
-    rec: { os: "Win 11", cpu: "i7-10700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "110 GB" },
-    dl: "https://lockr.so/yXNvrMpb"
+    id: 'the-last-of-us-p1', title: "The Last of Us Part I", image: "/images/tlou1.jpg", cat: "Action / Aventure", mode: "Solo",
+    desc: "Vivez l'histoire poignante de Joel et Ellie dans un monde post-apocalyptique dévasté.",
+    min: { os: "Win 10", cpu: "i7-4770K", ram: "16 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB SSD" },
+    rec: { os: "Win 11", cpu: "i5-12600K", ram: "32 GB", gpu: "RTX 3060", dx: "12", storage: "100 GB SSD" },
+    dl: "https://lockr.so/zKhA3U66"
   },
   { 
     id: 'god-of-war-ragnarok', title: "God of War Ragnarök", image: "/images/gow-ragnarok.jpg", cat: "Action / Mythologie", mode: "Solo",
@@ -50,32 +43,60 @@ export const gamesData = [
     dl: "https://lockr.so/97YR25eV"
   },
   { 
-    id: 'the-witcher-3', title: "The Witcher 3", image: "/images/witcher3.jpg", cat: "RPG / Fantasy", mode: "Solo",
-    desc: "Traquez l'enfant de la prophétie dans un monde dévasté par la guerre et les monstres.",
-    min: { os: "Win 10", cpu: "i5-2500K", ram: "6 GB", gpu: "GTX 660", dx: "11", storage: "35 GB" },
-    rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "35 GB" },
-    dl: "https://lockr.so/nkhF6lhi"
+    id: 'spider-man-remastered', title: "Spider-Man Remastered", image: "/images/spiderman.jpg", cat: "Action / Open World", mode: "Solo",
+    desc: "Vigile urbain de New York, Peter Parker combat le crime tout en jonglant avec sa vie personnelle.",
+    min: { os: "Win 10", cpu: "i3-4160", ram: "8 GB", gpu: "GTX 950", dx: "12", storage: "75 GB" },
+    rec: { os: "Win 11", cpu: "i5-4670", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB SSD" },
+    dl: "https://lockr.so/MyHMXlNy"
   },
   { 
-    id: 'hades-2', title: "Hades II", image: "/images/hades2.jpg", cat: "Action", mode: "Solo",
-    desc: "Affrontez le Titan du Temps avec la princesse immortelle des Enfers.",
-    min: { os: "Win 10", cpu: "Dual Core", ram: "4 GB", gpu: "GTX 950", dx: "12", storage: "10 GB" },
-    rec: { os: "Win 11", cpu: "Quad Core", ram: "8 GB", gpu: "RTX 2060", dx: "12", storage: "10 GB" },
-    dl: "https://lockr.so/1PmeVLBt"
+    id: 'ghost-of-tsushima', title: "Ghost of Tsushima", image: "/images/ghost-tsushima.jpg", cat: "Action", mode: "Solo / Multi",
+    desc: "En pleine invasion mongole, devenez le Fantôme pour libérer l'île de Tsushima.",
+    min: { os: "Win 10", cpu: "i3-7100", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "75 GB" },
+    rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB" },
+    dl: "https://lockr.so/uZBa8U2E"
   },
   { 
-    id: 'hollow-knight-silksong', title: "Silksong", image: "/images/silksong.jpg", cat: "Aventure", mode: "Solo",
-    desc: "Incarnez Hornet dans un tout nouveau royaume hanté par le mystère et la musique.",
-    min: { os: "Win 10", cpu: "i3-3220", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "9 GB" },
-    rec: { os: "Win 11", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "9 GB" },
-    dl: "https://lockr.so/SGwnoQqm"
+    id: 'uncharted-legacy', title: "Uncharted: Legacy of Thieves", image: "/images/uncharted.jpg", cat: "Aventure", mode: "Solo",
+    desc: "Incarnez Nathan Drake et Chloe Frazer dans leurs propres aventures à la recherche de trésors perdus.",
+    min: { os: "Win 10", cpu: "i5-4430", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "126 GB" },
+    rec: { os: "Win 11", cpu: "i7-4770", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "126 GB SSD" },
+    dl: "https://lockr.so/rW2gREHE"
   },
   { 
-    id: 'manor-lords', title: "Manor Lords", image: "/images/manor-lords.jpg", cat: "Stratégie / Médiéval", mode: "Solo",
-    desc: "Bâtissez votre cité médiévale et menez vos troupes dans des batailles tactiques.",
-    min: { os: "Win 10", cpu: "i5-4670", ram: "8 GB", gpu: "GTX 1050", dx: "12", storage: "15 GB" },
-    rec: { os: "Win 11", cpu: "i5-7600", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "15 GB" },
-    dl: "https://lockr.so/lQSgU5Fj"
+    id: 'horizon-forbidden-west', title: "Horizon Forbidden West", image: "/images/hfw.jpg", cat: "Action / RPG", mode: "Solo",
+    desc: "Explorez des terres lointaines, affrontez des machines plus imposantes et rencontrez de nouvelles tribus.",
+    min: { os: "Win 10", cpu: "i3-8100", ram: "16 GB", gpu: "GTX 1650", dx: "12", storage: "150 GB SSD" },
+    rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "150 GB SSD" },
+    dl: "https://lockr.so/Nt4QUsuB"
+  },
+  { 
+    id: 'dead-by-daylight', title: "Dead by Daylight", image: "/images/dbd.jpg", cat: "Horreur / Multi", mode: "Multi",
+    desc: "Un jeu d'horreur asymétrique 4 contre 1 où un tueur traque quatre survivants.",
+    min: { os: "Win 10", cpu: "i3-4170", ram: "8 GB", gpu: "GTX 460", dx: "11", storage: "50 GB" },
+    rec: { os: "Win 11", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
+    dl: "https://lockr.so/pRqHOv3H"
+  },
+  { 
+    id: 'sea-of-thieves', title: "Sea of Thieves", image: "/images/sea-of-thieves.jpg", cat: "Aventure", mode: "Multi",
+    desc: "Devenez le pirate de vos rêves dans ce monde ouvert rempli de trésors et de dangers.",
+    min: { os: "Win 10", cpu: "i3-4130", ram: "4 GB", gpu: "GTX 650", dx: "11", storage: "50 GB" },
+    rec: { os: "Win 11", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
+    dl: "https://lockr.so/jaN4fZOR"
+  },
+  { 
+    id: 'phasmophobia', title: "Phasmophobia", image: "/images/phasmophobia.jpg", cat: "Horreur / Coop", mode: "Multi",
+    desc: "Identifiez le fantôme avant qu'il ne vous chasse.",
+    min: { os: "Win 10", cpu: "i5-4590", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "21 GB" },
+    rec: { os: "Win 11", cpu: "i7-6700", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" },
+    dl: "https://lockr.so/YEfWZGhM"
+  },
+  { 
+    id: 'valheim', title: "Valheim", image: "/images/valheim.jpg", cat: "Survie / Coop", mode: "Solo / Multi",
+    desc: "Un jeu de survie brutal dans un purgatoire généré de manière procédurale inspiré de la culture viking.",
+    min: { os: "Win 10", cpu: "Dual Core 2.6 GHz", ram: "8 GB", gpu: "GTX 950", dx: "11", storage: "1 GB" },
+    rec: { os: "Win 11", cpu: "i5 3 GHz", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "1 GB" },
+    dl: "https://lockr.so/QtlLYU2C"
   },
   { 
     id: 'palworld', title: "Palworld", image: "/images/palworld.jpg", cat: "Survie", mode: "Solo / Multi",
@@ -97,6 +118,83 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "2.0 GHz", ram: "2 GB", gpu: "256 MB", dx: "10", storage: "500 MB" },
     rec: { os: "Win 11", cpu: "3.0 GHz", ram: "4 GB", gpu: "1 GB", dx: "10", storage: "500 MB" },
     dl: "https://lockr.so/zuhQ6dqV"
+  },
+  { 
+    id: 'cuphead', title: "Cuphead", image: "/images/cuphead.jpg", cat: "Aventure", mode: "Solo / Multi",
+    desc: "Un jeu d'action classique inspiré des dessins animés des années 30.",
+    min: { os: "Win 10", cpu: "Dual Core", ram: "3 GB", gpu: "9600 GT", dx: "10", storage: "4 GB" },
+    rec: { os: "Win 11", cpu: "i3", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "4 GB" },
+    dl: "https://lockr.so/9u6K8jBe"
+  },
+  { 
+    id: 'outer-wilds', title: "Outer Wilds", image: "/images/outer-wilds.jpg", cat: "Aventure", mode: "Solo",
+    desc: "Un mystère en monde ouvert sur un système solaire piégé dans une boucle temporelle infinie.",
+    min: { os: "Win 10", cpu: "i5-2300", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
+    rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "8 GB" },
+    dl: "https://lockr.so/LvJv0ONC"
+  },
+  { 
+    id: 'vampire-survivors', title: "Vampire Survivors", image: "/images/vampire.jpg", cat: "Indie / Roguelike", mode: "Solo",
+    desc: "Fauchez des milliers de créatures de la nuit et survivez jusqu'à l'aube.",
+    min: { os: "Win 10", cpu: "Pentium", ram: "1 GB", gpu: "Dédié", dx: "11", storage: "250 MB" },
+    rec: { os: "Win 11", cpu: "Dual Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "250 MB" },
+    dl: "https://lockr.so/Or0E0UJS"
+  },
+  { 
+    id: 'balatro', title: "Balatro", image: "/images/balatro.jpg", cat: "Poker", mode: "Solo",
+    desc: "Le roguelike de poker terriblement addictif où vous créez des combos déments.",
+    min: { os: "Win 10", cpu: "Intel Core", ram: "1 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
+    rec: { os: "Win 11", cpu: "Intel Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
+    dl: "https://lockr.so/ccENw7eA"
+  },
+  { 
+    id: 'forza-horizon-5', title: "Forza Horizon 5", image: "/images/forza5.jpg", cat: "Course / Simulation", mode: "Solo / Multi",
+    desc: "Parcourez les paysages magnifiques du Mexique au volant de centaines de voitures légendaires.",
+    min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 760", dx: "12", storage: "110 GB" },
+    rec: { os: "Win 11", cpu: "i7-10700", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "110 GB" },
+    dl: "https://lockr.so/yXNvrMpb"
+  },
+  { 
+    id: 'fc-23', title: "EA SPORTS FIFA 23", image: "/images/fc23.jpg", cat: "Sport", mode: "Solo / Multi",
+    desc: "Le nouveau chapitre du jeu de football le plus populaire au monde.",
+    min: { os: "Win 10", cpu: "i5-6600K", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB" },
+    rec: { os: "Win 11", cpu: "i7-6700", ram: "12 GB", gpu: "GTX 1660", dx: "12", storage: "100 GB" },
+    dl: "https://lockr.so/DlySffaV"
+  },
+  { 
+    id: 'spiderman-2', title: "Marvel's Spider-Man 2", image: "/images/spiderman2.jpg", cat: "Action / Aventure", mode: "Solo",
+    desc: "Incarnez Peter et Miles face à Venom et Kraven dans une New York plus grande que jamais.",
+    min: { os: "Win 10", cpu: "i5-8400", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "90 GB SSD" },
+    rec: { os: "Win 11", cpu: "i7-12700", ram: "32 GB", gpu: "RTX 3070", dx: "12", storage: "90 GB SSD" },
+    dl: "https://lockr.so/e9yQdsaP"
+  },
+  { 
+    id: 'hogwarts-legacy', title: "Hogwarts Legacy", image: " /images/hogwarts.jpg", cat: "Aventure / Magie", mode: "Solo",
+    desc: "Vivez l'expérience Poudlard au XIXe siècle. Apprenez des sorts et forgez votre propre héritage.",
+    min: { os: "Win 10", cpu: "i5-6600", ram: "16 GB", gpu: "GTX 960", dx: "12", storage: "85 GB" },
+    rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "85 GB" },
+    dl: "https://lockr.so/7Fc4Utc7"
+  },
+  { 
+    id: 'hades-2', title: "Hades II", image: "/images/hades2.jpg", cat: "Action", mode: "Solo",
+    desc: "Affrontez le Titan du Temps avec la princesse immortelle des Enfers.",
+    min: { os: "Win 10", cpu: "Dual Core", ram: "4 GB", gpu: "GTX 950", dx: "12", storage: "10 GB" },
+    rec: { os: "Win 11", cpu: "Quad Core", ram: "8 GB", gpu: "RTX 2060", dx: "12", storage: "10 GB" },
+    dl: "https://lockr.so/1PmeVLBt"
+  },
+  { 
+    id: 'hollow-knight-silksong', title: "Silksong", image: "/images/silksong.jpg", cat: "Aventure", mode: "Solo",
+    desc: "Incarnez Hornet dans un tout nouveau royaume hanté par le mystère et la musique.",
+    min: { os: "Win 10", cpu: "i3-3220", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "9 GB" },
+    rec: { os: "Win 11", cpu: "i5-6600", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "9 GB" },
+    dl: "https://lockr.so/SGwnoQqm"
+  },
+  { 
+    id: 'manor-lords', title: "Manor Lords", image: "/images/manor-lords.jpg", cat: "Stratégie / Médiéval", mode: "Solo",
+    desc: "Bâtissez votre cité médiévale et menez vos troupes dans des batailles tactiques.",
+    min: { os: "Win 10", cpu: "i5-4670", ram: "8 GB", gpu: "GTX 1050", dx: "12", storage: "15 GB" },
+    rec: { os: "Win 11", cpu: "i5-7600", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "15 GB" },
+    dl: "https://lockr.so/lQSgU5Fj"
   },
   { 
     id: 'schedules', title: "Schedules", image: "/images/schedules.jpg", cat: "Indie / Horreur", mode: "Solo / Multi",
@@ -127,25 +225,11 @@ export const gamesData = [
     dl: "https://lockr.so/W3ailhYr"
   },
   { 
-    id: 'phasmophobia', title: "Phasmophobia", image: "/images/phasmophobia.jpg", cat: "Horreur / Coop", mode: "Multi",
-    desc: "Identifiez le fantôme avant qu'il ne vous chasse.",
-    min: { os: "Win 10", cpu: "i5-4590", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "21 GB" },
-    rec: { os: "Win 11", cpu: "i7-6700", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "21 GB" },
-    dl: "https://lockr.so/YEfWZGhM"
-  },
-  { 
     id: 'resident-evil-4-remake', title: "Resident Evil 4", image: "/images/resident-evil-4.jpg", cat: "Horreur / Action", mode: "Solo",
     desc: "Leon S. Kennedy doit sauver la fille du président dans un village européen terrifiant.",
     min: { os: "Win 10", cpu: "i5-7500", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i7-8700", ram: "16 GB", gpu: "RTX 2070", dx: "12", storage: "60 GB" },
     dl: "https://lockr.so/reH8cpnA"
-  },
-  { 
-    id: 'ghost-of-tsushima', title: "Ghost of Tsushima", image: "/images/ghost-tsushima.jpg", cat: "Action", mode: "Solo / Multi",
-    desc: "En pleine invasion mongole, devenez le Fantôme pour libérer l'île de Tsushima.",
-    min: { os: "Win 10", cpu: "i3-7100", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "75 GB" },
-    rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB" },
-    dl: "https://lockr.so/uZBa8U2E"
   },
   { 
     id: 'ark-survival-ascended', title: "ARK: Ascended", image: "/images/ark-ascended.jpg", cat: "Survie", mode: "Solo / Multi",
@@ -190,13 +274,6 @@ export const gamesData = [
     dl: "https://lockr.so/C6twgzyR"
   },
   { 
-    id: 'spider-man-remastered', title: "Spider-Man Remastered", image: "/images/spiderman.jpg", cat: "Action / Open World", mode: "Solo",
-    desc: "Vigile urbain de New York, Peter Parker combat le crime tout en jonglant avec sa vie personnelle.",
-    min: { os: "Win 10", cpu: "i3-4160", ram: "8 GB", gpu: "GTX 950", dx: "12", storage: "75 GB" },
-    rec: { os: "Win 11", cpu: "i5-4670", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "75 GB SSD" },
-    dl: "https://lockr.so/MyHMXlNy"
-  },
-  { 
     id: 'f1-22', title: "F1 22", image: "/images/f122.jpg", cat: "Course / Sport", mode: "Solo / Multi",
     desc: "Devenez l'un des 20 pilotes officiels et vivez l'immersion totale du championnat du monde de Formule 1.",
     min: { os: "Win 10", cpu: "i3-2130", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "100 GB" },
@@ -211,39 +288,11 @@ export const gamesData = [
     dl: "https://lockr.so/65TFZDZP"
   },
   { 
-    id: 'outer-wilds', title: "Outer Wilds", image: "/images/outer-wilds.jpg", cat: "Aventure", mode: "Solo",
-    desc: "Un mystère en monde ouvert sur un système solaire piégé dans une boucle temporelle infinie.",
-    min: { os: "Win 10", cpu: "i5-2300", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
-    rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "8 GB" },
-    dl: "https://lockr.so/LvJv0ONC"
-  },
-  { 
     id: 'civilization-vi', title: "Civilization VI", image: "/images/civ6.jpg", cat: "Stratégie", mode: "Solo / Multi",
     desc: "Bâtissez un empire capable de résister au passage du temps, de l'âge de pierre à l'âge de l'information.",
     min: { os: "Win 10", cpu: "i3 @ 2.5 GHz", ram: "4 GB", gpu: "GTX 450", dx: "11", storage: "12 GB" },
     rec: { os: "Win 11", cpu: "i5 @ 3.0 GHz", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "12 GB" },
     dl: "https://lockr.so/rO2pApP0"
-  },
-  { 
-    id: 'sea-of-thieves', title: "Sea of Thieves", image: "/images/sea-of-thieves.jpg", cat: "Aventure", mode: "Multi",
-    desc: "Devenez le pirate de vos rêves dans ce monde ouvert rempli de trésors et de dangers.",
-    min: { os: "Win 10", cpu: "i3-4130", ram: "4 GB", gpu: "GTX 650", dx: "11", storage: "50 GB" },
-    rec: { os: "Win 11", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
-    dl: "https://lockr.so/jaN4fZOR"
-  },
-  { 
-    id: 'horizon-forbidden-west', title: "Horizon Forbidden West", image: "/images/hfw.jpg", cat: "Action / RPG", mode: "Solo",
-    desc: "Explorez des terres lointaines, affrontez des machines plus imposantes et rencontrez de nouvelles tribus.",
-    min: { os: "Win 10", cpu: "i3-8100", ram: "16 GB", gpu: "GTX 1650", dx: "12", storage: "150 GB SSD" },
-    rec: { os: "Win 11", cpu: "i5-8600", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "150 GB SSD" },
-    dl: "https://lockr.so/Nt4QUsuB"
-  },
-  { 
-    id: 'uncharted-legacy', title: "Uncharted: Legacy of Thieves", image: "/images/uncharted.jpg", cat: "Aventure", mode: "Solo",
-    desc: "Incarnez Nathan Drake et Chloe Frazer dans leurs propres aventures à la recherche de trésors perdus.",
-    min: { os: "Win 10", cpu: "i5-4430", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "126 GB" },
-    rec: { os: "Win 11", cpu: "i7-4770", ram: "16 GB", gpu: "GTX 1060", dx: "12", storage: "126 GB SSD" },
-    dl: "https://lockr.so/rW2gREHE"
   },
   { 
     id: 'assetto-corsa-competizione', title: "Assetto Corsa Comp.", image: "/images/acc.jpg", cat: "Simulation / Course", mode: "Solo / Multi",
@@ -265,20 +314,6 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i5-3570", ram: "8 GB", gpu: "GTX 1050Ti", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 1080", dx: "11", storage: "50 GB" },
     dl: "https://lockr.so/SbS0DuTe"
-  },
-  { 
-    id: 'balatro', title: "Balatro", image: "/images/balatro.jpg", cat: "Poker", mode: "Solo",
-    desc: "Le roguelike de poker terriblement addictif où vous créez des combos déments.",
-    min: { os: "Win 10", cpu: "Intel Core", ram: "1 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
-    rec: { os: "Win 11", cpu: "Intel Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "150 MB" },
-    dl: "https://lockr.so/ccENw7eA"
-  },
-  { 
-    id: 'cuphead', title: "Cuphead", image: "/images/cuphead.jpg", cat: "Aventure", mode: "Solo / Multi",
-    desc: "Un jeu d'action classique inspiré des dessins animés des années 30.",
-    min: { os: "Win 10", cpu: "Dual Core", ram: "3 GB", gpu: "9600 GT", dx: "10", storage: "4 GB" },
-    rec: { os: "Win 11", cpu: "i3", ram: "4 GB", gpu: "GTX 660", dx: "11", storage: "4 GB" },
-    dl: "https://lockr.so/9u6K8jBe"
   },
   { 
     id: 'cities-skylines-2', title: "Cities: Skylines II", image: "/images/cities2.jpg", cat: "Simulation", mode: "Solo",
@@ -358,13 +393,6 @@ export const gamesData = [
     dl: "https://lockr.so/A1vxd8ym"
   },
   { 
-    id: 'dead-by-daylight', title: "Dead by Daylight", image: "/images/dbd.jpg", cat: "Horreur / Multi", mode: "Multi",
-    desc: "Un jeu d'horreur asymétrique 4 contre 1 où un tueur traque quatre survivants.",
-    min: { os: "Win 10", cpu: "i3-4170", ram: "8 GB", gpu: "GTX 460", dx: "11", storage: "50 GB" },
-    rec: { os: "Win 11", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "50 GB" },
-    dl: "https://lockr.so/pRqHOv3H"
-  },
-  { 
     id: 'days-gone', title: "Days Gone", image: "/images/daysgone.jpg", cat: "Action / Open World", mode: "Solo",
     desc: "Incarnez Deacon St. John et survivez à travers le désert de l'Oregon face à des hordes de mutants.",
     min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 780", dx: "11", storage: "70 GB" },
@@ -393,13 +421,6 @@ export const gamesData = [
     dl: "https://lockr.so/zjVwQxHU"
   },
   { 
-    id: 'vampire-survivors', title: "Vampire Survivors", image: "/images/vampire.jpg", cat: "Indie / Roguelike", mode: "Solo",
-    desc: "Fauchez des milliers de créatures de la nuit et survivez jusqu'à l'aube.",
-    min: { os: "Win 10", cpu: "Pentium", ram: "1 GB", gpu: "Dédié", dx: "11", storage: "250 MB" },
-    rec: { os: "Win 11", cpu: "Dual Core", ram: "2 GB", gpu: "Dédié", dx: "11", storage: "250 MB" },
-    dl: "https://lockr.so/Or0E0UJS"
-  },
-  { 
     id: 'space-marine-2', title: "Warhammer 40k: Space Marine 2", image: "/images/sm2.jpg", cat: "Action / FPS", mode: "Solo / Multi",
     desc: "Incarnez un Space Marine, un guerrier surhumain, et massacrez des hordes de Tyranides.",
     min: { os: "Win 10", cpu: "i5-8600K", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "75 GB SSD" },
@@ -426,13 +447,6 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i3-8100", ram: "8 GB", gpu: "GTX 1060", dx: "12", storage: "85 GB" },
     rec: { os: "Win 11", cpu: "i5-8400", ram: "16 GB", gpu: "RTX 3060", dx: "12", storage: "85 GB" },
     dl: "https://lockr.so/bU3fERLy"
-  },
-  { 
-    id: 'valheim', title: "Valheim", image: "/images/valheim.jpg", cat: "Survie / Coop", mode: "Solo / Multi",
-    desc: "Un jeu de survie brutal dans un purgatoire généré de manière procédurale inspiré de la culture viking.",
-    min: { os: "Win 10", cpu: "Dual Core 2.6 GHz", ram: "8 GB", gpu: "GTX 950", dx: "11", storage: "1 GB" },
-    rec: { os: "Win 11", cpu: "i5 3 GHz", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "1 GB" },
-    dl: "https://lockr.so/QtlLYU2C"
   },
   { 
     id: 'raft', title: "Raft", image: "/images/raft.jpg", cat: "Survie", mode: "Solo / Multi",
@@ -475,13 +489,6 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i5-4690", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "11", storage: "12 GB" },
     rec: { os: "Win 11", cpu: "i5-9400", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "12 GB" },
     dl: "https://lockr.so/kN1kshGa"
-  },
-  { 
-    id: 'the-last-of-us-p1', title: "The Last of Us Part I", image: "/images/tlou1.jpg", cat: "Action / Aventure", mode: "Solo",
-    desc: "Vivez l'histoire poignante de Joel et Ellie dans un monde post-apocalyptique dévasté.",
-    min: { os: "Win 10", cpu: "i7-4770K", ram: "16 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB SSD" },
-    rec: { os: "Win 11", cpu: "i5-12600K", ram: "32 GB", gpu: "RTX 3060", dx: "12", storage: "100 GB SSD" },
-    dl: "https://lockr.so/zKhA3U66"
   },
   { 
     id: 'returnal', title: "Returnal", image: "/images/returnal.jpg", cat: "Sci-Fi / Roguelike", mode: "Solo / Multi",
@@ -601,13 +608,6 @@ export const gamesData = [
     min: { os: "Win 10", cpu: "i3-530", ram: "4 GB", gpu: "GTX 460", dx: "9", storage: "10 GB" },
     rec: { os: "Win 11", cpu: "i5-3570K", ram: "8 GB", gpu: "GTX 760", dx: "9", storage: "10 GB" },
     dl: "https://lockr.so/zkAuTPpB"
-  },
-  { 
-    id: 'fc-23', title: "EA SPORTS FIFA 23", image: "/images/fc23.jpg", cat: "Sport", mode: "Solo / Multi",
-    desc: "Le nouveau chapitre du jeu de football le plus populaire au monde.",
-    min: { os: "Win 10", cpu: "i5-6600K", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB" },
-    rec: { os: "Win 11", cpu: "i7-6700", ram: "12 GB", gpu: "GTX 1660", dx: "12", storage: "100 GB" },
-    dl: "https://lockr.so/DlySffaV"
   },
   { 
     id: 'nba-2k23', title: "NBA 2K23", image: "/images/nba2k23.jpg", cat: "Sport", mode: "Solo / Multi",
