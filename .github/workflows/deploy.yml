@@ -13,12 +13,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Install dependencies
-      run: npm install  # <-- Indispensable pour que le serveur télécharge Firebase
-    - name: Build
-      run: npm run build
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Astro génère le site dans le dossier "dist" par défaut
+          path: ./dist
 
   deploy:
     needs: build
