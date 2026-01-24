@@ -313,7 +313,7 @@ export const gamesData = [
     desc: "Plongez dans les profondeurs d'un monde océanique extraterrestre et tentez de survivre.",
     min: { os: "Win 10", cpu: "i3", ram: "4 GB", gpu: "Intel HD 4600", dx: "11", storage: "20 GB" },
     rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1050", dx: "11", storage: "20 GB" },
-    dl: "#"
+    dl: "https://lockr.so/4KIs6pc0"
   },
   { 
     id: 'the-forest', title: "The Forest", image: "/images/the-forest.jpg", cat: "Survie / Horreur", mode: "Solo / Multi",
@@ -579,105 +579,69 @@ export const gamesData = [
     desc: "Vivez les moments clés de la Seconde Guerre mondiale sur tous les fronts.",
     min: { os: "Win 10", cpu: "i3-4340", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "61 GB" },
     rec: { os: "Win 11", cpu: "i5-2500K", ram: "12 GB", gpu: "GTX 1060", dx: "12", storage: "61 GB" },
-    dl: "#"
+    dl: "https://lockr.so/jFlbrl1B"
   },
   { 
     id: 'cod-black-ops-cold-war', title: "CoD: Black Ops Cold War", image: "/images/coldwar.jpg", cat: "FPS", mode: "Solo / Multi",
     desc: "Plongez dans les profondeurs de la guerre froide au début des années 80.",
     min: { os: "Win 10", cpu: "i3-4340", ram: "8 GB", gpu: "GTX 670", dx: "12", storage: "175 GB" },
     rec: { os: "Win 11", cpu: "i5-2500K", ram: "12 GB", gpu: "GTX 1060", dx: "12", storage: "175 GB" },
-    dl: "#"
+    dl: "https://lockr.so/pfWSiZjp"
   },
-
-  // --- STRATÉGIE & GESTION ---
   { 
     id: 'anno-1800', title: "Anno 1800", image: "/images/anno1800.jpg", cat: "Stratégie / Gestion", mode: "Solo / Multi",
     desc: "Menez la révolution industrielle dans ce city-builder complexe et magnifique.",
     min: { os: "Win 10", cpu: "i5-2500K", ram: "8 GB", gpu: "GTX 660", dx: "11", storage: "60 GB" },
     rec: { os: "Win 11", cpu: "i7-3770", ram: "8 GB", gpu: "GTX 970", dx: "11", storage: "60 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'total-war-warhammer-3', title: "Total War: Warhammer III", image: "/images/tww3.jpg", cat: "Stratégie", mode: "Solo / Multi",
-    desc: "La conclusion épique de la trilogie Total War dans l'univers de Warhammer Fantasy.",
-    min: { os: "Win 10", cpu: "i3", ram: "6 GB", gpu: "GTX 900", dx: "11", storage: "120 GB" },
-    rec: { os: "Win 11", cpu: "i5", ram: "8 GB", gpu: "GTX 1660 Ti", dx: "11", storage: "120 GB" },
-    dl: "#"
+    dl: "https://lockr.so/1SeCG49p"
   },
   { 
     id: 'stellaris', title: "Stellaris", image: "/images/stellaris.jpg", cat: "Stratégie / Sci-Fi", mode: "Solo / Multi",
     desc: "Explorez une galaxie pleine de merveilles dans ce grand strategy game spatial.",
     min: { os: "Win 10", cpu: "i3-530", ram: "4 GB", gpu: "GTX 460", dx: "9", storage: "10 GB" },
     rec: { os: "Win 11", cpu: "i5-3570K", ram: "8 GB", gpu: "GTX 760", dx: "9", storage: "10 GB" },
-    dl: "#"
+    dl: "https://lockr.so/zkAuTPpB"
   },
-
-  // --- SIMULATION & SPORT ---
   { 
-    id: 'fc-25', title: "EA SPORTS FC 25", image: "/images/fc25.jpg", cat: "Sport", mode: "Solo / Multi",
+    id: 'fc-23', title: "EA SPORTS FIFA 23", image: "/images/fc23.jpg", cat: "Sport", mode: "Solo / Multi",
     desc: "Le nouveau chapitre du jeu de football le plus populaire au monde.",
     min: { os: "Win 10", cpu: "i5-6600K", ram: "8 GB", gpu: "GTX 1050 Ti", dx: "12", storage: "100 GB" },
     rec: { os: "Win 11", cpu: "i7-6700", ram: "12 GB", gpu: "GTX 1660", dx: "12", storage: "100 GB" },
-    dl: "#"
+    dl: "https://lockr.so/DlySffaV"
   },
   { 
-    id: 'nba-2k25', title: "NBA 2K25", image: "/images/nba2k25.jpg", cat: "Sport", mode: "Solo / Multi",
+    id: 'nba-2k23', title: "NBA 2K23", image: "/images/nba2k23.jpg", cat: "Sport", mode: "Solo / Multi",
     desc: "Dominez le terrain dans l'expérience de basket-ball la plus réaliste.",
     min: { os: "Win 10", cpu: "i3-9100", ram: "8 GB", gpu: "GTX 960", dx: "12", storage: "150 GB" },
     rec: { os: "Win 11", cpu: "i5-10600", ram: "16 GB", gpu: "RTX 2060", dx: "12", storage: "150 GB" },
-    dl: "#"
-  },
-  { 
-    id: 'microsoft-flight-sim', title: "Flight Simulator 2024", image: "/images/mfs.jpg", cat: "Simulation", mode: "Solo / Multi",
-    desc: "Parcourez le monde entier avec une précision graphique sans précédent.",
-    min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 770", dx: "11", storage: "150 GB" },
-    rec: { os: "Win 11", cpu: "i5-8400", ram: "16 GB", gpu: "GTX 1070", dx: "11", storage: "150 GB" },
-    dl: "#"
-  },
-
-  // --- ACTION / AVENTURE / RPG ---
-  { 
-    id: 'ghost-recon-breakpoint', title: "Ghost Recon Breakpoint", image: "/images/breakpoint.jpg", cat: "Action / FPS", mode: "Solo / Multi",
-    desc: "Devenez un Ghost et combattez une unité renégate sur l'archipel d'Auroa.",
-    min: { os: "Win 10", cpu: "i5-4460", ram: "8 GB", gpu: "GTX 960", dx: "11", storage: "50 GB" },
-    rec: { os: "Win 11", cpu: "i7-6700K", ram: "8 GB", gpu: "GTX 1080", dx: "11", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/KnhqLgwg"
   },
   { 
     id: 'watch-dogs-2', title: "Watch Dogs 2", image: "/images/wd2.jpg", cat: "Action / Sci-Fi", mode: "Solo / Multi",
     desc: "Incarnez Marcus Holloway dans la baie de San Francisco, le berceau de la technologie.",
     min: { os: "Win 10", cpu: "i5-2400S", ram: "6 GB", gpu: "GTX 660", dx: "11", storage: "50 GB" },
     rec: { os: "Win 11", cpu: "i5-3470", ram: "8 GB", gpu: "GTX 780", dx: "11", storage: "50 GB" },
-    dl: "#"
+    dl: "https://lockr.so/NSLz4uPm"
   },
   { 
-    id: 'outer-worlds', title: "The Outer Worlds", image: "/images/outerworlds.jpg", cat: "RPG / Sci-Fi", mode: "Solo",
+    id: 'outer-worlds-2', title: "The Outer Worlds 2", image: "/images/outerworlds2.jpg", cat: "RPG / Sci-Fi", mode: "Solo",
     desc: "Un RPG spatial plein d'humour noir où vos choix influencent l'histoire de la colonie.",
     min: { os: "Win 10", cpu: "i3-3225", ram: "4 GB", gpu: "GTX 650 Ti", dx: "11", storage: "40 GB" },
     rec: { os: "Win 11", cpu: "i7-7700K", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "40 GB" },
-    dl: "#"
+    dl: "https://lockr.so/DhCKBBYo"
   },
   { 
     id: 'borderlands-3', title: "Borderlands 3", image: "/images/borderlands3.jpg", cat: "Action / FPS", mode: "Solo / Multi",
     desc: "Le roi du looter-shooter est de retour. Des milliards d'armes et une aventure déjantée.",
     min: { os: "Win 10", cpu: "i5-3570", ram: "6 GB", gpu: "GTX 680", dx: "11", storage: "75 GB" },
     rec: { os: "Win 11", cpu: "i7-4770", ram: "16 GB", gpu: "GTX 1060", dx: "11", storage: "75 GB" },
-    dl: "#"
-  },
-
-  // --- INDIE & AUTRES ---
-  { 
-    id: 'disco-elysium', title: "Disco Elysium", image: "/images/disco.jpg", cat: "RPG / Indie", mode: "Solo",
-    desc: "Un RPG révolutionnaire où vous incarnez un détective au système de compétences unique.",
-    min: { os: "Win 10", cpu: "i5", ram: "4 GB", gpu: "Dédié", dx: "11", storage: "20 GB" },
-    rec: { os: "Win 11", cpu: "i7", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "20 GB" },
-    dl: "#"
+    dl: "https://lockr.so/EFDftBs6"
   },
   { 
     id: 'outer-wilds', title: "Outer Wilds", image: "/images/outerwilds.jpg", cat: "Indie / Aventure", mode: "Solo",
     desc: "Explorez un système solaire piégé dans une boucle temporelle infinie.",
     min: { os: "Win 10", cpu: "i5-2300", ram: "4 GB", gpu: "GTX 560", dx: "11", storage: "8 GB" },
     rec: { os: "Win 11", cpu: "i5-8400", ram: "8 GB", gpu: "GTX 1060", dx: "11", storage: "8 GB" },
-    dl: "#"
+    dl: "https://lockr.so/QsXC74DW"
   },
 ];
