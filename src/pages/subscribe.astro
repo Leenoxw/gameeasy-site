@@ -1,3 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
 <section class="sub-page">
     <div class="sub-header">
         <h1>Passez au niveau <span>supérieur</span></h1>
@@ -43,16 +48,23 @@
 </section>
 
 <style>
-    /* --- CONFIGURATION GÉNÉRALE & ANIMATIONS --- */
+    /* 1. RESET COMPLET : Supprime les marges blanches du navigateur */
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #060612; /* On met le fond de page à la même couleur que la section */
+        overflow-x: hidden; /* Évite les barres de défilement horizontales bizarres */
+        width: 100%;
+    }
+
+    * {
+        box-sizing: border-box; /* Pour que le padding ne casse pas la largeur */
+    }
+
+    /* --- ANIMATIONS --- */
     @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes goldGlow {
@@ -65,6 +77,7 @@
     .sub-page {
         padding: 120px 5% 60px;
         min-height: 100vh;
+        width: 100%;
         background: #060612;
         color: white;
         font-family: 'Inter', sans-serif;
@@ -73,6 +86,7 @@
         align-items: center;
     }
 
+    /* ... (Reste des styles inchangés) ... */
     .sub-header {
         text-align: center;
         margin-bottom: 50px;
@@ -81,21 +95,10 @@
         animation-delay: 0.1s;
     }
 
-    .sub-header h1 {
-        font-size: 2.5rem;
-        font-weight: 800;
-    }
+    .sub-header h1 { font-size: 2.5rem; font-weight: 800; }
+    .sub-header h1 span { color: #8a4fff; }
+    .sub-header p { color: #a0a0a0; margin-top: 10px; }
 
-    .sub-header h1 span {
-        color: #8a4fff;
-    }
-
-    .sub-header p {
-        color: #a0a0a0;
-        margin-top: 10px;
-    }
-
-    /* --- GRILLE DE PRIX --- */
     .pricing-container {
         display: flex;
         gap: 30px;
@@ -119,7 +122,6 @@
         transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Délais d'apparition des cartes */
     .pricing-card:nth-child(1) { animation-delay: 0.3s; }
     .pricing-card:nth-child(2) { animation-delay: 0.5s; }
     .pricing-card:nth-child(3) { animation-delay: 0.7s; }
@@ -130,11 +132,9 @@
         border-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Mise en avant de l'offre Premium */
     .pricing-card.popular {
         border: 1px solid #ffca28;
         background: rgba(255, 202, 40, 0.02);
-        /* Combine l'apparition et la lueur respirante */
         animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards, 
                    goldGlow 3s ease-in-out infinite 1.5s;
     }
@@ -153,22 +153,9 @@
         text-transform: uppercase;
     }
 
-    /* --- TEXTES DANS LES CARTES --- */
-    .pricing-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    .price {
-        font-size: 2.5rem;
-        font-weight: 800;
-        margin-bottom: 25px;
-    }
-
-    .price span {
-        font-size: 1rem;
-        color: #a0a0a0;
-    }
+    .pricing-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+    .price { font-size: 2.5rem; font-weight: 800; margin-bottom: 25px; }
+    .price span { font-size: 1rem; color: #a0a0a0; }
 
     .features {
         list-style: none;
@@ -189,7 +176,6 @@
     .fa-check { color: #4caf50; }
     .fa-times { color: #f44336; }
 
-    /* --- BOUTONS --- */
     .btn-sub {
         text-align: center;
         text-decoration: none;
@@ -201,9 +187,7 @@
         transition: 0.3s;
     }
 
-    .btn-sub:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
+    .btn-sub:hover { background: rgba(255, 255, 255, 0.2); }
 
     .btn-gold {
         background: linear-gradient(135deg, #ffca28, #ff8f00);
@@ -215,10 +199,7 @@
         transform: scale(1.02);
     }
 
-    /* --- RESPONSIVE --- */
     @media (max-width: 768px) {
-        .pricing-card {
-            width: 100%;
-        }
+        .pricing-card { width: 100%; }
     }
 </style>
