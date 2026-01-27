@@ -8,41 +8,75 @@ import Footer from '../components/Footer.astro';
   <Header />
 
   <main class="legal-container">
-    <div class="legal-content">
+    <div class="legal-wrapper">
+      
       <div class="header-section">
+        <span class="badge">Informations Légales</span>
         <h1>CONDITIONS <span>D'UTILISATION</span></h1>
-        <p class="last-update">Date d'entrée en vigueur : 19 Janvier 2026</p>
+        <p class="last-update">Dernière mise à jour : 27 Janvier 2026</p>
+        <div class="separator"></div>
       </div>
 
-      <section>
-        <h2>1. Objet du site</h2>
-        <p>GAMEASY est une plateforme d'information et de référencement de logiciels de divertissement. L'accès au site est gratuit et ouvert à tout utilisateur disposant d'une connexion Internet.</p>
-      </section>
+      <div class="legal-grid">
+        
+        <section class="legal-card">
+          <div class="icon-box"><i class="fas fa-info-circle"></i></div>
+          <h2>1. Objet du site</h2>
+          <p>
+            <strong>GAMEASY</strong> est une plateforme de référencement de logiciels de divertissement. Nous fournissons des liens vers des hébergeurs tiers à des fins d'information et de test technique uniquement.
+          </p>
+        </section>
 
-      <section>
-        <h2>2. Clause de non-responsabilité (Disclaimer)</h2>
-        <p>L'utilisation des fichiers téléchargés via des liens tiers présents sur GAMEASY se fait aux risques et périls de l'utilisateur. </p>
-        <ul>
-          <li><strong>Logiciels tiers :</strong> Nous ne sommes pas les développeurs des cracks ou des jeux listés.</li>
-          <li><strong>Sécurité :</strong> Bien que nous testions les liens, nous ne garantissons pas l'absence totale de risques. L'utilisation d'un antivirus et d'un VPN est fortement recommandée.</li>
-          <li><strong>Dommages :</strong> GAMEASY ne pourra être tenu responsable des pertes de données ou des pannes matérielles résultant de l'utilisation du site.</li>
-        </ul>
-      </section>
+        <section class="legal-card warning">
+          <div class="icon-box"><i class="fas fa-exclamation-triangle"></i></div>
+          <h2>2. Clause de Non-Responsabilité</h2>
+          <p>
+            Les logiciels listés sont mis à disposition en tant que <strong>"Démonstrations Techniques"</strong> pour évaluer les performances sur votre matériel.
+          </p>
+          <ul class="check-list">
+            <li><i class="fas fa-shield-virus"></i> <strong>Sécurité :</strong> L'utilisation d'un antivirus et d'un VPN est impérative avant toute manipulation.</li>
+            <li><i class="fas fa-user-shield"></i> <strong>Responsabilité :</strong> GAMEASY décline toute responsabilité pour les pertes de données ou pannes matérielles résultant de l'utilisation de fichiers tiers.</li>
+            <li><i class="fas fa-external-link-alt"></i> <strong>Contenus tiers :</strong> Nous ne sommes pas les développeurs des fichiers et ne garantissons pas leur intégrité.</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>3. Propriété du site</h2>
-        <p>Tous les éléments graphiques, le code source et le design de <em>gameeasy.netlify.app</em> sont la propriété exclusive de l'équipe GAMEASY. Toute reproduction sans autorisation est interdite.</p>
-      </section>
+        <section class="legal-card support">
+          <div class="icon-box"><i class="fas fa-shopping-cart"></i></div>
+          <h2>3. Soutenir les Créateurs</h2>
+          <p>
+            Nous croyons au respect de la propriété intellectuelle. Si un logiciel ou un jeu vous apporte satisfaction après votre test :
+          </p>
+          <ul class="support-list">
+            <li><i class="fas fa-heart"></i> <strong>Achetez l'original :</strong> Rendez-vous sur Steam, Epic Games, ou le site officiel du développeur.</li>
+            <li><i class="fas fa-crown"></i> <strong>Avantages :</strong> L'achat officiel vous offre le multijoueur, les mises à jour de sécurité et soutient l'industrie.</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>4. Liens Externes</h2>
-        <p>Notre site contient des liens vers des hébergeurs de fichiers externes (Mediafire, Mega, etc.). Nous n'exerçons aucun contrôle sur ces sites et déclinons toute responsabilité quant à leurs politiques de confidentialité ou leurs contenus.</p>
-      </section>
+        <section class="legal-card">
+          <div class="icon-box"><i class="fas fa-user-lock"></i></div>
+          <h2>4. Comptes Utilisateurs</h2>
+          <p>
+            L'accès à certaines fonctionnalités nécessite un compte validé par email.
+          </p>
+          <ul>
+            <li>Vous êtes responsable de la sécurité de vos identifiants de connexion.</li>
+            <li>L'utilisation de jetons d'accès ou de comptes partagés peut entraîner une suspension immédiate.</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>5. Modification des termes</h2>
-        <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Il est conseillé aux utilisateurs de consulter régulièrement cette page pour se tenir informés des changements.</p>
-      </section>
+        <section class="legal-card">
+          <div class="icon-box"><i class="fas fa-code"></i></div>
+          <h2>5. Propriété Intellectuelle</h2>
+          <p>
+            L'interface, le logo <strong>GAMEASY</strong> et le code source de <em>gameeasy.fr</em> sont protégés. Toute reproduction totale ou partielle est interdite sans accord préalable.
+          </p>
+        </section>
+
+      </div>
+
+      <div class="contact-footer">
+        <p>Besoin d'éclaircissements ? Rejoignez notre <a href="https://discord.gg/YaP3akhcgQ" target="_blank">Serveur Discord</a></p>
+      </div>
     </div>
   </main>
 
@@ -50,14 +84,84 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
-  .legal-container { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; display: flex; justify-content: center; }
-  .legal-content { max-width: 850px; width: 100%; line-height: 1.7; }
-  .header-section { text-align: center; margin-bottom: 50px; }
-  h1 { font-size: 3rem; font-weight: 900; }
+  .legal-container {
+    padding: 140px 20px 80px;
+    background: radial-gradient(circle at top, #11112a 0%, #060612 100%);
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .legal-wrapper { max-width: 950px; width: 100%; }
+
+  /* Header Section */
+  .header-section { text-align: center; margin-bottom: 60px; }
+  .badge {
+    background: rgba(138, 79, 255, 0.1);
+    color: #8a4fff;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(138, 79, 255, 0.2);
+  }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 900; margin: 20px 0; }
   h1 span { color: #8a4fff; }
-  .last-update { color: #444; font-weight: bold; }
-  h2 { font-size: 1.6rem; color: #8a4fff; margin: 35px 0 15px 0; border-left: 4px solid #8a4fff; padding-left: 15px; }
-  p, li { color: #a1a1aa; font-size: 1.05rem; margin-bottom: 15px; }
-  ul { padding-left: 20px; }
-  strong { color: #fff; }
+  .last-update { color: #555; font-size: 0.9rem; font-weight: 600; }
+  .separator { width: 80px; height: 4px; background: #8a4fff; margin: 25px auto; border-radius: 10px; }
+
+  /* Grid Layout */
+  .legal-grid { display: grid; gap: 30px; grid-template-columns: 1fr; }
+
+  .legal-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 35px;
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .legal-card:hover { 
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(138, 79, 255, 0.4);
+  }
+
+  .icon-box {
+    width: 50px; height: 50px; background: rgba(138, 79, 255, 0.1);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    color: #8a4fff; margin-bottom: 20px; font-size: 1.4rem;
+  }
+
+  /* Variations de Cartes */
+  .warning { border-top: 5px solid #ff4444; background: rgba(255, 68, 68, 0.01); }
+  .warning .icon-box { color: #ff4444; background: rgba(255, 68, 68, 0.1); }
+  
+  .support { border-top: 5px solid #00ff88; background: rgba(0, 255, 136, 0.01); }
+  .support .icon-box { color: #00ff88; background: rgba(0, 255, 136, 0.1); }
+
+  h2 { font-size: 1.6rem; color: #fff; margin-bottom: 18px; font-weight: 800; }
+  p, li { color: #a1a1aa; line-height: 1.8; font-size: 1.05rem; }
+  
+  ul { list-style: none; padding: 0; margin-top: 20px; }
+  li { margin-bottom: 12px; display: flex; gap: 15px; align-items: flex-start; }
+  li i { color: #8a4fff; margin-top: 6px; font-size: 1rem; }
+
+  .check-list li i { color: #ff4444; }
+  .support-list li i { color: #00ff88; }
+
+  strong { color: #eee; }
+
+  /* Footer contact */
+  .contact-footer { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); }
+  .contact-footer a { color: #8a4fff; text-decoration: none; font-weight: 800; transition: 0.3s; }
+  .contact-footer a:hover { color: white; text-shadow: 0 0 10px #8a4fff; }
+
+  @media (max-width: 768px) {
+    .legal-card { padding: 25px; }
+    h1 { font-size: 2.5rem; }
+  }
 </style>
