@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Soutenir GAMEASY - Faire un Don">
+  <Header />
+  
+  <main class="donation-page">
+    <div class="donation-wrapper">
+      
+      <aside class="side-ad left-ad">
+        <div class="ad-sticky">
+          <span class="ad-label">SPONSOR</span>
+          <iframe data-aa='2425086' src='//acceptable.a-ads.com/2425086/?size=160x600' style='border:0; padding:0; width:160px; height:600px; overflow:hidden; background-color: transparent;'></iframe>
+        </div>
+      </aside>
+
+      <div class="center-content">
+        <div class="donation-card">
+          <div class="card-header">
+            <div class="icon-circle">🎁</div>
+            <h1>SOUTENIR LE PROJET</h1>
+            <p>Vos dons permettent de maintenir les serveurs en vie et de garantir des téléchargements ultra-rapides sans limites.</p>
+          </div>
+
+          <div class="paypal-section">
+            <a href="https://paypal.me/TON_PSEUDO" target="_blank" class="paypal-btn">
+              <i class="fab fa-paypal"></i> FAIRE UN DON VIA PAYPAL
+            </a>
+            <p class="paypal-notice">Simple, rapide et sécurisé.</p>
+          </div>
+
+          <div class="separator"><span>OU VIA CRYPTO</span></div>
+
+          <div class="crypto-grid">
+            <div class="crypto-item">
+              <div class="crypto-info">
+                <i class="fab fa-bitcoin" style="color: #f7931a;"></i>
+                <div>
+                  <strong>Bitcoin (BTC)</strong>
+                  <code id="btc-addr">bc1qxy2kgdygj... (Ton Adresse)</code>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('btc-addr')">COPIER</button>
+            </div>
+
+            <div class="crypto-item">
+              <div class="crypto-info">
+                <i class="fab fa-ethereum" style="color: #627eea;"></i>
+                <div>
+                  <strong>Ethereum (ETH)</strong>
+                  <code id="eth-addr">0x71C765... (Ton Adresse)</code>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('eth-addr')">COPIER</button>
+            </div>
+          </div>
+
+          <div class="lightning-alert">
+            <i class="fas fa-bolt"></i> Soutenez-nous, pour <strong>aider au développement</strong> pour plus de jeux !
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-ad right-ad">
+        <div class="ad-sticky">
+          <span class="ad-label">SPONSOR</span>
+          <iframe data-aa='2425087' src='//acceptable.a-ads.com/2425087/?size=160x600' style='border:0; padding:0; width:160px; height:600px; overflow:hidden; background-color: transparent;'></iframe>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script is:inline>
+  function copyToClipboard(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Adresse copiée !");
+    });
+  }
+</script>
+
+<style>
+  .donation-page { min-height: 100vh; background: #060612; padding: 120px 20px 60px; }
+  .donation-wrapper { display: flex; justify-content: center; gap: 40px; max-width: 1600px; margin: 0 auto; }
+
+  /* --- STYLE DES PUBS LATÉRALES --- */
+  .side-ad { flex: 0 0 160px; }
+  .ad-sticky { position: sticky; top: 100px; text-align: center; }
+  .ad-label { display: block; font-size: 10px; color: #444; font-weight: 900; margin-bottom: 5px; letter-spacing: 2px; }
+
+  /* --- CARTE CENTRALE --- */
+  .center-content { flex: 1; max-width: 800px; }
+  .donation-card { 
+    background: #0c0c1d; 
+    border: 1px solid rgba(138, 79, 255, 0.2); 
+    border-radius: 30px; 
+    padding: 50px; 
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  .icon-circle { font-size: 3rem; margin-bottom: 20px; }
+  h1 { color: white; font-size: 2.5rem; font-weight: 950; margin-bottom: 15px; }
+  p { color: #888; margin-bottom: 30px; line-height: 1.6; }
+
+  /* --- PAYPAL --- */
+  .paypal-section { margin-bottom: 40px; }
+  .paypal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: #ffc439;
+    color: #003087;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    transition: 0.3s;
+  }
+  .paypal-btn:hover { transform: scale(1.02); background: #ffd36b; }
+  .paypal-notice { font-size: 0.8rem; margin-top: 10px; color: #555; }
+
+  .separator { 
+    display: flex; align-items: center; text-align: center; color: #333; margin: 30px 0; 
+    font-weight: 900; font-size: 0.8rem;
+  }
+  .separator::before, .separator::after { content: ''; flex: 1; border-bottom: 1px solid #1a1a2e; }
+  .separator span { padding: 0 15px; }
+
+  /* --- CRYPTO --- */
+  .crypto-grid { display: flex; flex-direction: column; gap: 15px; }
+  .crypto-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  .crypto-info { display: flex; align-items: center; gap: 15px; }
+  .crypto-info strong { display: block; color: white; }
+  .crypto-info code { color: #666; font-size: 0.8rem; }
+  .copy-btn { 
+    background: #1a1a2e; color: #8a4fff; border: 1px solid #8a4fff; 
+    padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: 800;
+  }
+  .copy-btn:hover { background: #8a4fff; color: white; }
+
+  .lightning-alert { color: #00ff88; font-size: 0.85rem; margin-top: 30px; font-weight: 700; }
+
+  @media (max-width: 1100px) { .side-ad { display: none; } }
+</style>

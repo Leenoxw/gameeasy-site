@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Guide d'Installation - GAMEASY">
+  <Header />
+
+  <main class="tuto-page">
+    <div class="container">
+      
+      <section class="tuto-header">
+        <span class="badge">Tutoriel Officiel</span>
+        <h1>GUIDE D'<span>INSTALLATION</span></h1>
+        <p>Suivez ce parcours interactif pour configurer vos jeux sans aucune erreur.</p>
+        <div class="separator"></div>
+      </section>
+
+      <div class="roadmap">
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-step" style="--delay: 0.1s">
+          <div class="bubble"><i class="fas fa-download"></i></div>
+          <div class="content">
+            <span class="step-number">Étape 01</span>
+            <h3>Téléchargement</h3>
+            <p>
+              Cliquez sur le bouton <strong>Download</strong> de la fiche du jeu. 
+              <br/>💡 <em>Conseil : Utilisez un bloqueur de publicité (uBlock Origin) pour une navigation fluide.</em>
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-step" style="--delay: 0.3s">
+          <div class="bubble active-glow"><i class="fas fa-file-archive"></i></div>
+          <div class="content focus-border">
+            <span class="step-number">Étape 02</span>
+            <h3>Récupération & Extraction</h3>
+            <p>
+              Ouvrez le fichier avec <span class="software-highlight">qBittorrent</span>. Une fois le téléchargement à 100%, utilisez <span class="software-highlight">WinRAR</span> pour extraire les fichiers.
+            </p>
+            <div class="password-box">
+              <i class="fas fa-key"></i> Mot de passe : <span>online-fix.me</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="roadmap-step" style="--delay: 0.5s">
+          <div class="bubble"><i class="fas fa-cog"></i></div>
+          <div class="content">
+            <span class="step-number">Étape 03</span>
+            <h3>Installation</h3>
+            <p>
+              Lancez le fichier <code>setup.exe</code> ou <code>install.bat</code> en <strong>tant qu'administrateur</strong>. 
+              Si votre antivirus bloque le fichier, désactivez-le temporairement (le crack est un "faux positif").
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-step" style="--delay: 0.7s">
+          <div class="bubble final-check"><i class="fas fa-play"></i></div>
+          <div class="content">
+            <span class="step-number">Étape 04</span>
+            <h3>Lancer le jeu</h3>
+            <p>Utilisez le raccourci créé sur votre bureau. <strong>Bon jeu sur GAMEASY !</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <section class="software-section">
+        <h2>Logiciels <span>Indispensables</span></h2>
+        <div class="software-grid">
+          <a href="https://www.qbittorrent.org/" target="_blank" class="soft-card">
+            <i class="fas fa-cloud-download-alt"></i>
+            <span>qBittorrent</span>
+          </a>
+          <a href="https://www.win-rar.com/" target="_blank" class="soft-card">
+            <i class="fas fa-file-zipper"></i>
+            <span>WinRAR</span>
+          </a>
+          <a href="https://www.7-zip.org/" target="_blank" class="soft-card">
+            <i class="fas fa-box-open"></i>
+            <span>7-Zip</span>
+          </a>
+          <a href="https://www.directx.com/" target="_blank" class="soft-card">
+            <i class="fas fa-microchip"></i>
+            <span>DirectX</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .tuto-page {
+    padding: 140px 20px 80px;
+    background: radial-gradient(circle at top, #11112a 0%, #060612 100%);
+    min-height: 100vh;
+    color: white;
+    font-family: 'Inter', sans-serif;
+  }
+  .container { max-width: 850px; margin: 0 auto; }
+
+  /* Header */
+  .tuto-header { text-align: center; margin-bottom: 80px; }
+  .badge {
+    background: rgba(139, 92, 246, 0.1); color: #8b5cf6;
+    padding: 6px 16px; border-radius: 30px; font-size: 0.75rem;
+    font-weight: 800; border: 1px solid rgba(139, 92, 246, 0.2);
+    text-transform: uppercase;
+  }
+  .tuto-header h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; margin: 20px 0; }
+  .tuto-header h1 span { color: #8b5cf6; text-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
+  .separator { width: 60px; height: 4px; background: #8b5cf6; margin: 0 auto; border-radius: 10px; }
+
+  /* Roadmap Logic */
+  .roadmap { position: relative; display: flex; flex-direction: column; gap: 40px; padding-left: 80px; }
+  .roadmap-line { 
+    position: absolute; left: 34px; top: 0; bottom: 0; width: 3px; 
+    background: linear-gradient(to bottom, #8b5cf6 0%, #1e1e2e 100%); 
+    border-radius: 10px;
+  }
+
+  .roadmap-step { 
+    position: relative; opacity: 0; transform: translateX(-20px); 
+    animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards var(--delay); 
+  }
+  @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+
+  .bubble { 
+    position: absolute; left: -70px; width: 54px; height: 54px; 
+    background: #11111e; border: 2px solid #2d2d3f; border-radius: 16px; 
+    display: flex; align-items: center; justify-content: center; 
+    font-size: 1.2rem; z-index: 2; color: #8b5cf6;
+    transition: 0.3s;
+  }
+
+  .active-glow { 
+    border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); 
+    animation: pulse 2s infinite; color: white; background: #8b5cf6;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .final-check { background: #10b981; border-color: #10b981; color: white; }
+
+  /* Content Cards */
+  .content { 
+    background: rgba(255, 255, 255, 0.02); padding: 30px; 
+    border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+  }
+  .content:hover { border-color: rgba(139, 92, 246, 0.3); background: rgba(255, 255, 255, 0.04); }
+  .focus-border { border-left: 4px solid #8b5cf6; }
+
+  .step-number { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #8b5cf6; letter-spacing: 1px; }
+  h3 { color: #fff; margin: 5px 0 12px 0; font-size: 1.5rem; font-weight: 700; }
+  p { color: #a1a1aa; line-height: 1.7; font-size: 1rem; }
+
+  /* Software UI */
+  .software-highlight { 
+    color: #8b5cf6; font-weight: 800; text-decoration: underline; 
+  }
+  .password-box {
+    margin-top: 15px; background: rgba(139, 92, 246, 0.1); 
+    padding: 10px 15px; border-radius: 8px; display: inline-flex; 
+    align-items: center; gap: 10px; border: 1px dashed #8b5cf6;
+    font-size: 0.9rem;
+  }
+  .password-box span { color: #fff; font-family: monospace; font-weight: bold; font-size: 1.1rem; }
+
+  /* Bottom Grid */
+  .software-section { margin-top: 100px; text-align: center; }
+  .software-section h2 { margin-bottom: 40px; font-weight: 800; }
+  .software-section h2 span { color: #8b5cf6; }
+  .software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+
+  .soft-card { 
+    padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 18px; text-decoration: none; color: white;
+    display: flex; flex-direction: column; align-items: center; gap: 15px;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .soft-card i { font-size: 2rem; color: #8b5cf6; }
+  .soft-card span { font-weight: 700; font-size: 0.9rem; }
+  .soft-card:hover { 
+    background: #8b5cf6; transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
+  }
+  .soft-card:hover i, .soft-card:hover span { color: white; }
+
+  @media (max-width: 600px) {
+    .roadmap { padding-left: 60px; }
+    .bubble { left: -65px; width: 44px; height: 44px; font-size: 1rem; }
+    .roadmap-line { left: 24px; }
+  }
+</style>
