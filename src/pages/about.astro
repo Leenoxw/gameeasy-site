@@ -217,7 +217,7 @@ import Footer from '../components/Footer.astro';
         const target = entry.target as HTMLElement;
         const val = parseInt(target.getAttribute('data-val') || "0");
         let start = 0;
-        const duration = 1000;
+        const duration = 10000;
         const step = val / (duration / 16);
         
         const update = () => {
