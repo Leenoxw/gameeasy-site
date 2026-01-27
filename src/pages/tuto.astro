@@ -4,67 +4,80 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Guide d'Installation - GAMEASY">
+<Layout title="À Propos - GAMEASY">
   <Header />
 
-  <main class="tuto-page">
-    <div class="container">
-      <section class="tuto-header">
-        <h1>Guide d'<span>Installation</span></h1>
-        <p>Suivez ce parcours interactif pour configurer vos jeux sans erreur.</p>
+  <main class="about-container">
+    <div class="content-wrapper">
+      
+      <section class="about-hero">
+        <span class="badge">Notre Histoire</span>
+        <h1 class="glitch-text">À PROPOS DE <span>GAMEASY</span></h1>
+        <p class="lead-text">La référence du partage de jeux gratuits et sécurisés depuis 2024.</p>
+        <div class="separator"></div>
       </section>
 
-      <div class="roadmap">
-        <div class="roadmap-line"></div>
-
-        <div class="roadmap-step" style="--delay: 0.1s">
-          <div class="bubble">01</div>
-          <div class="content">
-            <h3>Téléchargement</h3>
-            <p>Cliquez sur le bouton <strong>Download</strong> de la fiche du jeu. Nous vous conseillons d'utiliser un bloqueur de publicité pour une meilleure expérience.</p>
-          </div>
-        </div>
-
-        <div class="roadmap-step" style="--delay: 0.3s">
-          <div class="bubble active-glow">02</div>
-          <div class="content focus-border">
-            <h3>Récupération & Extraction</h3>
+      <div class="grid-content">
+        
+        <section class="text-section">
+          <div class="intro-card">
+            <h2>Pourquoi GAMEASY ?</h2>
             <p>
-              Ouvrez le fichier téléchargé avec <span class="software-highlight">qBittorrent</span> pour récupérer les dossiers du jeu. 
-              Une fois terminé, utilisez <span class="software-highlight">WinRAR</span> ou <span class="software-highlight">7-Zip</span> pour extraire les fichiers. 
-              <br/> 💡 <em>Si un mot de passe est demandé, c'est <strong>online-fix.me</strong>.</em>
+              GAMEASY est né d'une passion pour le gaming et de la volonté de rendre la culture vidéoludique accessible à tous. Nous pensons que le divertissement ne devrait pas être limité par le budget.
+            </p>
+            <p>
+              Notre équipe travaille quotidiennement pour répertorier les meilleurs cracks, vérifier leur sécurité et vous proposer des guides d'installation simplifiés pour que vous n'ayez qu'à cliquer et jouer.
             </p>
           </div>
-        </div>
+          
+          <div class="features-list">
+            <div class="feat-card">
+              <div class="feat-icon-box"><i class="fas fa-shield-check"></i></div>
+              <div class="feat-details">
+                <strong>Sécurité Garantie</strong>
+                <p>Tous nos fichiers sont scannés et testés sur des machines virtuelles isolées avant d'être mis en ligne.</p>
+              </div>
+            </div>
 
-        <div class="roadmap-step" style="--delay: 0.5s">
-          <div class="bubble">03</div>
-          <div class="content">
-            <h3>Installation</h3>
-            <p>Lancez le fichier <code>setup.exe</code> en tant qu'<strong>administrateur</strong>. Désactivez temporairement votre antivirus si le crack est bloqué.</p>
-          </div>
-        </div>
+            <div class="feat-card">
+              <div class="feat-icon-box"><i class="fas fa-bolt"></i></div>
+              <div class="feat-details">
+                <strong>Vitesse Maximum</strong>
+                <p>Pas de limite de bridage. Nous sélectionnons des hébergeurs offrant des débits ultra-rapides pour vos téléchargements.</p>
+              </div>
+            </div>
 
-        <div class="roadmap-step" style="--delay: 0.7s">
-          <div class="bubble final-check">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div class="feat-card">
+              <div class="feat-icon-box"><i class="fas fa-users"></i></div>
+              <div class="feat-details">
+                <strong>Communauté Active</strong>
+                <p>Un problème ? Notre Discord est ouvert 24/7 pour vous aider dans vos installations ou répondre à vos questions.</p>
+              </div>
+            </div>
           </div>
-          <div class="content">
-            <h3>Jouer</h3>
-            <p>Lancez le jeu via le raccourci sur votre bureau. <strong>Bon jeu sur GAMEASY !</strong></p>
+        </section>
+
+        <aside class="stats-sidebar">
+          <div class="stat-box">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Jeux répertoriés</span>
           </div>
-        </div>
+          
+          <div class="stat-box accent">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Gratuit & Testé</span>
+          </div>
+
+          <div class="community-card">
+            <h3>Rejoignez l'aventure</h3>
+            <p>Plus de 2000 membres nous font déjà confiance sur Discord.</p>
+            <a href="https://discord.gg/YaP3akhcgQ" target="_blank" class="discord-cta">
+              <i class="fab fa-discord"></i> Rejoindre le serveur
+            </a>
+          </div>
+        </aside>
+
       </div>
-
-      <section class="software-section">
-        <h2>Logiciels <span>Recommandés</span></h2>
-        <div class="software-grid">
-          <a href="https://www.qbittorrent.org/download" target="_blank" class="soft-btn">qBittorrent</a>
-          <a href="https://www.win-rar.com/" target="_blank" class="soft-btn">WinRAR</a>
-          <a href="https://www.7-zip.org/" target="_blank" class="soft-btn">7-Zip</a>
-          <a href="https://get.daemon-tools.cc/" target="_blank" class="soft-btn">Daemon Tools</a>
-        </div>
-      </section>
     </div>
   </main>
 
@@ -72,105 +85,221 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
-  .tuto-page { padding: 140px 20px 80px; background: #060612; min-height: 100vh; color: white; }
-  .container { max-width: 800px; margin: 0 auto; }
-
-  .tuto-header { text-align: center; margin-bottom: 80px; }
-  .tuto-header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 10px; }
-  .tuto-header h1 span { color: #8b5cf6; }
-  .tuto-header p { color: #a1a1aa; }
-
-  /* Le Schéma (Roadmap) */
-  .roadmap { position: relative; display: flex; flex-direction: column; gap: 40px; padding-left: 60px; }
-
-  .roadmap-line { 
-    position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; 
-    background: linear-gradient(to bottom, #8b5cf6, #1e1e2e); 
+  /* CONFIGURATION GLOBALE */
+  .about-container {
+    padding: 140px 20px 80px;
+    background: radial-gradient(circle at top, #11112a 0%, #060612 100%);
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
   }
 
-  .roadmap-step { 
-    position: relative; 
-    opacity: 0; 
-    transform: translateX(-20px); 
-    animation: slideIn 0.5s forwards var(--delay); 
+  .content-wrapper {
+    width: 100%;
+    max-width: 1100px;
   }
 
-  @keyframes slideIn {
-    to { opacity: 1; transform: translateX(0); }
+  /* HERO */
+  .about-hero {
+    text-align: center;
+    margin-bottom: 60px;
   }
 
-  .bubble { 
-    position: absolute; left: -56px; width: 40px; height: 40px; 
-    background: #11111e; border: 2px solid #333; border-radius: 50%; 
-    display: flex; align-items: center; justify-content: center; 
-    font-weight: bold; font-size: 0.9rem; z-index: 2;
+  .badge {
+    background: rgba(138, 79, 255, 0.1);
+    color: #8a4fff;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: 1px solid rgba(138, 79, 255, 0.2);
   }
 
-  /* Effet spécial pour l'étape cruciale (Extraction) */
-  .active-glow { 
-    border-color: #8b5cf6; 
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.6); 
-    animation: pulse 2s infinite;
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 900;
+    margin: 20px 0;
+    letter-spacing: -1px;
   }
 
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+  h1 span {
+    color: #8a4fff;
+    text-shadow: 0 0 30px rgba(138, 79, 255, 0.3);
   }
 
-  .final-check { background: #10b981; border-color: #10b981; color: white; }
-
-  .content { 
-    background: rgba(255, 255, 255, 0.03); 
-    padding: 20px 25px; 
-    border-radius: 12px; 
-    border: 1px solid #1e1e2e; 
+  .lead-text {
+    font-size: 1.2rem;
+    color: #a1a1aa;
+    max-width: 700px;
+    margin: 0 auto;
   }
 
-  .focus-border { border-color: rgba(139, 92, 246, 0.4); }
-
-  h3 { color: #8b5cf6; margin-bottom: 8px; font-size: 1.3rem; }
-  p { color: #ccc; line-height: 1.6; font-size: 0.95rem; }
-
-  /* Surlignage Logiciels */
-  .software-highlight { 
-    background: rgba(139, 92, 246, 0.2); 
-    color: #fff; 
-    font-weight: bold; 
-    padding: 2px 6px; 
-    border-radius: 4px; 
-    border-bottom: 2px solid #8b5cf6;
-    text-shadow: 0 0 8px rgba(139, 92, 246, 0.8);
+  .separator {
+    width: 60px;
+    height: 4px;
+    background: #8a4fff;
+    margin: 25px auto;
+    border-radius: 10px;
   }
 
-  /* Section Logiciels du bas */
-  .software-section { margin-top: 80px; text-align: center; }
-  .software-section h2 { margin-bottom: 30px; }
-  .software-section h2 span { color: #8b5cf6; }
+  /* GRID SYSTEM */
+  .grid-content {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
 
-  .software-grid { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+  .intro-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 30px;
+  }
 
-  .soft-btn { 
-    padding: 12px 25px; 
-    background: transparent; 
-    border: 1px solid #8b5cf6; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 8px; 
-    font-weight: 600; 
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 800;
+  }
+
+  .text-section p {
+    color: #a1a1aa;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+
+  /* FEATURES */
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feat-card {
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.01);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
     transition: 0.3s;
   }
 
-  .soft-btn:hover { 
-    background: #8b5cf6; 
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); 
-    transform: translateY(-3px);
+  .feat-card:hover {
+    background: rgba(138, 79, 255, 0.03);
+    border-color: rgba(138, 79, 255, 0.2);
+    transform: translateX(10px);
   }
 
-  @media (max-width: 600px) {
-    .roadmap { padding-left: 45px; }
-    .bubble { left: -45px; width: 32px; height: 32px; font-size: 0.75rem; }
-    .roadmap-line { left: 19px; }
+  .feat-icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(138, 79, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a4fff;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .feat-details strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+
+  .feat-details p {
+    font-size: 0.95rem;
+    color: #888;
+    margin: 0;
+  }
+
+  /* SIDEBAR */
+  .stats-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: sticky;
+    top: 140px;
+  }
+
+  .stat-box {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .stat-box.accent {
+    border: 1px solid rgba(138, 79, 255, 0.3);
+    background: rgba(138, 79, 255, 0.02);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #8a4fff;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #a1a1aa;
+    font-weight: 700;
+  }
+
+  .community-card {
+    background: linear-gradient(145deg, #1a1a3a, #060612);
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid rgba(88, 101, 242, 0.3);
+  }
+
+  .community-card h3 { margin-bottom: 10px; font-size: 1.3rem; }
+  .community-card p { font-size: 0.9rem; color: #a1a1aa; margin-bottom: 20px; }
+
+  .discord-cta {
+    background: #5865F2;
+    color: white;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 800;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .discord-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 950px) {
+    .grid-content {
+      grid-template-columns: 1fr;
+    }
+    .stats-sidebar {
+      position: static;
+    }
   }
 </style>
